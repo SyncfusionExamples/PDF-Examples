@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draw-text-in-a-PDF-using-TrueType-fonts", "Draw-text-in-a-PDF-using-TrueType-fonts\Draw-text-in-a-PDF-using-TrueType-fonts.csproj", "{BBADA577-468A-443A-88BD-A9854652C74F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBADA577-468A-443A-88BD-A9854652C74F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBADA577-468A-443A-88BD-A9854652C74F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBADA577-468A-443A-88BD-A9854652C74F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBADA577-468A-443A-88BD-A9854652C74F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E90DDF4-3711-4655-90EB-9953AABA44D8}
+	EndGlobalSection
+EndGlobal

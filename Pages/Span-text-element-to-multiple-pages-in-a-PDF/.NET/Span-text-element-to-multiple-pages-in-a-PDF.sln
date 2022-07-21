@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Span-text-element-to-multiple-pages-in-a-PDF", "Span-text-element-to-multiple-pages-in-a-PDF\Span-text-element-to-multiple-pages-in-a-PDF.csproj", "{54F72B4A-B5D1-4171-9C45-4A61CADF4538}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54F72B4A-B5D1-4171-9C45-4A61CADF4538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54F72B4A-B5D1-4171-9C45-4A61CADF4538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54F72B4A-B5D1-4171-9C45-4A61CADF4538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54F72B4A-B5D1-4171-9C45-4A61CADF4538}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8084EF14-9296-427D-A60F-E8A3CBDF4DB0}
+	EndGlobalSection
+EndGlobal

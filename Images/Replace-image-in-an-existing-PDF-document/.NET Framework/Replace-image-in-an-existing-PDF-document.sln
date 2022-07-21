@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Replace-image-in-an-existing-PDF-document", "Replace-image-in-an-existing-PDF-document\Replace-image-in-an-existing-PDF-document.csproj", "{A76944BC-EC63-45E3-90AC-00DC1588591C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A76944BC-EC63-45E3-90AC-00DC1588591C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A76944BC-EC63-45E3-90AC-00DC1588591C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A76944BC-EC63-45E3-90AC-00DC1588591C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A76944BC-EC63-45E3-90AC-00DC1588591C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E80D2DD-6F5F-4D4A-852F-F224065B7C97}
+	EndGlobalSection
+EndGlobal
