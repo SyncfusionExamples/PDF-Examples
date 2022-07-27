@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Converting-multi-page-TIFF-to-PDF", "Converting-multi-page-TIFF-to-PDF\Converting-multi-page-TIFF-to-PDF.csproj", "{7F73D6FD-123C-47BD-9345-95CC0930E915}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F73D6FD-123C-47BD-9345-95CC0930E915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F73D6FD-123C-47BD-9345-95CC0930E915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F73D6FD-123C-47BD-9345-95CC0930E915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F73D6FD-123C-47BD-9345-95CC0930E915}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67DBE4A2-D299-4BB7-92D7-B92AE19BB2D5}
+	EndGlobalSection
+EndGlobal

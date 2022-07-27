@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Import-pages-from-PDF-without-bookmarks", "Import-pages-from-PDF-without-bookmarks\Import-pages-from-PDF-without-bookmarks.csproj", "{4D56EF96-1A29-4124-9611-816EDFB2C2B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D56EF96-1A29-4124-9611-816EDFB2C2B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D56EF96-1A29-4124-9611-816EDFB2C2B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D56EF96-1A29-4124-9611-816EDFB2C2B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D56EF96-1A29-4124-9611-816EDFB2C2B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A36A4963-48C7-4209-9F5E-280B65275160}
+	EndGlobalSection
+EndGlobal

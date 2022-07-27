@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draw-Right-To-Left-text-in-a-PDF-document", "Draw-Right-To-Left-text-in-a-PDF-document\Draw-Right-To-Left-text-in-a-PDF-document.csproj", "{77BF4014-829C-45FB-A082-18093CC0F3D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77BF4014-829C-45FB-A082-18093CC0F3D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77BF4014-829C-45FB-A082-18093CC0F3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77BF4014-829C-45FB-A082-18093CC0F3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77BF4014-829C-45FB-A082-18093CC0F3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6D3751A-D41E-4FB9-932F-F757F4D60E24}
+	EndGlobalSection
+EndGlobal

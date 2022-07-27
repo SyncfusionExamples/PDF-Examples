@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rotate-an-existing-PDF-page", "Rotate-an-existing-PDF-page\Rotate-an-existing-PDF-page.csproj", "{8FC912B0-67B9-4D39-A8C2-BD7CC7799823}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FC912B0-67B9-4D39-A8C2-BD7CC7799823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC912B0-67B9-4D39-A8C2-BD7CC7799823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC912B0-67B9-4D39-A8C2-BD7CC7799823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC912B0-67B9-4D39-A8C2-BD7CC7799823}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D3DC916E-98EF-4BA9-A0F5-07235EA64FF3}
+	EndGlobalSection
+EndGlobal
