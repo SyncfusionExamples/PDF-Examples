@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Set-location-and-size-to-the-barcode-in-a-PDF-document", "Set-location-and-size-to-the-barcode-in-a-PDF-document\Set-location-and-size-to-the-barcode-in-a-PDF-document.csproj", "{986EC082-3B1B-456E-9AA9-FD2938B117CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{986EC082-3B1B-456E-9AA9-FD2938B117CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{986EC082-3B1B-456E-9AA9-FD2938B117CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{986EC082-3B1B-456E-9AA9-FD2938B117CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{986EC082-3B1B-456E-9AA9-FD2938B117CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {029160AB-3C93-45AA-8E11-A5FF68F1135D}
+	EndGlobalSection
+EndGlobal

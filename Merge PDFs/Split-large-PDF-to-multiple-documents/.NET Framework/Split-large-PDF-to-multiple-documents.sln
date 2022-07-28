@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Split-large-PDF-to-multiple-documents", "Split-large-PDF-to-multiple-documents\Split-large-PDF-to-multiple-documents.csproj", "{415B2F5C-B5C0-4728-85A4-1ECBAADF8318}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{415B2F5C-B5C0-4728-85A4-1ECBAADF8318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415B2F5C-B5C0-4728-85A4-1ECBAADF8318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415B2F5C-B5C0-4728-85A4-1ECBAADF8318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415B2F5C-B5C0-4728-85A4-1ECBAADF8318}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DC84C1B-E967-404F-9C95-EAC194DA2EFD}
+	EndGlobalSection
+EndGlobal

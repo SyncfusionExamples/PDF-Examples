@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encrypt-only-attachment-in-the-PDF-document", "Encrypt-only-attachment-in-the-PDF-document\Encrypt-only-attachment-in-the-PDF-document.csproj", "{FA76DF43-A116-4FC4-AE8B-BA7DCA658AFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA76DF43-A116-4FC4-AE8B-BA7DCA658AFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA76DF43-A116-4FC4-AE8B-BA7DCA658AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA76DF43-A116-4FC4-AE8B-BA7DCA658AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA76DF43-A116-4FC4-AE8B-BA7DCA658AFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDB505B1-4DEE-4AB9-A3BA-031C80056085}
+	EndGlobalSection
+EndGlobal

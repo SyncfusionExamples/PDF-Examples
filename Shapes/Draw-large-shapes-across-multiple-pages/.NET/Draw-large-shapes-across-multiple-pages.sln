@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draw-large-shapes-across-multiple-pages", "Draw-large-shapes-across-multiple-pages\Draw-large-shapes-across-multiple-pages.csproj", "{ABD486D2-77AA-48F5-B730-E95C077752BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABD486D2-77AA-48F5-B730-E95C077752BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABD486D2-77AA-48F5-B730-E95C077752BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABD486D2-77AA-48F5-B730-E95C077752BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABD486D2-77AA-48F5-B730-E95C077752BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AB42BAE-21C5-418F-A9FF-2F860D959C15}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Create-table-from-list-in-a-PDF-document", "Create-table-from-list-in-a-PDF-document\Create-table-from-list-in-a-PDF-document.csproj", "{A51FD3E2-C9A2-4FEC-84D1-5C5C3860421D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A51FD3E2-C9A2-4FEC-84D1-5C5C3860421D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A51FD3E2-C9A2-4FEC-84D1-5C5C3860421D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A51FD3E2-C9A2-4FEC-84D1-5C5C3860421D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A51FD3E2-C9A2-4FEC-84D1-5C5C3860421D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B040E106-99AC-4E28-A349-7C4EA4CE3FDA}
+	EndGlobalSection
+EndGlobal
