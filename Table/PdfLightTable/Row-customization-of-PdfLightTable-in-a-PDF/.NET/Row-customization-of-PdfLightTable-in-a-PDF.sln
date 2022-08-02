@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Row-customization-of-PdfLightTable-in-a-PDF", "Row-customization-of-PdfLightTable-in-a-PDF\Row-customization-of-PdfLightTable-in-a-PDF.csproj", "{9894D533-B0EB-4FF1-BC80-47DEB0375887}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9894D533-B0EB-4FF1-BC80-47DEB0375887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9894D533-B0EB-4FF1-BC80-47DEB0375887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9894D533-B0EB-4FF1-BC80-47DEB0375887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9894D533-B0EB-4FF1-BC80-47DEB0375887}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1FA7630C-18EE-47E4-B579-75F8E928F81D}
+	EndGlobalSection
+EndGlobal

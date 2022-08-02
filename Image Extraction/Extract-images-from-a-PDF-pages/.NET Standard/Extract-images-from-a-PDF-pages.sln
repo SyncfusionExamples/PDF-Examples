@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extract-images-from-a-PDF-pages", "Extract-images-from-a-PDF-pages\Extract-images-from-a-PDF-pages.csproj", "{D9FC7C26-2A6C-43E8-A7B9-9F8A71F22613}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9FC7C26-2A6C-43E8-A7B9-9F8A71F22613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9FC7C26-2A6C-43E8-A7B9-9F8A71F22613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9FC7C26-2A6C-43E8-A7B9-9F8A71F22613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9FC7C26-2A6C-43E8-A7B9-9F8A71F22613}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {265A1264-2C5B-4E51-9A20-0E3AAE9E6628}
+	EndGlobalSection
+EndGlobal

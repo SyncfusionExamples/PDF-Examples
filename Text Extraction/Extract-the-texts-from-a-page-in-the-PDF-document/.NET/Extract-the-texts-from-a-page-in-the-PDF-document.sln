@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extract-the-texts-from-a-page-in-the-PDF-document", "Extract-the-texts-from-a-page-in-the-PDF-document\Extract-the-texts-from-a-page-in-the-PDF-document.csproj", "{76690509-32D9-4588-AB38-785934A0F541}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76690509-32D9-4588-AB38-785934A0F541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76690509-32D9-4588-AB38-785934A0F541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76690509-32D9-4588-AB38-785934A0F541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76690509-32D9-4588-AB38-785934A0F541}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B5B5375-D22D-4B78-8D56-5B6D8284CF61}
+	EndGlobalSection
+EndGlobal

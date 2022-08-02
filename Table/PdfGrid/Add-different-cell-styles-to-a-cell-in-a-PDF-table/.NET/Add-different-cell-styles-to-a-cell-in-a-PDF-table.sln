@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-different-cell-styles-to-a-cell-in-a-PDF-table", "Add-different-cell-styles-to-a-cell-in-a-PDF-table\Add-different-cell-styles-to-a-cell-in-a-PDF-table.csproj", "{1854F55E-1F86-42DF-BEB9-A1C8A08836B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1854F55E-1F86-42DF-BEB9-A1C8A08836B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1854F55E-1F86-42DF-BEB9-A1C8A08836B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1854F55E-1F86-42DF-BEB9-A1C8A08836B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1854F55E-1F86-42DF-BEB9-A1C8A08836B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A0C22D6-6DD5-4853-A58A-AC66A5A0EBF6}
+	EndGlobalSection
+EndGlobal

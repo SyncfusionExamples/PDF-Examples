@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draw-a-pie-in-an-existing-PDF-document", "Draw-a-pie-in-an-existing-PDF-document\Draw-a-pie-in-an-existing-PDF-document.csproj", "{39918020-0BA2-45DC-9A10-E63406889395}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39918020-0BA2-45DC-9A10-E63406889395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39918020-0BA2-45DC-9A10-E63406889395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39918020-0BA2-45DC-9A10-E63406889395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39918020-0BA2-45DC-9A10-E63406889395}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26EE4706-C2D9-4C9A-99FB-C94042377E28}
+	EndGlobalSection
+EndGlobal

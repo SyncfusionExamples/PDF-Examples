@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-a-template-from-an-existing-PDF-document", "Add-a-template-from-an-existing-PDF-document\Add-a-template-from-an-existing-PDF-document.csproj", "{5CD331BF-9C73-4497-90C2-45E51CF486AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CD331BF-9C73-4497-90C2-45E51CF486AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CD331BF-9C73-4497-90C2-45E51CF486AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CD331BF-9C73-4497-90C2-45E51CF486AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CD331BF-9C73-4497-90C2-45E51CF486AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D8E3441-311C-41F6-A3AE-525FB66AE4A1}
+	EndGlobalSection
+EndGlobal

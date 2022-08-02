@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draw-a-bazier-in-an-existing-PDF-document", "Draw-a-bazier-in-an-existing-PDF-document\Draw-a-bazier-in-an-existing-PDF-document.csproj", "{24BCC326-B570-4FDA-B4C5-C40E3B186752}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24BCC326-B570-4FDA-B4C5-C40E3B186752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24BCC326-B570-4FDA-B4C5-C40E3B186752}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24BCC326-B570-4FDA-B4C5-C40E3B186752}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24BCC326-B570-4FDA-B4C5-C40E3B186752}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28611B34-386C-4C0A-AF6B-B25CB29644B9}
+	EndGlobalSection
+EndGlobal

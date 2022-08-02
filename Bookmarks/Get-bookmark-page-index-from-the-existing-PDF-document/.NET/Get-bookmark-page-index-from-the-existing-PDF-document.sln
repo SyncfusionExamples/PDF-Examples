@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Get-bookmark-page-index-from-the-existing-PDF-document", "Get-bookmark-page-index-from-the-existing-PDF-document\Get-bookmark-page-index-from-the-existing-PDF-document.csproj", "{3ADC0C7D-A2BE-4C76-94E2-A67BC8D9CAD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3ADC0C7D-A2BE-4C76-94E2-A67BC8D9CAD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ADC0C7D-A2BE-4C76-94E2-A67BC8D9CAD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ADC0C7D-A2BE-4C76-94E2-A67BC8D9CAD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ADC0C7D-A2BE-4C76-94E2-A67BC8D9CAD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2AB0061-CA3C-4517-B76E-E6AD5B5B5120}
+	EndGlobalSection
+EndGlobal

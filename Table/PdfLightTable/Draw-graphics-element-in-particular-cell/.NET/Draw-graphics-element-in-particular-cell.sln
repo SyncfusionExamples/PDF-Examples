@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draw-graphics-element-in-particular-cell", "Draw-graphics-element-in-particular-cell\Draw-graphics-element-in-particular-cell.csproj", "{DE7C767B-2571-432B-ACD7-D9E9E8318BAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE7C767B-2571-432B-ACD7-D9E9E8318BAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE7C767B-2571-432B-ACD7-D9E9E8318BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE7C767B-2571-432B-ACD7-D9E9E8318BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE7C767B-2571-432B-ACD7-D9E9E8318BAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B158E11B-39EB-48E9-8C96-582FDDF92C61}
+	EndGlobalSection
+EndGlobal

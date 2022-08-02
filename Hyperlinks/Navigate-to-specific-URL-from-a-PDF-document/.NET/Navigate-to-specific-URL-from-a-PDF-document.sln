@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Navigate-to-specific-URL-from-a-PDF-document", "Navigate-to-specific-URL-from-a-PDF-document\Navigate-to-specific-URL-from-a-PDF-document.csproj", "{5952227D-B506-4801-88D4-A79F2D123C2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5952227D-B506-4801-88D4-A79F2D123C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5952227D-B506-4801-88D4-A79F2D123C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5952227D-B506-4801-88D4-A79F2D123C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5952227D-B506-4801-88D4-A79F2D123C2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B78BB2C-544B-4682-8BD0-7D30C279B505}
+	EndGlobalSection
+EndGlobal
