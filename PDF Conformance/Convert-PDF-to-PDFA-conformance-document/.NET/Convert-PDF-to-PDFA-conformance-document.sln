@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convert-PDF-to-PDFA-conformance-document", "Convert-PDF-to-PDFA-conformance-document\Convert-PDF-to-PDFA-conformance-document.csproj", "{9F2FB8AD-AEE9-4591-92FD-5C4B75EC96F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F2FB8AD-AEE9-4591-92FD-5C4B75EC96F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F2FB8AD-AEE9-4591-92FD-5C4B75EC96F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F2FB8AD-AEE9-4591-92FD-5C4B75EC96F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F2FB8AD-AEE9-4591-92FD-5C4B75EC96F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C98CEA5F-7FED-487F-9B6F-F153BD4D19D7}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Convert_PDF_to_PDFA_conformance_document</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SkiaSharp" Version="2.88.1-preview.79" />
+    <PackageReference Include="Syncfusion.Pdf.Imaging.Net.Core" Version="20.2.0.36" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fill-color-on-the-redacted-area-in-a-PDF", "Fill-color-on-the-redacted-area-in-a-PDF\Fill-color-on-the-redacted-area-in-a-PDF.csproj", "{FCBB8843-B0A2-447C-B2C6-D12A806ED679}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCBB8843-B0A2-447C-B2C6-D12A806ED679}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCBB8843-B0A2-447C-B2C6-D12A806ED679}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCBB8843-B0A2-447C-B2C6-D12A806ED679}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCBB8843-B0A2-447C-B2C6-D12A806ED679}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C29784A3-B9F4-483D-8A22-C9B4EDE3C7F5}
+	EndGlobalSection
+EndGlobal
