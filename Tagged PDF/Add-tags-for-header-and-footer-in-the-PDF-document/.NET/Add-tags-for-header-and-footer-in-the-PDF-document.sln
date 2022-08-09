@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-tags-for-header-and-footer-in-the-PDF-document", "Add-tags-for-header-and-footer-in-the-PDF-document\Add-tags-for-header-and-footer-in-the-PDF-document.csproj", "{A5817CB7-AB0F-4DDF-8B7B-67D0E91CD34F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5817CB7-AB0F-4DDF-8B7B-67D0E91CD34F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5817CB7-AB0F-4DDF-8B7B-67D0E91CD34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5817CB7-AB0F-4DDF-8B7B-67D0E91CD34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5817CB7-AB0F-4DDF-8B7B-67D0E91CD34F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2A4E595-536F-42FC-8AA0-4AF370CB3D0A}
+	EndGlobalSection
+EndGlobal

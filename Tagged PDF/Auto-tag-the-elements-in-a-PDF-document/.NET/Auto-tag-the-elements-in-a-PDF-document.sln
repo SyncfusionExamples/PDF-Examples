@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auto-tag-the-elements-in-a-PDF-document", "Auto-tag-the-elements-in-a-PDF-document\Auto-tag-the-elements-in-a-PDF-document.csproj", "{289ECC74-810F-4D00-8D37-06E4322AF3D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{289ECC74-810F-4D00-8D37-06E4322AF3D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{289ECC74-810F-4D00-8D37-06E4322AF3D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{289ECC74-810F-4D00-8D37-06E4322AF3D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{289ECC74-810F-4D00-8D37-06E4322AF3D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5F1F2BD-6396-4FF9-8157-0866017AE15E}
+	EndGlobalSection
+EndGlobal

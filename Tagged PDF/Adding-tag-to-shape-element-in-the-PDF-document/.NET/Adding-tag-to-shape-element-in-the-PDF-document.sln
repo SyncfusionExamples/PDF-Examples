@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adding-tag-to-shape-element-in-the-PDF-document", "Adding-tag-to-shape-element-in-the-PDF-document\Adding-tag-to-shape-element-in-the-PDF-document.csproj", "{124F78D9-F007-4FC3-B8FE-EDBBF99EFC46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{124F78D9-F007-4FC3-B8FE-EDBBF99EFC46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{124F78D9-F007-4FC3-B8FE-EDBBF99EFC46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{124F78D9-F007-4FC3-B8FE-EDBBF99EFC46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{124F78D9-F007-4FC3-B8FE-EDBBF99EFC46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7075BB8E-F3C5-48C1-9DC8-5991C0610C2C}
+	EndGlobalSection
+EndGlobal

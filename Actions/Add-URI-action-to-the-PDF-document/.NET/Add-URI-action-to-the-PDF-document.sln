@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-URI-action-to-the-PDF-document", "Add-URI-action-to-the-PDF-document\Add-URI-action-to-the-PDF-document.csproj", "{F470D8F5-B7A1-4D2B-BCD2-018624870B4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F470D8F5-B7A1-4D2B-BCD2-018624870B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F470D8F5-B7A1-4D2B-BCD2-018624870B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F470D8F5-B7A1-4D2B-BCD2-018624870B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F470D8F5-B7A1-4D2B-BCD2-018624870B4F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4AD9E42A-A256-4842-9484-F6E45979FDE1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-tags-to-table-in-the-PDF-document", "Add-tags-to-table-in-the-PDF-document\Add-tags-to-table-in-the-PDF-document.csproj", "{576C73C4-4EC2-4CEF-9294-5C5FDED2830C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{576C73C4-4EC2-4CEF-9294-5C5FDED2830C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{576C73C4-4EC2-4CEF-9294-5C5FDED2830C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{576C73C4-4EC2-4CEF-9294-5C5FDED2830C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{576C73C4-4EC2-4CEF-9294-5C5FDED2830C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34A7C3A2-16A1-4B6D-9772-08C7D174553F}
+	EndGlobalSection
+EndGlobal
