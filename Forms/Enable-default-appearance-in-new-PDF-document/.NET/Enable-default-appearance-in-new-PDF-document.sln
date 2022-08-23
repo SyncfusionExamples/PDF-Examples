@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enable-default-appearance-in-new-PDF-document", "Enable-default-appearance-in-new-PDF-document\Enable-default-appearance-in-new-PDF-document.csproj", "{BCFE1DD1-5170-4FB1-831F-C041F81C8A5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCFE1DD1-5170-4FB1-831F-C041F81C8A5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCFE1DD1-5170-4FB1-831F-C041F81C8A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCFE1DD1-5170-4FB1-831F-C041F81C8A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCFE1DD1-5170-4FB1-831F-C041F81C8A5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A8FFC49-12A9-4AE9-A54C-A78B84E01035}
+	EndGlobalSection
+EndGlobal

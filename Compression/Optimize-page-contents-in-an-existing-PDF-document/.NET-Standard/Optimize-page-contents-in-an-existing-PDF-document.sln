@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optimize-page-contents-in-an-existing-PDF-document", "Optimize-page-contents-in-an-existing-PDF-document\Optimize-page-contents-in-an-existing-PDF-document.csproj", "{C82E4183-B155-41E4-B392-9BADD8F2F1E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C82E4183-B155-41E4-B392-9BADD8F2F1E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82E4183-B155-41E4-B392-9BADD8F2F1E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82E4183-B155-41E4-B392-9BADD8F2F1E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82E4183-B155-41E4-B392-9BADD8F2F1E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7221287A-CF61-4D4C-AE37-1E3BA3400C93}
+	EndGlobalSection
+EndGlobal

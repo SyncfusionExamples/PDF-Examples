@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-a-cloud-border-styled-polygon-annotation-in-the-PDF", "Add-a-cloud-border-styled-polygon-annotation-in-the-PDF\Add-a-cloud-border-styled-polygon-annotation-in-the-PDF.csproj", "{ED44258E-6EBF-4118-BF0D-398C75DA4BC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED44258E-6EBF-4118-BF0D-398C75DA4BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED44258E-6EBF-4118-BF0D-398C75DA4BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED44258E-6EBF-4118-BF0D-398C75DA4BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED44258E-6EBF-4118-BF0D-398C75DA4BC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F43C079A-A07E-46DA-AC5F-4E43D80E2986}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-a-circle-measurement-annotation-to-the-PDF-document", "Add-a-circle-measurement-annotation-to-the-PDF-document\Add-a-circle-measurement-annotation-to-the-PDF-document.csproj", "{AF258848-4556-446B-99A1-91F3D9999D77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF258848-4556-446B-99A1-91F3D9999D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF258848-4556-446B-99A1-91F3D9999D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF258848-4556-446B-99A1-91F3D9999D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF258848-4556-446B-99A1-91F3D9999D77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {502E91A8-426B-4258-9EF1-C6884E79D4A0}
+	EndGlobalSection
+EndGlobal

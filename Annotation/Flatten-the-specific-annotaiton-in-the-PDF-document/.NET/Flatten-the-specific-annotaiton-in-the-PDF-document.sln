@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flatten-the-specific-annotaiton-in-the-PDF-document", "Flatten-the-specific-annotaiton-in-the-PDF-document\Flatten-the-specific-annotaiton-in-the-PDF-document.csproj", "{1066FC95-D478-4BC6-A4D5-02D09F6FB843}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1066FC95-D478-4BC6-A4D5-02D09F6FB843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1066FC95-D478-4BC6-A4D5-02D09F6FB843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1066FC95-D478-4BC6-A4D5-02D09F6FB843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1066FC95-D478-4BC6-A4D5-02D09F6FB843}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B11324EE-6DB4-4AC3-A4C2-BFD61C9BF67E}
+	EndGlobalSection
+EndGlobal

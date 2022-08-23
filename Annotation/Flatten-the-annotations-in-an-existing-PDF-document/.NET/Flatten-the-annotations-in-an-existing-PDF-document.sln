@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flatten-the-annotations-in-an-existing-PDF-document", "Flatten-the-annotations-in-an-existing-PDF-document\Flatten-the-annotations-in-an-existing-PDF-document.csproj", "{8D133FE9-144E-4191-A9FB-83828176502A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D133FE9-144E-4191-A9FB-83828176502A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D133FE9-144E-4191-A9FB-83828176502A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D133FE9-144E-4191-A9FB-83828176502A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D133FE9-144E-4191-A9FB-83828176502A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41EF9E18-1660-45B4-89B7-ECB38C5B3052}
+	EndGlobalSection
+EndGlobal

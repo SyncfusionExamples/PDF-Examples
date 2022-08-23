@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Print-annotation-in-the-PDF-document", "Print-annotation-in-the-PDF-document\Print-annotation-in-the-PDF-document.csproj", "{52C3EB67-E3AE-43B2-B94B-9D92FFAE4578}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52C3EB67-E3AE-43B2-B94B-9D92FFAE4578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52C3EB67-E3AE-43B2-B94B-9D92FFAE4578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52C3EB67-E3AE-43B2-B94B-9D92FFAE4578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52C3EB67-E3AE-43B2-B94B-9D92FFAE4578}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F731BCA-BD20-4C4D-9F39-EDA08DC65B28}
+	EndGlobalSection
+EndGlobal

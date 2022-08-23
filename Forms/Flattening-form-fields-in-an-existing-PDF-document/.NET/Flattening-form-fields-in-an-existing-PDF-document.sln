@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flattening-form-fields-in-an-existing-PDF-document", "Flattening-form-fields-in-an-existing-PDF-document\Flattening-form-fields-in-an-existing-PDF-document.csproj", "{5CCB405B-C529-45FE-8A52-7BD1E1174378}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CCB405B-C529-45FE-8A52-7BD1E1174378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CCB405B-C529-45FE-8A52-7BD1E1174378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CCB405B-C529-45FE-8A52-7BD1E1174378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CCB405B-C529-45FE-8A52-7BD1E1174378}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3F45B2C-282C-4113-9D09-1169F6600E38}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-comments-to-the-PDF-annotation", "Add-comments-to-the-PDF-annotation\Add-comments-to-the-PDF-annotation.csproj", "{04E421AC-22C1-462F-B683-038A3FE81D86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04E421AC-22C1-462F-B683-038A3FE81D86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E421AC-22C1-462F-B683-038A3FE81D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E421AC-22C1-462F-B683-038A3FE81D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E421AC-22C1-462F-B683-038A3FE81D86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D8C739B-87A9-48BF-B6F1-9B2A5ED462E6}
+	EndGlobalSection
+EndGlobal

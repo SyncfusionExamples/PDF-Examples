@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-the-XFA-checkbox-field-to-an-existing-PDF-document", "Add-the-XFA-checkbox-field-to-an-existing-PDF-document\Add-the-XFA-checkbox-field-to-an-existing-PDF-document.csproj", "{F08FAF13-D329-4AE1-9043-F4822857159C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F08FAF13-D329-4AE1-9043-F4822857159C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08FAF13-D329-4AE1-9043-F4822857159C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08FAF13-D329-4AE1-9043-F4822857159C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08FAF13-D329-4AE1-9043-F4822857159C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {014F26DF-0CD2-449B-928B-80763FF1CEA8}
+	EndGlobalSection
+EndGlobal
