@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "qbfMUJIBAMvdH/6IjfUNVv7RbPtxb8vvucRwIz2oh/kohVBi8gRRom/UnxtSso6jJICZEkguu3pzkL+swhB3OQ==",
+  "success": true,
+  "projectFilePath": "D:\\GitHub Samples\\XFA\\Add-the-XFA-button-field-to-an-existing-PDF-document\\Add-the-XFA-button-field-to-an-existing-PDF-document\\Add-the-XFA-button-field-to-an-existing-PDF-document.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SowmiyaLoganathan\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\SowmiyaLoganathan\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\SowmiyaLoganathan\\.nuget\\packages\\syncfusion.compression.net\\20.1.0.56\\syncfusion.compression.net.20.1.0.56.nupkg.sha512",
+    "C:\\Users\\SowmiyaLoganathan\\.nuget\\packages\\syncfusion.licensing\\20.1.0.56\\syncfusion.licensing.20.1.0.56.nupkg.sha512",
+    "C:\\Users\\SowmiyaLoganathan\\.nuget\\packages\\syncfusion.pdf.net\\20.1.0.56\\syncfusion.pdf.net.20.1.0.56.nupkg.sha512",
+    "C:\\Users\\SowmiyaLoganathan\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\SowmiyaLoganathan\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

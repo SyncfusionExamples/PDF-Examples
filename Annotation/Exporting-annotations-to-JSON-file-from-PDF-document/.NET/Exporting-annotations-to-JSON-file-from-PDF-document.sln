@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exporting-annotations-to-JSON-file-from-PDF-document", "Exporting-annotations-to-JSON-file-from-PDF-document\Exporting-annotations-to-JSON-file-from-PDF-document.csproj", "{99BD6F10-91E0-4E77-9D9A-DCC5753C783E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99BD6F10-91E0-4E77-9D9A-DCC5753C783E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99BD6F10-91E0-4E77-9D9A-DCC5753C783E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99BD6F10-91E0-4E77-9D9A-DCC5753C783E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99BD6F10-91E0-4E77-9D9A-DCC5753C783E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36F1A55D-27A6-4490-A77A-0550AFCEB12A}
+	EndGlobalSection
+EndGlobal

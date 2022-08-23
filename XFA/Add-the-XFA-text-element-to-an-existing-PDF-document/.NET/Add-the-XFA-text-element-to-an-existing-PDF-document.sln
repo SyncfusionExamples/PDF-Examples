@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-the-XFA-text-element-to-an-existing-PDF-document", "Add-the-XFA-text-element-to-an-existing-PDF-document\Add-the-XFA-text-element-to-an-existing-PDF-document.csproj", "{8F4F058A-3C23-492D-872F-1A0B61025775}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F4F058A-3C23-492D-872F-1A0B61025775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F4F058A-3C23-492D-872F-1A0B61025775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F4F058A-3C23-492D-872F-1A0B61025775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F4F058A-3C23-492D-872F-1A0B61025775}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C73FC1EF-2EF1-455E-A12B-84C9275E9701}
+	EndGlobalSection
+EndGlobal

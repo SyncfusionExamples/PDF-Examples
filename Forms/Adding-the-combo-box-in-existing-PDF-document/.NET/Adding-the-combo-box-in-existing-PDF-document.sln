@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adding-the-combo-box-in-existing-PDF-document", "Adding-the-combo-box-in-existing-PDF-document\Adding-the-combo-box-in-existing-PDF-document.csproj", "{A3C061F0-DC95-450A-AE84-F7724C0E8EE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3C061F0-DC95-450A-AE84-F7724C0E8EE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3C061F0-DC95-450A-AE84-F7724C0E8EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3C061F0-DC95-450A-AE84-F7724C0E8EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3C061F0-DC95-450A-AE84-F7724C0E8EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E81A2935-9563-4412-98C9-42595F1AF90F}
+	EndGlobalSection
+EndGlobal

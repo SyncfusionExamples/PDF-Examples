@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-the-XFA-rectangle-field-to-an-existing-PDF-document", "Add-the-XFA-rectangle-field-to-an-existing-PDF-document\Add-the-XFA-rectangle-field-to-an-existing-PDF-document.csproj", "{FDC60DA6-266E-4432-A1B8-619F47511786}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDC60DA6-266E-4432-A1B8-619F47511786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC60DA6-266E-4432-A1B8-619F47511786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC60DA6-266E-4432-A1B8-619F47511786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC60DA6-266E-4432-A1B8-619F47511786}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFB5CF54-D79C-43F0-BEC0-E21A3ABB6240}
+	EndGlobalSection
+EndGlobal

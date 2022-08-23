@@ -1,0 +1,10 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Add_the_XFA_button_field_to_an_existing_PDF_document
+build_property.ProjectDir = D:\GitHub Samples\XFA\Add-the-XFA-button-field-to-an-existing-PDF-document\Add-the-XFA-button-field-to-an-existing-PDF-document\

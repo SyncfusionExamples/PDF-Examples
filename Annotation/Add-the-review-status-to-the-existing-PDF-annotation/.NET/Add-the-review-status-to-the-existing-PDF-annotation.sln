@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-the-review-status-to-the-existing-PDF-annotation", "Add-the-review-status-to-the-existing-PDF-annotation\Add-the-review-status-to-the-existing-PDF-annotation.csproj", "{12D921F7-38C4-4F3E-A952-D235C3A23B29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12D921F7-38C4-4F3E-A952-D235C3A23B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D921F7-38C4-4F3E-A952-D235C3A23B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D921F7-38C4-4F3E-A952-D235C3A23B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12D921F7-38C4-4F3E-A952-D235C3A23B29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46B4A275-ADB9-4AED-9B7F-6CA775B85A68}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Set-readonly-property-to-a-new-PDF-document", "Set-readonly-property-to-a-new-PDF-document\Set-readonly-property-to-a-new-PDF-document.csproj", "{5120760F-B651-41DA-9C66-45A1909F9A76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5120760F-B651-41DA-9C66-45A1909F9A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5120760F-B651-41DA-9C66-45A1909F9A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5120760F-B651-41DA-9C66-45A1909F9A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5120760F-B651-41DA-9C66-45A1909F9A76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C240403-01E4-428C-B82C-9510D44DA516}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-a-new-page-in-a-PDF-XFA-document", "Add-a-new-page-in-a-PDF-XFA-document\Add-a-new-page-in-a-PDF-XFA-document.csproj", "{CFD57DED-468D-46A4-B1FB-74CC2697CD0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFD57DED-468D-46A4-B1FB-74CC2697CD0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFD57DED-468D-46A4-B1FB-74CC2697CD0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFD57DED-468D-46A4-B1FB-74CC2697CD0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFD57DED-468D-46A4-B1FB-74CC2697CD0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C87F4194-B4D0-43C9-AAE9-A6AC38693EE3}
+	EndGlobalSection
+EndGlobal

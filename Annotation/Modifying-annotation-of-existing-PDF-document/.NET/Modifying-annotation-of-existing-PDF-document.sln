@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modifying-annotation-of-existing-PDF-document", "Modifying-annotation-of-existing-PDF-document\Modifying-annotation-of-existing-PDF-document.csproj", "{1FFD451E-85BF-4AC3-A880-1B6F90321300}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FFD451E-85BF-4AC3-A880-1B6F90321300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FFD451E-85BF-4AC3-A880-1B6F90321300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FFD451E-85BF-4AC3-A880-1B6F90321300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FFD451E-85BF-4AC3-A880-1B6F90321300}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E60CCC40-A404-4CF1-A540-DCE74669DFDE}
+	EndGlobalSection
+EndGlobal

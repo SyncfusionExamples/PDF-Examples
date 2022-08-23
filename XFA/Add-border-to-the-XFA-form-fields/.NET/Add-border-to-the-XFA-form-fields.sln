@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-border-to-the-XFA-form-fields", "Add-border-to-the-XFA-form-fields\Add-border-to-the-XFA-form-fields.csproj", "{2807DCE6-D6A0-408F-8D4B-7CA53CD5C6E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2807DCE6-D6A0-408F-8D4B-7CA53CD5C6E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2807DCE6-D6A0-408F-8D4B-7CA53CD5C6E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2807DCE6-D6A0-408F-8D4B-7CA53CD5C6E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2807DCE6-D6A0-408F-8D4B-7CA53CD5C6E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D11CC73-BA8E-4DDC-8BB6-410740A69344}
+	EndGlobalSection
+EndGlobal

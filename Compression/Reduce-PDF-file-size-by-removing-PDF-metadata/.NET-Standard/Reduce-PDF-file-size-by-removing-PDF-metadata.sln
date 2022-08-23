@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reduce-PDF-file-size-by-removing-PDF-metadata", "Reduce-PDF-file-size-by-removing-PDF-metadata\Reduce-PDF-file-size-by-removing-PDF-metadata.csproj", "{C8048F6A-131B-4965-8F2D-B1F40A169FCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8048F6A-131B-4965-8F2D-B1F40A169FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8048F6A-131B-4965-8F2D-B1F40A169FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8048F6A-131B-4965-8F2D-B1F40A169FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8048F6A-131B-4965-8F2D-B1F40A169FCE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3CA5C09C-2A76-4CFE-A630-2F19EBC7ACE5}
+	EndGlobalSection
+EndGlobal

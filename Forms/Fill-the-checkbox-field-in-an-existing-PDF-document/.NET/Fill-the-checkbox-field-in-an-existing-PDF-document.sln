@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fill-the-checkbox-field-in-an-existing-PDF-document", "Fill-the-checkbox-field-in-an-existing-PDF-document\Fill-the-checkbox-field-in-an-existing-PDF-document.csproj", "{3470C1E5-D680-455A-A3F7-05B1F2A5BD9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3470C1E5-D680-455A-A3F7-05B1F2A5BD9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3470C1E5-D680-455A-A3F7-05B1F2A5BD9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3470C1E5-D680-455A-A3F7-05B1F2A5BD9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3470C1E5-D680-455A-A3F7-05B1F2A5BD9E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB696A9C-E243-45B1-9504-3A2C01C84C52}
+	EndGlobalSection
+EndGlobal
