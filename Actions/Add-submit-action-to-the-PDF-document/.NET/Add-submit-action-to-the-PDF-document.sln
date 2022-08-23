@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-submit-action-to-the-PDF-document", "Add-submit-action-to-the-PDF-document\Add-submit-action-to-the-PDF-document.csproj", "{A991A051-5F7F-4BD7-BAE0-D4269334E3CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A991A051-5F7F-4BD7-BAE0-D4269334E3CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A991A051-5F7F-4BD7-BAE0-D4269334E3CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A991A051-5F7F-4BD7-BAE0-D4269334E3CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A991A051-5F7F-4BD7-BAE0-D4269334E3CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A89636A5-69F3-468A-8DA7-3B2C29EB8D47}
+	EndGlobalSection
+EndGlobal

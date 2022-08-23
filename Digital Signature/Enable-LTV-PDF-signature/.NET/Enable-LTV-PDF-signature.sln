@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enable-LTV-PDF-signature", "Enable-LTV-PDF-signature\Enable-LTV-PDF-signature.csproj", "{A6D019FF-5E9A-4A47-9181-9E0DED236FCB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6D019FF-5E9A-4A47-9181-9E0DED236FCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6D019FF-5E9A-4A47-9181-9E0DED236FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6D019FF-5E9A-4A47-9181-9E0DED236FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6D019FF-5E9A-4A47-9181-9E0DED236FCB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86CBE997-CE70-4E70-918C-F6F7AB005100}
+	EndGlobalSection
+EndGlobal

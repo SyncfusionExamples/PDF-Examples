@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signing-an-existing-PDF-document", "Signing-an-existing-PDF-document\Signing-an-existing-PDF-document.csproj", "{CAE8A178-87E5-4A54-AF4F-2C6D7C26C925}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAE8A178-87E5-4A54-AF4F-2C6D7C26C925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAE8A178-87E5-4A54-AF4F-2C6D7C26C925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAE8A178-87E5-4A54-AF4F-2C6D7C26C925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAE8A178-87E5-4A54-AF4F-2C6D7C26C925}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47B16014-41FF-4E23-9112-A2FD10356056}
+	EndGlobalSection
+EndGlobal

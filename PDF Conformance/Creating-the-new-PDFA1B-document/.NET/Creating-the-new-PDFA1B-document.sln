@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creating-the-new-PDFA1B-document", "Creating-the-new-PDFA1B-document\Creating-the-new-PDFA1B-document.csproj", "{F84BFA9E-ED5D-4271-9CD0-32398B69827D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F84BFA9E-ED5D-4271-9CD0-32398B69827D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F84BFA9E-ED5D-4271-9CD0-32398B69827D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F84BFA9E-ED5D-4271-9CD0-32398B69827D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F84BFA9E-ED5D-4271-9CD0-32398B69827D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E494262F-A666-4855-98B6-ACCF82E2FE00}
+	EndGlobalSection
+EndGlobal

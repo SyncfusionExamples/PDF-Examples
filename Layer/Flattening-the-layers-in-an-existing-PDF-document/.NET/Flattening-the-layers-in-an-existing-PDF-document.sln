@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flattening-the-layers-in-an-existing-PDF-document", "Flattening-the-layers-in-an-existing-PDF-document\Flattening-the-layers-in-an-existing-PDF-document.csproj", "{4E18F4EF-6AAC-4470-8F1E-3DE85E6E097A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E18F4EF-6AAC-4470-8F1E-3DE85E6E097A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E18F4EF-6AAC-4470-8F1E-3DE85E6E097A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E18F4EF-6AAC-4470-8F1E-3DE85E6E097A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E18F4EF-6AAC-4470-8F1E-3DE85E6E097A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D32144A-31D4-4B99-B6D1-1C08E9D4A0E1}
+	EndGlobalSection
+EndGlobal

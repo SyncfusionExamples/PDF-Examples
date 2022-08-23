@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-a-lock-state-to-the-layer-in-a-new-PDF-document", "Add-a-lock-state-to-the-layer-in-a-new-PDF-document\Add-a-lock-state-to-the-layer-in-a-new-PDF-document.csproj", "{FDD7C86B-8CD4-47E9-ADFB-1A9ACE8ACD06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDD7C86B-8CD4-47E9-ADFB-1A9ACE8ACD06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDD7C86B-8CD4-47E9-ADFB-1A9ACE8ACD06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDD7C86B-8CD4-47E9-ADFB-1A9ACE8ACD06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDD7C86B-8CD4-47E9-ADFB-1A9ACE8ACD06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABFCFA55-4E39-41FB-85A5-6C15629F886A}
+	EndGlobalSection
+EndGlobal
