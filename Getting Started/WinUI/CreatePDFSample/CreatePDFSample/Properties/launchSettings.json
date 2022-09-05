@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CreatePDFSample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "CreatePDFSample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

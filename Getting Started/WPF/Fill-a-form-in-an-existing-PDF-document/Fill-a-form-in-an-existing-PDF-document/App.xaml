@@ -1,0 +1,9 @@
+﻿<Application x:Class="Fill_a_form_in_an_existing_PDF_document.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Fill_a_form_in_an_existing_PDF_document"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

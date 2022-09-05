@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creating-a-PDF-document-with-table", "Creating-a-PDF-document-with-table\Creating-a-PDF-document-with-table.csproj", "{790F0275-C69A-4E28-BCB1-25576E509C67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{790F0275-C69A-4E28-BCB1-25576E509C67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{790F0275-C69A-4E28-BCB1-25576E509C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{790F0275-C69A-4E28-BCB1-25576E509C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{790F0275-C69A-4E28-BCB1-25576E509C67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA1EE08E-68FE-4EE5-8B75-17B9B6EE1F03}
+	EndGlobalSection
+EndGlobal

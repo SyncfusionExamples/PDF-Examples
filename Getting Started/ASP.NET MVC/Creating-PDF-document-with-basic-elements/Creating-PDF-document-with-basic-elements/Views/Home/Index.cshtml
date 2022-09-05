@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@{Html.BeginForm("GenerateInvoicePDF", "Home", FormMethod.Get);
+    {
+        <div>
+            <input type="submit" value="Generate invoice PDF document" style="width:150px;height:27px" />
+        </div>
+    }
+    Html.EndForm();
+}
+

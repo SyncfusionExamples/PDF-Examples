@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fill-a-form-in-an-existing-PDF-document", "Fill-a-form-in-an-existing-PDF-document\Fill-a-form-in-an-existing-PDF-document.csproj", "{68D8AAB5-7808-4ED7-A6C7-4352CB6B6736}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68D8AAB5-7808-4ED7-A6C7-4352CB6B6736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68D8AAB5-7808-4ED7-A6C7-4352CB6B6736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68D8AAB5-7808-4ED7-A6C7-4352CB6B6736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68D8AAB5-7808-4ED7-A6C7-4352CB6B6736}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A46C9D4-6067-4D37-BF11-756AC7C25A34}
+	EndGlobalSection
+EndGlobal

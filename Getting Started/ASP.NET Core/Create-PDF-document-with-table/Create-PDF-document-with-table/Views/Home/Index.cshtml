@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{Html.BeginForm("CreatePDFDocument", "Home", FormMethod.Get);
+    {
+        <div>
+            <input type="submit" value="Generate PDF Document" style="width:300px;height:27px" />
+        </div>
+    }
+    Html.EndForm();
+}
