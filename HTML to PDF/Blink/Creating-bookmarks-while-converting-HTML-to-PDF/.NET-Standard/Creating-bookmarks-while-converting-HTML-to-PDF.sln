@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creating-bookmarks-while-converting-HTML-to-PDF", "Creating-bookmarks-while-converting-HTML-to-PDF\Creating-bookmarks-while-converting-HTML-to-PDF.csproj", "{7BB7FE0D-19EE-4CAE-AC4E-C8C3F4B69EAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BB7FE0D-19EE-4CAE-AC4E-C8C3F4B69EAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BB7FE0D-19EE-4CAE-AC4E-C8C3F4B69EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BB7FE0D-19EE-4CAE-AC4E-C8C3F4B69EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BB7FE0D-19EE-4CAE-AC4E-C8C3F4B69EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48FAF165-E749-4796-8B03-C7DECC9234F3}
+	EndGlobalSection
+EndGlobal

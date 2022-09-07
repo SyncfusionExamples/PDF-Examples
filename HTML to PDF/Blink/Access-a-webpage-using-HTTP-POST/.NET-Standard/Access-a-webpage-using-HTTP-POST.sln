@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Access-a-webpage-using-HTTP-POST", "Access-a-webpage-using-HTTP-POST\Access-a-webpage-using-HTTP-POST.csproj", "{AED85AF0-4311-4044-8201-F92582F47CAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AED85AF0-4311-4044-8201-F92582F47CAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AED85AF0-4311-4044-8201-F92582F47CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AED85AF0-4311-4044-8201-F92582F47CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AED85AF0-4311-4044-8201-F92582F47CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {041D0C7E-4243-4351-BA68-68D4CF01BE25}
+	EndGlobalSection
+EndGlobal
