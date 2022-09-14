@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@{Html.BeginForm("CreateDocument", "Home", FormMethod.Get);
+    {
+        <div>
+            <input type="submit" value="Create PDF document with table" style="width:300px;height:27px" />
+        </div>
+    }
+    Html.EndForm();
+}

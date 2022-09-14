@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convert-website-URL-to-PDF-document", "Convert-website-URL-to-PDF-document\Convert-website-URL-to-PDF-document.csproj", "{2BDEB5DF-3F97-4F12-8E2E-14E567DFD031}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BDEB5DF-3F97-4F12-8E2E-14E567DFD031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BDEB5DF-3F97-4F12-8E2E-14E567DFD031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BDEB5DF-3F97-4F12-8E2E-14E567DFD031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BDEB5DF-3F97-4F12-8E2E-14E567DFD031}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A5721CF-6920-42FD-94B0-AB86E11F04FB}
+	EndGlobalSection
+EndGlobal

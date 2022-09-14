@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convert-HTML-to-MHTML", "Convert-HTML-to-MHTML\Convert-HTML-to-MHTML.csproj", "{626CFE3C-4FAB-4E97-8952-B4AAC6698E1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{626CFE3C-4FAB-4E97-8952-B4AAC6698E1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{626CFE3C-4FAB-4E97-8952-B4AAC6698E1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{626CFE3C-4FAB-4E97-8952-B4AAC6698E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{626CFE3C-4FAB-4E97-8952-B4AAC6698E1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBCC0E29-97FB-449B-B16C-B07A47317D3A}
+	EndGlobalSection
+EndGlobal

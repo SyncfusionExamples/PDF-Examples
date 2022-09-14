@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{Html.BeginForm("MergePDF", "Home", FormMethod.Get);
+    {
+        <div>
+            <input type="submit" value="Merge multiple PDF documents" style="width:350px;height:27px" />
+        </div>
+    }
+    Html.EndForm();
+}
+

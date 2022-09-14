@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Disable-URL-links-while-converting-HTML-to-PDF", "Disable-URL-links-while-converting-HTML-to-PDF\Disable-URL-links-while-converting-HTML-to-PDF.csproj", "{99E96D9D-7367-47E7-B821-ACBB98B374F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99E96D9D-7367-47E7-B821-ACBB98B374F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99E96D9D-7367-47E7-B821-ACBB98B374F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99E96D9D-7367-47E7-B821-ACBB98B374F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99E96D9D-7367-47E7-B821-ACBB98B374F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95294521-806B-4FC6-909B-6D77AB821CED}
+	EndGlobalSection
+EndGlobal

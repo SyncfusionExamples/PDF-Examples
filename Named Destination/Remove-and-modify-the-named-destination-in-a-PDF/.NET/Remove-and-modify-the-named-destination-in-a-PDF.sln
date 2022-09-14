@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remove-and-modify-the-named-destination-in-a-PDF", "Remove-and-modify-the-named-destination-in-a-PDF\Remove-and-modify-the-named-destination-in-a-PDF.csproj", "{3CFA0A8F-CDAC-4378-BCA9-7FDA6EBC9EE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CFA0A8F-CDAC-4378-BCA9-7FDA6EBC9EE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CFA0A8F-CDAC-4378-BCA9-7FDA6EBC9EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CFA0A8F-CDAC-4378-BCA9-7FDA6EBC9EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CFA0A8F-CDAC-4378-BCA9-7FDA6EBC9EE1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A184355A-8FBE-4A0F-B166-F2DAD3BEFE65}
+	EndGlobalSection
+EndGlobal

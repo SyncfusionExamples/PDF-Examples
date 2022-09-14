@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{Html.BeginForm("FillForm", "Home", FormMethod.Get);
+    {
+        <div>
+            <input type="submit" value="Fill form in a PDF document" style="width:350px;height:27px" />
+        </div>
+    }
+    Html.EndForm();
+}
+

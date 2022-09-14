@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creating-PDF-document-with-basic-elements", "Creating-PDF-document-with-basic-elements\Creating-PDF-document-with-basic-elements.csproj", "{3CBEDA1A-6340-4050-8865-8B708772FA50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CBEDA1A-6340-4050-8865-8B708772FA50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CBEDA1A-6340-4050-8865-8B708772FA50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CBEDA1A-6340-4050-8865-8B708772FA50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CBEDA1A-6340-4050-8865-8B708772FA50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {05BA568F-6B55-4E1E-91BF-26E85C400E92}
+	EndGlobalSection
+EndGlobal
