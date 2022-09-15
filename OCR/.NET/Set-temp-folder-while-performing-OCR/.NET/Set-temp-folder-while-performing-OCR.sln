@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Set-temp-folder-while-performing-OCR", "Set-temp-folder-while-performing-OCR\Set-temp-folder-while-performing-OCR.csproj", "{6806A44E-B476-45CF-AC2B-B6D4B8581C6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6806A44E-B476-45CF-AC2B-B6D4B8581C6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6806A44E-B476-45CF-AC2B-B6D4B8581C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6806A44E-B476-45CF-AC2B-B6D4B8581C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6806A44E-B476-45CF-AC2B-B6D4B8581C6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4ABF73B-9AC2-4D50-BB5E-C4E68D11C701}
+	EndGlobalSection
+EndGlobal

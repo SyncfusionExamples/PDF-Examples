@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Perform-OCR-for-the-entire-PDF-document", "Perform-OCR-for-the-entire-PDF-document\Perform-OCR-for-the-entire-PDF-document.csproj", "{EAA6CE47-9611-4FEE-82FF-4EF7881D81EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAA6CE47-9611-4FEE-82FF-4EF7881D81EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA6CE47-9611-4FEE-82FF-4EF7881D81EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA6CE47-9611-4FEE-82FF-4EF7881D81EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA6CE47-9611-4FEE-82FF-4EF7881D81EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {364FCAB7-A784-4F0C-BC12-C78A6FDF45FB}
+	EndGlobalSection
+EndGlobal
