@@ -13,7 +13,7 @@ PdfLoadedXfaDocument loadedDocument = new PdfLoadedXfaDocument(docStream);
 PdfLoadedXfaForm loadedForm = loadedDocument.XfaForm;
 
 //Create a button field and add the properties.
-PdfXfaButtonField buttonField = new PdfXfaButtonField("buttonField", new SizeF(70, 20));
+PdfXfaButtonField buttonField = new PdfXfaButtonField("buttonField", new SizeF(100, 20));
 
 //Set the caption text.
 buttonField.Content = "Click";

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draw-HTML-styled-text-in-a-PDF-table-cell", "Draw-HTML-styled-text-in-a-PDF-table-cell\Draw-HTML-styled-text-in-a-PDF-table-cell.csproj", "{00BC4C59-140C-4C43-AD19-2FAE78588FA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00BC4C59-140C-4C43-AD19-2FAE78588FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00BC4C59-140C-4C43-AD19-2FAE78588FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00BC4C59-140C-4C43-AD19-2FAE78588FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00BC4C59-140C-4C43-AD19-2FAE78588FA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F6AE431-8D2A-4FE9-9A9E-B84CB5340AA2}
+	EndGlobalSection
+EndGlobal

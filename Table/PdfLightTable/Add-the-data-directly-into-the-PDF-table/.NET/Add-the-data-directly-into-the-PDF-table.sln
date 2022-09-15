@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add-the-data-directly-into-the-PDF-table", "Add-the-data-directly-into-the-PDF-table\Add-the-data-directly-into-the-PDF-table.csproj", "{719CCC21-2983-4AA5-BD41-2B5E877AFC1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{719CCC21-2983-4AA5-BD41-2B5E877AFC1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{719CCC21-2983-4AA5-BD41-2B5E877AFC1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{719CCC21-2983-4AA5-BD41-2B5E877AFC1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{719CCC21-2983-4AA5-BD41-2B5E877AFC1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA100322-BB7E-4E34-9A10-347B0529AD25}
+	EndGlobalSection
+EndGlobal

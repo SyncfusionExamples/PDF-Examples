@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insert-image-in-a-particular-table-cell", "Insert-image-in-a-particular-table-cell\Insert-image-in-a-particular-table-cell.csproj", "{2237C8A6-DD7B-4B6E-8AAB-A6D1370037CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2237C8A6-DD7B-4B6E-8AAB-A6D1370037CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2237C8A6-DD7B-4B6E-8AAB-A6D1370037CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2237C8A6-DD7B-4B6E-8AAB-A6D1370037CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2237C8A6-DD7B-4B6E-8AAB-A6D1370037CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C44630DC-B292-4E07-B3B2-33512F7B34E9}
+	EndGlobalSection
+EndGlobal
