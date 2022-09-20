@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Create-PDF-document-with-XMP-basic-schema", "Create-PDF-document-with-XMP-basic-schema\Create-PDF-document-with-XMP-basic-schema.csproj", "{8200B197-1A34-4D0D-9E67-B12D1BC63B94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8200B197-1A34-4D0D-9E67-B12D1BC63B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8200B197-1A34-4D0D-9E67-B12D1BC63B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8200B197-1A34-4D0D-9E67-B12D1BC63B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8200B197-1A34-4D0D-9E67-B12D1BC63B94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DDBBD495-A65C-4D22-B198-6A6EB3F620E8}
+	EndGlobalSection
+EndGlobal

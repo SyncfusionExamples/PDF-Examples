@@ -9,13 +9,13 @@ HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter(HtmlRenderingEngine.We
 WebKitConverterSettings settings = new WebKitConverterSettings();
 
 //Set the SplitImages property
-settings.SplitImages = true;
+settings.SplitImages = false;
 
 //Assign WebKit settings to HTML converter
 htmlConverter.ConverterSettings = settings;
 
 //Convert URL to PDF
-PdfDocument document = htmlConverter.Convert(Path.GetFullPath("../../../HtmlSample.html"));
+PdfDocument document = htmlConverter.Convert(Path.GetFullPath("../../../input.mhtml"));
 
 //Create file stream.
 using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))

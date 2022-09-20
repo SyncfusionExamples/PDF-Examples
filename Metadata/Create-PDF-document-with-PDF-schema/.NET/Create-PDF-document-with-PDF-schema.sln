@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Create-PDF-document-with-PDF-schema", "Create-PDF-document-with-PDF-schema\Create-PDF-document-with-PDF-schema.csproj", "{1226B6B3-C92F-4C72-B0E6-766D60859275}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1226B6B3-C92F-4C72-B0E6-766D60859275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1226B6B3-C92F-4C72-B0E6-766D60859275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1226B6B3-C92F-4C72-B0E6-766D60859275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1226B6B3-C92F-4C72-B0E6-766D60859275}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF327604-0C73-4C95-8533-EAA075099925}
+	EndGlobalSection
+EndGlobal
