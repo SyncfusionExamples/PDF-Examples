@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Select-multiple-values-in-an-existing-XFA-listbox-field", "Select-multiple-values-in-an-existing-XFA-listbox-field\Select-multiple-values-in-an-existing-XFA-listbox-field.csproj", "{7E068D5E-639A-4E44-B79F-08C9086FA98C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E068D5E-639A-4E44-B79F-08C9086FA98C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E068D5E-639A-4E44-B79F-08C9086FA98C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E068D5E-639A-4E44-B79F-08C9086FA98C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E068D5E-639A-4E44-B79F-08C9086FA98C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E6E678C-4E9E-44B2-B5B1-B4877C6E993A}
+	EndGlobalSection
+EndGlobal
