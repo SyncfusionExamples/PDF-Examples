@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Textract" Version="3.7.100.6" />
+    <PackageReference Include="Syncfusion.PDF.OCR.Net.Core" Version="20.3.0.52" />
+  </ItemGroup>
+
+</Project>
