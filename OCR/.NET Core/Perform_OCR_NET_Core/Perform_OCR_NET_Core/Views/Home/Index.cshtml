@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{Html.BeginForm("PerformOCR", "Home", FormMethod.Get);
+    {
+        <div>
+            <input type="submit" value="Perform OCR on entire PDF" style="width:200px;height:27px" />
+        </div>
+    }
+    Html.EndForm();
+}
