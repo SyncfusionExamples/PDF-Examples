@@ -14,9 +14,6 @@ class Program
 
     static void Main(string[] args)
     {
-        //Register Syncfusion license
-        Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MDAxQDMyMzAyZTMyMmUzMEpFWWZ3RUVveVJLeWJNTmpSaU5Gd0crYXpISyszcWxNcGo2QzVaRnd4aW89");
-
         CreateEmptySignedPDF();
         DeferredSign();
     }
