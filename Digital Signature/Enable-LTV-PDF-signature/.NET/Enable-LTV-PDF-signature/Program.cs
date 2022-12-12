@@ -16,10 +16,13 @@ PdfGraphics graphics = page.Graphics;
 
 //Creates a certificate instance from PFX file with private key.
 FileStream certificateStream = new FileStream(Path.GetFullPath("../../../PDF.pfx"), FileMode.Open, FileAccess.Read);
-PdfCertificate pdfCert = new PdfCertificate(certificateStream, "syncfusion");
+PdfCertificate pdfCert = new PdfCertificate(certificateStream, "DigitalPass123");
 
 //Creates a digital signature.
 PdfSignature signature = new PdfSignature(document, page, pdfCert, "Signature");
+signature.Settings.CryptographicStandard = CryptographicStandard.CADES;
+signature.Settings.DigestAlgorithm = DigestAlgorithm.SHA256;
+
 
 //Sets an image for signature field.
 FileStream imageStream = new FileStream(Path.GetFullPath("../../../syncfusion_logo.png"), FileMode.Open, FileAccess.Read);
