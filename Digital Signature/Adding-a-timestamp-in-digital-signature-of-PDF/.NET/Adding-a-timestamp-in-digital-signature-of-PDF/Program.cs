@@ -21,6 +21,10 @@ PdfCertificate pdfCert = new PdfCertificate(certificateStream, "syncfusion");
 //Creates a digital signature.
 PdfSignature signature = new PdfSignature(document, page, pdfCert, "Signature");
 
+//Change the digital signature standard and hashing algorithm.
+signature.Settings.CryptographicStandard = CryptographicStandard.CADES;
+signature.Settings.DigestAlgorithm = DigestAlgorithm.SHA512;
+
 //Sets an image for signature field.
 FileStream imageStream = new FileStream(Path.GetFullPath("../../../syncfusion_logo.png"), FileMode.Open, FileAccess.Read);
 

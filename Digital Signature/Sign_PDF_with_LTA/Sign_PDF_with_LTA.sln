@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sign_PDF_with_LTA", "Sign_PDF_with_LTA\Sign_PDF_with_LTA.csproj", "{F9DBA8FA-87E6-4CDC-B0A9-B2DB2701DEB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9DBA8FA-87E6-4CDC-B0A9-B2DB2701DEB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9DBA8FA-87E6-4CDC-B0A9-B2DB2701DEB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9DBA8FA-87E6-4CDC-B0A9-B2DB2701DEB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9DBA8FA-87E6-4CDC-B0A9-B2DB2701DEB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD10AE5A-BD16-4B05-8D11-D275AC6F2957}
+	EndGlobalSection
+EndGlobal
