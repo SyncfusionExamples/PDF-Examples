@@ -1,0 +1,270 @@
+%PDF-1.4
+%ƒ’úþ
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+/AcroForm 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Kids [4 0 R]
+/Count 1
+/Resources <<>>
+
+/MediaBox [0 0 595 842]
+>>
+endobj
+3 0 obj
+<<
+/Fields [5 0 R 6 0 R]
+/SigFlags 3
+/NeedAppearances false
+>>
+endobj
+4 0 obj
+<<
+/Count 1
+/Type /Pages
+/Kids [7 0 R]
+/Parent 2 0 R
+>>
+endobj
+5 0 obj
+<<
+/Kids [8 0 R]
+/T (Student Signature)
+/TU (Student Signature)
+>>
+endobj
+6 0 obj
+<<
+/Kids [9 0 R]
+/T (Teacher Signature)
+/TU (Teacher Signature)
+>>
+endobj
+7 0 obj
+<<
+/Type /Page
+/Parent 4 0 R
+/Contents [10 0 R 11 0 R 12 0 R]
+/Resources <<
+/ProcSet [/PDF /Text]
+/Font <<
+/838a19d5-e1d4-49b1-ad53-425e49467083 13 0 R
+/3cbcb1f4-e093-40d0-9d33-a20c8fa22b32 14 0 R
+>>
+
+>>
+
+/Annots [8 0 R 9 0 R]
+>>
+endobj
+8 0 obj
+<<
+/Type /Annot
+/F 4
+/Subtype /Widget
+/BS <<
+/Type /Border
+/S /S
+>>
+
+/FT /Sig
+/T (Student Signature)
+/P 7 0 R
+/Rect [190 712 280 732]
+/AP <<
+/N 15 0 R
+>>
+
+/MK <<
+/BC [0 0 0]
+/BG [1 1 1]
+>>
+
+/DA (/TiRo 0 Tf 0 0 0 rg\r
+)
+>>
+endobj
+9 0 obj
+<<
+/Type /Annot
+/F 4
+/Subtype /Widget
+/BS <<
+/Type /Border
+/S /S
+>>
+
+/FT /Sig
+/T (Teacher Signature)
+/P 7 0 R
+/Rect [190 662 280 682]
+/AP <<
+/N 16 0 R
+>>
+
+/MK <<
+/BC [0 0 0]
+/BG [1 1 1]
+>>
+
+/DA (/TiRo 0 Tf 0 0 0 rg\r
+)
+>>
+endobj
+10 0 obj
+<<
+/Length 1
+>>
+stream
+q
+endstream
+endobj
+11 0 obj
+<<
+/Length 1
+>>
+stream
+Q
+endstream
+endobj
+12 0 obj
+<<
+/Length 650
+>>
+stream
+q
+% Change co-ordinate system to left/top.
+1.00 .00 .00 1.00 .00 842.00  cm
+% Clip margins.
+40.00 -40.00 515.00 -762.00 re
+h
+W n
+% Translate co-ordinate system.
+1.00 .00 .00 1.00 40.00 -40.00  cm
+BT
+/DeviceRGB CS
+/DeviceRGB cs
+0 0 0 rg
+
+/838a19d5-e1d4-49b1-ad53-425e49467083 20.00 Tf
+0 Tr
+.00 Tc
+.00 Tw
+100.00 Tz
+1.00 .00 .00 1.00 150.00 -39.24  Tm
+(Signature Form)'
+ET
+BT
+0 0 0 rg
+
+/3cbcb1f4-e093-40d0-9d33-a20c8fa22b32 12.00 Tf
+1.00 .00 .00 1.00 20.00 -81.172  Tm
+(Student Signature)'
+ET
+BT
+0 0 0 rg
+
+/3cbcb1f4-e093-40d0-9d33-a20c8fa22b32 12.00 Tf
+1.00 .00 .00 1.00 20.00 -131.172  Tm
+(Teacher Signature)'
+ET
+Q
+
+endstream
+endobj
+13 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+>>
+endobj
+15 0 obj
+<<
+/BBox [0 0 90 20]
+/Type /XObject
+/Subtype /Form
+/Resources <<
+/ProcSet [/PDF]
+>>
+
+/Length 151
+>>
+stream
+% Change co-ordinate system to left/top.
+1.00 .00 .00 1.00 .00 20.00  cm
+/DeviceRGB CS
+/DeviceRGB cs
+0 0 0 rg
+
+150.00 -70.00 90.00 -20.00 re
+f
+
+endstream
+endobj
+16 0 obj
+<<
+/BBox [0 0 90 20]
+/Type /XObject
+/Subtype /Form
+/Resources <<
+/ProcSet [/PDF]
+>>
+
+/Length 152
+>>
+stream
+% Change co-ordinate system to left/top.
+1.00 .00 .00 1.00 .00 20.00  cm
+/DeviceRGB CS
+/DeviceRGB cs
+0 0 0 rg
+
+150.00 -120.00 90.00 -20.00 re
+f
+
+endstream
+endobj
+xref
+0 17
+0000000000 65535 f
+0000000017 00000 n
+0000000089 00000 n
+0000000197 00000 n
+0000000282 00000 n
+0000000361 00000 n
+0000000450 00000 n
+0000000539 00000 n
+0000000801 00000 n
+0000001064 00000 n
+0000001327 00000 n
+0000001386 00000 n
+0000001445 00000 n
+0000002155 00000 n
+0000002266 00000 n
+0000002372 00000 n
+0000002672 00000 n
+trailer
+<<
+/Root 1 0 R
+/Size 17
+>>
+
+startxref
+2973
+%%EOF
