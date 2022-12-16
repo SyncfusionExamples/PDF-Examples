@@ -52,8 +52,8 @@ N> Provide a valid Access key and Secret Access Key to work with AWS Textract.
 
 class AWSExternalOcrEngine : IOcrEngine
 {
-    private string awsAccessKeyId = "AKIASCRGFNWJEKPU5MPF";
-    private string awsSecretAccessKey = "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";
+    private string awsAccessKeyId = "AccessKeyID";
+    private string awsSecretAccessKey = "SecretAccessKey";
     private float imageHeight;
     private float imageWidth;
     public OCRLayoutResult PerformOCR(Stream stream)
