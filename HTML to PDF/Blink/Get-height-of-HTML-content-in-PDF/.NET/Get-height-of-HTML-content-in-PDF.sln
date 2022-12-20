@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Get-height-of-HTML-content-in-PDF", "Get-height-of-HTML-content-in-PDF\Get-height-of-HTML-content-in-PDF.csproj", "{149DECEA-5582-4012-BCD2-33C9E5C7342E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{149DECEA-5582-4012-BCD2-33C9E5C7342E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{149DECEA-5582-4012-BCD2-33C9E5C7342E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{149DECEA-5582-4012-BCD2-33C9E5C7342E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{149DECEA-5582-4012-BCD2-33C9E5C7342E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11C3EF44-6BB7-4FDE-8D0C-15C8C204633F}
+	EndGlobalSection
+EndGlobal
