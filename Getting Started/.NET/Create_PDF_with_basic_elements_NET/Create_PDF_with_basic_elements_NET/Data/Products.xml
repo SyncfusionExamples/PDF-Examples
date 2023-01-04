@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<DataSet1 xmlns="http://www.tempuri.org/DataSet1.xsd">  
+  <Order_x0020_Details>
+    <OrderID>10248</OrderID>
+    <ProductName>Queso Cabrales</ProductName>
+     <ProductID>11</ProductID>
+    <UnitPrice>14.0000</UnitPrice>
+    <Quantity>12</Quantity>
+    <Discount>0</Discount>
+    <ShipName>Vins et alcools Chevalier</ShipName>
+    <ShipAddress>59 rue de l'Abbaye</ShipAddress>
+    <ShipCity>Reims</ShipCity>
+    <ShipCountry>France</ShipCountry>
+  </Order_x0020_Details>
+  <Order_x0020_Details>
+    <OrderID>10248</OrderID>
+    <ProductName>Singaporean Hokkien Fried Mee</ProductName>
+    <ProductID>42</ProductID>
+    <UnitPrice>9.8000</UnitPrice>
+    <Quantity>10</Quantity>
+    <Discount>0</Discount>
+    <ShipName>Vins et alcools Chevalier</ShipName>
+    <ShipAddress>59 rue de l'Abbaye</ShipAddress>
+    <ShipCity>Reims</ShipCity>
+    <ShipCountry>France</ShipCountry>
+  </Order_x0020_Details>
+  <Order_x0020_Details>
+    <OrderID>10248</OrderID>
+    <ProductName>Mozzarella di Giovanni</ProductName>
+    <ProductID>72</ProductID>
+    <UnitPrice>34.8000</UnitPrice>
+    <Quantity>5</Quantity>
+    <Discount>0</Discount>
+    <ShipName>Vins et alcools Chevalier</ShipName>
+    <ShipAddress>59 rue de l'Abbaye</ShipAddress>
+    <ShipCity>Reims</ShipCity>
+    <ShipCountry>France</ShipCountry>
+  </Order_x0020_Details>
+</DataSet1>
