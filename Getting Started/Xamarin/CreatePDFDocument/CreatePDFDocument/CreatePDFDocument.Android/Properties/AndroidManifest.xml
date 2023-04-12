@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.CreatePDFDocument">
-    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27" />
-    <application android:label="CreatePDFDocument.Android"></application>
-  <provider android:name="android.support.v4.content.FileProvider"
-          android:authorities="${applicationId}.provider"
-          android:exported="false"
-          android:grantUriPermissions="true">
-    <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
-               android:resource="@xml/provider_paths" />
-  </provider>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.xamarintest">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33" />
+	<application android:label="CreatePDFDocument.Android" android:requestLegacyExternalStorage="true" android:theme="@style/MainTheme">
+
+		<provider
+				  android:name="androidx.core.content.FileProvider"
+				  android:authorities="${applicationId}.provider"
+				  android:exported="false"
+				  android:grantUriPermissions="true">
+			<meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+		</provider>
+	</application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>

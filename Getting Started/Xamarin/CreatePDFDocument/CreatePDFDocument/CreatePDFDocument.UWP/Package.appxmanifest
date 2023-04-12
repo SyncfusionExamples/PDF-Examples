@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="1b61d349-4f52-4f11-aa2d-5e44c6d000dc"
-    Publisher="CN=0f97ba95-641b-46c8-949b-c2c4b848829b"
+    Name="DD952710-4FEF-4E4C-980F-A868ADE3904B"
+    Publisher="CN=F9D080BE-9A23-4201-8F44-95642A1A2990"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>CreatePDFDocument.UWP</DisplayName>
-    <PublisherDisplayName>0f97ba95-641b-46c8-949b-c2c4b848829b</PublisherDisplayName>
+    <PublisherDisplayName>F9D080BE-9A23-4201-8F44-95642A1A2990</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

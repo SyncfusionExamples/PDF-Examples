@@ -13,7 +13,7 @@ using Xamarin.Forms;
 
 namespace CreatePDFDocument.UWP
 {
-    class SaveWindows : ISave 
+    class SaveWindows : ISave
     {
         public async Task SaveAndView(string filename, string contentType, MemoryStream stream)
         {

@@ -1,13 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:CreatePDFDocument"
              x:Class="CreatePDFDocument.MainPage">
-
     <StackLayout VerticalOptions="Center">
-
-        <Button Text="Generate PDF Document" Clicked="OnButtonClicked" HorizontalOptions="Center"/>
-
+        <Button Text="Generate Document" Clicked="Button_Clicked" HorizontalOptions="Center"/>
     </StackLayout>
+
 
 </ContentPage>
