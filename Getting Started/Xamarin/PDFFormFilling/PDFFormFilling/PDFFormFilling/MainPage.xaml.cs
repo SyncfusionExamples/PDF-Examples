@@ -1,6 +1,8 @@
-﻿using Syncfusion.Pdf.Parsing;
+﻿using CreatePDFDocument;
+using Syncfusion.Pdf.Parsing;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -17,7 +19,7 @@ namespace PDFFormFilling
             InitializeComponent();
         }
 
-        public void OnButtonClicked(object sender, EventArgs args)
+        private void Button_Clicked(object sender, EventArgs e)
         {
             //Get stream from an existing PDF document. 
             Stream pdfStream = typeof(App).GetTypeInfo().Assembly.GetManifestResourceStream("PDFFormFilling.Assets.Form.pdf");

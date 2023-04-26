@@ -1,7 +1,10 @@
-﻿using Syncfusion.Pdf;
+﻿using CreatePDFDocument;
 using Syncfusion.Pdf.Graphics;
+using Syncfusion.Pdf;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -17,8 +20,7 @@ namespace CreatePDFwithImage
         {
             InitializeComponent();
         }
-
-        void OnButtonClicked(object sender, EventArgs args)
+        private void Button_Clicked(object sender, EventArgs e)
         {
             //Create a new PDF document.
             PdfDocument document = new PdfDocument();
@@ -31,16 +33,16 @@ namespace CreatePDFwithImage
 
             //Load the image as stream
             Stream imageStream = typeof(App).GetTypeInfo().Assembly.GetManifestResourceStream("CreatePDFwithImage.Assets.Autumn Leaves.jpg");
-            
+
             //Load the image from the disk.
             PdfBitmap image = new PdfBitmap(imageStream);
-            
+
             //Draw the image.
             graphics.DrawImage(image, 0, 0);
-            
+
             //Save the document to the stream.
             MemoryStream stream = new MemoryStream();
-            
+
             //Save the document.
             document.Save(stream);
 
@@ -49,6 +51,7 @@ namespace CreatePDFwithImage
 
             //Save the stream as a file in the device and invoke it for viewing
             Xamarin.Forms.DependencyService.Get<ISave>().SaveAndView("Output.pdf", "application/pdf", stream);
+
         }
     }
 }

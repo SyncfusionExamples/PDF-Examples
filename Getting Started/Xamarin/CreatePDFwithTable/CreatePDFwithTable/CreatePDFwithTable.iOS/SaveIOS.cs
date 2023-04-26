@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CreatePDFwithTable.iOS;
+using CreatePDFDocument.iOS;
 using Foundation;
 using QuickLook;
 using UIKit;
@@ -12,15 +12,16 @@ using Xamarin.Forms;
 
 [assembly: Dependency(typeof(SaveIOS))]
 
-namespace CreatePDFwithTable.iOS
+namespace CreatePDFDocument.iOS
 {
     class SaveIOS : ISave
     {
-        //Method to save document as a file and view the saved document
+        //Method to save document as a file and view the saved document.
         public async Task SaveAndView(string filename, string contentType, MemoryStream stream)
         {
+
             //Get the root path in iOS device.
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
             string filePath = Path.Combine(path, filename);
 
             //Create a file and write the stream into it.
@@ -30,7 +31,7 @@ namespace CreatePDFwithTable.iOS
             fileStream.Flush();
             fileStream.Close();
 
-            //Invoke the saved document for viewing
+            //Invoke the saved document for viewing.
             UIViewController currentController = UIApplication.SharedApplication.KeyWindow.RootViewController;
             while (currentController.PresentedViewController != null)
                 currentController = currentController.PresentedViewController;
