@@ -1,4 +1,4 @@
-﻿using CreatePDFwithTable.UWP;
+﻿using CreatePDFDocument.UWP;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 [assembly: Dependency(typeof(SaveWindows))]
 
-namespace CreatePDFwithTable.UWP
+namespace CreatePDFDocument.UWP
 {
     class SaveWindows : ISave
     {

@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="594f23fc-012c-4ef8-bc29-6484f8c2a4e2"
-    Publisher="CN=0bb602d4-5ff8-4495-b443-3840f3d11cd3"
+    Name="6AD3F949-05FB-45F6-800F-FE35507B2F0E"
+    Publisher="CN=52FFC131-C502-48F2-8CC9-F2C2358D7F00"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>MergePDFs.UWP</DisplayName>
-    <PublisherDisplayName>0bb602d4-5ff8-4495-b443-3840f3d11cd3</PublisherDisplayName>
+    <PublisherDisplayName>52FFC131-C502-48F2-8CC9-F2C2358D7F00</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

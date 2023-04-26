@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="cf517e73-d4b0-443b-b353-3d68fcf325f8"
-    Publisher="CN=e685d8de-c026-414c-83ba-63d53930f4fe"
+    Name="8B66077E-EBBC-4483-B44D-5EDAE2168354"
+    Publisher="CN=08640531-AE92-4E1E-A2F5-D80A116ABA4E"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>PDFFormFilling.UWP</DisplayName>
-    <PublisherDisplayName>e685d8de-c026-414c-83ba-63d53930f4fe</PublisherDisplayName>
+    <PublisherDisplayName>08640531-AE92-4E1E-A2F5-D80A116ABA4E</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
