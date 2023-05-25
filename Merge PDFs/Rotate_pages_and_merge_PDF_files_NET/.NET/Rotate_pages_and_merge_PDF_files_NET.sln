@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rotate_pages_and_merge_PDF_files_NET", "Rotate_pages_and_merge_PDF_files_NET\Rotate_pages_and_merge_PDF_files_NET.csproj", "{0441F3E9-4B44-4813-94D7-5AC96EC713AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0441F3E9-4B44-4813-94D7-5AC96EC713AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0441F3E9-4B44-4813-94D7-5AC96EC713AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0441F3E9-4B44-4813-94D7-5AC96EC713AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0441F3E9-4B44-4813-94D7-5AC96EC713AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93122772-E238-40A9-9019-20A04FA48E89}
+	EndGlobalSection
+EndGlobal
