@@ -33,6 +33,6 @@ jobs:
        if: steps.gitleaks.outcome != 'success'
        run: |
            nuget install "Syncfusion.Email" -source "https://nexus.syncfusion.com/repository/nuget-hosted/"
-           dir $GITHUB_WORKSPACE/Syncfusion.Email.1.0.0/lib/netcoreapp3.1
-           dotnet $GITHUB_WORKSPACE/Syncfusion.Email.1.0.0/lib/netcoreapp3.1/Email.dll "citeam@syncfusion.com" "$GITHUB_REF_NAME" ${{ secrets.NETWORKCREDENTIALS }} ${{ secrets.NETWORKKEY }} "$GITHUB_WORKSPACE"
+           dir $GITHUB_WORKSPACE/Syncfusion.Email.1.1.0/lib/netcoreapp3.1
+           dotnet $GITHUB_WORKSPACE/Syncfusion.Email.1.1.0/lib/netcoreapp3.1/GitleaksReportMail.dll "citeam@syncfusion.com" "$GITHUB_REF_NAME" ${{ secrets.NETWORKCREDENTIALS }} ${{ secrets.NETWORKKEY }} "$GITHUB_WORKSPACE" "SyncfusionExamples"
            exit 1
