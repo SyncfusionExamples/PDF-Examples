@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33417.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compress_PDF_NET", "Compress_PDF_NET\Compress_PDF_NET.csproj", "{F5301F1D-9679-4679-9662-C11E5B582B15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5301F1D-9679-4679-9662-C11E5B582B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5301F1D-9679-4679-9662-C11E5B582B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5301F1D-9679-4679-9662-C11E5B582B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5301F1D-9679-4679-9662-C11E5B582B15}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5E323EB-7B99-4BB6-83B2-F5762024EAE3}
+	EndGlobalSection
+EndGlobal
