@@ -20,7 +20,7 @@ using (OCRProcessor processor = new OCRProcessor(tesseractBinariesPath))
     processor.Settings.Language = Languages.English;
 
     //Set the bounds to perform OCR. 
-    Syncfusion.Drawing.RectangleF rect = new Syncfusion.Drawing.RectangleF(0, 100, 950, 150);
+    RectangleF rect = new RectangleF(0, 100, 950, 150);
 
     //Assign rectangles to the page.
     List<PageRegion> pageRegions = new List<PageRegion>();

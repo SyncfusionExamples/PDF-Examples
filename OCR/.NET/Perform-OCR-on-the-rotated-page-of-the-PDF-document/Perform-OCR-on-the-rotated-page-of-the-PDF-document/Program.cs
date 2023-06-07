@@ -2,15 +2,17 @@
 
 using Syncfusion.OCRProcessor;
 using Syncfusion.Pdf.Parsing;
+using System.Diagnostics;
+using System.IO;
 
 string tesseractBinariesPath = Path.GetFullPath("../../../../../Tesseractbinaries/Windows");
 string tessdataPath = Path.GetFullPath("../../../../../Tessdata");
 
 //Initialize the OCR processor by providing the path of tesseract.
-using (OCRProcessor processor = new OCRProcessor(Path.GetFullPath(tesseractBinariesPath))
+using (OCRProcessor processor = new OCRProcessor(Path.GetFullPath(tesseractBinariesPath)))
+//Get stream from an existing PDF document.  
+using (FileStream stream = new FileStream(Path.GetFullPath(@"../../../Input.pdf"), FileMode.Open, FileAccess.Read))
 {
-    //Get stream from an existing PDF document.  
-    FileStream stream = new FileStream(Path.GetFullPath(@"../../../Input.pdf"), FileMode.Open);
 
     //Load the PDF document. 
     PdfLoadedDocument loadedDocument = new PdfLoadedDocument(stream);
