@@ -7,7 +7,7 @@ namespace Compress_secured_PDF_NET {
         static void Main(string[] args) {
             //Load existing PDF document.
             FileStream fileStream = new FileStream(Path.GetFullPath("../../../Data/SecurePDF.pdf"), FileMode.Open, FileAccess.Read);
-            PdfLoadedDocument document = new PdfLoadedDocument(fileStream, "sample123");
+            PdfLoadedDocument document = new PdfLoadedDocument(fileStream, "syncfusion");
 
             //Create a new compression option.
             PdfCompressionOptions options = new PdfCompressionOptions();
