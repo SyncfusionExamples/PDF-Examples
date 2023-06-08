@@ -5,11 +5,10 @@ using Syncfusion.Pdf.Parsing;
 using System.Diagnostics;
 using System.IO;
 
-string tesseractBinariesPath = Path.GetFullPath("../../../../../Tesseractbinaries/Windows");
 string tessdataPath = Path.GetFullPath("../../../../../Tessdata");
 
 //Initialize the OCR processor by providing the path of tesseract.
-using (OCRProcessor processor = new OCRProcessor(Path.GetFullPath(tesseractBinariesPath)))
+using (OCRProcessor processor = new OCRProcessor(Path.GetFullPath()))
 //Get stream from an existing PDF document.  
 using (FileStream stream = new FileStream(Path.GetFullPath(@"../../../Input.pdf"), FileMode.Open, FileAccess.Read))
 {
