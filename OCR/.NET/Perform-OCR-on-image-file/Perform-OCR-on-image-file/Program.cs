@@ -4,11 +4,10 @@ using Syncfusion.OCRProcessor;
 using Syncfusion.Pdf.Graphics;
 using System.Drawing;
 
-string tesseractBinariesPath = Path.GetFullPath("../../../../../Tesseractbinaries/Windows");
 string tessdataPath = Path.GetFullPath("../../../../../Tessdata");
 
 //Initialize the OCR processor by providing the path of the tesseract binaries.
-using (OCRProcessor processor = new OCRProcessor(tesseractBinariesPath))
+using (OCRProcessor processor = new OCRProcessor())
 {
     //Get stream from the image file. 
     FileStream stream = new FileStream(Path.GetFullPath("../../../Input.jpg"), FileMode.Open);
