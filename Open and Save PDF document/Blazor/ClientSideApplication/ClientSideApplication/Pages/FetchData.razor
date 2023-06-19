@@ -1,0 +1,107 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+@using Syncfusion.Pdf 
+@using Syncfusion.Pdf.Grid
+@using Syncfusion.Pdf.Graphics
+@using Syncfusion.Drawing
+@using Syncfusion.Pdf.Parsing
+@using System.IO
+@inject Microsoft.JSInterop.IJSRuntime JS
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<button class="btn btn-primary" @onclick="@LoadAndSavePDF">Export to PDF</button>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private WeatherForecast[]? forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+    }
+
+    public class WeatherForecast
+    {
+        public DateOnly Date { get; set; }
+
+        public int TemperatureC { get; set; }
+
+        public string? Summary { get; set; }
+
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
+}
+
+@functions {
+    public async void LoadAndSavePDF()
+    {
+        //Load an existing PDF document
+        byte[] input = await Http.GetByteArrayAsync("Data/Input.pdf");
+        Stream inputstream = new MemoryStream(input);
+        PdfLoadedDocument document = new PdfLoadedDocument(inputstream);
+
+        //Load the existing page
+        PdfLoadedPage loadedPage = document.Pages[0] as PdfLoadedPage;
+        //Create PDF graphics for the page
+        PdfGraphics graphics = loadedPage.Graphics;
+
+        //Create a PdfGrid
+        PdfGrid pdfGrid = new PdfGrid();
+        //Add values to the list
+        List<object> data = new List<object>();
+        Object row1 = new { Product_ID = "1001", Product_Name = "Bicycle", Price = "10,000" };
+        Object row2 = new { Product_ID = "1002", Product_Name = "Head Light", Price = "3,000" };
+        Object row3 = new { Product_ID = "1003", Product_Name = "Break wire", Price = "1,500" };
+        data.Add(row1);
+        data.Add(row2);
+        data.Add(row3);
+        //Add list to IEnumerable
+        IEnumerable<object> dataTable = data;
+        //Assign data source
+        pdfGrid.DataSource = dataTable;
+        //Apply built-in table style
+        pdfGrid.ApplyBuiltinStyle(PdfGridBuiltinStyle.GridTable4Accent3);
+        //Draw the grid to the page of PDF document
+        pdfGrid.Draw(graphics, new RectangleF(40, 400, loadedPage.Size.Width - 80, 0));
+
+        //Save the PDF document.
+        MemoryStream memoryStream = new MemoryStream();
+        document.Save(memoryStream);
+        document.Close();
+        //Download the PDF document
+        await JS.SaveAs("Sample.pdf", memoryStream.ToArray());
+    }
+}

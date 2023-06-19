@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@{Html.BeginForm("OpenAndSaveDocument", "Home", FormMethod.Get);
+    {
+        <div>
+            <input type="submit" value="Open and save PDF document" style="width:180px;height:27px" />
+        </div>
+    }
+    Html.EndForm();
+}

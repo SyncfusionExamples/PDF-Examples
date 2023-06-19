@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="24aa1007-973d-4530-9b36-faf7c24a8368"
-    Publisher="CN=c98eaf85-fa2e-459e-b90a-6aacbd0c020a"
+    Name="07624CB3-599E-4261-9334-34515DFBDA26"
+    Publisher="CN=FE15648C-45C2-4090-81D2-6369998174F2"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>CreateInvoicePDF.UWP</DisplayName>
-    <PublisherDisplayName>c98eaf85-fa2e-459e-b90a-6aacbd0c020a</PublisherDisplayName>
+    <PublisherDisplayName>FE15648C-45C2-4090-81D2-6369998174F2</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

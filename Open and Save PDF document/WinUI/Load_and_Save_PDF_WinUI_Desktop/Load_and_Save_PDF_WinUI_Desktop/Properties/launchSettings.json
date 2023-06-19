@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Load_and_Save_PDF_WinUI_Desktop (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Load_and_Save_PDF_WinUI_Desktop (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

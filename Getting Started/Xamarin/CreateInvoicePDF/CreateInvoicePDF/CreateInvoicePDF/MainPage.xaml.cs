@@ -1,16 +1,18 @@
-﻿using Syncfusion.Drawing;
+﻿using CreatePDFDocument;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
-using Syncfusion.Pdf.Grid;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using Syncfusion.Drawing;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 using Xamarin.Forms;
+using Syncfusion.Pdf.Grid;
+using System.Reflection;
+using System.Xml.Linq;
 
 namespace CreateInvoicePDF
 {
@@ -22,8 +24,7 @@ namespace CreateInvoicePDF
         {
             InitializeComponent();
         }
-
-        void OnButtonClicked(object sender, EventArgs args)
+        private void Button_Clicked(object sender, EventArgs e)
         {
             //Create a new PDF document.
             PdfDocument document = new PdfDocument();
@@ -43,7 +44,7 @@ namespace CreateInvoicePDF
             PdfLayoutResult result = element.Draw(page, new RectangleF(0, 0, page.Graphics.ClientSize.Width / 2, 200));
 
             //Draw the image to PDF page with specified size. 
-            Stream imageStream = typeof(App).GetTypeInfo().Assembly.GetManifestResourceStream("CreateInvoicePDF.Assets.logo.jpg");
+            Stream imageStream = typeof(App).GetTypeInfo().Assembly.GetManifestResourceStream("CreateInvoicePDF.Assets.Logo.jpg");
             PdfImage img = new PdfBitmap(imageStream);
             graphics.DrawImage(img, new RectangleF(graphics.ClientSize.Width - 200, result.Bounds.Y, 190, 45));
             PdfFont subHeadingFont = new PdfStandardFont(PdfFontFamily.TimesRoman, 14);
@@ -170,7 +171,6 @@ namespace CreateInvoicePDF
             //Save the stream as a file in the device and invoke it for viewing
             Xamarin.Forms.DependencyService.Get<ISave>().SaveAndView("Output.pdf", "application/pdf", stream);
         }
-
         #region Helper Methods
         public void GetTotalPrice(IEnumerable<CustOrders> orders)
         {
@@ -192,7 +192,6 @@ namespace CreateInvoicePDF
         }
         #endregion
     }
-
     #region Helper Classes
     internal sealed class Orders
     {

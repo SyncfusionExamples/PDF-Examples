@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Open_and_save_PDF_document", "Open_and_save_PDF_document\Open_and_save_PDF_document.csproj", "{DDE9E08F-32BA-402D-8817-6C61C975BACF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDE9E08F-32BA-402D-8817-6C61C975BACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE9E08F-32BA-402D-8817-6C61C975BACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE9E08F-32BA-402D-8817-6C61C975BACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE9E08F-32BA-402D-8817-6C61C975BACF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34AEADB4-EDDF-42A5-840E-0A62B20BED97}
+	EndGlobalSection
+EndGlobal

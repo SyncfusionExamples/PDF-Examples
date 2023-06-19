@@ -1,13 +1,17 @@
-﻿using Syncfusion.Drawing;
-using Syncfusion.Pdf;
+﻿using CreatePDFDocument;
 using Syncfusion.Pdf.Grid;
+using Syncfusion.Pdf;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
+using Syncfusion.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace CreatePDFwithTable
 {
@@ -17,7 +21,6 @@ namespace CreatePDFwithTable
         {
             InitializeComponent();
         }
-
         void OnButtonClicked(object sender, EventArgs args)
         {
             //Create a new PDF document.
