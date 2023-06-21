@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.open_and_save_pdf_document_xamarin">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
+	<application android:label="Open_and_save_PDF_document_Xamarin.Android" android:requestLegacyExternalStorage="true" android:theme="@style/MainTheme">
+
+		<provider
+					  android:name="androidx.core.content.FileProvider"
+					  android:authorities="${applicationId}.provider"
+					  android:exported="false"
+					  android:grantUriPermissions="true">
+			<meta-data
+					  android:name="android.support.FILE_PROVIDER_PATHS"
+					  android:resource="@xml/provider_paths" />
+		</provider>
+	</application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+</manifest>
