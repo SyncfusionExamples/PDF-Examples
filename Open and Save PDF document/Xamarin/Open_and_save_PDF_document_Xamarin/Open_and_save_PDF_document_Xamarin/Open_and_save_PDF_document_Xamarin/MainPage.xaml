@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Open_and_save_PDF_document_Xamarin.MainPage">
+
+    <StackLayout VerticalOptions="Center">
+        <Button Text="Open and save PDF document" Clicked="Button_Clicked"  HorizontalOptions="Center"/>
+    </StackLayout>
+
+</ContentPage>
