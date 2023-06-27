@@ -7,9 +7,9 @@ using Syncfusion.Pdf.Parsing;
 FileStream docStream = new FileStream(Path.GetFullPath(@"../../../Input.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
 //Load the PDF document. 
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
+PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream, true);
 
-for (int i = 0; i < loadedDocument.PageCount; i++)
+for (int i = 0; i < loadedDocument.Pages.Count; i++)
 {
 
     //Creates a new document.
@@ -18,28 +18,12 @@ for (int i = 0; i < loadedDocument.PageCount; i++)
     //Imports the pages from the loaded document.
     document.ImportPage(loadedDocument, i);
 
-    //Create a memory stream. 
-    MemoryStream stream = new MemoryStream();
-
-    //Save the document to stream.
-    document.Save(stream);
-
-    stream.Position = 0;
-
-    //Close the documents.
+    //Create a File stream. 
+    using (var outputFileStream = new FileStream("Output" + i + ".pdf", FileMode.Create, FileAccess.Write)) {
+        //Save the document to stream.
+        document.Save(outputFileStream);
+    }
+    //Close the document.
     document.Close(true);
-	loadedDocument.Close(true);
-
-    //Create a file stream.
-    FileStream fileStream = new FileStream("Output" + i + ".pdf", FileMode.Create, FileAccess.Write);
-
-    byte[] bytes = stream.ToArray();
-
-    //Write bytes to file.
-    fileStream.Write(bytes, 0, (int)bytes.Length);
-
-    //Dispose the streams.
-    stream.Dispose();
-    fileStream.Dispose();
 
 }
