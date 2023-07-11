@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33417.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML-to-PDF-page-orientation-customization", "HTML-to-PDF-page-orientation-customization\HTML-to-PDF-page-orientation-customization.csproj", "{34FA98EC-29B5-45E9-A7D9-C2B48F650DAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34FA98EC-29B5-45E9-A7D9-C2B48F650DAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34FA98EC-29B5-45E9-A7D9-C2B48F650DAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34FA98EC-29B5-45E9-A7D9-C2B48F650DAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34FA98EC-29B5-45E9-A7D9-C2B48F650DAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D9C68D8-ADA6-412C-B8F4-D176063EBF60}
+	EndGlobalSection
+EndGlobal

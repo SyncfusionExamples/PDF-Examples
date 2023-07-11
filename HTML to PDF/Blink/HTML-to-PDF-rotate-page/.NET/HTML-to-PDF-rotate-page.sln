@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33417.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML-to-PDF-rotate-page", "HTML-to-PDF-rotate-page\HTML-to-PDF-rotate-page.csproj", "{CDCBC58D-02B5-4E3B-A54F-5D9B64509010}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDCBC58D-02B5-4E3B-A54F-5D9B64509010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDCBC58D-02B5-4E3B-A54F-5D9B64509010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDCBC58D-02B5-4E3B-A54F-5D9B64509010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDCBC58D-02B5-4E3B-A54F-5D9B64509010}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF322DBC-F23A-4014-B151-1090F02B9889}
+	EndGlobalSection
+EndGlobal
