@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Create_PDF_document": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7045",
+      "launchBrowser": false
+    }
+  }
+}
