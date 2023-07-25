@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Open_and_save_PDF_document": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7259",
+      "launchBrowser": false
+    }
+  }
+}
