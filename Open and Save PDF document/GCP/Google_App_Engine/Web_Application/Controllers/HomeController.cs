@@ -50,6 +50,7 @@ namespace Web_Application.Controllers
             pdfGrid.ApplyBuiltinStyle(PdfGridBuiltinStyle.GridTable4Accent3);
             //Draw the grid to the page of PDF document.
             pdfGrid.Draw(graphics, new RectangleF(40, 400, loadedPage.Size.Width - 80, 0));
+
             //Create memory stream. 
             MemoryStream stream = new MemoryStream();
             //Save the PDF document to stream.
