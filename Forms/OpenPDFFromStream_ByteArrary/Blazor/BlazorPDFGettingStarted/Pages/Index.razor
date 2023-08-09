@@ -1,0 +1,78 @@
+﻿@page "/"
+
+@inject PdfService service
+@inject Microsoft.JSInterop.IJSRuntime JS
+@using System.IO
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+@*<button class="btn btn-primary" @onclick="@LoadAndSave">Load and save PDF document</button>*@
+
+<label for="fileload"> choose form file </label> 
+<br/>
+<InputFile OnChange="LoadForm">   
+</InputFile>
+<br />
+
+@*@functions
+{
+    private async Task LoadForm(InputFileChangeEventArgs item)
+    {
+        try
+        {
+            IBrowserFile file = item.File;
+
+            // Read the file into a byte array
+            byte[] buffer = new byte[file.Size];
+            await file.OpenReadStream().ReadAsync(buffer, 0, (int)file.Size);
+
+
+            // Fill the form
+            using (MemoryStream outputStream = PdfService.FillPdfForm(buffer))
+            {
+                // Save the file
+                await JS.InvokeVoidAsync("saveAsFile", "Sample.pdf", Convert.ToBase64String(outputStream.ToArray()));
+            }
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+
+    }
+}*@
+
+@functions
+{
+    private async Task LoadForm(InputFileChangeEventArgs item)
+    {
+        try
+        {
+            // Get the file from the form
+            IBrowserFile file = item.File;
+            
+            // Copy the file to a memory stream
+            await using MemoryStream ms = new MemoryStream();
+            await file.OpenReadStream().CopyToAsync(ms);
+            ms.Position = 0;
+
+            // Fill out the form
+            using (MemoryStream outputStream = PdfService.FillPdfForm(ms))
+            {
+                // Save the file
+                await JS.InvokeVoidAsync("saveAsFile", "Sample.pdf", Convert.ToBase64String(outputStream.ToArray()));
+            }
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+
+    }
+}
