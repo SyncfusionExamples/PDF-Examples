@@ -35,7 +35,7 @@ namespace Creating_a_PDF_document_with_image.Controllers
             //Create PDF graphics for the page.
             PdfGraphics graphics = page.Graphics;
 
-            string imagePath = _hostingEnvironment.WebRootPath + "/Data/Autumn Leaves.jpg";
+            string imagePath = _hostingEnvironment.WebRootPath + "/Data/Adventure Cycles.png";
 
             //Get stream from the image file. 
             FileStream imageStream = new FileStream(imagePath, FileMode.Open, FileAccess.Read);

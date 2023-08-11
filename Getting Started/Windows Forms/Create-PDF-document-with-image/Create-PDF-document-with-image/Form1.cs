@@ -32,7 +32,7 @@ namespace Create_PDF_document_with_image
             PdfGraphics graphics = page.Graphics;
 
             //Load the image from the disk.
-            PdfBitmap image = new PdfBitmap("../../Data/Autumn Leaves.jpg");
+            PdfBitmap image = new PdfBitmap("../../Data/Adventure Cycles.png");
 
             //Draw the image
             graphics.DrawImage(image, 0, 0);

@@ -27,7 +27,7 @@ namespace Creating_a_PDF_document_with_image.Controllers
             PdfGraphics graphics = page.Graphics;
 
             //Load the image from the disk.
-            PdfBitmap image = new PdfBitmap(Server.MapPath("~/App_Data/Autumn Leaves.jpg"));
+            PdfBitmap image = new PdfBitmap(Server.MapPath("~/App_Data/Adventure Cycles.png"));
 
             //Draw the image.
             graphics.DrawImage(image, 0, 0);
