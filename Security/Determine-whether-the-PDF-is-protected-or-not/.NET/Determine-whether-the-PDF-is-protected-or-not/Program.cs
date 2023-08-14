@@ -9,16 +9,18 @@ try
     FileStream docStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
 
     //Load the PDF document.
-    PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream, "password");
+    PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
 
 	//Write whether document is protected or not in console window. 
     Console.WriteLine("The PDF document is password protected one");
 }
 
-catch (PdfDocumentException exception)
+catch (PdfException exception)
 {
-    //Write whether document is protected or not in console window. 
-    Console.WriteLine("The PDF document is not password protected");
+    if (exception.Message == "Can't open an encrypted document. The password is invalid.")
+    {
+        Console.WriteLine("Cannot open an encrypted document without password");
+    }
 }
-
+    
 Console.ReadLine();
