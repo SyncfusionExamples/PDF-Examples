@@ -53,6 +53,9 @@ namespace CreatePDFwithTable
             //Assign data source.
             pdfGrid.DataSource = dataTable;
 
+			//Apply built-in table style
+			pdfGrid.ApplyBuiltinStyle(PdfGridBuiltinStyle.GridTable4Accent1);
+
             //Draw grid to the page of PDF document.
             pdfGrid.Draw(page, new PointF(10, 10));
 

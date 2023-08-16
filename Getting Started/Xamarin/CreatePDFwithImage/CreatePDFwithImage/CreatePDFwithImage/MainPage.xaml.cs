@@ -32,7 +32,7 @@ namespace CreatePDFwithImage
             PdfGraphics graphics = page.Graphics;
 
             //Load the image as stream
-            Stream imageStream = typeof(App).GetTypeInfo().Assembly.GetManifestResourceStream("CreatePDFwithImage.Assets.Autumn Leaves.jpg");
+            Stream imageStream = typeof(App).GetTypeInfo().Assembly.GetManifestResourceStream("CreatePDFwithImage.Assets.Adventure Cycles.png");
 
             //Load the image from the disk.
             PdfBitmap image = new PdfBitmap(imageStream);
