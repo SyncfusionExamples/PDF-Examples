@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Retrieve-certificate-information-from-digital-signature", "Retrieve-certificate-information-from-digital-signature.csproj", "{79F1B204-18E8-4702-B47F-16E4E03BDC1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79F1B204-18E8-4702-B47F-16E4E03BDC1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79F1B204-18E8-4702-B47F-16E4E03BDC1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79F1B204-18E8-4702-B47F-16E4E03BDC1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79F1B204-18E8-4702-B47F-16E4E03BDC1E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DAFD465E-7F96-4A9E-A75B-5AD6A73F3116}
+	EndGlobalSection
+EndGlobal
