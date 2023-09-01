@@ -11,5 +11,10 @@ PdfLoadedSignatureField signatureField = document.Form.Fields[0] as PdfLoadedSig
 PdfSignatureValidationResult result = signatureField.ValidateSignature();
 //Gets signer certificates
 PdfSignerCertificate[] certifcate = result.TimeStampInformation.SignerCertificates;
+//Print the certifcate value
+for(int i = 0;i < certifcate.Length; i++)
+{
+    Console.WriteLine(certifcate[i].Certificate);
+}
 //Close the document.
 document.Close(true);
