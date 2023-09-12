@@ -16,12 +16,12 @@ PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
 PdfPageBase pageBase = loadedDocument.Pages[0];
 
 //Extract images from first page.
-Image[] extractedImages = pageBase.ExtractImages();
+Stream[] extractedImages = pageBase.ExtractImages();
 
 //Get each image and save to the separate file. 
 for(int i=0; i<extractedImages.Length; i++)
 {
-    extractedImages[i].Save(Path.GetFullPath("../../../ExtractedImage" + i.ToString() + ".jpg"), ImageFormat.Jpeg);
+    File.WriteAllBytes("../../../ExtractedImage" + i.ToString() + ".jpg", (extractedImages[i] as MemoryStream).ToArray());
 }
 
 //Close the document.
