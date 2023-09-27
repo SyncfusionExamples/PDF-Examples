@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Set_blink_path_in_HTML_to_PDF", "Set_blink_path_in_HTML_to_PDF\Set_blink_path_in_HTML_to_PDF.csproj", "{DCE10516-E8CB-4FE2-9AF2-6AFF2DE04026}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCE10516-E8CB-4FE2-9AF2-6AFF2DE04026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCE10516-E8CB-4FE2-9AF2-6AFF2DE04026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCE10516-E8CB-4FE2-9AF2-6AFF2DE04026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCE10516-E8CB-4FE2-9AF2-6AFF2DE04026}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2535A2F-9E26-4961-88B6-733DDA34D313}
+	EndGlobalSection
+EndGlobal
