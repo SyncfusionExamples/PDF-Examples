@@ -14,7 +14,7 @@ document.Pages.PageAdded += Pages_PageAdded;
 //Create a new page and add it as the last page of the document.
 PdfPage page = document.Pages.Add();
 
-//Create grphics for the page.
+//Create graphics for the page.
 PdfGraphics graphics = page.Graphics;
 
 //Read the long text from the text file.
@@ -51,4 +51,5 @@ document.Close(true);
 void Pages_PageAdded(object sender, PageAddedEventArgs args)
 {
     PdfPage page = args.Page;
+    page.Graphics.DrawRectangle(PdfPens.Black, new RectangleF(0, 0, page.GetClientSize().Width, page.GetClientSize().Height));
 }
