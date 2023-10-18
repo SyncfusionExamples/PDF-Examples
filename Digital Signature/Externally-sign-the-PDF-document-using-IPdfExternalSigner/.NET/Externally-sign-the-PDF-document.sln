@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33417.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Externally-sign-the-PDF-document", "Externally-sign-the-PDF-document\Externally-sign-the-PDF-document.csproj", "{86E9E6FD-460E-4CD2-943A-E6A85D83C71D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86E9E6FD-460E-4CD2-943A-E6A85D83C71D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86E9E6FD-460E-4CD2-943A-E6A85D83C71D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86E9E6FD-460E-4CD2-943A-E6A85D83C71D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86E9E6FD-460E-4CD2-943A-E6A85D83C71D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F9E000B-487C-4A70-8C76-6256DDA085B3}
+	EndGlobalSection
+EndGlobal
