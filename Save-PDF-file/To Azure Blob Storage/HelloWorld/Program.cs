@@ -24,14 +24,14 @@ using (PdfDocument doc = new PdfDocument())
     doc.Close(true);
 }
 // Parse the connection string for the Azure Storage Account
-CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=helloworlddocument;AccountKey=NLVp39X0fAEEsH6APP7tVgPoe7kIY/c8fjC6aS7R956iiLP6TpNw5YEDu+oDq2yrjA5oIW73iB6L+ASt+EMfEA==;EndpointSuffix=core.windows.net");
+CloudStorageAccount storageAccount = CloudStorageAccount.Parse(connectionString);
 // Create a client for accessing Blob storage
 CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 // Get a reference to the container named "helloworld"
-CloudBlobContainer container = blobClient.GetContainerReference("helloworld");// 
+CloudBlobContainer container = blobClient.GetContainerReference(containerName);
 container.CreateIfNotExists();
 // Get a reference to the block blob named "sample.pdf"
-CloudBlockBlob blockBlob = container.GetBlockBlobReference("sample.pdf");
+CloudBlockBlob blockBlob = container.GetBlockBlobReference(blobName);
 // Open the local file "sample.pdf" for reading
 using (var fileStream = File.OpenRead("sample.pdf"))
 {

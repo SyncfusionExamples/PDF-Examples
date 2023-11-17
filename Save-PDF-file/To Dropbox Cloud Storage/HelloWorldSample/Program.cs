@@ -19,7 +19,7 @@ MemoryStream stream = new MemoryStream();
 doc.Save(stream);
 // Close the PDF document.
 doc.Close(true);
-var accessToken = "sl.BoKwHL9XbylXxxpuzhSccdpgNq2iY03V-Cx7TT1I1zsfaBILs3TLWvGYvBbjTCFkp0fGKyw_V25TXWzldj8cO9hjqGtD5k63EFc-O44uNnAYeeKKR0mTAEOd3zt5OiJFezqWVmYxNn8E";// Replace with your actual access token
+var accessToken = "YOUR_ACTUAL_TOKEN";// Replace with your actual access token
 // Initialize a DropboxClient with the provided access token.
 using (var dbx = new DropboxClient(accessToken))
 {

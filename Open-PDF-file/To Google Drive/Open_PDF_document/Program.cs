@@ -28,20 +28,12 @@ var service = new DriveService(new BaseClientService.Initializer()
 });
 
 // Step 3: Specify the file ID of the PDF you want to open
-string fileId = "1uxpbgFG6A43AarcPZY1bzqUVfSaKXSsQ"; // Replace with the actual file ID YOUR_FILE_ID
+string fileId = "YOUR_FILE_ID"; // Replace with the actual file ID YOUR_FILE_ID
 
 // Step 4: Download the PDF file from Google Drive
 var request = service.Files.Get(fileId);
 var stream = new MemoryStream();
 request.Download(stream);
-
-// Step 5: Open the PDF with Syncfusion
-//PdfLoadedDocument loadedDocument = new PdfLoadedDocument(stream);
-
-// Use the loadedDocument for further processing (e.g., extracting text or images)
-
-// Remember to dispose of the loadedDocument when you're done
-//loadedDocument.Close(true);
 
 // Step 5: Save the PDF locally
 using (FileStream fileStream = new FileStream("output.pdf", FileMode.Create, FileAccess.Write))
