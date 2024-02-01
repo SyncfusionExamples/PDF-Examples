@@ -14,15 +14,14 @@ loadedDocument.FileStructure.IncrementalUpdate = false;
 loadedDocument.Security.Permissions = PdfPermissionsFlags.EditAnnotations | PdfPermissionsFlags.AssembleDocument;
 // Set the encryption algorithm to AES for the document security.
 security.Algorithm = PdfEncryptionAlgorithm.AES;
-// Set the owner password for a PDF document.
-security.OwnerPassword = "";
-// Set the user password for a PDF document.
-security.UserPassword = "";
+// Set the encryption key size to 256 Bit.
+security.KeySize = PdfEncryptionKeySize.Key256Bit;
 // Create a MemoryStream to store the modified PDF document.
 MemoryStream stream = new MemoryStream();
 // Save the modified PDF document to the MemoryStream.
 loadedDocument.Save(stream);
-// Write the contents of the MemoryStream.
-File.WriteAllBytes("output.pdf", stream.ToArray());
 // Close the loaded PDF document.
 loadedDocument.Close(true);
+// Write the contents of the MemoryStream.
+File.WriteAllBytes("output.pdf", stream.ToArray());
+
