@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Removing_restrictions_for_security", "Removing_restrictions_for_security\Removing_restrictions_for_security.csproj", "{CE9212D6-331C-49E8-B37B-592C1EC482C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE9212D6-331C-49E8-B37B-592C1EC482C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE9212D6-331C-49E8-B37B-592C1EC482C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE9212D6-331C-49E8-B37B-592C1EC482C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9212D6-331C-49E8-B37B-592C1EC482C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0095863-F1F8-4BA8-9F31-E840CBDD1A3F}
+	EndGlobalSection
+EndGlobal
