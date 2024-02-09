@@ -4,15 +4,13 @@
              x:Class="CreatePdfDemoSample.MainPage">
 
     <ScrollView>
-
-        <Button
-                x:Name="CounterBtn"
-                Text="Create PDF"
-                FontAttributes="Bold"
-                Grid.Row="3"
-                Clicked="CreatePDF_Click"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"/>
+        <Button 
+    Text="Create PDF"
+    FontAttributes="Bold"
+    Grid.Row="3"
+    Clicked="createPdf_Click"
+    HorizontalOptions="Center" 
+    VerticalOptions="Center"/>
     </ScrollView>
 
 </ContentPage>

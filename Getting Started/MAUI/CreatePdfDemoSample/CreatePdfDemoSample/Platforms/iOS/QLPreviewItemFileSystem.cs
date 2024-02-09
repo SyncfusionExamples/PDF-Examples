@@ -1,63 +1,58 @@
-﻿using Foundation;
+using Foundation;
 using QuickLook;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
-namespace CreatePdfDemoSample.Platforms.iOS
+public class QLPreviewItemFileSystem : QLPreviewItem
 {
-    public class QLPreviewItemFileSystem : QLPreviewItem
-    {
-        readonly string _fileName, _filePath;
+    readonly string _fileName, _filePath;
 
-        public QLPreviewItemFileSystem(string fileName, string filePath)
-        {
-            _fileName = fileName;
-            _filePath = filePath;
-        }
-        public override string PreviewItemTitle
-        {
-            get
-            {
-                return _fileName;
-            }
-        }
-        public override NSUrl PreviewItemUrl
-        {
-            get
-            {
-                return NSUrl.FromFilename(_filePath);
-            }
-        }
+    public QLPreviewItemFileSystem(string fileName, string filePath)
+    {
+        _fileName = fileName;
+        _filePath = filePath;
     }
 
-    public class QLPreviewItemBundle : QLPreviewItem
+    public override string PreviewItemTitle
     {
-        readonly string _fileName, _filePath;
-        public QLPreviewItemBundle(string fileName, string filePath)
+        get
         {
-            _fileName = fileName;
-            _filePath = filePath;
+            return _fileName;
         }
-
-        public override string PreviewItemTitle
+    }
+    public override NSUrl PreviewItemUrl
+    {
+        get
         {
-            get
-            {
-                return _fileName;
-            }
-        }
-        public override NSUrl PreviewItemUrl
-        {
-            get
-            {
-                var documents = NSBundle.MainBundle.BundlePath;
-                var lib = Path.Combine(documents, _filePath);
-                var url = NSUrl.FromFilename(lib);
-                return url;
-            }
+            return NSUrl.FromFilename(_filePath);
         }
     }
 }
+
+public class QLPreviewItemBundle : QLPreviewItem
+{
+    readonly string _fileName, _filePath;
+    public QLPreviewItemBundle(string fileName, string filePath)
+    {
+        _fileName = fileName;
+        _filePath = filePath;
+    }
+
+    public override string PreviewItemTitle
+    {
+        get
+        {
+            return _fileName;
+        }
+    }
+    public override NSUrl PreviewItemUrl
+    {
+        get
+        {
+            var documents = NSBundle.MainBundle.BundlePath;
+            var lib = Path.Combine(documents, _filePath);
+            var url = NSUrl.FromFilename(lib);
+            return url;
+        }
+    }
+}
+

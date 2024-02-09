@@ -1,11 +1,9 @@
-﻿using Foundation;
 using QuickLook;
-using System;
-using System.IO;
 
 public class PreviewControllerDS : QLPreviewControllerDataSource
 {
     private readonly QLPreviewItem _item;
+
     public PreviewControllerDS(QLPreviewItem item)
     {
         _item = item;
