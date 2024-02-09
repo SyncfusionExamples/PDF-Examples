@@ -1,34 +1,27 @@
-﻿using Android.Content;
+using Android.Content;
 using Android.OS;
 using Java.IO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CreatePdfDemoSample;
 
-[assembly: Dependency(typeof(SaveAndroid))]
-
-    class SaveAndroid : ISave
+namespace CreatePdfDemoSample.Services
+{
+    public partial class SaveService
     {
-        //Method to save document as a file in Android and view the saved document
-        public async Task SaveAndView(string fileName, String contentType, MemoryStream stream)
+        public partial void SaveAndView(string filename, string contentType, MemoryStream stream)
         {
             string exception = string.Empty;
-            string root = null;
+            string? root = null;
 
             if (Android.OS.Environment.IsExternalStorageEmulated)
             {
-                root = Android.App.Application.Context.GetExternalFilesDir(Android.OS.Environment.DirectoryDownloads).AbsolutePath;
+                root = Android.App.Application.Context!.GetExternalFilesDir(Android.OS.Environment.DirectoryDownloads)!.AbsolutePath;
             }
             else
                 root = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
 
-            Java.IO.File myDir = new Java.IO.File(root + "/Syncfusion");
+            Java.IO.File myDir = new(root + "/Syncfusion");
             myDir.Mkdir();
 
-            Java.IO.File file = new Java.IO.File(myDir, fileName);
+            Java.IO.File file = new(myDir, filename);
 
             if (file.Exists())
             {
@@ -37,7 +30,7 @@ using CreatePdfDemoSample;
 
             try
             {
-                FileOutputStream outs = new FileOutputStream(file);
+                FileOutputStream outs = new(file);
                 outs.Write(stream.ToArray());
 
                 outs.Flush();
@@ -65,10 +58,11 @@ using CreatePdfDemoSample;
                     var intent = new Intent(Intent.ActionView);
                     intent.SetDataAndType(fileUri, contentType);
                     intent = Intent.CreateChooser(intent, "Open File");
-                    intent.AddFlags(ActivityFlags.NewTask);
+                    intent!.AddFlags(ActivityFlags.NewTask);
                     Android.App.Application.Context.StartActivity(intent);
                 }
-            }
-         }
-    }
 
+            }
+        }
+    }
+}
