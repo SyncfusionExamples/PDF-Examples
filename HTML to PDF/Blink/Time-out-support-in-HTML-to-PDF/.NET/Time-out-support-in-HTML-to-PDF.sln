@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Time-out-support-in-HTML-to-PDF", "Time-out-support-in-HTML-to-PDF\Time-out-support-in-HTML-to-PDF.csproj", "{94F088F3-3517-4E63-8633-05C71D5BA1E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94F088F3-3517-4E63-8633-05C71D5BA1E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F088F3-3517-4E63-8633-05C71D5BA1E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F088F3-3517-4E63-8633-05C71D5BA1E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F088F3-3517-4E63-8633-05C71D5BA1E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86ACE6C7-3AD0-4331-B45D-2DF0B5415841}
+	EndGlobalSection
+EndGlobal
