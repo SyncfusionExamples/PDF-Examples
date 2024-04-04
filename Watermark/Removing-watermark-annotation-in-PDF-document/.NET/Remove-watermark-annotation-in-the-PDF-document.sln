@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remove-watermark-annotation-in-the-PDF-document", "Remove-watermark-annotation-in-the-PDF-document\Remove-watermark-annotation-in-the-PDF-document.csproj", "{CD7C4343-0A2E-46AC-B944-A3C6B6DAA951}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD7C4343-0A2E-46AC-B944-A3C6B6DAA951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD7C4343-0A2E-46AC-B944-A3C6B6DAA951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD7C4343-0A2E-46AC-B944-A3C6B6DAA951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD7C4343-0A2E-46AC-B944-A3C6B6DAA951}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5249AA4-5AFA-4581-83B8-3E2D2A379F13}
+	EndGlobalSection
+EndGlobal
