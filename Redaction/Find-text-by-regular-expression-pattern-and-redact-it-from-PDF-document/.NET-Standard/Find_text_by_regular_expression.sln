@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Find_text_by_regular_expression", "Find_text_by_regular_expression\Find_text_by_regular_expression.csproj", "{8CD3237D-31CF-49D5-B537-F1CCDEC7B681}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CD3237D-31CF-49D5-B537-F1CCDEC7B681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CD3237D-31CF-49D5-B537-F1CCDEC7B681}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CD3237D-31CF-49D5-B537-F1CCDEC7B681}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CD3237D-31CF-49D5-B537-F1CCDEC7B681}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B475615B-69EF-40F3-9A7F-72E78EE8AB8D}
+	EndGlobalSection
+EndGlobal
