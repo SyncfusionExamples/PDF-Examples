@@ -33,7 +33,7 @@ signature.LocationInfo = "Honolulu, Hawaii";
 signature.Reason = "I am author of this document.";
 
 //Draws the signature image.
-graphics.DrawImage(signatureImage, 0, 0);
+signature.Appearance.Normal.Graphics.DrawImage(signatureImage, 0, 0);
 
 //Create file stream.
 using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
