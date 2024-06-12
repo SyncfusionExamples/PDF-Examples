@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customizing-truetype-fonts-in-a-PDF", "Customizing-truetype-fonts-in-a-PDF\Customizing-truetype-fonts-in-a-PDF.csproj", "{E8ED28CA-BE49-4D3E-BD66-4E0007A3CE49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8ED28CA-BE49-4D3E-BD66-4E0007A3CE49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8ED28CA-BE49-4D3E-BD66-4E0007A3CE49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8ED28CA-BE49-4D3E-BD66-4E0007A3CE49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8ED28CA-BE49-4D3E-BD66-4E0007A3CE49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {831D183F-99A1-4491-81F8-51B5BD03D68B}
+	EndGlobalSection
+EndGlobal
