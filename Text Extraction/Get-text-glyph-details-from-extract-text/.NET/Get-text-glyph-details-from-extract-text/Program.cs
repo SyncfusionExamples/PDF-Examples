@@ -34,3 +34,5 @@ FontStyle GlyphFontStyle = textGlyph.FontStyle;
 char GlyphText = textGlyph.Text;
 //Gets the color of the character 
 Color GlyphColor = textGlyph.TextColor;
+//Close the document 
+loadedDocument.Close(true);
