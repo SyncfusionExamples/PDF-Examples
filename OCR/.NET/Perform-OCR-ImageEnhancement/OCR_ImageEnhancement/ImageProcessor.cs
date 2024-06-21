@@ -16,7 +16,7 @@ namespace OCR_ImageEnhancement
         public Stream ProcessImage(Stream imageStream)
         {
             //Process the image from stream with any third party library and return the processed image.
-            Stream processedImageStream =ConvertToGrayscaleImage(imageStream);
+            Stream processedImageStream = ConvertToGrayscaleImage(imageStream);
             return processedImageStream;
         }
        
