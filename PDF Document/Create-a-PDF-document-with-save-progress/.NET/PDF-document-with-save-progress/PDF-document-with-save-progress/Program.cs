@@ -3,14 +3,25 @@ using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf;
 using Syncfusion.Drawing;
 
-//Create a new PDF document.
+
+// Create a new PDF document.
 PdfDocument document = new PdfDocument();
-//Add new pages to the document.
-PdfPage page = document.Pages.Add();
-//Create font and font style.
-PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 12f, PdfFontStyle.Bold);
-//Draw text in the new page.
-page.Graphics.DrawString("Essential PDF", font, PdfBrushes.Black, new PointF(10, 10));
+
+// Add multiple pages to the document.
+for (int i = 0; i < 10; i++)
+{
+    // Add a new page.
+    PdfPage page = document.Pages.Add();
+
+    // Create PDF graphics for the page.
+    PdfGraphics graphics = page.Graphics;
+
+    // Set the font.
+    PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
+
+    // Draw text on the page.
+    graphics.DrawString($"This is page {i + 1}", font, PdfBrushes.Black, new PointF(0, 0));
+}
 document.SaveProgress += new PdfDocument.ProgressEventHandler(document_SaveProgress);
 
 
