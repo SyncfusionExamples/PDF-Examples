@@ -17,7 +17,7 @@ using (OCRProcessor processor = new OCRProcessor())
     //Perform OCR with input document and tessdata (Language packs).
     string text = processor.PerformOCR(document, 0, 0, processor.TessDataPath);
     //Create file stream.
-    using (FileStream outputFileStream = new FileStream("../../../Output1.pdf", FileMode.Create, FileAccess.ReadWrite))
+    using (FileStream outputFileStream = new FileStream("../../../Output.pdf", FileMode.Create, FileAccess.ReadWrite))
     {
         //Save the PDF document to file stream.
         document.Save(outputFileStream);
