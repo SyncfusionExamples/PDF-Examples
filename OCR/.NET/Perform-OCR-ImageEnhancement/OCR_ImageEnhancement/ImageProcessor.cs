@@ -16,8 +16,30 @@ namespace OCR_ImageEnhancement
         public Stream ProcessImage(Stream imageStream)
         {
             //Process the image from stream with any third party library and return the processed image.
+
+            // Convert the image stream to a grayscale image stream.
             Stream processedImageStream = ConvertToGrayscaleImage(imageStream);
+
+            // Convert the image stream to a enhance resolution image stream.
+            //Stream processedImageStream = EnhanceResolution(imageStream);
+
+            // Enhances the image by applying Gaussian sharpening, converts it to grayscale, and then binarizes it
+            //Stream processedImageStream = EnhanceGrayscaleAndBinarize(imageStream);
+
+            //MemoryStream Stream = new MemoryStream();
+            
+            //processedImageStream.CopyTo(Stream);
+            //Stream.Position = 0;
+            //File.WriteAllBytes("sample.png", Stream.ToArray());
+
+            // Process the image data.
+            //Stream processedImageStream = imageBinarization(imageStream);
+
+            // return the processed ImageStream.
             return processedImageStream;
+
+            
+
         }
        
         public Stream EnhanceResolution(Stream imgstream)
@@ -118,7 +140,7 @@ namespace OCR_ImageEnhancement
             SKData data = grayscaleImage.Encode();
             return data.AsStream();
         }
-        private Stream Sixlaborslib(Stream imageStream)
+        private Stream EnhanceGrayscaleAndBinarize(Stream imageStream)
         {
             MemoryStream stream = new MemoryStream();
             using (Image image = Image.Load(imageStream))

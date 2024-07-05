@@ -12,6 +12,7 @@ using (OCRProcessor processor = new OCRProcessor())
     PdfLoadedDocument document = new PdfLoadedDocument(stream);
     //Set OCR language.
     processor.Settings.Language = Languages.English;
+    //Initialize the OCR image processor.
     processor.ImageProcessor = new ImageProcessor();
     //Perform OCR with input document and tessdata (Language packs).
     string text = processor.PerformOCR(document, 0, 0, processor.TessDataPath);
