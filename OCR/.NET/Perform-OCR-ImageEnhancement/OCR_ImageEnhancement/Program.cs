@@ -12,16 +12,17 @@ using (OCRProcessor processor = new OCRProcessor())
     PdfLoadedDocument document = new PdfLoadedDocument(stream);
     //Set OCR language.
     processor.Settings.Language = Languages.English;
+    //Initialize the OCR image processor.
     processor.ImageProcessor = new ImageProcessor();
     //Perform OCR with input document and tessdata (Language packs).
     string text = processor.PerformOCR(document, 0, 0, processor.TessDataPath);
     //Create file stream.
-    using (FileStream outputFileStream = new FileStream("../../../Output.pdf", FileMode.Create, FileAccess.ReadWrite))
+    using (FileStream outputFileStream = new FileStream("../../../Output1.pdf", FileMode.Create, FileAccess.ReadWrite))
     {
         //Save the PDF document to file stream.
         document.Save(outputFileStream);
     }
     //Close the document.
     document.Close(true);
-    File.WriteAllText("../../../Output.txt", text);
+    File.WriteAllText("../../../Output1.txt", text);
 }
