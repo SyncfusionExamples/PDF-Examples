@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>Perform_OCR_for_the_entire_PDF_document</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.PDF.OCR.NET" Version="20.2.0.43" />
+    <PackageReference Include="Syncfusion.PDF.OCR.NET" Version="*" />
   </ItemGroup>
 
 </Project>

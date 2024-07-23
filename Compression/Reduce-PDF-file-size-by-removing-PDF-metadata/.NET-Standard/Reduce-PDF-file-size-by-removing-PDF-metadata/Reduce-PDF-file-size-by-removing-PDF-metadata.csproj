@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>Reduce_PDF_file_size_by_removing_PDF_metadata</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.Pdf.Imaging.Net.Core" Version="20.2.0.36" />
+    <PackageReference Include="Syncfusion.Pdf.Imaging.Net.Core" Version="*" />
   </ItemGroup>
 
 </Project>

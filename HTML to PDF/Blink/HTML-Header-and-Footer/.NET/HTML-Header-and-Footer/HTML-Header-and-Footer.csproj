@@ -2,14 +2,13 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>HTML_Header_and_Footer</RootNamespace>
+    <TargetFramework>net8.0</TargetFramework>    <RootNamespace>HTML_Header_and_Footer</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.HtmlToPdfConverter.Net.Windows" Version="23.1.36" />
+    <PackageReference Include="Syncfusion.HtmlToPdfConverter.Net.Windows" Version="*" />
   </ItemGroup>
 
 </Project>

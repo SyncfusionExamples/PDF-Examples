@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.HtmlToPdfConverter.Net.Windows" Version="25.1.35" />
-    <PackageReference Include="Syncfusion.Pdf.Imaging.Net.Core" Version="25.1.35" />
+    <PackageReference Include="Syncfusion.HtmlToPdfConverter.Net.Windows" Version="*" />
+    <PackageReference Include="Syncfusion.Pdf.Imaging.Net.Core" Version="*" />
   </ItemGroup>
 
 </Project>
