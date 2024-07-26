@@ -15,4 +15,9 @@
     <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.3.1" />
     <PackageReference Include="Syncfusion.Pdf.Net.Core" Version="*" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="Data\Input.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
