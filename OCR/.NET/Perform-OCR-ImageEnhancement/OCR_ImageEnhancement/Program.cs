@@ -8,7 +8,7 @@ using Syncfusion.Pdf.Parsing;
 using (OCRProcessor processor = new OCRProcessor())
 {
     //Load an existing PDF document.
-    FileStream stream = new FileStream("../../../Carte grise Peugeot 108.pdf", FileMode.Open);
+    FileStream stream = new FileStream("../../../Input.pdf", FileMode.Open);
     PdfLoadedDocument document = new PdfLoadedDocument(stream);
     //Set OCR language.
     processor.Settings.Language = Languages.English;
