@@ -65,6 +65,9 @@ namespace Create_PDF_AWS_Elastic_Beanstalk.Controllers
             MemoryStream stream = new MemoryStream();
             //Save the document to the memory stream.
             document.Save(stream);
+			//Close the documet
+			document.Close(true); 
+			//Return the PDF file as a download
             return File(stream.ToArray(), System.Net.Mime.MediaTypeNames.Application.Pdf, "Output.pdf");
         }
     }
