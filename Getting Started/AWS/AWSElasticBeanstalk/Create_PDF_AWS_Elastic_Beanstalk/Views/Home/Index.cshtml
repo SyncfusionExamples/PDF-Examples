@@ -1,0 +1,13 @@
+﻿@{
+    Html.BeginForm("CreatePDF", "Home", FormMethod.Get);
+    {
+        <div>
+            <input type="submit" value="Create PDF" style="width:150px;height:27px" />
+            <br />
+            <div class="text-danger">
+                @ViewBag.Message
+            </div>
+        </div>
+    }
+    Html.EndForm();
+}
