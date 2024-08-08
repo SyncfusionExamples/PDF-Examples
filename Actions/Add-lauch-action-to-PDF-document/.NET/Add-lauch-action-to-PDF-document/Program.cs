@@ -7,11 +7,11 @@ using Syncfusion.Pdf.Interactive;
 PdfDocument document = new PdfDocument();
 
 //Create and add new launch Action to the document.
-PdfLaunchAction action = new PdfLaunchAction(Path.GetFullPath("../../../logo.png"));
+PdfLaunchAction action = new PdfLaunchAction(Path.GetFullPath(@"Data/logo.png"));
 document.Actions.AfterOpen = action;
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
 	//Save the PDF document to file stream.
 	document.Save(outputFileStream);

@@ -38,7 +38,7 @@ page.Graphics.DrawString("Parent Bookmark", font, PdfBrushes.Red, new PointF(20,
 page.Graphics.DrawString("Child Bookmark", font, PdfBrushes.DarkSeaGreen, new PointF(200,300));
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

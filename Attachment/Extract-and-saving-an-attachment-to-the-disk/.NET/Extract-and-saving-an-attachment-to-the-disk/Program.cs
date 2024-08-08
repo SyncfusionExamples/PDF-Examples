@@ -4,7 +4,7 @@ using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 
 //Get stream from the existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 
 //Load the PDF document. 
 PdfLoadedDocument document = new PdfLoadedDocument(docStream);
