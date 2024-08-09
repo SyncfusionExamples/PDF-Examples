@@ -6,8 +6,8 @@ using Syncfusion.Pdf;
 PdfDocument finalDoc = new PdfDocument();
 
 //Get stream from an existing PDF documents. 
-FileStream stream1 = new FileStream(Path.GetFullPath("../../../File1.pdf"), FileMode.Open, FileAccess.Read);
-FileStream stream2 = new FileStream(Path.GetFullPath("../../../File2.pdf"), FileMode.Open, FileAccess.Read);
+FileStream stream1 = new FileStream(Path.GetFullPath(@"Data/File1.pdf"), FileMode.Open, FileAccess.Read);
+FileStream stream2 = new FileStream(Path.GetFullPath(@"Data/File2.pdf"), FileMode.Open, FileAccess.Read);
 
 //Creates a PDF stream for merging.
 Stream[] streams = { stream1, stream2 };
@@ -22,7 +22,7 @@ mergeOptions.OptimizeResources = true;
 PdfDocumentBase.Merge(finalDoc, mergeOptions, streams);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     finalDoc.Save(outputFileStream);

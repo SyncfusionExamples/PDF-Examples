@@ -10,4 +10,16 @@
     <PackageReference Include="Syncfusion.Pdf.NET" Version="*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\File1.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\File2.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Output\.gitkeep">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

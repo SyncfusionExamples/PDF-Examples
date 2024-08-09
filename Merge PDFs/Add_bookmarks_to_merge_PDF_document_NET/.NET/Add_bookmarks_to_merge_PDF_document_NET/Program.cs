@@ -9,9 +9,9 @@ using System.Reflection.Metadata;
 using (PdfDocument finalDocument = new PdfDocument())
 {
     //Load the first PDF document. 
-    using (FileStream firstStream = new FileStream(Path.GetFullPath("../../../File1.pdf"), FileMode.Open, FileAccess.Read))
+    using (FileStream firstStream = new FileStream(Path.GetFullPath(@"Data/File1.pdf"), FileMode.Open, FileAccess.Read))
     //Load the second PDF document. 
-    using (FileStream secondStream = new FileStream(Path.GetFullPath("../../../File2.pdf"), FileMode.Open, FileAccess.Read))
+    using (FileStream secondStream = new FileStream(Path.GetFullPath(@"Data/File2.pdf"), FileMode.Open, FileAccess.Read))
     {
         //Create a list of streams to merge.   
         Stream[] streams = { firstStream, secondStream };
@@ -31,7 +31,7 @@ using (PdfDocument finalDocument = new PdfDocument())
         bookmark2.Destination.Location = new PointF(20, 20);
         
         //Create file stream.
-        using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+        using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
         {
             //Save the PDF document to file stream.
             finalDocument.Save(outputFileStream);

@@ -4,7 +4,7 @@ using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 
 //Get file stream from an existing PDF document.
-FileStream inputFileStream = new FileStream(Path.GetFullPath(@"../../../Input.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
 //Load the PDF document.
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputFileStream);
@@ -16,7 +16,7 @@ PdfPageBase loadedPage = loadedDocument.Pages[0] as PdfPageBase;
 loadedPage.Rotation = PdfPageRotateAngle.RotateAngle90;
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     loadedDocument.Save(outputFileStream);
