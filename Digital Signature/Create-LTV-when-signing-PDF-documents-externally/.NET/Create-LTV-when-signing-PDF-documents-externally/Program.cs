@@ -8,7 +8,7 @@ using System.Security.Cryptography.Pkcs;
 using System.Security.Cryptography.X509Certificates;
 
 //Get the stream from the document.
-FileStream documentStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
+FileStream documentStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 
 //Load an existing PDF document.
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(documentStream);
@@ -23,13 +23,13 @@ PdfSignature signature = new PdfSignature(loadedDocument, loadedPage, null, "Sig
 signature.ComputeHash += Signature_ComputeHash;
 
 //Create X509Certificate2 from your certificate to create a long-term validity.
-X509Certificate2 x509 = new X509Certificate2(Path.GetFullPath("../../../PDF.pfx"), "syncfusion");
+X509Certificate2 x509 = new X509Certificate2(Path.GetFullPath(@"Data/PDF.pfx"), "syncfusion");
 
 //Create LTV with your public certificates.
 signature.CreateLongTermValidity(new List<X509Certificate2> { x509 });
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     loadedDocument.Save(outputFileStream);

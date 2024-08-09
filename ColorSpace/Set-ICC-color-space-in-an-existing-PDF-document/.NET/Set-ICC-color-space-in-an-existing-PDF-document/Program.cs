@@ -7,7 +7,7 @@ using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Parsing;
 
 //Get stream from an existing PDF document.
-FileStream docStream = new FileStream("../../../Input.pdf", FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(@"Data/Input.pdf", FileMode.Open, FileAccess.Read);
 
 //Load the PDF document. 
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
@@ -25,7 +25,7 @@ calRgbCS.Matrix = new double[] { 1, 0, 0, 0, 1, 0, 0, 0, 1 };
 calRgbCS.WhitePoint = new double[] { 0.7, 1, 0.8 };
 
 //Reads the ICC profile.
-FileStream fileStream = new FileStream(Path.GetFullPath(@"../../../input.icc"), FileMode.Open, FileAccess.Read);
+FileStream fileStream = new FileStream(Path.GetFullPath(@"Data/input.icc"), FileMode.Open, FileAccess.Read);
 byte[] profileData = new byte[fileStream.Length];
 fileStream.Read(profileData, 0, profileData.Length);
 fileStream.Close();
@@ -51,7 +51,7 @@ RectangleF bounds = new RectangleF(0, 0, 300, 300);
 graphics.DrawRectangle(brush, bounds);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     loadedDocument.Save(outputFileStream);

@@ -21,7 +21,7 @@ pdfSchema.PDFVersion = "1.5";
 pdfSchema.Keywords = "Essential PDF";
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     pdfDoc.Save(outputFileStream);

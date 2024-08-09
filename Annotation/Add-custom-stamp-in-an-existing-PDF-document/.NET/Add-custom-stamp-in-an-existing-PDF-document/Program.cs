@@ -8,7 +8,7 @@ using Syncfusion.Pdf.Parsing;
 using Add_custom_stamp_in_an_existing_PDF_document;
 
 //Get stream from an existing PDF document. 
-FileStream inputStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open);
+FileStream inputStream = new FileStream(Path.GetFullPath("Data/Input.pdf"), FileMode.Open);
 
 //Load the PDF document. 
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputStream);
@@ -46,7 +46,7 @@ rubberStampAnnotation.Text = "Text Properties Rubber Stamp Annotation";
 loadedPage.Annotations.Add(rubberStampAnnotation);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     loadedDocument.Save(outputFileStream);

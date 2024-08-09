@@ -7,7 +7,7 @@ using Syncfusion.Pdf.Interactive;
 PdfDocument document = new PdfDocument();
 
 //Get stream from an existing PDF document. 
-Stream fileStream = new FileStream(Path.GetFullPath("../../../Input.txt"), FileMode.Open, FileAccess.Read);
+Stream fileStream = new FileStream(Path.GetFullPath(@"Data/Input.txt"), FileMode.Open, FileAccess.Read);
 
 //Creates an attachment with properties. 
 PdfAttachment attachment = new PdfAttachment("Input.txt", fileStream);
@@ -19,7 +19,7 @@ attachment.MimeType = "application/txt";
 document.Attachments.Add(attachment);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

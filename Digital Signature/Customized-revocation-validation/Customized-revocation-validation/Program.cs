@@ -3,7 +3,7 @@ using Syncfusion.Pdf.Security;
 
 
 //Gets the stream from the document
-FileStream documentStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
+FileStream documentStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 
 //Loads an existing signed PDF document
 

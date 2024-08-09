@@ -1,9 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Security;
-using System.Reflection.Metadata;
+using System.Security.Cryptography.X509Certificates;
+
 //Load a PDF document
-FileStream docStream = new FileStream("../../../Input.pdf", FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(@"Data/Input.pdf", FileMode.Open, FileAccess.Read);
 PdfLoadedDocument document = new PdfLoadedDocument(docStream);
 //Gets the signature field.
 PdfLoadedSignatureField signatureField = document.Form.Fields[0] as PdfLoadedSignatureField;

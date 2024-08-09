@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convert-partial-webpage-to-SVG", "Convert-partial-webpage-to-SVG\Convert-partial-webpage-to-SVG.csproj", "{DFDB51D6-E5B6-42C8-9236-0A15266EAD6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFDB51D6-E5B6-42C8-9236-0A15266EAD6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFDB51D6-E5B6-42C8-9236-0A15266EAD6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFDB51D6-E5B6-42C8-9236-0A15266EAD6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFDB51D6-E5B6-42C8-9236-0A15266EAD6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEAF3935-91FB-43BC-A629-BE0703A7F85A}
+	EndGlobalSection
+EndGlobal

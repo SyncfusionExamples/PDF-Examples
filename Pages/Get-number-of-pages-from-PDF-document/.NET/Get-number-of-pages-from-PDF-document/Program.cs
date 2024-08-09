@@ -3,7 +3,7 @@
 using Syncfusion.Pdf.Parsing;
 
 //Get stream from an existing PDF document.
-FileStream inputFileStream = new FileStream(Path.GetFullPath(@"../../../Input.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
 //Load the PDF document.
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputFileStream);

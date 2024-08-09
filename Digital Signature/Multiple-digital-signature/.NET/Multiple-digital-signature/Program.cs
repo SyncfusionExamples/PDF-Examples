@@ -6,7 +6,7 @@ using Syncfusion.Pdf.Security;
 using Syncfusion.Pdf;
 
 //Load an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath("../../../SignatureFields.pdf"), FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/SignatureFields.pdf"), FileMode.Open, FileAccess.Read);
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
 
 //Get the first page of the document.
@@ -16,14 +16,14 @@ PdfLoadedPage page = loadedDocument.Pages[0] as PdfLoadedPage;
 PdfLoadedSignatureField signatureField1 = loadedDocument.Form.Fields[0] as PdfLoadedSignatureField;
 
 //Create a certificate instance from a PFX file with a private key.
-FileStream certificateStream = new FileStream(Path.GetFullPath("../../../PDF.pfx"), FileMode.Open, FileAccess.Read);
+FileStream certificateStream = new FileStream(Path.GetFullPath(@"Data/PDF.pfx"), FileMode.Open, FileAccess.Read);
 PdfCertificate certificate1 = new PdfCertificate(certificateStream, "syncfusion");
 
 //Add a signature to the signature field.
 signatureField1.Signature = new PdfSignature(loadedDocument, page, certificate1, "Signature", signatureField1);
 
 //Set an image for the signature field.
-FileStream imageStream1 = new FileStream(Path.GetFullPath("../../../Student Signature.jpg"), FileMode.Open, FileAccess.Read);
+FileStream imageStream1 = new FileStream(Path.GetFullPath(@"Data/Student Signature.jpg"), FileMode.Open, FileAccess.Read);
 PdfBitmap signatureImage = new PdfBitmap(imageStream1);
 
 //Insert an image in the signature appearance. 
@@ -46,14 +46,14 @@ PdfLoadedSignatureField signatureField2 = signedDocument.Form.Fields[1] as PdfLo
 signatureField2.Signature = new PdfSignature(signedDocument, loadedPage, certificate1, "Signature", signatureField2);
 
 //Set an image for the signature field.
-FileStream imageStream2 = new FileStream(Path.GetFullPath("../../../Teacher Signature.png"), FileMode.Open, FileAccess.Read);
+FileStream imageStream2 = new FileStream(Path.GetFullPath(@"Data/Teacher Signature.png"), FileMode.Open, FileAccess.Read);
 PdfBitmap signatureImage1 = new PdfBitmap(imageStream2);
 
 //Draw an image in the signature appearance. 
 signatureField2.Signature.Appearance.Normal.Graphics.DrawImage(signatureImage1, 0, 0, 90, 20);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     signedDocument.Save(outputFileStream);

@@ -12,7 +12,7 @@ PdfDocument document = new PdfDocument();
 PdfPage page = document.Pages.Add();
 
 //Get stream from the font file. 
-FileStream fontStream = new FileStream(Path.GetFullPath("../../../Arial.ttf"), FileMode.Open, FileAccess.Read);
+FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/Arial.ttf"), FileMode.Open, FileAccess.Read);
 
 //Create PDF font. 
 PdfFont pdfFont = new PdfTrueTypeFont(fontStream, 14);
@@ -44,7 +44,7 @@ markupAnnotation.TextMarkupAnnotationType = PdfTextMarkupAnnotationType.Highligh
 page.Annotations.Add(markupAnnotation);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

@@ -7,7 +7,7 @@ using Syncfusion.XlsIORenderer;
 using (ExcelEngine excelEngine = new ExcelEngine())
 {
     IApplication application = excelEngine.Excel;
-    FileStream excelStream = new FileStream(Path.GetFullPath("../../../ExcelToPDF.xlsx"), FileMode.Open, FileAccess.Read);
+    FileStream excelStream = new FileStream(Path.GetFullPath(@"Data/ExcelToPDF.xlsx"), FileMode.Open, FileAccess.Read);
     IWorkbook workbook = application.Workbooks.Open(excelStream);
 
     //Initialize XlsIO renderer.
@@ -16,7 +16,7 @@ using (ExcelEngine excelEngine = new ExcelEngine())
     //Convert Excel document into PDF document 
     PdfDocument pdfDocument = renderer.ConvertToPDF(workbook);
 
-    Stream stream = new FileStream(Path.GetFullPath("../../../ExcelToPDF.pdf"), FileMode.Create, FileAccess.ReadWrite);
+    Stream stream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite);
     pdfDocument.Save(stream);
 
     excelStream.Dispose();

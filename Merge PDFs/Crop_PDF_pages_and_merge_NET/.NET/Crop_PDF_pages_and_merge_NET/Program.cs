@@ -7,7 +7,7 @@ using Syncfusion.Pdf.Graphics;
 using Syncfusion.Drawing;
 
 //Get the stream from an existing PDF document.
-FileStream stream1 = new FileStream(Path.GetFullPath("../../../File1.pdf"), FileMode.Open, FileAccess.Read);
+FileStream stream1 = new FileStream(Path.GetFullPath(@"Data/File1.pdf"), FileMode.Open, FileAccess.Read);
 //Load the PDF document. 
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(stream1);
 //Load the page.
@@ -38,13 +38,13 @@ loadedDocument.Close(true);
 //Creates a PDF document.
 PdfDocument finalDocument = new PdfDocument();
 //Get the stream from an existing PDF documents.
-FileStream stream2 = new FileStream(Path.GetFullPath("../../../File2.pdf"), FileMode.Open, FileAccess.Read);
+FileStream stream2 = new FileStream(Path.GetFullPath(@"Data/File2.pdf"), FileMode.Open, FileAccess.Read);
 Stream[] streams = { stream, stream2 };
 //Merges PDF documents.
 PdfDocumentBase.Merge(finalDocument, streams);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     finalDocument.Save(outputFileStream);

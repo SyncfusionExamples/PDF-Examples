@@ -29,7 +29,7 @@ PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 14);
 graphics.DrawString("Rotated by 90 degree", font, brush, new PointF(20, 20));
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

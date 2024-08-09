@@ -32,7 +32,7 @@ namespace Create_PDF_with_basic_elements_NET
             PdfLayoutResult result = element.Draw(page, new RectangleF(0, 0, page.Graphics.ClientSize.Width / 2, 200));
 
             //Draw the image to PDF page with specified size. 
-            FileStream imageStream = new FileStream("../../../Data/logo.jpg", FileMode.Open, FileAccess.Read);
+            FileStream imageStream = new FileStream(@"Data/logo.jpg", FileMode.Open, FileAccess.Read);
             PdfImage img = PdfImage.FromStream(imageStream);
             graphics.DrawImage(img, new RectangleF(graphics.ClientSize.Width - 200, result.Bounds.Y, 190, 45));
             PdfFont subHeadingFont = new PdfStandardFont(PdfFontFamily.TimesRoman, 14);
@@ -150,7 +150,7 @@ namespace Create_PDF_with_basic_elements_NET
             gridResult.Page.Graphics.DrawString('$' + string.Format("{0:N2}", total), font, new PdfSolidBrush(new PdfColor(131, 130, 136)), new RectangleF(new PointF(pos, gridResult.Bounds.Bottom + 20), new SizeF(grid.Columns[4].Width - pos, 20)), new PdfStringFormat(PdfTextAlignment.Right));
 
             //Create file stream.
-            using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+            using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
             {
                 //Save the PDF document to file stream.
                 document.Save(outputFileStream);
@@ -181,7 +181,7 @@ namespace Create_PDF_with_basic_elements_NET
     {
         public static IEnumerable<CustOrders> GetProducts()
         {
-            Stream xmlStream = new FileStream("../../../Data/Products.xml", FileMode.Open, FileAccess.Read);
+            Stream xmlStream = new FileStream(@"Data/Products.xml", FileMode.Open, FileAccess.Read);
 
             using (StreamReader reader = new StreamReader(xmlStream, true))
             {

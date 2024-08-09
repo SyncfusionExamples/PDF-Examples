@@ -2,7 +2,7 @@
 using Syncfusion.Pdf.Parsing;
 
 //Load the PDF document.
-FileStream docStream = new FileStream("../../../Input.pdf", FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(@"Data/Input.pdf", FileMode.Open, FileAccess.Read);
 
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
 
@@ -24,7 +24,7 @@ MemoryStream stream = new MemoryStream();
 
 loadedDocument.Save(stream);
 
-File.WriteAllBytes("../../../Output.pdf", stream.ToArray());
+File.WriteAllBytes("Output/Output.pdf", stream.ToArray());
 //Close the document. 
 
 loadedDocument.Close(true);

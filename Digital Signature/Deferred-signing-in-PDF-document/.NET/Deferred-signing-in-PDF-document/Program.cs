@@ -21,7 +21,7 @@ class Program
     static void CreateEmptySignedPDF()
     {
         // Get the stream from the document.
-        FileStream documentStream = new FileStream(Path.GetFullPath("../../../Barcode.pdf"), FileMode.Open, FileAccess.Read);
+        FileStream documentStream = new FileStream(Path.GetFullPath(@"Data/Barcode.pdf"), FileMode.Open, FileAccess.Read);
 
         //Load an existing PDF document.
         PdfLoadedDocument loadedDocument = new PdfLoadedDocument(documentStream);
@@ -43,7 +43,7 @@ class Program
         signature.AddExternalSigner(externalSignature, certificates, null);
 
         //Save the document.
-        FileStream inputFileStream = new FileStream(Path.GetFullPath("../../../EmptySignature.pdf"), FileMode.Create, FileAccess.ReadWrite);
+        FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Output/EmptySignature.pdf"), FileMode.Create, FileAccess.ReadWrite);
         loadedDocument.Save(inputFileStream);
 
         //Close the PDF document.
@@ -61,10 +61,10 @@ class Program
         publicCertificates.Add(new X509Certificate2(Convert.FromBase64String(PublicCert)));
 
         //Create an output file stream.
-        FileStream outputFileStream = new FileStream(Path.GetFullPath("../../../DeferredSign.pdf"), FileMode.Create, FileAccess.ReadWrite);
+        FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/DeferredSign.pdf"), FileMode.Create, FileAccess.ReadWrite);
 
         // Get the stream from the document
-        FileStream inputFileStream = new FileStream(Path.GetFullPath("../../../EmptySignature.pdf"), FileMode.Open, FileAccess.Read);
+        FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Output/EmptySignature.pdf"), FileMode.Open, FileAccess.Read);
 
         string pdfPassword = string.Empty;
 
@@ -103,7 +103,7 @@ class Program
         //Example for signed docuement hash 
         private void SignDocumentHash(byte[] documentHash)
         {
-            X509Certificate2 digitalID = new X509Certificate2(new X509Certificate2(Path.GetFullPath("../../../PDF.pfx"), "password123"));
+            X509Certificate2 digitalID = new X509Certificate2(new X509Certificate2(Path.GetFullPath(@"Data/PDF.pfx"), "password123"));
             if (digitalID.PrivateKey is System.Security.Cryptography.RSACryptoServiceProvider)
             {
                 System.Security.Cryptography.RSACryptoServiceProvider rsa = (System.Security.Cryptography.RSACryptoServiceProvider)digitalID.PrivateKey;

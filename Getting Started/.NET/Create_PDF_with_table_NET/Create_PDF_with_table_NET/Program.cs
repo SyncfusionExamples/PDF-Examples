@@ -29,7 +29,7 @@ pdfGrid.DataSource = dataTable;
 pdfGrid.Draw(page, new Syncfusion.Drawing.PointF(10, 10));
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     doc.Save(outputFileStream);

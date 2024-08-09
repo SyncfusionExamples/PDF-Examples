@@ -15,7 +15,7 @@ finalDocument.PageSettings.Orientation = PdfPageOrientation.Landscape;
 finalDocument.PageSettings.Margins.All = 0;
 
 //Load an existing PDF document. 
-FileStream stream1 = new FileStream(Path.GetFullPath("../../../File1.pdf"), FileMode.Open, FileAccess.Read);
+FileStream stream1 = new FileStream(Path.GetFullPath(@"Data/File1.pdf"), FileMode.Open, FileAccess.Read);
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(stream1);
 
 for (int i = 0; i < loadedDocument.Pages.Count; i++)
@@ -33,12 +33,12 @@ for (int i = 0; i < loadedDocument.Pages.Count; i++)
 }
 
 //Load an existing PDF document. 
-FileStream stream2 = new FileStream(Path.GetFullPath("../../../File2.pdf"), FileMode.Open, FileAccess.Read);
+FileStream stream2 = new FileStream(Path.GetFullPath(@"Data/File2.pdf"), FileMode.Open, FileAccess.Read);
 PdfLoadedDocument loadedDocument2 = new PdfLoadedDocument(stream2);
 finalDocument.ImportPageRange(loadedDocument2, 0, loadedDocument2.Pages.Count - 1);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     finalDocument.Save(outputFileStream);

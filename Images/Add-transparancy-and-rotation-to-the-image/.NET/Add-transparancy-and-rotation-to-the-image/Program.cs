@@ -10,7 +10,7 @@ PdfDocument document = new PdfDocument();
 PdfPage page = document.Pages.Add();
 
 //Load a image as stream.
-FileStream imageStream = new FileStream(Path.GetFullPath("../../../logo.png"), FileMode.Open, FileAccess.Read);
+FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/logo.png"), FileMode.Open, FileAccess.Read);
 
 //Load a bitmap.
 PdfBitmap image = new PdfBitmap(imageStream);
@@ -34,7 +34,7 @@ image.Draw(page, 0, 100);
 page.Graphics.Restore(state);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream
     document.Save(outputFileStream);

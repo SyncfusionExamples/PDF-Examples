@@ -10,7 +10,7 @@ PdfDocument document = new PdfDocument();
 PdfPage page = document.Pages.Add();
 
 //Get stream from the sound file. 
-FileStream fileStream = new FileStream(Path.GetFullPath("../../../Startup.wav"), FileMode.Open, FileAccess.Read);
+FileStream fileStream = new FileStream(Path.GetFullPath(@"Data/Startup.wav"), FileMode.Open, FileAccess.Read);
 
 //Create a sound action.
 PdfSoundAction soundAction = new PdfSoundAction(fileStream);
@@ -23,7 +23,7 @@ soundAction.Volume = 0.9f;
 document.Actions.AfterOpen = soundAction;
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

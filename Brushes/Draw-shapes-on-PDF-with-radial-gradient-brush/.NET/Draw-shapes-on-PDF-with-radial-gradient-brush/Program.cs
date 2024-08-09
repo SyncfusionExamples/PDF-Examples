@@ -20,7 +20,7 @@ PdfRadialGradientBrush brush = new PdfRadialGradientBrush(new PointF(50, 50), 0,
 graphics.DrawEllipse(brush, new RectangleF(0, 0, 100, 100));
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

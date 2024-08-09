@@ -3,7 +3,7 @@
 using Syncfusion.Pdf.Parsing;
 
 //Load an existing PDF document.
-FileStream docStream = new FileStream(Path.GetFullPath("../../../SignedPDF.pdf"), FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/SignedPDF.pdf"), FileMode.Open, FileAccess.Read);
 PdfLoadedDocument pdfLoadedDocument = new PdfLoadedDocument(docStream);
 
 //Get the signature field from PDF form field collection.
@@ -13,7 +13,7 @@ PdfLoadedSignatureField signatureField = pdfLoadedDocument.Form.Fields[0] as Pdf
 pdfLoadedDocument.Form.Fields.Remove(signatureField);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     pdfLoadedDocument.Save(outputFileStream);

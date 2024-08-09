@@ -11,7 +11,7 @@ PdfDocument document = new PdfDocument();
 PdfPageBase page = document.Pages.Add();
 
 //Creates a certificate instance from the PFX file with a private key.
-FileStream certificateStream = new FileStream(Path.GetFullPath("../../../PDF.pfx"), FileMode.Open, FileAccess.Read);
+FileStream certificateStream = new FileStream(Path.GetFullPath(@"Data/PDF.pfx"), FileMode.Open, FileAccess.Read);
 PdfCertificate pdfCert = new PdfCertificate(certificateStream, "syncfusion");
 
 //Add a new signature to the PDF page.
@@ -22,7 +22,7 @@ signature.Bounds = new Rectangle(10, 20, 400, 200);
 signature.EstimatedSignatureSize = 20000;
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

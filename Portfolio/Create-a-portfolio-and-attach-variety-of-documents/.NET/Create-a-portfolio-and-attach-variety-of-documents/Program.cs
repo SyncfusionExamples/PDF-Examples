@@ -13,7 +13,7 @@ document.PortfolioInformation = new PdfPortfolioInformation();
 document.PortfolioInformation.ViewMode = PdfPortfolioViewMode.Tile;
 
 //Get stream from the attachment PDF file. 
-FileStream pdfStream = new FileStream(Path.GetFullPath("../../../CorporateBrochure.pdf"), FileMode.Open, FileAccess.Read);
+FileStream pdfStream = new FileStream(Path.GetFullPath(@"Data/CorporateBrochure.pdf"), FileMode.Open, FileAccess.Read);
 
 //Create the attachment.
 PdfAttachment pdfFile = new PdfAttachment("CorporateBrochure.pdf", pdfStream);
@@ -28,7 +28,7 @@ document.PortfolioInformation.StartupDocument = pdfFile;
 document.Attachments.Add(pdfFile);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

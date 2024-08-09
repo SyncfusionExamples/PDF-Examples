@@ -7,7 +7,7 @@ using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Security;
 
 //Load the PDF document.
-FileStream docStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
 
 //Gets the page.
@@ -19,7 +19,7 @@ signatureField.Bounds = new RectangleF(0, 0, 100, 100);
 signatureField.Signature = new PdfSignature();
 
 //Adds certificate to the signature field.
-FileStream certificateStream = new FileStream(Path.GetFullPath("../../../PDF.pfx"), FileMode.Open, FileAccess.Read);
+FileStream certificateStream = new FileStream(Path.GetFullPath(@"Data/PDF.pfx"), FileMode.Open, FileAccess.Read);
 signatureField.Signature.Certificate = new PdfCertificate(certificateStream, "syncfusion");
 signatureField.Signature.Reason = "I am author of this document";
 
@@ -27,7 +27,7 @@ signatureField.Signature.Reason = "I am author of this document";
 loadedDocument.Form.Fields.Add(signatureField);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     loadedDocument.Save(outputFileStream);
