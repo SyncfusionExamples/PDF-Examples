@@ -11,4 +11,16 @@
     <PackageReference Include="Syncfusion.PDF.OCR.NET" Version="*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\DigitalSignature.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Intermediate0.cer">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Root.cer">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

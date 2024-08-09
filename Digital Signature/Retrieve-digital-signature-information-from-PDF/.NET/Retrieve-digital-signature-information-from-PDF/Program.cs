@@ -4,7 +4,7 @@ using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Security;
 
 //Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath("../../../SignedPDF.pdf"), FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/SignedPDF.pdf"), FileMode.Open, FileAccess.Read);
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
 
 //Get the signature field from PdfLoadedDocument form field collection.

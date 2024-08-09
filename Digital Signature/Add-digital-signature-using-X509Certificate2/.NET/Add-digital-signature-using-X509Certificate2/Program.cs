@@ -16,14 +16,14 @@ PdfPage page = document.Pages.Add();
 PdfGraphics graphics = page.Graphics;
 
 //Creates a certificate instance from PFX file with private key.
-X509Certificate2 certificate = new X509Certificate2(Path.GetFullPath("../../../PDF.pfx"), "syncfusion");
+X509Certificate2 certificate = new X509Certificate2(Path.GetFullPath(@"Data/PDF.pfx"), "syncfusion");
 PdfCertificate pdfCertificate = new PdfCertificate(certificate);
 
 //Creates a digital signature.
 PdfSignature signature = new PdfSignature(document, page, pdfCertificate, "Signature");
 
 //Sets an image for signature field.
-FileStream imageStream = new FileStream(Path.GetFullPath("../../../signature.png"), FileMode.Open, FileAccess.Read);
+FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/signature.png"), FileMode.Open, FileAccess.Read);
 PdfBitmap signatureImage = new PdfBitmap(imageStream);
 
 //Sets signature information.
@@ -36,7 +36,7 @@ signature.Reason = "I am author of this document.";
 signature.Appearance.Normal.Graphics.DrawImage(signatureImage, 0, 0);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

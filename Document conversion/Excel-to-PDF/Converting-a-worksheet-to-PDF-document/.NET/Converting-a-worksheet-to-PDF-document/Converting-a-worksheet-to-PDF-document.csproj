@@ -12,4 +12,13 @@
     <PackageReference Include="Syncfusion.XlsIORenderer.NET" Version="*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\ExcelToPDF.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Output\.gitkeep">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

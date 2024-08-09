@@ -17,7 +17,7 @@ RectangleF bounds = new RectangleF(0, 0, pdfDocument.Pages[0].GetClientSize().Wi
 PdfPageTemplateElement header = new PdfPageTemplateElement(bounds);
 
 //Get stream from the image file. 
-FileStream imageStream = new FileStream(Path.GetFullPath("../../../Logo.jpg"), FileMode.Open, FileAccess.Read);
+FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/Logo.jpg"), FileMode.Open, FileAccess.Read);
 
 //Load the image file. 
 PdfImage image = new PdfBitmap(imageStream);
@@ -60,7 +60,7 @@ font = new PdfStandardFont(PdfFontFamily.Helvetica, 25);
 pdfPage.Graphics.DrawString("Hello World!!!", font, PdfBrushes.Red, new PointF(10,10));
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     pdfDocument.Save(outputFileStream);

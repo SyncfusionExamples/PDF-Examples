@@ -6,7 +6,7 @@ using Syncfusion.Pdf;
 using System.Reflection.Metadata;
 
 //Open the file as Stream.
-FileStream docStream = new FileStream(Path.GetFullPath("../../../Essential PDF.rtf"), FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Essential PDF.rtf"), FileMode.Open, FileAccess.Read);
 
 //Loads file stream into Word document.
 WordDocument wordDocument = new WordDocument(docStream, Syncfusion.DocIO.FormatType.Automatic);
@@ -22,7 +22,7 @@ render.Dispose();
 wordDocument.Dispose();
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     pdfDocument.Save(outputFileStream);

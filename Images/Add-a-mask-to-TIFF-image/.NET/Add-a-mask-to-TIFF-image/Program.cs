@@ -13,13 +13,13 @@ PdfPage page = document.Pages.Add();
 PdfGraphics graphics = page.Graphics;
 
 //Get stream from the existing TIF file. 
-FileStream imageStream = new FileStream(Path.GetFullPath("../../../image.tif"), FileMode.Open, FileAccess.Read);
+FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/image.tif"), FileMode.Open, FileAccess.Read);
 
 //Load the image from stream. 
 PdfTiffImage image = new PdfTiffImage(imageStream);
 
 //Get stream from the image file. 
-FileStream maskStream = new FileStream(Path.GetFullPath("../../../mask2.bmp"), FileMode.Open, FileAccess.Read);
+FileStream maskStream = new FileStream(Path.GetFullPath(@"Data/mask2.bmp"), FileMode.Open, FileAccess.Read);
 
 //Load the image mask file from stream. 
 PdfImageMask mask = new PdfImageMask(new PdfTiffImage(maskStream));
@@ -31,7 +31,7 @@ image.Mask = mask;
 graphics.DrawImage(image, 0, 0);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream
     document.Save(outputFileStream);

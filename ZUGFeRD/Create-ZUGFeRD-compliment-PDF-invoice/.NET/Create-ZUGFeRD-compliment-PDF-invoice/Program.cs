@@ -10,7 +10,7 @@ PdfDocument document = new PdfDocument(PdfConformanceLevel.Pdf_A3B);
 document.ZugferdConformanceLevel = ZugferdConformanceLevel.Basic;
 
 //Get stream from the XML file
-FileStream invoiceStream = new FileStream(Path.GetFullPath("../../../ZUGFeRD_invoice.xml"), FileMode.Open, FileAccess.Read);
+FileStream invoiceStream = new FileStream(Path.GetFullPath(@"Data/ZUGFeRD_invoice.xml"), FileMode.Open, FileAccess.Read);
 
 //Create an attachment with some properties.
 PdfAttachment attachment = new PdfAttachment("ZUGFeRD-invoice.xml", invoiceStream);
@@ -23,7 +23,7 @@ attachment.MimeType = "application/xml";
 document.Attachments.Add(attachment);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

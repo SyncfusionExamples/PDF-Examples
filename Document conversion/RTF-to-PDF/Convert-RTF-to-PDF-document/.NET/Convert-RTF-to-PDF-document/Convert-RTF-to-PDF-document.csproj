@@ -12,4 +12,13 @@
     <PackageReference Include="Syncfusion.DocIORenderer.NET" Version="*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\Essential PDF.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Output\.gitkeep">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

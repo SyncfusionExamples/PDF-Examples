@@ -3,7 +3,7 @@
 using Syncfusion.Pdf.Parsing;
 
 //Get stream from an existing PDF document.
-FileStream docStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 
 //Load the PDF document.
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
@@ -19,7 +19,7 @@ PdfLoadedTextBoxField loadedTextBoxField = loadedForm.Fields[0] as PdfLoadedText
 loadedTextBoxField.Text = "John";
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     loadedDocument.Save(outputFileStream);

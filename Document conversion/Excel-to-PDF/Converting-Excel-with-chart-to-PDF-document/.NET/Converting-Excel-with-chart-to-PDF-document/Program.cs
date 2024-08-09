@@ -12,14 +12,14 @@ using (ExcelEngine excelEngine = new ExcelEngine())
     XlsIORenderer renderer = new XlsIORenderer();
 
     //Get stream from an existing Excel file. 
-    FileStream excelStream = new FileStream(Path.GetFullPath("../../../EmbeddedChart.xlsx"), FileMode.Open, FileAccess.Read);
+    FileStream excelStream = new FileStream(Path.GetFullPath(@"Data/EmbeddedChart.xlsx"), FileMode.Open, FileAccess.Read);
     IWorkbook workbook = application.Workbooks.Open(excelStream);
 
     //Convert Excel document with charts into PDF document 
     PdfDocument pdfDocument = renderer.ConvertToPDF(workbook);
 
     //Save the PDF document. 
-    Stream stream = new FileStream(Path.GetFullPath("../../../ExcelToPDF.pdf"), FileMode.Create, FileAccess.ReadWrite);
+    Stream stream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite);
     pdfDocument.Save(stream);
 
     excelStream.Dispose();
