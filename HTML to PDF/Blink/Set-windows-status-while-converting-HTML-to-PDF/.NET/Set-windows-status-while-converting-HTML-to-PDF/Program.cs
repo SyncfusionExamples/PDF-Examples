@@ -16,10 +16,10 @@ blinkConverterSettings.WindowStatus = "completed";
 htmlConverter.ConverterSettings = blinkConverterSettings;
 
 //Convert URL to PDF document. 
-PdfDocument document = htmlConverter.Convert(Path.GetFullPath("../../../input.html"));
+PdfDocument document = htmlConverter.Convert(Path.GetFullPath(@"Data/Input.html"));
 
 //Create file stream. 
-FileStream fileStream = new FileStream(Path.GetFullPath("../../../HTML-to-PDF.pdf"), FileMode.CreateNew, FileAccess.ReadWrite);
+FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/HTML-to-PDF.pdf"), FileMode.CreateNew, FileAccess.ReadWrite);
 
 //Save and close the PDF document 
 document.Save(fileStream);

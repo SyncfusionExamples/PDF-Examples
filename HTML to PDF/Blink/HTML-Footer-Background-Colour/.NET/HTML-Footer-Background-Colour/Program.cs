@@ -22,7 +22,7 @@ htmlConverter.ConverterSettings = blinkConverterSettings;
 PdfDocument document = htmlConverter.Convert("<div>Hello World</div>",string.Empty);
 
 //Create a filestream.
-FileStream fileStream = new FileStream("Output.pdf", FileMode.Create, FileAccess.ReadWrite);
+FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite);
 //Save and close a PDF document.
 document.Save(fileStream);
 document.Close(true);

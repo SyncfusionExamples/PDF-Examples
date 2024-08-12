@@ -11,4 +11,16 @@
     <PackageReference Include="Syncfusion.HtmlToPdfConverter.Net.Windows" Version="*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\footer.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Header.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Output\.gitkeep">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

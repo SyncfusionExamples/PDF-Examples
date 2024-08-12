@@ -13,4 +13,4 @@ Image image = htmlConverter.ConvertToImage("https://www.google.com");
 byte[] imageByte = image.ImageData;
 
 //Save the image.
-File.WriteAllBytes(Path.GetFullPath("../../../Output.jpg"), imageByte);
+File.WriteAllBytes(Path.GetFullPath(@"Output/Output.jpg"), imageByte);

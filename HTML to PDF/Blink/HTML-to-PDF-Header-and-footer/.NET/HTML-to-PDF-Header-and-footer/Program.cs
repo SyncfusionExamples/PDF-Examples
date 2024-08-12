@@ -37,7 +37,7 @@ namespace HTML_to_PDF_Header_and_footer {
             PdfDocument document = htmlConverter.Convert("https://www.google.com/");
 
             //Create a file stream.
-            FileStream fileStream = new FileStream("Output.pdf", FileMode.Create, FileAccess.ReadWrite);
+            FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/HTML-to-PDF.pdf"), FileMode.Create, FileAccess.ReadWrite);
             //Save a PDF document to the file stream.
             document.Save(fileStream);
             //Close the document.
