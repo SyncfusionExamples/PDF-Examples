@@ -6,7 +6,7 @@ using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Redaction;
 
 //Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 
 //Load the existing PDF document from stream. 
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
@@ -23,7 +23,7 @@ page.AddRedaction(redaction);
 loadedDocument.RedactionProgress += redaction_TrackProgress;
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
 	//Save the PDF document to file stream.
 	loadedDocument.Save(outputFileStream);

@@ -42,7 +42,7 @@ textLink.Brush = PdfBrushes.Blue;
 textLink.DrawTextWebLink(page, new PointF(10, 40));
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

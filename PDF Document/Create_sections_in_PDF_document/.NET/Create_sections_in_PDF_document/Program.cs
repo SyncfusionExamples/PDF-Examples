@@ -26,7 +26,7 @@ PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
 graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
 
 //Save the document.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     document.Save(outputFileStream);
 }

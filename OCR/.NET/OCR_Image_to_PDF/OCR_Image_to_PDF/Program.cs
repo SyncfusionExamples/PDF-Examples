@@ -7,13 +7,13 @@ using Syncfusion.Pdf;
 using (OCRProcessor processor = new OCRProcessor())
 {
     //Get stream from an image file. 
-    FileStream imageStream = new FileStream("../../../Input.jpg", FileMode.Open);
+    FileStream imageStream = new FileStream(@"Data/Input.jpg", FileMode.Open);
 
     //Set OCR language to process.
     processor.Settings.Language = Languages.English;
 
     //Sets Unicode font to preserve the Unicode characters in a PDF document.
-    FileStream fontStream = new FileStream("../../../ARIALUNI.ttf", FileMode.Open);
+    FileStream fontStream = new FileStream(@"Data/ARIALUNI.ttf", FileMode.Open);
 
     //Set the unicode font. 
     processor.UnicodeFont = new PdfTrueTypeFont(fontStream, true, PdfFontStyle.Regular, 10);
@@ -25,7 +25,7 @@ using (OCRProcessor processor = new OCRProcessor())
     PdfDocument document = processor.PerformOCR(imageStream);
 
     //Create file stream.
-    using (FileStream outputFileStream = new FileStream("Output.pdf", FileMode.Create, FileAccess.ReadWrite))
+    using (FileStream outputFileStream = new FileStream(@"Output/Output.pdf", FileMode.Create, FileAccess.ReadWrite))
     {
         //Save the PDF document to file stream.
         document.Save(outputFileStream);

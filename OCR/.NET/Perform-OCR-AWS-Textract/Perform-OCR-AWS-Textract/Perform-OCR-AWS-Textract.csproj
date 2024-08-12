@@ -13,4 +13,13 @@
     <PackageReference Include="Syncfusion.PDF.OCR.NET" Version="*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\Region.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Output\.gitkeep">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

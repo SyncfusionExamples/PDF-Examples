@@ -11,7 +11,7 @@ PdfDocument document = new PdfDocument();
 PdfPage page = document.Pages.Add();
 
 //Get stream from OTF font file. 
-FileStream fontFileStream = new FileStream(Path.GetFullPath(@"../../../font.otf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+FileStream fontFileStream = new FileStream(Path.GetFullPath(@"Data/font.otf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
 //Create font. 
 PdfFont font = new PdfTrueTypeFont(fontFileStream, 14);
@@ -33,7 +33,7 @@ RectangleF rect = new RectangleF(0, 0, clipBounds.Width, clipBounds.Height);
 page.Graphics.DrawString(text, font, brush, rect);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

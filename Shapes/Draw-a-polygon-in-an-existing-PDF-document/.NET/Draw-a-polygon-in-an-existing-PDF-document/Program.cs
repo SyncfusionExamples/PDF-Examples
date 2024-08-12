@@ -6,7 +6,7 @@ using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Parsing;
 
 //Load the PDF document as stream.
-FileStream inputStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open);
+FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open);
 
 //Load the PDF document. 
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputStream);
@@ -32,7 +32,7 @@ PointF[] points = { p1, p2, p3, p4, p5 };
 loadedPage.Graphics.DrawPolygon(pen, brush, points);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     loadedDocument.Save(outputFileStream);

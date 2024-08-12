@@ -3,7 +3,7 @@ using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf;
 
 // Load the PDF document 
-using (FileStream fileStream = new FileStream("../../../Input.pdf", FileMode.Open, FileAccess.Read))
+using (FileStream fileStream = new FileStream(@"Data/Input.pdf", FileMode.Open, FileAccess.Read))
 using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(fileStream))
 {
     PdfBookmarkBase bookmarks = loadedDocument.Bookmarks;
@@ -26,7 +26,7 @@ using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(fileStream))
                     // Import the pages to the new PDF document 
                     document.ImportPageRange(loadedDocument, bookmark.Destination.PageIndex, endIndex);
                     //Save the document as stream
-                    using (FileStream stream = new FileStream(bookmark.Title +".pdf",FileMode.CreateNew,FileAccess.Write))
+                    using (FileStream stream = new FileStream("Output/" + bookmark.Title +".pdf",FileMode.CreateNew,FileAccess.Write))
                     {
                         document.Save(stream);
                     }

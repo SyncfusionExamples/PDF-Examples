@@ -12,7 +12,7 @@ PdfPage page = document.Pages.Add();
 
 // Load the font file from the stream 
 
-FileStream fontStream = new FileStream(@"../../../arial.ttf", FileMode.Open, FileAccess.Read);
+FileStream fontStream = new FileStream(@"Data/arial.ttf", FileMode.Open, FileAccess.Read);
 
 //Create a new PDF font instance 
 
@@ -44,7 +44,7 @@ MemoryStream stream = new MemoryStream();
 
 document.Save(stream);
 
-File.WriteAllBytes("../../../Output.pdf", stream.ToArray());
+File.WriteAllBytes("Output/Output.pdf", stream.ToArray());
     
 //Close the document 
 

@@ -10,13 +10,13 @@ string tessdataPath = Path.GetFullPath("../../../../../Tessdata");
 using (OCRProcessor processor = new OCRProcessor())
 {
     //Get stream from the image file. 
-    FileStream stream = new FileStream(Path.GetFullPath("../../../Input.jpg"), FileMode.Open);
+    FileStream stream = new FileStream(Path.GetFullPath(@"Data/Input.jpg"), FileMode.Open);
 
     //Set OCR language to process.
     processor.Settings.Language = Languages.English;
 
     //Sets Unicode font to preserve the Unicode characters in a PDF document.
-    FileStream fontStream = new FileStream(Path.GetFullPath("../../../ARIALUNI.ttf"), FileMode.Open);
+    FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/ARIALUNI.ttf"), FileMode.Open);
 
     processor.UnicodeFont = new PdfTrueTypeFont(fontStream, 8);
 
@@ -24,7 +24,7 @@ using (OCRProcessor processor = new OCRProcessor())
     string ocrText = processor.PerformOCR(stream, tessdataPath);
 
     //Write the OCR'ed text in text file. 
-    using (StreamWriter writer = new StreamWriter(Path.GetFullPath("../../../OCRText.txt"), true))
+    using (StreamWriter writer = new StreamWriter(Path.GetFullPath("Output/Output.txt"), true))
     {
         writer.WriteLine(ocrText);
     }

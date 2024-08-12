@@ -14,9 +14,9 @@ PdfPage page = document.Pages.Add();
 PdfGraphics graphics = page.Graphics;
 
 //Get stream from font stream. 
-FileStream fontStream1 = new FileStream(Path.GetFullPath("../../../tahoma.ttf"), FileMode.Open, FileAccess.Read);
-FileStream fontStream2 = new FileStream(Path.GetFullPath("../../../Arial.ttf"), FileMode.Open, FileAccess.Read);
-FileStream fontStream3 = new FileStream(Path.GetFullPath("../../../Calibri.ttf"), FileMode.Open, FileAccess.Read);
+FileStream fontStream1 = new FileStream(Path.GetFullPath(@"Data/tahoma.ttf"), FileMode.Open, FileAccess.Read);
+FileStream fontStream2 = new FileStream(Path.GetFullPath(@"Data/Arial.ttf"), FileMode.Open, FileAccess.Read);
+FileStream fontStream3 = new FileStream(Path.GetFullPath(@"Data/Calibri.ttf"), FileMode.Open, FileAccess.Read);
 
 //Create a new PDF font instance.
 PdfFont font = new PdfTrueTypeFont(fontStream1, 8);
@@ -40,7 +40,7 @@ graphics.DrawString("Hello World!", font2, PdfBrushes.Black, new PointF(220, 50)
 graphics.DrawString("Hello World!", font3, PdfBrushes.Black, new PointF(320, 50), format);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

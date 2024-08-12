@@ -43,7 +43,7 @@ PdfGridCell gridCell = pdfGrid.Rows[0].Cells[0];
 gridCell.Style = gridCellStyle;
 
 //Initialize PdfGridCellStyle and set background image.
-FileStream imageStream = new FileStream(Path.GetFullPath("../../../Autumn Leaves.jpg"), FileMode.Open);
+FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/Autumn Leaves.jpg"), FileMode.Open);
 gridCellStyle = new PdfGridCellStyle();
 gridCellStyle.BackgroundImage = PdfImage.FromStream(imageStream);
 
@@ -84,7 +84,7 @@ gridCell.StringFormat = stringFormat;
 pdfGrid.Draw(pdfPage, new PointF(10, 10));
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     pdfDocument.Save(outputFileStream);

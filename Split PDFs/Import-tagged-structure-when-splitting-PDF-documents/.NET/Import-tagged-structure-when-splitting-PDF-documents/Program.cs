@@ -8,13 +8,13 @@ namespace Import_tagged_structure_when_splitting_PDF_documents
         static void Main(string[] args)
         {
             //Load an existing PDF file.
-            PdfLoadedDocument loadDocument = new PdfLoadedDocument(new FileStream("../../../Input.pdf", FileMode.Open));
+            PdfLoadedDocument loadDocument = new PdfLoadedDocument(new FileStream(@"Data/Input.pdf", FileMode.Open));
             //Subscribe to the document split event.
             loadDocument.DocumentSplitEvent += LoadDocument_DocumentSplitEvent;
             void LoadDocument_DocumentSplitEvent(object sender, PdfDocumentSplitEventArgs args)
             {
                 //Save the resulting document.
-                FileStream outputStream = new FileStream(Guid.NewGuid().ToString() + ".pdf", FileMode.CreateNew);
+                FileStream outputStream = new FileStream(@"Output/" + Guid.NewGuid().ToString() + ".pdf", FileMode.CreateNew);
                 args.PdfDocumentData.CopyTo(outputStream);
                 outputStream.Close();
             }

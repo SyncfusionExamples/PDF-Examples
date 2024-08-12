@@ -11,4 +11,16 @@
     <PackageReference Include="Syncfusion.PDF.OCR.Net.Core" Version="*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\ARIALUNI.TTF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Input.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Output\.gitkeep">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

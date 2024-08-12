@@ -6,7 +6,7 @@ using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Parsing;
 
 //Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 
 //Load the PDF document. 
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
@@ -18,7 +18,7 @@ PdfPageBase loadedPage = loadedDocument.Pages[0];
 PdfGraphics graphics = loadedPage.Graphics;
 
 //Load the image file as stream.
-FileStream imageStream = new FileStream(Path.GetFullPath("../../../design.png"), FileMode.Open, FileAccess.Read);
+FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/design.png"), FileMode.Open, FileAccess.Read);
 
 //Load the image file.
 PdfImage image = new PdfBitmap(imageStream);
@@ -33,7 +33,7 @@ graphics.SetTransparency(0.25f);
 graphics.DrawImage(image, new PointF(0, 0), loadedPage.Graphics.ClientSize);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     loadedDocument.Save(outputFileStream);

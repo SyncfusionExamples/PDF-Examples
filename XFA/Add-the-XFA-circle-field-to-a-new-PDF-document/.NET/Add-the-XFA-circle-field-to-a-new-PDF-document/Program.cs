@@ -25,7 +25,7 @@ mainForm.Fields.Add(circle);
 document.XfaForm = mainForm;
 
 //Save the document.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     document.Save(outputFileStream, PdfXfaType.Dynamic);
 }

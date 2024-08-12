@@ -11,7 +11,7 @@ PdfDocument document = new PdfDocument(PdfConformanceLevel.Pdf_A4);
 PdfPage page = document.Pages.Add();
 
 //Get stream from the U3D annotation file.  
-FileStream inputStream = new FileStream(Path.GetFullPath("../../../design.U3D"), FileMode.Open, FileAccess.Read);
+FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/design.U3D"), FileMode.Open, FileAccess.Read);
 
 //Create a new pdf 3d annotation. 
 Pdf3DAnnotation pdf3dAnnotation = new Pdf3DAnnotation(new RectangleF(10, 50, 300, 150), inputStream);
@@ -25,7 +25,7 @@ activation.ShowToolbar = true; pdf3dAnnotation.Activation = activation;
 page.Annotations.Add(pdf3dAnnotation);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

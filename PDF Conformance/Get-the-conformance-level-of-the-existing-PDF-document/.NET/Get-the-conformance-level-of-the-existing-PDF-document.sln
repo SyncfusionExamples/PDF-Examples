@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Get-the-conformance-level-of-the-existing-PDF-document", "Get-the-conformance-level-of-the-existing-PDF-document\Get-the-conformance-level-of-the-existing-PDF-document.csproj", "{BFCA6722-1EE2-473E-BCDF-5E8BA8A4248C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Get-the-conformance-level-of-the-existing-PDF-document", "Get-the-conformance-level-of-the-existing-PDF-document.csproj", "{BFCA6722-1EE2-473E-BCDF-5E8BA8A4248C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

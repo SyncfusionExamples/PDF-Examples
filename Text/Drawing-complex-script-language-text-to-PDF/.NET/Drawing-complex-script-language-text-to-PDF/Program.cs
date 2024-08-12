@@ -14,7 +14,7 @@ PdfPage page = document.Pages.Add();
 PdfGraphics graphics = page.Graphics;
 
 //Get stream from font file.
-FileStream fontStream = new FileStream(Path.GetFullPath("../../../tahoma.ttf"), FileMode.Open, FileAccess.Read);
+FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/tahoma.ttf"), FileMode.Open, FileAccess.Read);
 
 //Create a new PDF font instance.
 PdfFont pdfFont = new PdfTrueTypeFont(fontStream, 10);
@@ -29,7 +29,7 @@ format.ComplexScript = true;
 graphics.DrawString("สวัสดีชาวโลก", pdfFont, PdfBrushes.Black, new RectangleF(0, 0, page.GetClientSize().Width, page.GetClientSize().Height), format);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream
     document.Save(outputFileStream);

@@ -27,7 +27,7 @@ for (int i = 0; i < 10; i++)
 document.SaveProgress += new PdfDocument.ProgressEventHandler(document_SaveProgress);
 
 // Create a file stream to save the PDF document.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     // Save the PDF document to the file stream.
     document.Save(outputFileStream);

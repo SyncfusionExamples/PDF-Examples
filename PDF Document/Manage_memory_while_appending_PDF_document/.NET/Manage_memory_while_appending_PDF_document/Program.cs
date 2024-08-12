@@ -4,7 +4,7 @@
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 
-FileStream fileStreamPath = new FileStream(Path.GetFullPath(@"../../../File1.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+FileStream fileStreamPath = new FileStream(Path.GetFullPath(@"Data/File1.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
 //Load the PDF document.
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(fileStreamPath);
@@ -19,7 +19,7 @@ document.EnableMemoryOptimization = true;
 document.Append(loadedDocument);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream
     document.Save(outputFileStream);

@@ -6,7 +6,7 @@ using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Parsing;
 
 //Get stream from an existing PDF document. 
-FileStream inputStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open);
+FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open);
 
 //Load the PDF document. 
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputStream);
@@ -25,7 +25,7 @@ PointF point2 = new PointF(10, 100);
 loadedPage.Graphics.DrawLine(pen, point1, point2);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     loadedDocument.Save(outputFileStream);

@@ -4,7 +4,7 @@ using Syncfusion.Drawing;
 using Syncfusion.Pdf.Xfa;
 
 //Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 
 //Load the existing XFA document.
 PdfLoadedXfaDocument loadedDocument = new PdfLoadedXfaDocument(docStream);
@@ -22,7 +22,7 @@ circle.Border.FillColor = new PdfXfaSolidBrush(Color.FromArgb(0, 255, 0, 0));
 loadedForm.Fields.Add(circle);
 
 //Save the document.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     loadedDocument.Save(outputFileStream);
 }

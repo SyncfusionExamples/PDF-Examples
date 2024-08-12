@@ -15,7 +15,7 @@ PdfPage page = document.Pages.Add();
 PdfGraphics graphics = page.Graphics;
 
 //Create font.
-FileStream fontStream = new FileStream(Path.GetFullPath("../../../Arial.ttf"), FileMode.Open, FileAccess.Read);
+FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/Arial.ttf"), FileMode.Open, FileAccess.Read);
 PdfFont font = new PdfTrueTypeFont(fontStream, 14);
 
 //Set the format for string.
@@ -29,7 +29,7 @@ format.Alignment = PdfTextAlignment.Right;
 format.ParagraphIndent = 35f;
 
 //Read the text from file.
-FileStream rtlText = new FileStream(Path.GetFullPath("../../../Arabic.txt"), FileMode.Open, FileAccess.Read);
+FileStream rtlText = new FileStream(Path.GetFullPath(@"Data/Arabic.txt"), FileMode.Open, FileAccess.Read);
 StreamReader reader = new StreamReader(rtlText);
 string text = reader.ReadToEnd();
 reader.Dispose();
@@ -47,7 +47,7 @@ format.Alignment = PdfTextAlignment.Left;
 graphics.DrawString(text, font, PdfBrushes.Black, new RectangleF(0, 100, page.GetClientSize().Width, page.GetClientSize().Height), format);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

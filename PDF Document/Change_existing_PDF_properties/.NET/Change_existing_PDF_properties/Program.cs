@@ -3,7 +3,7 @@
 using Syncfusion.Pdf.Parsing;
 
 //Get stream from an existing PDF document.  
-FileStream fileStreamPath = new FileStream(Path.GetFullPath(@"../../../Input.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+FileStream fileStreamPath = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
 //Load the PDF document. 
 PdfLoadedDocument document = new PdfLoadedDocument(fileStreamPath);
@@ -19,7 +19,7 @@ document.DocumentInformation.ModificationDate = DateTime.Now;
 document.DocumentInformation.Producer = "Syncfusion PDF";
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document.
     document.Save(outputFileStream);

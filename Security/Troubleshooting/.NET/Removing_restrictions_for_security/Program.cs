@@ -3,7 +3,7 @@ using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Security;
 using System.Security.Cryptography;
 
-FileStream fileStream = new FileStream("OwnerPasswordOnly.pdf", FileMode.Open, FileAccess.Read);
+FileStream fileStream = new FileStream(@"Data/OwnerPasswordOnly.pdf", FileMode.Open, FileAccess.Read);
 // Load the PDF document from the FileStream with the specified owner password.
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(fileStream, "12345");
 // Access the security settings of the loaded PDF document.
@@ -23,4 +23,4 @@ loadedDocument.Save(stream);
 // Close the loaded PDF document.
 loadedDocument.Close(true);
 // Write the contents of the MemoryStream.
-File.WriteAllBytes("output.pdf", stream.ToArray());
+File.WriteAllBytes(@"Output/Output.pdf", stream.ToArray());

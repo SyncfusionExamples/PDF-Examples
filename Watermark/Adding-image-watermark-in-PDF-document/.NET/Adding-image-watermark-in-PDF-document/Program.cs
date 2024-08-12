@@ -14,7 +14,7 @@ PdfPage pdfPage = pdfDocument.Pages.Add();
 PdfGraphics graphics = pdfPage.Graphics;
 
 //Load the image as stream.
-FileStream imageStream = new FileStream(Path.GetFullPath("../../../design.png"), FileMode.Open, FileAccess.Read);
+FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/design.png"), FileMode.Open, FileAccess.Read);
 
 //Image watermark.
 PdfImage image = new PdfBitmap(imageStream);
@@ -29,7 +29,7 @@ graphics.SetTransparency(0.25f);
 graphics.DrawImage(image, new PointF(0, 0), pdfPage.Graphics.ClientSize);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     pdfDocument.Save(outputFileStream);

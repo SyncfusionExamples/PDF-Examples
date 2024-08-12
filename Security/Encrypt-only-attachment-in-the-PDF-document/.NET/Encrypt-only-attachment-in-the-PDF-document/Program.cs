@@ -36,7 +36,7 @@ security.UserPassword = "password";
 graphics.DrawString("Encrypted only attachments with AES 256bit", font, brush, new PointF(0, 40));
 
 //Creates an attachment.
-FileStream textFileStream = new FileStream(Path.GetFullPath(@"../../../input.txt"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+FileStream textFileStream = new FileStream(Path.GetFullPath(@"Data/input.txt"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 PdfAttachment attachment = new PdfAttachment("input.txt", textFileStream);
 attachment.ModificationDate = DateTime.Now;
 attachment.Description = "Input.txt";
@@ -46,7 +46,7 @@ attachment.MimeType = "application/txt";
 document.Attachments.Add(attachment);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

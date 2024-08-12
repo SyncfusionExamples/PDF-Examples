@@ -5,7 +5,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 string matchText = string.Empty;
 //Load an existing PDF document. 
-FileStream docStream = new FileStream("../../../Input.pdf", FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(@"Data/Input.pdf", FileMode.Open, FileAccess.Read);
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
 
 //Returns page number and rectangle positions of the text maches. 

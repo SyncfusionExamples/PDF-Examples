@@ -11,4 +11,13 @@
     <PackageReference Include="Syncfusion.Pdf.NET" Version="*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\Arial.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Output\.gitkeep">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
