@@ -2,7 +2,7 @@
 
 using Syncfusion.Pdf.Barcode;
 using Syncfusion.Pdf.Graphics;
-using System.Drawing;
+using Syncfusion.Drawing;
 
 //Initialize a new PdfCode39Barcode instance.
 PdfCode39Barcode barcode = new PdfCode39Barcode();
@@ -11,23 +11,19 @@ PdfCode39Barcode barcode = new PdfCode39Barcode();
 barcode.BarHeight = 45;
 barcode.Text = "CODE39$";
 
-//Convert the barcode to image.
-Image barcodeImage = barcode.ToImage(new System.Drawing.SizeF(300, 200));
+// Generate a barcode image with the specified size
+Stream barcodeImageStream = barcode.ToImage(new SizeF(300, 200));
 
-//Create memory stream. 
-MemoryStream stream = new MemoryStream();
+// Create a file stream to write the barcode image to a file
+FileStream fileStreamResult = new FileStream(Path.GetFullPath(@"Output/BarcodeImage.png"), FileMode.Create, FileAccess.ReadWrite);
 
-//Save image to stream.
-barcodeImage.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+// Copy the barcode image data to the file stream
+barcodeImageStream.CopyTo(fileStreamResult);
 
-//Create file stream.  
-FileStream outputFileStream = new FileStream(Path.GetFullPath("../../../BarcodeImage.png"), FileMode.Create, FileAccess.ReadWrite);
-outputFileStream.Position = 0;
+// Ensure all data is written to the file
+fileStreamResult.Flush();
 
-//Copy memory stream to file stream. 
-stream.WriteTo(outputFileStream);
-
-//Dispose the stream. 
-stream.Dispose();
-outputFileStream.Dispose();
+// Dispose of the streams to release resources
+barcodeImageStream.Dispose();
+fileStreamResult.Dispose();
 
