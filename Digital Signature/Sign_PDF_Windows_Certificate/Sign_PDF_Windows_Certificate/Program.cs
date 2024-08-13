@@ -13,7 +13,7 @@ X509Certificate2Collection fcollection = (X509Certificate2Collection)collection.
 X509Certificate2 digitalID = fcollection[0];
 
 //Load existing PDF document.
-FileStream documentStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
+FileStream documentStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(documentStream);
 //Load X509Certificate2.
 PdfCertificate certificate = new PdfCertificate(digitalID);
@@ -25,7 +25,7 @@ signature.Settings.CryptographicStandard = CryptographicStandard.CADES;
 signature.Settings.DigestAlgorithm = DigestAlgorithm.SHA512;
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     loadedDocument.Save(outputFileStream);
