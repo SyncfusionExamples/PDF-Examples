@@ -10,7 +10,7 @@ using System.Reflection.Metadata;
 using (OCRProcessor processor = new OCRProcessor())
 {
     //Get the stream from an image file. 
-    FileStream stream = new FileStream(@"Data/Input.pdf", FileMode.Open);
+    FileStream stream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open);
     //Set the OCR language to process.
     PdfLoadedDocument document = new PdfLoadedDocument(stream);
     //Set the OCR language.
@@ -33,7 +33,7 @@ using (OCRProcessor processor = new OCRProcessor())
     }
     
     //Create file stream.
-    using (FileStream outputFileStream = new FileStream(@"Output/Output.pdf", FileMode.Create, FileAccess.ReadWrite))
+    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
     {
         //Save the PDF document to file stream.
         document.Save(outputFileStream);

@@ -17,7 +17,7 @@ Stream[] images = documentExtractor.ExtractImages();
 for(int i=0;i<images.Length;i++)
 {
     //Save the image.
-    FileStream imageStream = new FileStream("Output/Output" + i + ".png", FileMode.Create, FileAccess.Write);
+    FileStream imageStream = new FileStream(@"Output/Output" + i + ".png", FileMode.Create, FileAccess.Write);
     images[i].CopyTo(imageStream);
     imageStream.Dispose();
 }

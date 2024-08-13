@@ -3,7 +3,7 @@ using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
 using System.IO;
 
-string path = Path.GetFullPath(@"../../../Autumn Leaves.jpg");
+string path = Path.GetFullPath(@"Data/Autumn Leaves.jpg");
 //Initialize HTML to PDF converter.
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 //HTML string and Base URL.
@@ -12,7 +12,7 @@ string baseUrl = @"C:/Temp/HTMLFiles/";
 //Convert URL to PDF.
 PdfDocument document = htmlConverter.Convert(htmlText, baseUrl);
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

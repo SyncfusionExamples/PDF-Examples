@@ -24,7 +24,7 @@ using (OCRProcessor processor = new OCRProcessor())
     string ocrText = processor.PerformOCR(stream, tessdataPath);
 
     //Write the OCR'ed text in text file. 
-    using (StreamWriter writer = new StreamWriter(Path.GetFullPath("Output/Output.txt"), true))
+    using (StreamWriter writer = new StreamWriter(Path.GetFullPath(@"Output/Output.txt"), true))
     {
         writer.WriteLine(ocrText);
     }

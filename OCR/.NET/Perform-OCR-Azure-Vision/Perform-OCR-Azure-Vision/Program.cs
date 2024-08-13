@@ -13,7 +13,7 @@ namespace OCR.Test
             using (OCRProcessor processor = new OCRProcessor())
             {
                 //Load an existing PDF document.
-                FileStream stream = new FileStream(@"Data/Region.pdf", FileMode.Open);
+                FileStream stream = new FileStream(Path.GetFullPath(@"Data/Region.pdf"), FileMode.Open);
                 PdfLoadedDocument lDoc = new PdfLoadedDocument(stream);
 
                 //Set OCR language.
@@ -27,7 +27,7 @@ namespace OCR.Test
                 processor.PerformOCR(lDoc);
 
                 //Create file stream.
-                FileStream outputStream = new FileStream("Output/Output.pdf", FileMode.CreateNew);
+                FileStream outputStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.CreateNew);
 
                 //Save the document into stream.
                 lDoc.Save(outputStream);

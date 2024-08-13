@@ -8,7 +8,7 @@ using Syncfusion.Pdf.Parsing;
 
 //Open an existing PDF document.
 
-FileStream stream = new FileStream("../../Input.pdf", FileMode.Open, FileAccess.Read);
+FileStream stream = new FileStream(@"Data/Input.pdf", FileMode.Open, FileAccess.Read);
 
 PdfLoadedDocument document = new PdfLoadedDocument(stream);
 
@@ -62,7 +62,7 @@ pdfGrid.Draw(graphics, new RectangleF(40, 400, page.Size.Width - 80, 0));
 
 //Create a FileStream to save the PDF document.
 
-using (FileStream outputStream = new FileStream("Result.pdf", FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 
 {
 

@@ -2,7 +2,7 @@
 using Syncfusion.Pdf;
 
 // Create the FileStream object. 
-using (FileStream inputFileStream = new FileStream(@"Data/Input.pdf", FileMode.Open, FileAccess.Read))
+using (FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
 {
     // Create a PdfLoadedDocument object from the FileStream object  
     PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputFileStream,"password");
@@ -15,7 +15,7 @@ using (FileStream inputFileStream = new FileStream(@"Data/Input.pdf", FileMode.O
             // Import the page from the PdfLoadedDocument object to the PdfDocument object  
             outputDocument.ImportPage(loadedDocument, pageIndex);
             //Save the document into a filestream object. 
-            using (FileStream outputFileStream = new FileStream(@"Output/Output" + pageIndex + ".pdf", FileMode.Create, FileAccess.Write))
+            using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output" + pageIndex + ".pdf"), FileMode.Create, FileAccess.Write))
             {
                 outputDocument.Save(outputFileStream);
             }

@@ -23,7 +23,7 @@ PdfFont font1 = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
 graphics.DrawString("Hello World!!!", font1, PdfBrushes.BlueViolet, new PointF(50, 50));
 
 //Create new instance for PDF font from TTF file. 
-FileStream fontStream = new FileStream(@"Data/Arial.ttf", FileMode.Open, FileAccess.Read);
+FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/Arial.ttf"), FileMode.Open, FileAccess.Read);
 PdfFont font2 = new PdfTrueTypeFont(fontStream, 20);
 
 //Draw the text with Arial font. 

@@ -13,7 +13,7 @@ PdfLoadedDocument document = new PdfLoadedDocument(docStream);
 foreach (PdfAttachment attachment in document.Attachments)
 {
     //Extracts the attachment and saves it to the disk.
-    FileStream s = new FileStream(Path.GetFullPath("../../../"+ attachment.FileName), FileMode.Create);
+    FileStream s = new FileStream(Path.GetFullPath(@"Output/"+ attachment.FileName), FileMode.Create);
     s.Write(attachment.Data, 0, attachment.Data.Length);
     s.Dispose();
 }

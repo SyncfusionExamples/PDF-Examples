@@ -19,7 +19,7 @@ using (OCRProcessor processor = new OCRProcessor())
     processor.Settings.Language = Languages.English;
 
     //Set custom temp file path location.
-    processor.Settings.TempFolder = Path.GetFullPath("D:/Temp/");
+    processor.Settings.TempFolder = Path.GetFullPath(@"D:/Temp/");
 
     //Process OCR by providing the PDF document, data dictionary, and language.
     processor.PerformOCR(document, tessdataPath);

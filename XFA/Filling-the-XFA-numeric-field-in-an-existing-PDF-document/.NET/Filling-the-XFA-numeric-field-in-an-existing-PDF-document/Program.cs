@@ -3,7 +3,7 @@
 //Get stream from an existing PDF document. 
 using Syncfusion.Pdf.Xfa;
 
-FileStream docStream = new FileStream(@"Data/Input.pdf", FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 
 //Load the existing XFA document.
 PdfLoadedXfaDocument loadedDocument = new PdfLoadedXfaDocument(docStream);
