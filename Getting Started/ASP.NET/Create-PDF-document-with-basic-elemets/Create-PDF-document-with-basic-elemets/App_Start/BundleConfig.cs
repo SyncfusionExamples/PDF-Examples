@@ -33,6 +33,12 @@ namespace Create_PDF_document_with_basic_elemets
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                             "~/Scripts/modernizr-*"));
+            ScriptManager.ScriptResourceMapping.AddDefinition("bootstrap", new ScriptResourceDefinition
+            {
+                Path = "~/scripts/bootstrap.min.js",
+                DebugPath = "~/scripts/bootstrap.js",
+                LoadSuccessExpression = "bootstrap"
+            });
         }
     }
 }
