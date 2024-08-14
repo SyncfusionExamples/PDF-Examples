@@ -24,5 +24,5 @@ using (OCRProcessor processor = new OCRProcessor())
     }
     //Close the document.
     document.Close(true);
-    File.WriteAllText("../../../Output.txt", text);
+    File.WriteAllText(Path.GetFullPath(@"Output/Output.txt"), text);
 }
