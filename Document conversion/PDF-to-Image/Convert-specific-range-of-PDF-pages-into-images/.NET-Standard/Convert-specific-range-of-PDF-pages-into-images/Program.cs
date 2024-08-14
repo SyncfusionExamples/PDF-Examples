@@ -9,7 +9,7 @@ using System.Drawing.Imaging;
 PdfRenderer pdfExportImage = new PdfRenderer();
 
 //Loads the PDF document.
-pdfExportImage.Load(@"Data\Barcode.pdf");
+pdfExportImage.Load(@"..\..\..\Barcode.pdf");
 
 //Exports the PDF document pages into images.
 SkiaSharp.SKBitmap[] images = pdfExportImage.ExportAsImage(0, pdfExportImage.PageCount - 1);
@@ -23,6 +23,6 @@ for (int i = 0; i < pdfExportImage.PageCount; i++)
     //Save the SKBitmap as Bitmap. 
     Bitmap bitmapImage = new Bitmap(imageStream);
 
-    bitmapImage.Save(Path.GetFullPath(@"Output\" + i.ToString() + ".png"), ImageFormat.Png);
+    bitmapImage.Save(Path.GetFullPath(i.ToString() + ".png"), ImageFormat.Png);
 
 }
