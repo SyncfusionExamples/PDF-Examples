@@ -29,7 +29,7 @@ for (int i = 0; i < 10; i++)
     //Save and close the PDF document.
     document.Save(memoryStream);
     document.Close(true);
-    File.WriteAllBytes("ReuseBrowserProcess" + Guid.NewGuid().ToString() + ".pdf", memoryStream.ToArray());
+    File.WriteAllBytes(Path.GetFullPath(@"Output/") + Guid.NewGuid().ToString() + ".pdf", memoryStream.ToArray());
 }
 
 //Close HTML converter.

@@ -50,7 +50,7 @@ pdfGridCellStyle.TextPen = PdfPens.Red;
 pdfGridCellStyle.Borders.All = PdfPens.Red;
 
 //Load image as stream.
-FileStream imageStream = new FileStream(Path.GetFullPath("../../../Image.jpg"), FileMode.Open, FileAccess.Read);
+FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/Image.jpg"), FileMode.Open, FileAccess.Read);
 pdfGridCellStyle.BackgroundImage = new PdfBitmap(imageStream);
 PdfGridCell pdfGridCell = parentPdfGrid.Rows[1].Cells[0];
 
@@ -64,7 +64,7 @@ pdfGridCell.ImagePosition = PdfGridImagePosition.Fit;
 parentPdfGrid.Draw(pdfPage, Syncfusion.Drawing.PointF.Empty);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     pdfDocument.Save(outputFileStream);

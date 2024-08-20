@@ -36,7 +36,7 @@ pdfGrid.BeginCellLayout += PdfGrid_BeginCellLayout;
 pdfGrid.Draw(pdfPage, new PointF(10, 10));
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     pdfDocument.Save(outputFileStream);
@@ -53,7 +53,7 @@ static void PdfGrid_BeginCellLayout(object sender, PdfGridBeginCellLayoutEventAr
     if (args.CellIndex == 1 && !args.IsHeaderRow)
     {
         //Load the image from the disk.
-        FileStream imageStream = new FileStream(Path.GetFullPath("../../../Support.jpg"), FileMode.Open, FileAccess.Read);
+        FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/Support.jpg"), FileMode.Open, FileAccess.Read);
         PdfBitmap image = new PdfBitmap(imageStream);
 
         //Insert the image in a table cell. 

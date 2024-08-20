@@ -14,7 +14,7 @@ PdfPage page = document.Pages.Add();
 RectangleF attachmentRectangle = new RectangleF(10, 40, 30, 30);
 
 //Load the PDF document.
-FileStream inputStream = new FileStream(Path.GetFullPath("../../../logo.png"), FileMode.Open, FileAccess.Read);
+FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/logo.png"), FileMode.Open, FileAccess.Read);
 
 //Creates a new attachment annotation.
 PdfAttachmentAnnotation attachmentAnnotation = new PdfAttachmentAnnotation(attachmentRectangle, @"logo.png", inputStream);
@@ -26,7 +26,7 @@ attachmentAnnotation.Icon = PdfAttachmentIcon.PushPin;
 page.Annotations.Add(attachmentAnnotation);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

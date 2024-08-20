@@ -15,7 +15,7 @@ PdfPage page = document.Pages.Add();
 //Create PDF graphics for the page.
 PdfGraphics graphics = page.Graphics;
 //Load the image from the disk.
-FileStream imageStream = new FileStream("../../../AdventureCycle.jpg", FileMode.Open, FileAccess.Read);
+FileStream imageStream = new FileStream(@"Data/AdventureCycle.jpg", FileMode.Open, FileAccess.Read);
 PdfBitmap image = new PdfBitmap(imageStream);
 //Draw an image.
 graphics.DrawImage(image, new RectangleF(130,0, 250, 100));
@@ -50,7 +50,7 @@ pdfGrid.ApplyBuiltinStyle(PdfGridBuiltinStyle.GridTable4Accent3);
 pdfGrid.Draw(graphics, new RectangleF(0, 300, page.Size.Width - 80, 0));
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

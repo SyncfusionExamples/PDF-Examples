@@ -8,7 +8,7 @@ namespace Externally_sign_the_PDF_document {
     internal class Program {
         static void Main(string[] args) {
             //Get the stream from the document
-            FileStream documentStream = new FileStream(Path.GetFullPath("../../../Barcode.pdf"), FileMode.Open, FileAccess.Read);
+            FileStream documentStream = new FileStream(Path.GetFullPath(@"Data/Barcode.pdf"), FileMode.Open, FileAccess.Read);
             //Load the existing PDF document
             PdfLoadedDocument loadedDocument = new PdfLoadedDocument(documentStream);
 
@@ -24,11 +24,11 @@ namespace Externally_sign_the_PDF_document {
 
             //Add public certificates.
             List<X509Certificate2> certificates = new List<X509Certificate2>();
-            certificates.Add(new X509Certificate2(new X509Certificate2(Path.GetFullPath("../../../PDF.pfx"), "password123")));
+            certificates.Add(new X509Certificate2(new X509Certificate2(Path.GetFullPath(@"Data/PDF.pfx"), "password123")));
             signature.AddExternalSigner(externalSignature, certificates, null);
 
             //Create file stream.
-            using (FileStream outputFileStream = new FileStream("Output.pdf", FileMode.Create, FileAccess.ReadWrite)) {
+            using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite)) {
                 //Save the PDF document to file stream.
                 loadedDocument.Save(outputFileStream);
             }
@@ -47,7 +47,7 @@ namespace Externally_sign_the_PDF_document {
             }
             public byte[] Sign(byte[] message, out byte[] timeStampResponse) {
                 timeStampResponse = null;
-                X509Certificate2 digitalID = new X509Certificate2(new X509Certificate2(Path.GetFullPath("../../../PDF.pfx"), "password123"));
+                X509Certificate2 digitalID = new X509Certificate2(new X509Certificate2(Path.GetFullPath(@"Data/PDF.pfx"), "password123"));
                 if (digitalID.PrivateKey is System.Security.Cryptography.RSACryptoServiceProvider) {
                     System.Security.Cryptography.RSACryptoServiceProvider rsa = (System.Security.Cryptography.RSACryptoServiceProvider)digitalID.PrivateKey;
                     return rsa.SignData(message, HashAlgorithm);

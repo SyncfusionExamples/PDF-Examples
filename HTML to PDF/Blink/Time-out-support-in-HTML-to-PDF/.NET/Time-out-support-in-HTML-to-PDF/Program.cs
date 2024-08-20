@@ -13,7 +13,7 @@ htmlConverter.ConverterSettings = blinkConverterSettings;
 //Convert URL to PDF
 PdfDocument document = htmlConverter.Convert("https://www.google.com");
 //Create a file stream.
-FileStream fileStream = new FileStream("HTML-to-PDF.pdf", FileMode.CreateNew, FileAccess.ReadWrite);
+FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/HTML-to-PDF.pdf"), FileMode.CreateNew, FileAccess.ReadWrite);
 //Save and close the PDF document.
 document.Save(fileStream);
 //Close the document.

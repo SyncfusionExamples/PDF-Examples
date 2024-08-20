@@ -7,21 +7,21 @@ using Syncfusion.Pdf.Parsing;
 PdfDocument finalDoc = new PdfDocument();
 
 //Get stream from an existing PDF document. 
-FileStream firstPDFStream = new FileStream(Path.GetFullPath("../../../Protected_File1.pdf"), FileMode.Open, FileAccess.Read);
+FileStream firstPDFStream = new FileStream(Path.GetFullPath(@"Data/Protected_File1.pdf"), FileMode.Open, FileAccess.Read);
 //Load the PDF document.
 PdfLoadedDocument firstDocument = new PdfLoadedDocument(firstPDFStream, "Syncfusion");
 //Imports the page at 1 from the loaded document.
 finalDoc.ImportPageRange(firstDocument, 0, firstDocument.Pages.Count-1);
 
 //Get stream from an existing PDF document. 
-FileStream secondPDFStream = new FileStream(Path.GetFullPath("../../../Protected_File2.pdf"), FileMode.Open, FileAccess.Read);
+FileStream secondPDFStream = new FileStream(Path.GetFullPath(@"Data/Protected_File2.pdf"), FileMode.Open, FileAccess.Read);
 //Load the PDF document.
 PdfLoadedDocument secondDocument = new PdfLoadedDocument(secondPDFStream, "Password");
 //Imports the page at 1 from the loaded document.
 finalDoc.ImportPageRange(secondDocument, 0, secondDocument.Pages.Count - 1);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     finalDoc.Save(outputFileStream);

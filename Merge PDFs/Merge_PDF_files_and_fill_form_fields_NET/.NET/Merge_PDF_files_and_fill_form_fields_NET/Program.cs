@@ -11,8 +11,8 @@ using Syncfusion.Pdf.Interactive;
 PdfDocument finalDocument = new PdfDocument();
 
 //Get the stream from an existing PDF documents.
-FileStream stream1 = new FileStream(Path.GetFullPath("../../../File1.pdf"), FileMode.Open, FileAccess.Read);
-FileStream stream2 = new FileStream(Path.GetFullPath("../../../File2.pdf"), FileMode.Open, FileAccess.Read);
+FileStream stream1 = new FileStream(Path.GetFullPath(@"Data/File1.pdf"), FileMode.Open, FileAccess.Read);
+FileStream stream2 = new FileStream(Path.GetFullPath(@"Data/File2.pdf"), FileMode.Open, FileAccess.Read);
 //Creates a PDF stream for merging.
 Stream[] streams = { stream1, stream2 };
 //Merges PDFDocument.
@@ -35,7 +35,7 @@ PdfLoadedTextBoxField loadedTextBoxField2 = loadedForm.Fields[4] as PdfLoadedTex
 loadedTextBoxField2.Text = "SSN0001";
 
 //Create file stream
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream
     finalDocument.Save(outputFileStream);

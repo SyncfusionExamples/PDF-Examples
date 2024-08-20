@@ -36,7 +36,7 @@ pdfLightTable.Style.ShowHeader = true;
 pdfLightTable.Draw(page, Syncfusion.Drawing.PointF.Empty);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);
@@ -51,7 +51,7 @@ void PdfLightTable_EndCellLayout(object sender, EndCellLayoutEventArgs args)
     if (args.RowIndex == 0 && args.CellIndex == 0)
     {
         //Load the image as stream
-        FileStream imageStream = new FileStream(Path.GetFullPath("../../../Image.jpg"), FileMode.Open, FileAccess.Read);
+        FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/Image.jpg"), FileMode.Open, FileAccess.Read);
         args.Graphics.DrawImage(new PdfBitmap(imageStream), args.Bounds);
     }
 }

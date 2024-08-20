@@ -4,7 +4,7 @@ using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 
 //Get the stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 
 //Load the PDF document.
 PdfLoadedDocument document = new PdfLoadedDocument(docStream, "password");

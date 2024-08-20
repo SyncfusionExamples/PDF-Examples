@@ -3,7 +3,7 @@
 using Syncfusion.Pdf.Xfa;
 
 //Get stream from an existing PDF document. 
-FileStream docStream = new FileStream("../../../Input.pdf", FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 
 //Load the existing XFA document.
 PdfLoadedXfaDocument loadedDocument = new PdfLoadedXfaDocument(docStream);
@@ -15,7 +15,7 @@ PdfLoadedXfaForm loadedForm = loadedDocument.XfaForm;
 loadedForm.ReadOnly = true;
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     loadedDocument.Save(outputFileStream);

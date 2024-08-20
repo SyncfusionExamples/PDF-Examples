@@ -8,7 +8,7 @@ using Syncfusion.Pdf.Parsing;
 using (OCRProcessor processor = new OCRProcessor())
 {
     //Load an existing PDF document.
-    FileStream stream = new FileStream("../../../Input.pdf", FileMode.Open);
+    FileStream stream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open);
     PdfLoadedDocument document = new PdfLoadedDocument(stream);
     //Set OCR language.
     processor.Settings.Language = Languages.English;
@@ -17,12 +17,12 @@ using (OCRProcessor processor = new OCRProcessor())
     //Perform OCR with input document and tessdata (Language packs).
     string text = processor.PerformOCR(document, 0, 0, processor.TessDataPath);
     //Create file stream.
-    using (FileStream outputFileStream = new FileStream("../../../Output.pdf", FileMode.Create, FileAccess.ReadWrite))
+    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
     {
         //Save the PDF document to file stream.
         document.Save(outputFileStream);
     }
     //Close the document.
     document.Close(true);
-    File.WriteAllText("../../../Output.txt", text);
+    File.WriteAllText(Path.GetFullPath(@"Output/Output.txt"), text);
 }

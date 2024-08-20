@@ -12,7 +12,7 @@ PdfXfaPage xfaPage = document.Pages.Add();
 PdfXfaForm mainForm = new PdfXfaForm("subform1", xfaPage, xfaPage.GetClientSize().Width);
 
 //Get stream from an image file. 
-FileStream imageStream = new FileStream(Path.GetFullPath("../../../image.jpg"), FileMode.Open, FileAccess.Read);
+FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/image.jpg"), FileMode.Open, FileAccess.Read);
 
 //Create a image and add the properties.
 PdfXfaImage image = new PdfXfaImage("image1", imageStream);
@@ -24,7 +24,7 @@ mainForm.Fields.Add(image);
 document.XfaForm = mainForm;
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream, PdfXfaType.Dynamic);

@@ -10,9 +10,9 @@ settings.EnableAccessibilityTags = true;
 //Assign the BlinkConverterSettings to the ConverterSettings property of HtmlToPdfConverter.
 htmlConverter.ConverterSettings = settings;
 //Convert URL to PDF.
-PdfDocument document = htmlConverter.Convert("file:///D:/PDF-Examples/HTML%20to%20PDF/Blink/Accessible_PDF_In_HTML_to_PDF/.NET/Accessible%20PDF/Input.html");
+PdfDocument document = htmlConverter.Convert("file:///D:/PDF-Examples/HTML%20to%20PDF/Blink/Accessible_PDF_In_HTML_to_PDF/.NET/Accessible%20PDF/Data/Input.html");
 //Save and close the PDF document.
-FileStream fileStream = new FileStream("HTML-to-PDF.pdf", FileMode.CreateNew, FileAccess.ReadWrite);
+FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/HTML-to-PDF.pdf"), FileMode.CreateNew, FileAccess.ReadWrite);
 //Save and close the PDF document 
 document.Save(fileStream);
 document.Close(true);

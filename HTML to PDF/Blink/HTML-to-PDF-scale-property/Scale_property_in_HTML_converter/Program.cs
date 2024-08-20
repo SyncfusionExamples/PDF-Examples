@@ -13,7 +13,7 @@ htmlConverter.ConverterSettings = blinkConverterSettings;
 //Convert URL to PDF document. 
 PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com");
 //Create a file stream.
-FileStream fileStream = new FileStream("HTMLtoPDF.pdf", FileMode.Create, FileAccess.ReadWrite);
+FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite);
 //Save a PDF document to a file stream.
 document.Save(fileStream);
 //Close the document.

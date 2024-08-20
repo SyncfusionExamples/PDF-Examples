@@ -15,7 +15,7 @@ PdfPage page = document.Pages.Add();
 RectangleF rectangle = new RectangleF(10, 40, 30, 30);
 
 //Creates a new sound annotation.
-FileStream inputStream = new FileStream(Path.GetFullPath("../../../Sound.wav"), FileMode.Open, FileAccess.Read);
+FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Sound.wav"), FileMode.Open, FileAccess.Read);
 PdfSoundAnnotation soundAnnotation = new PdfSoundAnnotation(rectangle, inputStream);
 soundAnnotation.Sound.Encoding = PdfSoundEncoding.Signed;
 soundAnnotation.Sound.Channels = PdfSoundChannels.Stereo;
@@ -29,7 +29,7 @@ soundAnnotation.Icon = PdfSoundIcon.Speaker;
 page.Annotations.Add(soundAnnotation);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

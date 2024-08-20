@@ -4,7 +4,7 @@ using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Xmp;
 
 //Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 
 //Load the PDF document. 
 PdfLoadedDocument pdfDocument = new PdfLoadedDocument(docStream);
@@ -28,7 +28,7 @@ basic.Nickname = "nickname";
 basic.Rating.Add(-25);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     pdfDocument.Save(outputFileStream);

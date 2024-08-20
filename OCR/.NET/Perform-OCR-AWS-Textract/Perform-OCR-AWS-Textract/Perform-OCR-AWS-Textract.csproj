@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>Perform_OCR_AWS_Textract</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -10,7 +10,16 @@
 
   <ItemGroup>
     <PackageReference Include="AWSSDK.Textract" Version="3.7.100.6" />
-    <PackageReference Include="Syncfusion.PDF.OCR.NET" Version="20.3.0.60" />
+    <PackageReference Include="Syncfusion.PDF.OCR.NET" Version="*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Data\Region.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Output\.gitkeep">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

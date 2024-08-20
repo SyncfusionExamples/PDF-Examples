@@ -16,10 +16,10 @@ settings.EnableForm = true;
 htmlConverter.ConverterSettings = settings;
 
 //Convert URL to PDF document. 
-PdfDocument document = htmlConverter.Convert(Path.GetFullPath("../../../Input.html"));
+PdfDocument document = htmlConverter.Convert(Path.GetFullPath(@"Data/Input.html"));
 
 //Create file stream to save the PDF document. 
-FileStream fileStream = new FileStream(Path.GetFullPath("../../../HTML-to-PDF.pdf"), FileMode.CreateNew, FileAccess.ReadWrite);
+FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/HTML-to-PDF.pdf"), FileMode.CreateNew, FileAccess.ReadWrite);
 
 //Save and close the PDF document 
 document.Save(fileStream);

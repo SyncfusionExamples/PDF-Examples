@@ -7,7 +7,7 @@ using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 
 //Get stream from an existing PDF document. 
-FileStream inputStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
+FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 
 //Load the PDF document from stream.
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputStream);
@@ -23,7 +23,7 @@ richMediaAnnotation.ActivationMode = PdfRichMediaActivationMode.Click;
 richMediaAnnotation.PresentationStyle = PdfRichMediaPresentationStyle.Windowed;
 
 //Set the richmedia content.
-FileStream fileStream = new FileStream(Path.GetFullPath("../../../Sample_Video.mp4"), FileMode.Open, FileAccess.Read);
+FileStream fileStream = new FileStream(Path.GetFullPath("Data/Sample_Video.mp4"), FileMode.Open, FileAccess.Read);
 PdfRichMediaContent content = new PdfRichMediaContent("video", fileStream, "mp4");
 richMediaAnnotation.Content = content;
 
@@ -34,7 +34,7 @@ richMediaAnnotation.Appearance.Normal.Graphics.DrawString("Click here to play vi
 loadedPage.Annotations.Add(richMediaAnnotation);
 
 //Save the document.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     loadedDocument.Save(outputFileStream);
 }

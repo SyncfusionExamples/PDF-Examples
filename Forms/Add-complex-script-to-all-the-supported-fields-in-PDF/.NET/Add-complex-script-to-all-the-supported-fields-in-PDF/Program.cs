@@ -21,7 +21,7 @@ textField.Bounds = new RectangleF(10, 10, 200, 30);
 textField.Text = "สวัสดีชาวโลก";
 
 //Get stream from an font file.
-FileStream fontStream = new FileStream(Path.GetFullPath("../../../tahoma.ttf"), FileMode.Open, FileAccess.Read);
+FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/tahoma.ttf"), FileMode.Open, FileAccess.Read);
 
 //Create a new PDF font instance.
 PdfFont font = new PdfTrueTypeFont(fontStream, 10);
@@ -39,7 +39,7 @@ document.Form.SetDefaultAppearance(false);
 document.Form.ComplexScript = true;
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

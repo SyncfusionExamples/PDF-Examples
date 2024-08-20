@@ -10,15 +10,15 @@ using System.Reflection.Metadata;
 using (OCRProcessor processor = new OCRProcessor())
 {
     //Get the stream from an image file. 
-    FileStream stream = new FileStream(@"../../../Input.pdf", FileMode.Open);
+    FileStream stream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open);
     //Set the OCR language to process.
     PdfLoadedDocument document = new PdfLoadedDocument(stream);
     //Set the OCR language.
     processor.Settings.Language = Languages.English;
     //Set the Unicode font to preserve the Unicode characters in a PDF document.
-    processor.TesseractPath = @"../../../TesseractBinaries/";
+    processor.TesseractPath = @"TesseractBinaries/";
     processor.Settings.PageSegment = PageSegMode.AutoOsd;
-    processor.PerformOCR(document, 0, 0, @"../../../Tessdata", out OCRLayoutResult result);
+    processor.PerformOCR(document, 0, 0, @"Tessdata", out OCRLayoutResult result);
     float angle = 0;
     if (result != null)
     {
@@ -33,7 +33,7 @@ using (OCRProcessor processor = new OCRProcessor())
     }
     
     //Create file stream.
-    using (FileStream outputFileStream = new FileStream("../../../Output.pdf", FileMode.Create, FileAccess.ReadWrite))
+    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
     {
         //Save the PDF document to file stream.
         document.Save(outputFileStream);

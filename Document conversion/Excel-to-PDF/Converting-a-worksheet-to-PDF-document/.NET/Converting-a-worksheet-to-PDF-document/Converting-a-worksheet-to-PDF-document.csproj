@@ -2,14 +2,23 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>Converting_a_worksheet_to_PDF_document</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.XlsIORenderer.NET" Version="20.2.0.45" />
+    <PackageReference Include="Syncfusion.XlsIORenderer.NET" Version="*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Data\ExcelToPDF.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Output\.gitkeep">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -10,7 +10,7 @@ PdfDocument document = new PdfDocument();
 PdfPage page = document.Pages.Add();
 
 //Load a bitmap.
-FileStream imageStream = new FileStream(Path.GetFullPath("../../../Autumn Leaves.jpg"), FileMode.Open, FileAccess.Read);
+FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/Autumn Leaves.jpg"), FileMode.Open, FileAccess.Read);
 PdfBitmap image = new PdfBitmap(imageStream);
 
 //Set layout property to make the element break across the pages.
@@ -22,7 +22,7 @@ format.Layout = PdfLayoutType.Paginate;
 image.Draw(page, 20, 400, format);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream
     document.Save(outputFileStream);

@@ -4,7 +4,7 @@ using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 
 //Get stream from the existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 
 //Load the PDF document. 
 PdfLoadedDocument document = new PdfLoadedDocument(docStream);
@@ -13,7 +13,7 @@ PdfLoadedDocument document = new PdfLoadedDocument(docStream);
 foreach (PdfAttachment attachment in document.Attachments)
 {
     //Extracts the attachment and saves it to the disk.
-    FileStream s = new FileStream(Path.GetFullPath("../../../"+ attachment.FileName), FileMode.Create);
+    FileStream s = new FileStream(Path.GetFullPath(@"Output/"+ attachment.FileName), FileMode.Create);
     s.Write(attachment.Data, 0, attachment.Data.Length);
     s.Dispose();
 }

@@ -11,7 +11,7 @@ string tessdataPath = Path.GetFullPath("../../../../../Tessdata");
 using (OCRProcessor processor = new OCRProcessor())
 {
     //Get stream from an existing PDF document. 
-    FileStream stream = new FileStream(Path.GetFullPath(@"../../../Input.pdf"), FileMode.Open);
+    FileStream stream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open);
 
     //Load the PDF document. 
     PdfLoadedDocument loadedDocument = new PdfLoadedDocument(stream);

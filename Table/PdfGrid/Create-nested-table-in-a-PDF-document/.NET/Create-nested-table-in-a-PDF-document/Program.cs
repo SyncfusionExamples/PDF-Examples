@@ -58,7 +58,7 @@ parentPdfGrid.Rows[1].Cells[2].Style.CellPadding = new PdfPaddings(5, 5, 5, 5);
 parentPdfGrid.Draw(pdfPage, PointF.Empty);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     pdfDocument.Save(outputFileStream);

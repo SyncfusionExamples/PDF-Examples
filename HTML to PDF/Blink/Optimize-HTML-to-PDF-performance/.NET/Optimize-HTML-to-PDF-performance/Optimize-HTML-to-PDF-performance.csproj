@@ -2,14 +2,20 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>Optimize_HTML_to_PDF_performance</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.HtmlToPdfConverter.Net.Windows" Version="23.1.38" />
+    <PackageReference Include="Syncfusion.HtmlToPdfConverter.Net.Windows" Version="*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Output\.gitkeep">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

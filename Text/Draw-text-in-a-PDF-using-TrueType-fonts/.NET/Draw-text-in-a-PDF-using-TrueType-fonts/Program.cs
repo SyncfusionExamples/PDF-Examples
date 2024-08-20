@@ -13,14 +13,14 @@ PdfPage page = document.Pages.Add();
 PdfGraphics graphics = page.Graphics;
 
 //Load the TrueType font from the local *.ttf file.
-FileStream fontStream = new FileStream(Path.GetFullPath("../../../Arial.ttf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/Arial.ttf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 PdfFont font = new PdfTrueTypeFont(fontStream, 14);
 
 //Draw the text.
 graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, 0));
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

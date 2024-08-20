@@ -2,7 +2,7 @@
 using Syncfusion.Pdf.Parsing;
 
 //Load the PDF document.
-FileStream docStream = new FileStream("../../../Data/Form.pdf", FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(@"Data/Form.pdf", FileMode.Open, FileAccess.Read);
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
 
 //Loads the form.
@@ -28,7 +28,7 @@ PdfLoadedRadioButtonItemCollection radioButtonCollection1 = (form.Fields["Occupa
 radioButtonCollection1[0].Checked = true;
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     loadedDocument.Save(outputFileStream);

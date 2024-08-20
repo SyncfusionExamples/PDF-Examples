@@ -23,7 +23,7 @@ RectangleF rectangle = new RectangleF(10, 50, 200, 200);
 page.Graphics.DrawPie(pen, PdfBrushes.Green, rectangle, 180, 60);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

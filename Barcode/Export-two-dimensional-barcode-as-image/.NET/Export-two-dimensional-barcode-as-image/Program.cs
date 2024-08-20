@@ -2,7 +2,7 @@
 
 using Syncfusion.Pdf.Barcode;
 using Syncfusion.Pdf.Graphics;
-using System.Drawing;
+using Syncfusion.Drawing;
 
 //Initialize a new PdfCode39Barcode instance.
 PdfQRBarcode qRBarcode = new PdfQRBarcode();
@@ -11,22 +11,18 @@ PdfQRBarcode qRBarcode = new PdfQRBarcode();
 qRBarcode.XDimension = 3;
 qRBarcode.Text = "http://www.google.com";
 
-//Convert the barcode to image.
-Image barcodeImage = qRBarcode.ToImage(new System.Drawing.SizeF(300, 300));
+// Generate a barcode image with the specified size
+Stream barcodeImageStream = qRBarcode.ToImage(new SizeF(300, 300));
 
-//Create memory stream. 
-MemoryStream stream = new MemoryStream();
+// Create a file stream to write the barcode image to a file
+FileStream fileStreamResult = new FileStream(Path.GetFullPath(@"Output/BarcodeImage.png"), FileMode.Create, FileAccess.ReadWrite);
 
-//Save image to stream.
-barcodeImage.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+// Copy the barcode image data to the file stream
+barcodeImageStream.CopyTo(fileStreamResult);
 
-//Create file stream.  
-FileStream outputFileStream = new FileStream(Path.GetFullPath("../../../BarcodeImage.png"), FileMode.Create, FileAccess.ReadWrite);
-outputFileStream.Position = 0;
+// Ensure all data is written to the file
+fileStreamResult.Flush();
 
-//Copy memory stream to file stream. 
-stream.WriteTo(outputFileStream);
-
-//Dispose the stream. 
-stream.Dispose();
-outputFileStream.Dispose();
+// Dispose of the streams to release resources
+barcodeImageStream.Dispose();
+fileStreamResult.Dispose();

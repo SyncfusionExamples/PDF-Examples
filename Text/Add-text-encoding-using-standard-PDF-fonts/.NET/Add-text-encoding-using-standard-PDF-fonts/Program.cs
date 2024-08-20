@@ -26,7 +26,7 @@ font.SetTextEncoding(Encoding.GetEncoding("Windows-1250"));
 graphics.DrawString("äÖíßĆŇ", font, PdfBrushes.Black, PointF.Empty);
 
 //Create file stream.z              
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

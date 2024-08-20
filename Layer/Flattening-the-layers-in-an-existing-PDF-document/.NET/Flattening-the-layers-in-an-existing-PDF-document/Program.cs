@@ -4,7 +4,7 @@ using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 
 //Get stream from an existing PDF document. 
-FileStream inputStream = new FileStream(Path.GetFullPath("../../../Layers.pdf"), FileMode.Open);
+FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Layers.pdf"), FileMode.Open);
 
 //Load the PDF document. 
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputStream);
@@ -16,7 +16,7 @@ PdfDocumentLayerCollection layers = loadedDocument.Layers;
 layers.RemoveAt(0);
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     loadedDocument.Save(outputFileStream);

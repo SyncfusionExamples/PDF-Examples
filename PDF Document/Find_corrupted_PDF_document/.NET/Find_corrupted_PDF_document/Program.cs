@@ -5,7 +5,7 @@ using Syncfusion.Pdf.Parsing;
 using System.Text;
 
 //Get file stream from an existing PDF document.
-FileStream fileStream = new FileStream(Path.GetFullPath(@"../../../Test.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+FileStream fileStream = new FileStream(Path.GetFullPath(@"Data/Test.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
 //Create a new instance for the PDF analyzer.
 PdfDocumentAnalyzer analyzer = new PdfDocumentAnalyzer(fileStream);

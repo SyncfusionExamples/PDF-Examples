@@ -20,7 +20,7 @@ PdfSolidBrush brush = new PdfSolidBrush(Color.Red);
 graphics.DrawEllipse(brush, new RectangleF(0, 0, 200, 100));
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

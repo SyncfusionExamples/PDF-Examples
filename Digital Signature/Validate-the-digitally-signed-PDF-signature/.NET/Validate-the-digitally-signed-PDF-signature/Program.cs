@@ -5,7 +5,7 @@ using Syncfusion.Pdf.Security;
 using System.Security.Cryptography.X509Certificates;
 
 //Get the stream from the document.
-FileStream documentStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
+FileStream documentStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 
 //Load an existing signed PDF document.
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(documentStream);
@@ -17,7 +17,7 @@ PdfLoadedSignatureField signatureField = loadedDocument.Form.Fields[0] as PdfLoa
 X509CertificateCollection collection = new X509CertificateCollection();
 
 //Creates a certificate instance from PFX file with private key.
-FileStream certificateStream = new FileStream(Path.GetFullPath("../../../PDF.pfx"), FileMode.Open, FileAccess.Read);
+FileStream certificateStream = new FileStream(Path.GetFullPath(@"Data/PDF.pfx"), FileMode.Open, FileAccess.Read);
 byte[] data = new byte[certificateStream.Length];
 certificateStream.Read(data, 0, data.Length);
 

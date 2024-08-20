@@ -12,8 +12,8 @@ namespace HTML_Header_and_Footer {
             //Set the Blink viewport size.
             blinkConverterSettings.ViewPortSize = new Size(1280, 0);
             //Reade the html header and footer text from the html file or you can set html string also.
-            string headerTemplate = File.ReadAllText(@"..\..\..\Data\header.html");
-            string footerTemplate = File.ReadAllText(@"..\..\..\Data\footer.html");
+            string headerTemplate = File.ReadAllText(@"Data\header.html");
+            string footerTemplate = File.ReadAllText(@"Data\footer.html");
             //Set the html margin-top value based on the html header height and margin-top value.
             blinkConverterSettings.Margin.Top = 70;
             //Set the html margin-bottom value based on the html footer height and margin-bottom value.
@@ -28,7 +28,7 @@ namespace HTML_Header_and_Footer {
             PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com");
 
             //Create a filestream.
-            FileStream fileStream = new FileStream("Output.pdf", FileMode.Create, FileAccess.ReadWrite);
+            FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/HTML-to-PDF.pdf"), FileMode.Create, FileAccess.ReadWrite);
             //Save and close a PDF document.
             document.Save(fileStream);
             document.Close(true);

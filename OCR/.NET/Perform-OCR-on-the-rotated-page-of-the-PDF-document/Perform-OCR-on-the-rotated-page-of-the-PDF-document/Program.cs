@@ -10,7 +10,7 @@ string tessdataPath = Path.GetFullPath("../../../../../Tessdata");
 //Initialize the OCR processor by providing the path of tesseract.
 using (OCRProcessor processor = new OCRProcessor(Path.GetFullPath()))
 //Get stream from an existing PDF document.  
-using (FileStream stream = new FileStream(Path.GetFullPath(@"../../../Input.pdf"), FileMode.Open, FileAccess.Read))
+using (FileStream stream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
 {
 
     //Load the PDF document. 
@@ -26,7 +26,7 @@ using (FileStream stream = new FileStream(Path.GetFullPath(@"../../../Input.pdf"
     processor.PerformOCR(loadedDocument, tessdataPath);
 
     //Create file stream.
-    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
     {
         //Save the PDF document to file stream.
         loadedDocument.Save(outputFileStream);

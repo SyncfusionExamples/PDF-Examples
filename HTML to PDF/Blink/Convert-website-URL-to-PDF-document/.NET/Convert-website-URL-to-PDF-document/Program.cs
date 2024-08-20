@@ -10,7 +10,7 @@ HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 PdfDocument document = htmlConverter.Convert("https://www.google.com");
 
 //Create file stream for PDF document. 
-FileStream fileStream = new FileStream(Path.GetFullPath("../../../Sample.pdf"), FileMode.CreateNew, FileAccess.ReadWrite);
+FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.CreateNew, FileAccess.ReadWrite);
 
 //Save and close the PDF document 
 document.Save(fileStream);

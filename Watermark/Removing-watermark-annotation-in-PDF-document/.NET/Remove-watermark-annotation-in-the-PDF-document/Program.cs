@@ -3,7 +3,7 @@ using Syncfusion.Pdf;
 using Syncfusion.Pdf.Interactive;
 
 //Load the PDF document
-FileStream docStream = new FileStream("../../../Input.pdf", FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(@"Data/Input.pdf", FileMode.Open, FileAccess.Read);
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
 
 // Iterate through the annotations collection and remove PdfLoadedWatermark annotations
@@ -21,7 +21,7 @@ foreach (PdfPageBase page in loadedDocument.Pages)
 }
 
 //Save the document.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     loadedDocument.Save(outputFileStream);
 }

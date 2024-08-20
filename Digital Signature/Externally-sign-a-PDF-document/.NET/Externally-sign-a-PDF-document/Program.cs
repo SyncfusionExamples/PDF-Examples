@@ -7,7 +7,7 @@ using System.Security.Cryptography.Pkcs;
 using System.Security.Cryptography.X509Certificates;
 
 //Get the stream from the document.
-FileStream documentStream = new FileStream(Path.GetFullPath("../../../Input.pdf"), FileMode.Open, FileAccess.Read);
+FileStream documentStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 
 //Load the existing PDF document.
 PdfLoadedDocument document = new PdfLoadedDocument(documentStream);
@@ -17,7 +17,7 @@ PdfSignature signature = new PdfSignature(document, document.Pages[0], null, "Di
 signature.ComputeHash += Signature_ComputeHash;
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);
@@ -33,7 +33,7 @@ void Signature_ComputeHash(object sender, PdfSignatureEventArgs ars)
     SignedCms signedCms = new SignedCms(new ContentInfo(documentBytes), detached: true);
 
     //Compute the signature using the specified digital ID file and the password.
-    X509Certificate2 certificate = new X509Certificate2("../../../PDF.pfx", "syncfusion");
+    X509Certificate2 certificate = new X509Certificate2(@"Data/PDF.pfx", "syncfusion");
     var cmsSigner = new CmsSigner(certificate);
 
     //Set the digest algorithm SHA256.

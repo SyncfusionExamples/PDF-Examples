@@ -44,7 +44,7 @@ element2.Brush = new PdfSolidBrush(new PdfColor(89, 89, 93));
 element2.Draw(page.Graphics, new PointF(0, 100));
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

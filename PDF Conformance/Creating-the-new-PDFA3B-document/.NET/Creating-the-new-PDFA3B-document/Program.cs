@@ -11,10 +11,10 @@ PdfDocument document = new PdfDocument(PdfConformanceLevel.Pdf_A3B);
 PdfPage page = document.Pages.Add();
 
 //Get stream from the input text file attachment. 
-Stream fileStream = new FileStream(Path.GetFullPath("../../../Input.txt"), FileMode.Open, FileAccess.Read);
+Stream fileStream = new FileStream(Path.GetFullPath(@"Data/Input.txt"), FileMode.Open, FileAccess.Read);
 
 //Creates the attachment with some properties. 
-PdfAttachment attachment = new PdfAttachment("Input.txt", fileStream);
+PdfAttachment attachment = new PdfAttachment(@"Data/Input.txt", fileStream);
 attachment.Relationship = PdfAttachmentRelationship.Alternative;
 attachment.ModificationDate = DateTime.Now;
 attachment.Description = "Input.txt";
@@ -27,7 +27,7 @@ document.Attachments.Add(attachment);
 PdfGraphics graphics = page.Graphics;
 
 //Load the TrueType font from the local file.
-FileStream fontStream = new FileStream(Path.GetFullPath("../../../Arial.ttf"), FileMode.Open, FileAccess.Read);
+FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/Arial.ttf"), FileMode.Open, FileAccess.Read);
 
 //Create the PDF true type font. 
 PdfFont font = new PdfTrueTypeFont(fontStream, 14);
@@ -36,7 +36,7 @@ PdfFont font = new PdfTrueTypeFont(fontStream, 14);
 graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, 0));
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);

@@ -7,10 +7,10 @@ using Syncfusion.Pdf;
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 
 //Convert Partial webpage to PDF document. 
-PdfDocument document = htmlConverter.ConvertPartialHtml(Path.GetFullPath("../../../input.html"), "picture");
+PdfDocument document = htmlConverter.ConvertPartialHtml(Path.GetFullPath(@"Data/Input.html"), "picture");
 
 //Create file stream. 
-FileStream fileStream = new FileStream(Path.GetFullPath("../../../Sample.pdf"), FileMode.CreateNew, FileAccess.ReadWrite);
+FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.CreateNew, FileAccess.ReadWrite);
 
 //Save and close the PDF document 
 document.Save(fileStream);

@@ -39,7 +39,7 @@ PdfStandardFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
 page.Graphics.DrawString("Hello World!!!", font, PdfBrushes.Red, new PointF(0,500));
 
 //Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
     document.Save(outputFileStream);
