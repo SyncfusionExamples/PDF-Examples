@@ -12,7 +12,7 @@ namespace Get_images_from_the_existing_signed_signature_field {
             //Get the image streams.
             Stream[] imageStreams = loadedSignature.GetImages();
             for (int i = 0; i < imageStreams.Length; i++) {
-                File.WriteAllBytes("Output/Output" + i.ToString() + ".jpg", (imageStreams[i] as MemoryStream).ToArray());
+                File.WriteAllBytes("Output/" + i.ToString() + ".jpg", (imageStreams[i] as MemoryStream).ToArray());
             }
             //Close a PDF document.
             ldoc.Close(true);
