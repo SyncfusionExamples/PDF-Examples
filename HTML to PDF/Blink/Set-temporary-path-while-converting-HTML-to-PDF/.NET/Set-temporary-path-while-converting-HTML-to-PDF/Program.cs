@@ -2,12 +2,19 @@
 
 using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
+using System.Runtime.InteropServices;
 
 //Initialize the HTML to PDF converter.
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 
 //Set blink converter settings. 
 BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
+
+if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+{
+    blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
+    blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
+}
 
 //Set Temporary Path to generate temporary files.
 blinkConverterSettings.TempPath = @"D:/HtmlConversion/Temp/";

@@ -4,7 +4,7 @@ using Syncfusion.OCRProcessor;
 using Syncfusion.Pdf.Parsing;
 
 
-string tessdataPath = Path.GetFullPath("../../../../../Tessdata");
+string tessdataPath = Path.GetFullPath(@"Tessdata");
 
 //Initialize the OCR processor by providing the path of the tesseract.
 using (OCRProcessor processor = new OCRProcessor())

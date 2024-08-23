@@ -2,10 +2,18 @@
 
 using Syncfusion.Drawing;
 using Syncfusion.HtmlConverter;
+using System.Runtime.InteropServices;
 
 //Initialize HTML to PDF converter.
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
-
+BlinkConverterSettings settings = new BlinkConverterSettings();
+if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+{
+    settings.CommandLineArguments.Add("--no-sandbox");
+    settings.CommandLineArguments.Add("--disable-setuid-sandbox");
+}
+//Assign Blink converter settings to HTML converter.
+htmlConverter.ConverterSettings = settings;
 //HTML string and Base URL.
 string htmlText = "<html><body><img src=\"syncfusion_logo.png\" alt=\"Syncfusion_logo\" width=\"200\" height=\"70\"><p> Hello World</p></body></html>";
 string baseUrl = Path.GetFullPath(@"Data/Resources/");

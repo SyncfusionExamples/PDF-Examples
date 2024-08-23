@@ -16,9 +16,9 @@ using (OCRProcessor processor = new OCRProcessor())
     //Set the OCR language.
     processor.Settings.Language = Languages.English;
     //Set the Unicode font to preserve the Unicode characters in a PDF document.
-    processor.TesseractPath = @"TesseractBinaries/";
+    processor.TesseractPath = Path.GetFullPath(@"TesseractBinaries/");
     processor.Settings.PageSegment = PageSegMode.AutoOsd;
-    processor.PerformOCR(document, 0, 0, @"Tessdata", out OCRLayoutResult result);
+    processor.PerformOCR(document, 0, 0, Path.GetFullPath(@"Tessdata"), out OCRLayoutResult result);
     float angle = 0;
     if (result != null)
     {

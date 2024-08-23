@@ -1,10 +1,17 @@
 ﻿using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
+using System.Runtime.InteropServices;
 
 //Initialize HTML to PDF converter.
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 //Initialize the BlinkConverterSettings.
 BlinkConverterSettings settings = new BlinkConverterSettings();
+if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+{
+    //Set command line arugument to run without the sandbox.
+    settings.CommandLineArguments.Add("--no-sandbox");
+    settings.CommandLineArguments.Add("--disable-setuid-sandbox");
+}
 //Set true to enable the accessibility tags in PDF generation.
 settings.EnableAccessibilityTags = true;
 //Assign the BlinkConverterSettings to the ConverterSettings property of HtmlToPdfConverter.

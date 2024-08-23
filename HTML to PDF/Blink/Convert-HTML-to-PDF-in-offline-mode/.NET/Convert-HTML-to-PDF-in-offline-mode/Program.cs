@@ -2,12 +2,19 @@
 
 using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
+using System.Runtime.InteropServices;
 
 //Initialize the HTML to PDF converter.
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 
 //Initialize blink converter settings. 
 BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
+if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+{
+    //Set command line arugument to run without the sandbox.
+    blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
+    blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
+}
 
 //Enable offline mode.
 blinkConverterSettings.EnableOfflineMode = true;

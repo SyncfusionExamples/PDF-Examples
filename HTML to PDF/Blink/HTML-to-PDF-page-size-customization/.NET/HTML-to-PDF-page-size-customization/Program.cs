@@ -1,5 +1,6 @@
 ﻿using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
+using System.Runtime.InteropServices;
 
 namespace HTML_to_PDF_page_size_customization {
     internal class Program {
@@ -8,6 +9,11 @@ namespace HTML_to_PDF_page_size_customization {
             HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
             //Initialize blink converter settings. 
             BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
+			if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+			{
+				blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
+				blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
+			}
             //Set the page size.
             blinkConverterSettings.PdfPageSize = PdfPageSize.A4;
             //Assign Blink converter settings to HTML converter.

@@ -2,6 +2,7 @@
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf;
 using Syncfusion.Drawing;
+using System.Runtime.InteropServices;
 
 namespace HTML_to_PDF_Header_and_footer {
     internal class Program {
@@ -9,6 +10,11 @@ namespace HTML_to_PDF_Header_and_footer {
             //Initialize HTML to PDF converter.
             HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
             BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
+			if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+			{
+				blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
+				blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
+			}
             //Create PDF page template element for header with bounds.
             PdfPageTemplateElement header = new PdfPageTemplateElement(new RectangleF(0, 0, blinkConverterSettings.PdfPageSize.Width, 50));
             //Create font and brush for header element.
