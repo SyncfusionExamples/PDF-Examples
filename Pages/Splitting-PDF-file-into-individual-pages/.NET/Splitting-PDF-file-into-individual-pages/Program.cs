@@ -19,7 +19,7 @@ for (int i = 0; i < loadedDocument.Pages.Count; i++)
     document.ImportPage(loadedDocument, i);
 
     //Create a File stream. 
-    using (var outputFileStream = new FileStream(@"Output/" + i + ".pdf", FileMode.Create, FileAccess.Write)) {
+    using (var outputFileStream = new FileStream(Path.GetFullPath(@"Output/" + i + ".pdf"), FileMode.Create, FileAccess.Write)) {
         //Save the document to stream.
         document.Save(outputFileStream);
     }
