@@ -19,7 +19,7 @@ Stream[] extractedImages = pageBase.ExtractImages();
 //Get each image and save to the separate file.
 for(int i=0; i<extractedImages.Length; i++)
 {
-    File.WriteAllBytes(Path.GetFullPath(@"Output/" + i.ToString() + ".jpg"), (extractedImages[i] as MemoryStream).ToArray());
+    File.WriteAllBytes(Path.GetFullPath(@"Output/Output" + i.ToString() + ".jpg"), (extractedImages[i] as MemoryStream).ToArray());
 }
  
 //Close the document.
