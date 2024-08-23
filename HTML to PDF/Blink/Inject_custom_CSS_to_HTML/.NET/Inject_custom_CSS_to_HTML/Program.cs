@@ -3,10 +3,16 @@
 using Syncfusion.Drawing;
 using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
+using System.Runtime.InteropServices;
 
 //Initialize the HTML to PDF converter.
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
+if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+{
+    blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
+    blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
+}
 //Set the Blink viewport size.
 blinkConverterSettings.ViewPortSize = new Size(1280, 0);
 blinkConverterSettings.Margin.All = 30;

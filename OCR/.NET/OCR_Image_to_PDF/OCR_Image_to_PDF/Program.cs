@@ -13,7 +13,7 @@ using (OCRProcessor processor = new OCRProcessor())
     processor.Settings.Language = Languages.English;
 
     //Sets Unicode font to preserve the Unicode characters in a PDF document.
-    FileStream fontStream = new FileStream(@"Data/ARIALUNI.ttf", FileMode.Open);
+    FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/ARIALUNI.ttf"), FileMode.Open);
 
     //Set the unicode font. 
     processor.UnicodeFont = new PdfTrueTypeFont(fontStream, true, PdfFontStyle.Regular, 10);

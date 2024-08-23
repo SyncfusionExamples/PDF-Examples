@@ -3,6 +3,7 @@
 using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
 using System.IO;
+using System.Runtime.InteropServices;
 
 //Initialize the HTML to PDF converter.
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
@@ -18,6 +19,11 @@ for (int i = 0; i < 10; i++)
 {
     //Initialize the blink converter settings. 
     BlinkConverterSettings settings = new BlinkConverterSettings();
+	if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+	{
+		settings.CommandLineArguments.Add("--no-sandbox");
+		settings.CommandLineArguments.Add("--disable-setuid-sandbox");
+	}
     settings.AdditionalDelay = 1000;
     settings.EnableJavaScript = true;
     //Assign the settings to HTML converter.

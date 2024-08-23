@@ -2,10 +2,16 @@
 using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
 using Syncfusion.Drawing;
+using System.Runtime.InteropServices;
 
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 //Initialize blink converter settings. 
 BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
+if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+{
+    blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
+    blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
+}
 //Set the Blink viewport size.
 blinkConverterSettings.ViewPortSize = new Size(1280, 0);
 //Set the html margin-top value based on the html header height and margin-top value.
