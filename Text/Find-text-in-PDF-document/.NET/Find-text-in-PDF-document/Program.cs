@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Syncfusion.Pdf.Parsing;
-using static System.Net.Mime.MediaTypeNames;
+
 
 string matchText = string.Empty;
 //Load an existing PDF document. 
