@@ -20,7 +20,7 @@ namespace Remove_specific_keys_from_the_existing_document_information {
             MemoryStream stream = new MemoryStream();
             //Save the document into stream.
             document.Save(stream);
-            File.WriteAllBytes("Output/Output.pdf", stream.ToArray());
+            File.WriteAllBytes(Path.GetFullPath(@"Output/Output.pdf"), stream.ToArray());
             //Close the document.
             document.Close(true);
         }

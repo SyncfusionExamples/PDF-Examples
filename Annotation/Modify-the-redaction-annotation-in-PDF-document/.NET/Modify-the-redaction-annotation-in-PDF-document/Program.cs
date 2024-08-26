@@ -44,15 +44,15 @@ foreach (PdfAnnotation annot in loadedDocument.Pages[0].Annotations)
         //Flatten the annotations in the page.
         redactAnnot.Flatten = true;
     }
-
-    loadedDocument.Redact();
-
-    //Save the document.
-    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-    {
-        loadedDocument.Save(outputFileStream);
-    }
-
-    //Close the document.
-    loadedDocument.Close(true);
 }
+loadedDocument.Redact();
+
+//Save the document.
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+{
+    loadedDocument.Save(outputFileStream);
+}
+
+//Close the document.
+loadedDocument.Close(true);
+

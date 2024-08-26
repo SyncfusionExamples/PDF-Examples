@@ -34,7 +34,7 @@ using (OCRProcessor processor = new OCRProcessor())
     //Perform OCR with input document.
     string text = processor.PerformOCR(lDoc);
     //Create file stream.
-    FileStream fileStream = new FileStream("Output.pdf", FileMode.CreateNew);
+    FileStream fileStream = new FileStream("Output.pdf", FileMode.Create, FileAccess.ReadWrite);
     //Save the document into stream.
     lDoc.Save(fileStream);
     //Close the document.

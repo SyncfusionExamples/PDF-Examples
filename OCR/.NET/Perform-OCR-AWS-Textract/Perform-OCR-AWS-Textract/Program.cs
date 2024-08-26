@@ -27,7 +27,7 @@ namespace OCR.Test
                 string text = processor.PerformOCR(lDoc);
 
                 //Create file stream.
-                FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.CreateNew);
+                FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite);
 
                 //Save the document into stream.
                 lDoc.Save(fileStream);

@@ -23,7 +23,7 @@ string baseUrl = Path.GetFullPath(@"Data/Resources/");
 PdfDocument document = htmlConverter.Convert(htmlText, baseUrl);
 
 //Create the file stream. 
-FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/HTML-to-PDF.pdf"), FileMode.CreateNew, FileAccess.ReadWrite);
+FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/HTML-to-PDF.pdf"), FileMode.Create, FileAccess.ReadWrite);
 
 //Save and close the PDF document
 document.Save(fileStream);

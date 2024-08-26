@@ -14,7 +14,7 @@ namespace Remove_Unused_Resources_when_Splitting_PDF_Documents
             void LoadDocument_DocumentSplitEvent(object sender, PdfDocumentSplitEventArgs args)
             {
                 //Save the resulting document.
-                FileStream outputStream = new FileStream(Path.GetFullPath(@"Output/" + Guid.NewGuid().ToString() + ".pdf"), FileMode.CreateNew);
+                FileStream outputStream = new FileStream(Path.GetFullPath(@"Output/" + Guid.NewGuid().ToString() + ".pdf"), FileMode.Create, FileAccess.ReadWrite);
                 args.PdfDocumentData.CopyTo(outputStream);
                 outputStream.Close();
             }
