@@ -35,7 +35,7 @@ htmlConverter.ConverterSettings = settings;
 PdfDocument document = htmlConverter.Convert(Path.GetFullPath(@"Data/Input.html"));
 
 //Create file stream to save the PDF document. 
-FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/HTML-to-PDF.pdf"), FileMode.CreateNew, FileAccess.ReadWrite);
+FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/HTML-to-PDF.pdf"), FileMode.Create, FileAccess.ReadWrite);
 
 //Save and close the PDF document 
 document.Save(fileStream);

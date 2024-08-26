@@ -16,7 +16,7 @@ namespace Create_PDF {
             //Draw the text.
             graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
             //Create a fileStream.
-            FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.CreateNew, FileAccess.ReadWrite);
+            FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite);
             //Save and close the PDF document.
             document.Save(fileStream);
             document.Close(true);

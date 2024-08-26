@@ -26,7 +26,7 @@ using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(fileStream))
                     // Import the pages to the new PDF document 
                     document.ImportPageRange(loadedDocument, bookmark.Destination.PageIndex, endIndex);
                     //Save the document as stream
-                    using (FileStream stream = new FileStream(Path.GetFullPath(@"Output/" + bookmark.Title +".pdf"),FileMode.CreateNew,FileAccess.Write))
+                    using (FileStream stream = new FileStream(Path.GetFullPath(@"Output/" + bookmark.Title +".pdf"),FileMode.Create,FileAccess.Write))
                     {
                         document.Save(stream);
                     }

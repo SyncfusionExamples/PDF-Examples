@@ -41,7 +41,7 @@ using (OCRProcessor processor = new OCRProcessor())
     processor.PerformOCR(lDoc);
 
     //Create file stream.
-    FileStream outputStream = new FileStream("../../../OCR.pdf", FileMode.CreateNew);
+    FileStream outputStream = new FileStream("../../../OCR.pdf", FileMode.Create);
 
     //Save the document into stream.
     lDoc.Save(outputStream);
