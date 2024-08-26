@@ -16,6 +16,8 @@ foreach (PdfAttachment attachment in document.Attachments)
     stream.Write(attachment.Data, 0, attachment.Data.Length);
     stream.Dispose();
 }
-    
+
+Console.WriteLine("Successfully loaded an encrypt only attachment document");
+
 //Close the document.
 document.Close(true);

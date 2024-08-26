@@ -4,7 +4,7 @@ using Syncfusion.Pdf.Security;
 using System.Security.Cryptography.X509Certificates;
 
 //Load a PDF document
-FileStream docStream = new FileStream(@"Data/Input.pdf", FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 PdfLoadedDocument document = new PdfLoadedDocument(docStream);
 //Gets the signature field.
 PdfLoadedSignatureField signatureField = document.Form.Fields[0] as PdfLoadedSignatureField;

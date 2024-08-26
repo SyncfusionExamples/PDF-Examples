@@ -12,5 +12,7 @@ PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
 //Get the conformance level of the loaded document. 
 PdfConformanceLevel conformance = loadedDocument.Conformance;
 
+Console.WriteLine("Conformance level :" + conformance);
+
 //Close the document.
 loadedDocument.Close(true);

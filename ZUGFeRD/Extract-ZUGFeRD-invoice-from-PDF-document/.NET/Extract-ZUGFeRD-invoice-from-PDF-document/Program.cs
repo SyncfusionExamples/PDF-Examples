@@ -17,6 +17,6 @@ foreach (PdfAttachment attachment in loadedDocument.Attachments)
     s.Write(attachment.Data, 0, attachment.Data.Length);
     s.Dispose();
 }
-
+Console.WriteLine("Successfully extract ZUGFeRD invoice from PDF document");
 //Close the PDF document. 
 loadedDocument.Close(true);

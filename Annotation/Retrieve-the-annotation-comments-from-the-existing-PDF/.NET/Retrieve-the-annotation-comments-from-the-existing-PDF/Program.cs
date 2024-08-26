@@ -19,5 +19,7 @@ PdfLoadedRectangleAnnotation loadedMarkup = loadedPage.Annotations[0] as PdfLoad
 //Get the comments of the annotation.
 PdfLoadedPopupAnnotationCollection commentsCollection = loadedMarkup.Comments;
 
+Console.WriteLine("Successfully retrive annotation comments from PDF document");
+
 //Closes the document.
 loadedDocument.Close(true);

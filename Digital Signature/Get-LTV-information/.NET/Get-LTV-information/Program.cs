@@ -26,13 +26,19 @@ LtvVerificationInfo ltvVerificationInfo = result.LtvVerificationInfo;
 
 bool isLtvEnabled = ltvVerificationInfo.IsLtvEnabled;
 
+Console.WriteLine("isLtvEnabled :" + isLtvEnabled);
+
 // Checks whether the signature document has CRL embedded.
 
 bool isCrlEmbedded = ltvVerificationInfo.IsCrlEmbedded;
 
+Console.WriteLine("isCrlEmbedded :" + isCrlEmbedded);
+
 // Checks whether the signature document has OCSP embedded.
 
 bool isOcspEmbedded = ltvVerificationInfo.IsOcspEmbedded;
+
+Console.WriteLine("isOcspEmbedded :" + isOcspEmbedded);
 
 // Closes the document
 

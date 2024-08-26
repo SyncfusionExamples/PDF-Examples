@@ -20,6 +20,7 @@ foreach (PdfAttachment attachment in document.Attachments)
 
     stream.Dispose();
 }
+Console.WriteLine("Successfully set user password when accessing the attachment");
 
 //Close the document.
 document.Close(true);

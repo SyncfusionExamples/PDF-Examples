@@ -25,6 +25,8 @@ options.RevocationValidationType = RevocationValidationType.Crl;
 
 PdfSignatureValidationResult result = signatureField.ValidateSignature(options);
 
+Console.WriteLine("Successfully validate customized revocation");
+
 // Closes the document
 
 document.Close(true);

@@ -31,5 +31,7 @@ PdfLoadedPopupAnnotationCollection commentsCollection = loadedMarkup.Comments;
 //Get the review history of the comment.
 PdfLoadedPopupAnnotationCollection reviewCollection1 = commentsCollection[0].ReviewHistory;
 
+Console.WriteLine("Successfully retrive review status from PDF document");
+
 //Closes the document.
 loadedDocument.Close(true);

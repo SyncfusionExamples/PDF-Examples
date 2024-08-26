@@ -48,5 +48,7 @@ RevocationResult revocationDetails = result.RevocationResult;
 RevocationStatus revocationStatus = revocationDetails.OcspRevocationStatus;
 bool isRevokedCRL = revocationDetails.IsRevokedCRL;
 
+Console.WriteLine("Successfully validate all signatures in digitally signed PDF");
+
 //Close the document.
 loadedDocument.Close(true);
