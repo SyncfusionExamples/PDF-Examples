@@ -14,24 +14,23 @@ PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
 PdfLoadedPage loadedPage = loadedDocument.Pages[0] as PdfLoadedPage;
 
 //Get the annotation.
-PdfLoadedRectangleAnnotation loadedMarkup = loadedPage.Annotations[0] as PdfLoadedRectangleAnnotation;
+PdfLoadedRectangleAnnotation rectangleAnnotation = loadedPage.Annotations[0] as PdfLoadedRectangleAnnotation;
 
 //Get the review history collection for the annotation.
-PdfLoadedPopupAnnotationCollection reviewCollection = loadedMarkup.ReviewHistory;
+PdfLoadedPopupAnnotationCollection reviewCollection = rectangleAnnotation.ReviewHistory;
 
-//Get annotation state.
-PdfAnnotationState state = reviewCollection[0].State;
+//Iterate through the review history collection.
+foreach (PdfLoadedPopupAnnotation review in reviewCollection)
+{
+    //Get the author of the annotation.
+    string author = review.Author;
+    //Get the state of the annotation.
+    PdfAnnotationState state = review.State;
+    //Get the state model of the annotation.
+    PdfAnnotationStateModel model = review.StateModel;
 
-//Get annotation state model.
-PdfAnnotationStateModel model = reviewCollection[0].StateModel;
-
-//Get the comments of the annotation.
-PdfLoadedPopupAnnotationCollection commentsCollection = loadedMarkup.Comments;
-
-//Get the review history of the comment.
-PdfLoadedPopupAnnotationCollection reviewCollection1 = commentsCollection[0].ReviewHistory;
-
-Console.WriteLine("Successfully retrive review status from PDF document");
+    Console.WriteLine("Author of the reviewer: " + author + "\r\nState: " + state + "\r\nState Model: " + model);
+}
 
 //Closes the document.
 loadedDocument.Close(true);

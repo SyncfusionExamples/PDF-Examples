@@ -14,13 +14,12 @@ document.OnPdfPassword += Document_OnPdfPassword;
 //Accessing the attachments.
 foreach (PdfAttachment attachment in document.Attachments)
 {
-    FileStream stream = new FileStream(attachment.FileName, FileMode.Create);
+    FileStream stream = new FileStream(Path.GetFullPath(@"Output/") + attachment.FileName, FileMode.Create);
 
     stream.Write(attachment.Data, 0, attachment.Data.Length);
 
     stream.Dispose();
 }
-Console.WriteLine("Successfully set user password when accessing the attachment");
 
 //Close the document.
 document.Close(true);

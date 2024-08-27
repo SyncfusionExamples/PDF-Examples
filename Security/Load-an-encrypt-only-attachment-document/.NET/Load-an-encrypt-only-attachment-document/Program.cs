@@ -12,12 +12,10 @@ PdfLoadedDocument document = new PdfLoadedDocument(docStream, "password");
 //Accessing the attachments.
 foreach (PdfAttachment attachment in document.Attachments)
 {
-    FileStream stream = new FileStream(attachment.FileName, FileMode.Create);
+    FileStream stream = new FileStream(Path.GetFullPath(@"Output/") + attachment.FileName, FileMode.Create);
     stream.Write(attachment.Data, 0, attachment.Data.Length);
     stream.Dispose();
 }
-
-Console.WriteLine("Successfully loaded an encrypt only attachment document");
 
 //Close the document.
 document.Close(true);

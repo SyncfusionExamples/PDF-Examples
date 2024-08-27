@@ -13,10 +13,10 @@ PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
 foreach (PdfAttachment attachment in loadedDocument.Attachments)
 {
     //Extracts the ZUGFeRD invoice attachment and saves it to the disk.
-    FileStream s = new FileStream(attachment.FileName, FileMode.Create, FileAccess.Write);
+    FileStream s = new FileStream(Path.GetFullPath(@"Output/") + attachment.FileName, FileMode.Create, FileAccess.Write);
     s.Write(attachment.Data, 0, attachment.Data.Length);
     s.Dispose();
 }
-Console.WriteLine("Successfully extract ZUGFeRD invoice from PDF document");
+
 //Close the PDF document. 
 loadedDocument.Close(true);
