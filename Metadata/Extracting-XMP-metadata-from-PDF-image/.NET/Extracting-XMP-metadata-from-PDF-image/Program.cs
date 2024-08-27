@@ -20,5 +20,7 @@ PdfImageInfo[] imagesInfo = pageBase.GetImagesInfo();
 //Extracts the XMP metadata from PDF image.
 XmpMetadata metadata = imagesInfo[0].Metadata;
 
+Console.WriteLine(metadata.XmlData);
+
 //Close the document.
 loadedDocument.Close(true);
