@@ -5,7 +5,7 @@ using Syncfusion.Pdf.Security;
 using System.Security.Cryptography.X509Certificates;
 
 //Gets the stream from the document
-FileStream documentStream = new FileStream(@"Data/DigitalSignature.pdf", FileMode.Open, FileAccess.Read);
+FileStream documentStream = new FileStream(Path.GetFullPath(@"Data/DigitalSignature.pdf"), FileMode.Open, FileAccess.Read);
 //Load an existing signed PDF document.
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(documentStream);
 
@@ -14,11 +14,11 @@ PdfLoadedSignatureField loadedSignatureField = loadedDocument.Form.Fields[0] as 
 //X509Certificate2Collection to check the signer's identity using root certificates.
 X509CertificateCollection collection = new X509CertificateCollection();
 //Create new X509Certificate2 with the root certificate.
-X509Certificate2 certificate = new X509Certificate2(@"Data/Root.cer");
+X509Certificate2 certificate = new X509Certificate2(Path.GetFullPath(@"Data/Root.cer"));
 //Add the certificate to the collection.
 collection.Add(certificate);
 //Create new X509Certificate2 with the intermediate certificate.
-certificate = new X509Certificate2(@"Data/Intermediate0.cer");
+certificate = new X509Certificate2(Path.GetFullPath(@"Data/Intermediate0.cer"));
 //Add the certificate to the collection.
 collection.Add(certificate);
 //Validate signature and get the validation result
@@ -31,6 +31,7 @@ foreach (PdfSignerCertificate signerCertificate in result.SignerCertificates)
         foreach (X509Certificate2 item in signerCertificate.OcspCertificate.Certificates)
         {
             string subjectName = "The OCSP Response was signed by " + item.SubjectName.Name;
+			Console.WriteLine(subjectName);
         }
         bool isEmbbed = signerCertificate.OcspCertificate.IsEmbedded;
         DateTime validForm = signerCertificate.OcspCertificate.ValidFrom;
@@ -41,6 +42,7 @@ foreach (PdfSignerCertificate signerCertificate in result.SignerCertificates)
         foreach (X509Certificate2 item in signerCertificate.CrlCertificate.Certificates)
         {
             string subjectName = "The CRL was signed by " + item.SubjectName.Name;
+			Console.WriteLine(subjectName);
         }
         bool isEmbbed = signerCertificate.CrlCertificate.IsEmbedded;
         DateTime validForm = signerCertificate.CrlCertificate.ValidFrom;

@@ -3,7 +3,7 @@
 using Syncfusion.Pdf.Parsing;
 
 //Loads an existing document
-FileStream docStream = new FileStream(@"Data/Input.pdf", FileMode.Open, FileAccess.Read);
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 PdfLoadedDocument document = new PdfLoadedDocument(docStream);
 
 //Gets an array of revisions. 

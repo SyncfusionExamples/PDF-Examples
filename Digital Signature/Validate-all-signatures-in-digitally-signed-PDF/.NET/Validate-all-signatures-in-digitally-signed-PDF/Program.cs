@@ -28,5 +28,9 @@ collection.Add(certificate);
 List<PdfSignatureValidationResult> results;
 bool isValid = loadedDocument.Form.Fields.ValidateSignatures(collection, out results);
 
+Console.WriteLine("All signatures in the document are valid: " + isValid);
+
 //Close the document.
 loadedDocument.Close(true);
+
+

@@ -36,6 +36,8 @@ SignatureStatus status = result.SignatureStatus;
 //Checks whether the document is modified or not.
 bool isModified = result.IsDocumentModified;
 
+Console.WriteLine("Document modified: " + isModified);
+
 //Signature details.
 string issuerName = signatureField.Signature.Certificate.IssuerName;
 DateTime validFrom = signatureField.Signature.Certificate.ValidFrom;
@@ -43,10 +45,19 @@ DateTime validTo = signatureField.Signature.Certificate.ValidTo;
 string signatureAlgorithm = result.SignatureAlgorithm;
 DigestAlgorithm digestAlgorithm = result.DigestAlgorithm;
 
+Console.WriteLine("Issuer Name: " + issuerName);
+Console.WriteLine("Valid From: " + validFrom);
+Console.WriteLine("Valid To: " + validTo);
+Console.WriteLine("Signature Algorithm: " + signatureAlgorithm);
+Console.WriteLine("Digest Algorithm: " + digestAlgorithm);
+
 //Revocation validation details.
 RevocationResult revocationDetails = result.RevocationResult;
 RevocationStatus revocationStatus = revocationDetails.OcspRevocationStatus;
 bool isRevokedCRL = revocationDetails.IsRevokedCRL;
+
+Console.WriteLine("Revocation Status: " + revocationStatus);
+Console.WriteLine("Is Revoked CRL: " + isRevokedCRL);
 
 //Close the document.
 loadedDocument.Close(true);
