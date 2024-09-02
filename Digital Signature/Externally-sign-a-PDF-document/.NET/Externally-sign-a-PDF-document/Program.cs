@@ -33,7 +33,7 @@ void Signature_ComputeHash(object sender, PdfSignatureEventArgs ars)
     SignedCms signedCms = new SignedCms(new ContentInfo(documentBytes), detached: true);
 
     //Compute the signature using the specified digital ID file and the password.
-    X509Certificate2 certificate = new X509Certificate2(@"Data/PDF.pfx", "syncfusion");
+    X509Certificate2 certificate = new X509Certificate2(Path.GetFullPath(@"Data/PDF.pfx"), "syncfusion");
     var cmsSigner = new CmsSigner(certificate);
 
     //Set the digest algorithm SHA256.
