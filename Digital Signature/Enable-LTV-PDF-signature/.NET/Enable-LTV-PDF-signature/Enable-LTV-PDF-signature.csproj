@@ -13,10 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Data\PDF.pfx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\syncfusion_logo.png">
+    <None Update="Data\Input.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Output\.gitkeep">
