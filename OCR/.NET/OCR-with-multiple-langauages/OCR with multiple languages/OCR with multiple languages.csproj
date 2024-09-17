@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.PDF.OCR.NET" Version="26.2.14" />
+    <PackageReference Include="Syncfusion.PDF.OCR.NET" Version="*" />
   </ItemGroup>
 
   <ItemGroup>
