@@ -28,7 +28,7 @@ using (OCRProcessor ocrProcessor = new OCRProcessor())
     ocrProcessor.Settings = ocrSettings;
 
     // Perform OCR on the loaded PDF document, providing the path to the tessdata directory
-    ocrProcessor.PerformOCR(loadedDocument, "../../../tessdata");
+    ocrProcessor.PerformOCR(loadedDocument, "tessdata");
 
     // Create a file stream to save the OCR-processed PDF
     FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create);
