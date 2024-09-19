@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: createpdfdocument
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: createpdfdocument
+  template:
+    metadata:
+      labels:
+        app: createpdfdocument
+    spec:
+      containers:
+      - name: createpdfdocument
+        image: createpdfdocument20240918103106.azurecr.io/createpdfdocument:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: createpdfdocument
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app: createpdfdocument
