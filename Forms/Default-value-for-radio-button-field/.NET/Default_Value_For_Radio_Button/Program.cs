@@ -9,8 +9,8 @@ PdfDocument document = new PdfDocument();
 // Add a new page to the PDF document
 PdfPage page = document.Pages.Add();
 
-// Create a new radio button list field named "employeesRadioList"
-PdfRadioButtonListField employeesRadioList = new PdfRadioButtonListField(page, "employeesRadioList");
+// Create a new radio button list field
+PdfRadioButtonListField genderRadioList = new PdfRadioButtonListField(page, "gender");
 // Create a font
 PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 12, PdfFontStyle.Regular);
 
@@ -31,7 +31,7 @@ radioItem2.Bounds = new RectangleF(205, 203, 15, 15);
 page.Graphics.DrawString("Female", font, PdfBrushes.Black, new RectangleF(225, 204, 180, 20));
 // Add the radio button item to the list
 employeesRadioList.Items.Add(radioItem2);
-
+//Set the default value of the radio button field.
 employeesRadioList.SelectedIndex = 1;
 // Add the radio button list to the form
 document.Form.Fields.Add(employeesRadioList);
