@@ -6,18 +6,39 @@ using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Security;
 
-//Get the stream from the document.
-FileStream documentStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
+//Creates a new PDF document.
+PdfDocument document = new PdfDocument();
 
-//Load an existing PDF document.
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(documentStream);
+//Adds a new page.
+PdfPageBase page = document.Pages.Add();
+
+//Create graphics for the page. 
+PdfGraphics graphics = page.Graphics;
+
+//Creates a certificate instance from PFX file with private key.
+FileStream certificateStream = new FileStream(Path.GetFullPath(@"Data/PDF.pfx"), FileMode.Open, FileAccess.Read);
+PdfCertificate pdfCert = new PdfCertificate(certificateStream, "DigitalPass123");
+
+//Creates a digital signature.
+PdfSignature signature = new PdfSignature(document, page, pdfCert, "Signature");
+signature.Settings.CryptographicStandard = CryptographicStandard.CADES;
+signature.Settings.DigestAlgorithm = DigestAlgorithm.SHA256;
+
+//Save the document into stream
+MemoryStream stream = new MemoryStream();
+document.Save(stream);
+//Close the document
+document.Close(true);
+
+//Load an existing PDF stream.
+PdfLoadedDocument loadedDocument = new PdfLoadedDocument(stream);
 
 //Gets the first signature field of the PDF document
 PdfLoadedSignatureField signatureField = loadedDocument.Form.Fields[0] as PdfLoadedSignatureField;
-PdfSignature signature = signatureField.Signature;
+PdfSignature pdfSignature = signatureField.Signature;
 
 //Enable LTV on Signature.
-signature.EnableLtv = true;
+pdfSignature.EnableLtv = true;
 
 
 //Create file stream.
