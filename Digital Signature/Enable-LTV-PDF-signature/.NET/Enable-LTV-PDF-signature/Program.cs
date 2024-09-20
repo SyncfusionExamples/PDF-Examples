@@ -3,6 +3,7 @@
 using Syncfusion.Drawing;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
+using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Security;
 
 //Creates a new PDF document.
@@ -23,35 +24,30 @@ PdfSignature signature = new PdfSignature(document, page, pdfCert, "Signature");
 signature.Settings.CryptographicStandard = CryptographicStandard.CADES;
 signature.Settings.DigestAlgorithm = DigestAlgorithm.SHA256;
 
+//Save the document into stream
+MemoryStream stream = new MemoryStream();
+document.Save(stream);
+//Close the document
+document.Close(true);
 
-//Sets an image for signature field.
-FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/syncfusion_logo.png"), FileMode.Open, FileAccess.Read);
+//Load an existing PDF stream.
+PdfLoadedDocument loadedDocument = new PdfLoadedDocument(stream);
 
-//Sets an image for signature field.
-PdfBitmap image = new PdfBitmap(imageStream);
-
-//Adds time stamp by using the server URI and credentials.
-signature.TimeStampServer = new TimeStampServer(new Uri("http://time.certum.pl/ "));
+//Gets the first signature field of the PDF document
+PdfLoadedSignatureField signatureField = loadedDocument.Form.Fields[0] as PdfLoadedSignatureField;
+PdfSignature pdfSignature = signatureField.Signature;
 
 //Enable LTV on Signature.
-signature.EnableLtv = true;
+pdfSignature.EnableLtv = true;
 
-//Sets signature info.
-signature.Bounds = new RectangleF(new PointF(0, 0), image.PhysicalDimension);
-signature.ContactInfo = "johndoe@owned.us";
-signature.LocationInfo = "Honolulu, Hawaii";
-signature.Reason = "I am author of this document.";
-
-//Draws the signature image.
-signature.Appearance.Normal.Graphics.DrawImage(image, 0, 0);
 
 //Create file stream.
 using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     //Save the PDF document to file stream.
-    document.Save(outputFileStream);
+    loadedDocument.Save(outputFileStream);
 }
 
 //Close the document.
-document.Close(true);
+loadedDocument.Close(true);
 
