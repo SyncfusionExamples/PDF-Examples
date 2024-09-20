@@ -13,14 +13,9 @@ FileStream documentStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), 
 //Load an existing PDF document.
 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(documentStream);
 
-//Get the page of the existing PDF document.
-PdfLoadedPage loadedPage = loadedDocument.Pages[0] as PdfLoadedPage;
-
-//Create a new PDF signature without PdfCertificate instance.
-PdfSignature signature = new PdfSignature(loadedDocument, loadedPage, null, "Signature1");
-
-//Hook up the ComputeHash event.
-signature.ComputeHash += Signature_ComputeHash;
+//Gets the first signature field of the PDF document
+PdfLoadedSignatureField signatureField = loadedDocument.Form.Fields[0] as PdfLoadedSignatureField;
+PdfSignature signature = signatureField.Signature;
 
 //Create X509Certificate2 from your certificate to create a long-term validity.
 X509Certificate2 x509 = new X509Certificate2(Path.GetFullPath(@"Data/PDF.pfx"), "syncfusion");
@@ -38,22 +33,4 @@ using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Ou
 //Close the document.
 loadedDocument.Close(true);
 
-void Signature_ComputeHash(object sender, PdfSignatureEventArgs ars)
-{
-    //Get the document bytes
-    byte[] documentBytes = ars.Data;
 
-    SignedCms signedCms = new SignedCms(new ContentInfo(documentBytes), detached: true);
-
-    //Compute the signature using the specified digital ID file and the password
-    X509Certificate2 certificate = new X509Certificate2(Path.GetFullPath(@"Data/PDF.pfx"), "syncfusion");
-    CmsSigner cmsSigner = new CmsSigner(certificate);
-
-    //Set the digest algorithm SHA256
-    cmsSigner.DigestAlgorithm = new Oid("2.16.840.1.101.3.4.2.1");
-
-    signedCms.ComputeSignature(cmsSigner);
-
-    //Embed the encoded digital signature to the PDF document
-    ars.SignedData = signedCms.Encode();
-}
