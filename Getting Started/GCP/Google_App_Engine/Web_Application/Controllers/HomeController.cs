@@ -19,7 +19,7 @@ namespace Web_Application.Controllers
             _logger = logger;
         }
 
-        public ActionResult GenerateInvoicePDF()
+        public ActionResult CreateDocument()
         {
 
             //Load PDF document as stream.
