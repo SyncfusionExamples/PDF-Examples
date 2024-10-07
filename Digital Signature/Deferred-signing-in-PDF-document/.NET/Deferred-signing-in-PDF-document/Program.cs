@@ -114,6 +114,11 @@ class Program
                 RSACng rsa = (RSACng)digitalID.PrivateKey;
                 Program.SignedHash = rsa.SignData(documentHash, System.Security.Cryptography.HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
             }
+            else if (digitalID.PrivateKey is System.Security.Cryptography.RSAOpenSsl)
+            {       
+                System.Security.Cryptography.RSAOpenSsl rsa = (System.Security.Cryptography.RSAOpenSsl)digitalID.PrivateKey;
+                Program.SignedHash = rsa.SignData(documentHash, System.Security.Cryptography.HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
+            }
         }
     }
     /// <summary>
