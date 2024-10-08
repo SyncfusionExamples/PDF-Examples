@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Implementing-PdfFormFieldVisibility-types", "Implementing-PdfFormFieldVisibility-types\Implementing-PdfFormFieldVisibility-types.csproj", "{D247A993-E0CF-4289-B36A-122A61B1DB67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D247A993-E0CF-4289-B36A-122A61B1DB67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D247A993-E0CF-4289-B36A-122A61B1DB67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D247A993-E0CF-4289-B36A-122A61B1DB67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D247A993-E0CF-4289-B36A-122A61B1DB67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A10586B8-C76A-4E8C-BDA8-30449D4B3CBF}
+	EndGlobalSection
+EndGlobal
