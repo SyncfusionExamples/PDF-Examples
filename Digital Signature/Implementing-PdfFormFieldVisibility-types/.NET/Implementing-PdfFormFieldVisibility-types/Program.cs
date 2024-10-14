@@ -3,20 +3,25 @@ using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf;
 using Syncfusion.Drawing;
 
+// Create a new PDF document
 PdfDocument document = new PdfDocument();
-//Creates a new page and adds it as the last page of the document
+// Add a new PDF page
 PdfPage page = document.Pages.Add();
+//Create font
 PdfFont font = new PdfStandardFont(PdfFontFamily.Courier, 12f);
-//Create a text box
-PdfTextBoxField firstNameTextBox = new PdfTextBoxField(page, "firstNameTextBox");
-firstNameTextBox.MaxLength = 8;
-firstNameTextBox.Bounds = new RectangleF(100, 20, 200, 20);
-firstNameTextBox.Font = font;
-firstNameTextBox.Text = "Text Box";
-//Set the visibility.
-firstNameTextBox.Visibility = PdfFormFieldVisibility.Visible;
+//Draw the label text
 page.Graphics.DrawString("First Name", font, PdfBrushes.Black, 10, 55);
-//Add the textbox in document
+//Create a text box
+PdfTextBoxField firstNameTextBox = new PdfTextBoxField(page, "FirstNameTextBox");
+//Set bounds of the text box.
+firstNameTextBox.Bounds = new RectangleF(100, 20, 200, 20);
+//Set font
+firstNameTextBox.Font = font;
+//Set the text box default text
+firstNameTextBox.Text = "John";
+//Set the text box field visibility.
+firstNameTextBox.Visibility = PdfFormFieldVisibility.Visible;
+//Add the textbox to the document
 document.Form.Fields.Add(firstNameTextBox);
 //Save the document.
 using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
