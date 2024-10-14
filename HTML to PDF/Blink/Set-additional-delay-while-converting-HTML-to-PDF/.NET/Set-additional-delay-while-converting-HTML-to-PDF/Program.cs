@@ -26,8 +26,10 @@ htmlConverter.ConverterSettings = blinkConverterSettings;
 PdfDocument document = htmlConverter.Convert("https://www.google.com");
 
 //Create file stream. 
-FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite);
-
-//Save and Close the PDF document.
-document.Save(fileStream);
+using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+{
+    //Save the PDF document 
+    document.Save(fileStream);
+}
+//Close the document.
 document.Close(true);

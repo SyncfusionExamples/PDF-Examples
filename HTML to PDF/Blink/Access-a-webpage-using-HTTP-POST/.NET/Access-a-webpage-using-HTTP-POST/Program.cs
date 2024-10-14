@@ -26,8 +26,10 @@ htmlConverter.ConverterSettings = settings;
 PdfDocument document = htmlConverter.Convert("https://www.example.com");
 
 //Create file stream. 
-FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/HTML-to-PDF.pdf"), FileMode.Create, FileAccess.ReadWrite);
-
-//Save and close the PDF document 
-document.Save(fileStream);
+using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/HTML-to-PDF.pdf"), FileMode.Create, FileAccess.ReadWrite))
+{
+    //Save the PDF document 
+    document.Save(fileStream);
+}
+//Close the document.
 document.Close(true);
