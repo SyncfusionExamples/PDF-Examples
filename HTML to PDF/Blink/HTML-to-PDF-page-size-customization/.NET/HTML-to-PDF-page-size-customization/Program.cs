@@ -21,10 +21,12 @@ namespace HTML_to_PDF_page_size_customization {
             //Convert URL to PDF document.  
             PdfDocument document = htmlConverter.Convert("https://www.google.com");
 
-            //Create a file stream.
-            FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite);
-            //Save the PDF document to the file stream.
-            document.Save(fileStream);
+            //Create file stream. 
+            using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+            {
+                //Save the PDF document 
+                document.Save(fileStream);
+            }
             //Close the document.
             document.Close(true);
         }

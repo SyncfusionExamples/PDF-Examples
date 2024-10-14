@@ -19,8 +19,10 @@ htmlConverter.ConverterSettings = blinkConverterSettings;
 PdfDocument document = htmlConverter.ConvertPartialHtml(Path.GetFullPath(@"Data/Input.html"), "picture");
 
 //Create file stream. 
-FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite);
-
-//Save and close the PDF document 
-document.Save(fileStream);
+using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+{
+    //Save the PDF document 
+    document.Save(fileStream);
+}
+//Close the document.
 document.Close(true);
