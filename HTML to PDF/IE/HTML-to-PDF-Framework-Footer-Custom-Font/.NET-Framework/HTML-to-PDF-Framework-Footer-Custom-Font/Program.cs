@@ -13,8 +13,7 @@ namespace HTML_to_PDF_Framework_Footer_Custom_Font
             HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
             BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
             //Create font and brush for footer element.
-            FileStream fontStream = new FileStream(@"Data/calibri.ttf", FileMode.Open, FileAccess.Read);
-            PdfFont font = new PdfTrueTypeFont(fontStream, 10);
+            PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 8);
             PdfBrush brush = new PdfSolidBrush(Color.Black);
             //Create PDF page template element for footer with bounds.
             PdfPageTemplateElement footer = new PdfPageTemplateElement(new RectangleF(0, 0, blinkConverterSettings.PdfPageSize.Width, 50));
