@@ -32,12 +32,8 @@ namespace HTML_to_PDF_Framework_Footer_Custom_Font
             htmlConverter.ConverterSettings = blinkConverterSettings;
             //Convert URL to PDF.
             PdfDocument document = htmlConverter.Convert("https://www.google.com/");
-            //Create a file stream.
-            using (FileStream fileStream = new FileStream(@"Output/Output.pdf", FileMode.Create, FileAccess.ReadWrite))
-            {
-                //Save a PDF document to the file stream.
-                document.Save(fileStream);
-            }
+            //Save a PDF document to the file stream.
+            document.Save("Output.pdf");
             //Close the document.
             document.Close(true);
         }
