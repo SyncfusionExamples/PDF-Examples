@@ -32,6 +32,8 @@ signatureField1.Signature.Appearance.Normal.Graphics.DrawImage(signatureImage, 0
 //Save the document into the stream.
 MemoryStream stream = new MemoryStream();
 loadedDocument.Save(stream);
+//Close the document.
+loadedDocument.Close(true);
 
 //Load the signed PDF document.
 PdfLoadedDocument signedDocument = new PdfLoadedDocument(stream);
@@ -58,7 +60,7 @@ using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Ou
     //Save the PDF document to file stream.
     signedDocument.Save(outputFileStream);
 }
-
 //Close the document.
 signedDocument.Close(true);
 loadedDocument.Close(true);
+stream.Dispose();
