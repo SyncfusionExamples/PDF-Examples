@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Get-width-annotation-in-PDF", "Get-width-annotation-in-PDF\Get-width-annotation-in-PDF.csproj", "{95AF7923-2FEF-4CDA-9326-AF02B3F4AFBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95AF7923-2FEF-4CDA-9326-AF02B3F4AFBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95AF7923-2FEF-4CDA-9326-AF02B3F4AFBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95AF7923-2FEF-4CDA-9326-AF02B3F4AFBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95AF7923-2FEF-4CDA-9326-AF02B3F4AFBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2E39D7E-4666-4614-B242-DECD5E7A7A1B}
+	EndGlobalSection
+EndGlobal

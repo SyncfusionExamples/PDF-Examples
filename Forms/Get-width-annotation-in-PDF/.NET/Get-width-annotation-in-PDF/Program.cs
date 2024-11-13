@@ -1,6 +1,7 @@
 ﻿using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf;
+using Syncfusion.Drawing;
 
 //Load the PDF document.
 FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
