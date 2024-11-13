@@ -8,6 +8,8 @@ PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
 // Loop through each page in the loaded PDF document.
 foreach (PdfLoadedPage page in loadedDocument.Pages)
 {
+    // Initialize the widget count to zero.
+    int widgetCount = 0;
     // Loop through each annotation on the current page.
     foreach (PdfLoadedAnnotation annot in page.Annotations)
     {
@@ -16,17 +18,16 @@ foreach (PdfLoadedPage page in loadedDocument.Pages)
         {
             // Cast the annotation to a PdfLoadedWidgetAnnotation type.
             PdfLoadedWidgetAnnotation widget = annot as PdfLoadedWidgetAnnotation;
-            // Set the widget's text value to "true".
-            widget.Text = "true";
+            // Retrieve the bounds of the widget annotation.
+            RectangleF bounds = widget.Bounds;
+            // Display the index and bounds value of the widget annotation.
+            Console.WriteLine("Index: {0}, Bounds Value: {1}", widgetCount, bounds);
+            // Increment the widget count.
+            widgetCount++;
         }
     }
-
-}
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream.
-    loadedDocument.Save(outputFileStream);
+    // Display the total number of widget annotations.
+    Console.WriteLine("Total number of widgets: {0}", widgetCount);
 }
 //Close the document.
 loadedDocument.Close(true);
