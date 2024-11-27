@@ -2,26 +2,22 @@
 
 using Syncfusion.Pdf;
 
-//Creates a PDF document.
-PdfDocument finalDoc = new PdfDocument();
-
-//Get stream from the PDF documents. 
-FileStream stream1 = new FileStream(Path.GetFullPath(@"Data/file1.pdf"), FileMode.Open, FileAccess.Read);
-FileStream stream2 = new FileStream(Path.GetFullPath(@"Data/file2.pdf"), FileMode.Open, FileAccess.Read);
-
-//Creates a PDF stream for merging.
-Stream[] streams = { stream1, stream2 };
-
-//Merges documents.
-PdfDocumentBase.Merge(finalDoc, streams);
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream.
-    finalDoc.Save(outputFileStream);
+//Create a PDF document 
+using (PdfDocument finalDocument = new PdfDocument()) 
+{ 
+    //Get the stream from an existing PDF document 
+    using (FileStream firstStream = new FileStream(Path.GetFullPath(@"Data/file1.pdf"), FileMode.Open, FileAccess.Read)) 
+    using (FileStream secondStream = new FileStream(Path.GetFullPath(@"Data/file2.pdf"), FileMode.Open, FileAccess.Read)) 
+    { 
+        //Create a PDF stream for merging 
+        Stream[] streams = { firstStream, secondStream }; 
+        //Merge PDF documents 
+        PdfDocumentBase.Merge(finalDocument, streams); 
+        //Save the document into a stream 
+        using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+        { 
+            finalDocument.Save(outputFileStream); 
+        } 
+    } 
 }
-
-//Close the document.
-finalDoc.Close();
 

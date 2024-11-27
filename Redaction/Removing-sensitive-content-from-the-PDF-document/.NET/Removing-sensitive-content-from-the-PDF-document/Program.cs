@@ -6,29 +6,18 @@ using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Redaction;
 
 //Create stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
-
-//Load the existing PDF document.
-PdfLoadedDocument document = new PdfLoadedDocument(docStream);
-
-//Get the first page from the document.
-PdfLoadedPage page = document.Pages[0] as PdfLoadedPage;
-
-//Create a redaction object.
-PdfRedaction redaction = new PdfRedaction(new RectangleF(343, 147, 60, 17), Syncfusion.Drawing.Color.Black);
-
-//Add a redaction object into the redaction collection of loaded page.
-page.AddRedaction(redaction);
-
-//Redact the contents from the PDF document.
-document.Redact();
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
 {
-    //Save the PDF document to file stream.
-    document.Save(outputFileStream);
+    //Load the PDF document from stream
+    using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputStream))
+    {
+        PdfLoadedPage loadedPage = loadedDocument.Pages[0] as PdfLoadedPage;
+        //Create a PDF redaction for the page
+        PdfRedaction redaction = new PdfRedaction(new RectangleF(340, 120, 140, 20));
+        //Add redaction to the first page
+        loadedPage.Redactions.Add(redaction);
+        //Save the redacted PDF document to the memory stream
+        MemoryStream stream = new MemoryStream();
+        loadedDocument.Save(stream);
+    }
 }
-
-//Close the document.
-document.Close(true);
