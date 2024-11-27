@@ -16,7 +16,7 @@ if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
 //Assign Blink converter settings to HTML converter.
 htmlConverter.ConverterSettings = blinkConverterSettings;
 //Convert URL to PDF document. 
-PdfDocument document = htmlConverter.Convert("https://www.google.com");
+PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com");
 
 //Create file stream. 
 using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
