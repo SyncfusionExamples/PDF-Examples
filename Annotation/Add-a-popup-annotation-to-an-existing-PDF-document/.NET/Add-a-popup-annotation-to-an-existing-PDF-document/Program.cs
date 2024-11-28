@@ -4,33 +4,27 @@ using Syncfusion.Drawing;
 using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 
-//Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/input.pdf"), FileMode.Open, FileAccess.Read);
-
-//Load the PDF document. 
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
-
-//Creates a rectangle.
-RectangleF rectangle = new RectangleF(10, 40, 30, 30);
-
-//Creates a new popup annotation.
-PdfPopupAnnotation popupAnnotation = new PdfPopupAnnotation(rectangle, "Test popup annotation");
-popupAnnotation.Border.Width = 4;
-popupAnnotation.Border.HorizontalRadius = 20;
-popupAnnotation.Border.VerticalRadius = 30;
-
-//Sets the pdf popup icon.
-popupAnnotation.Icon = PdfPopupIcon.NewParagraph;
-
-//Adds the annotation to loaded page.
-loadedDocument.Pages[0].Annotations.Add(popupAnnotation);
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+//Create FileStream object to read the input PDF file
+using (FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Data/input.pdf"), FileMode.Open, FileAccess.Read))
 {
-    //Save the PDF document to file stream.
-    loadedDocument.Save(outputFileStream);
+    //Load the PDF document from the input stream
+    using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputFileStream))
+    {
+        //Get the first page of the PDF document
+        PdfPageBase loadedPage = loadedDocument.Pages[0];
+        //Create a new popup annotation
+        PdfPopupAnnotation popupAnnotation = new PdfPopupAnnotation(new RectangleF(100, 100, 20, 20), "Comment");
+        //Set the icon for the popup annotation
+        popupAnnotation.Icon = PdfPopupIcon.Comment;
+        //Set the color for the popup annotation
+        popupAnnotation.Color = new PdfColor(Color.Yellow);
+        //Add the annotation to the page
+        loadedPage.Annotations.Add(popupAnnotation);
+        //Create file stream.
+        using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+        {
+            //Save the PDF document to file stream.
+            loadedDocument.Save(outputFileStream);
+        }
+    }
 }
-
-//Close the document.
-loadedDocument.Close(true);

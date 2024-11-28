@@ -3,29 +3,30 @@
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Security;
 
-//Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
-
-//Load the PDF document.
-PdfLoadedDocument document = new PdfLoadedDocument(docStream);
-
-//PDF document security.
-PdfSecurity security = document.Security;
-
-//Specifies encryption key size, algorithm and permission. 
-security.KeySize = PdfEncryptionKeySize.Key256Bit;
-security.Algorithm = PdfEncryptionAlgorithm.AES;
-
-//Provide owner and user password.
-security.OwnerPassword = "ownerPassword256";
-security.UserPassword = "userPassword256";
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+// Load the PDF document from a file stream
+using (FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
 {
-    //Save the PDF document to file stream.
-    document.Save(outputFileStream);
-}
+    // Load the PDF document
+    PdfLoadedDocument document = new PdfLoadedDocument(inputFileStream);
 
-//Close the document.
-document.Close(true);
+    //  Gets a security object for the document
+    PdfSecurity security = document.Security;
+
+    // Configure key size and encryption algorithm
+    security.KeySize = PdfEncryptionKeySize.Key256Bit;
+    security.Algorithm = PdfEncryptionAlgorithm.AES;
+
+    // Assign owner and user passwords
+    security.OwnerPassword = "owner123";
+    security.UserPassword = "user123";
+
+    //Create file stream.
+    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+    {
+        //Save the PDF document to file stream.
+        document.Save(outputFileStream);
+    }
+
+    // Close the document
+    document.Close(true);
+}

@@ -3,28 +3,39 @@
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 
-//Get stream from an existing PDF document. 
-using (FileStream docStream = new FileStream(Path.GetFullPath(@"Data/imageDoc.pdf"), FileMode.Open, FileAccess.Read))
-{
+// Open a file stream to read the input PDF file.
+using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Data/imageDoc.pdf"), FileMode.Open, FileAccess.Read))
+{ 
+    // Create a new PdfLoadedDocument object from the file stream.
+    using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(fileStream))
+    { 
+        // Create a new PdfCompressionOptions object.
+        PdfCompressionOptions options = new PdfCompressionOptions(); 
+        
+        // Enable image compression and set image quality.
+        options.CompressImages = true; 
+        options.ImageQuality = 50; 
+        
+        // Enable font optimization.
+        options.OptimizeFont = true; 
+        
+        // Enable page content optimization.
+        options.OptimizePageContents = true; 
+        
+        // Remove metadata from the PDF.
+        options.RemoveMetadata = true; 
+        
+        // Compress the PDF document.
+        loadedDocument.Compress(options);
 
-    //Load the existing PDF document.
-    PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
-    //Create a new compression option.
-    PdfCompressionOptions options = new PdfCompressionOptions();
-    //Enable the compress image.
-    options.CompressImages = true;
-    //Set the image quality.
-    options.ImageQuality = 50;
-    //Assign the compression option to the document
-    loadedDocument.Compress(options);
-
-    //Create file stream.
-    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-    {
-        //Save the PDF document to file stream.
-        loadedDocument.Save(outputFileStream);
+        //Create file stream.
+        using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+        {
+            //Save the PDF document to file stream.
+            loadedDocument.Save(outputFileStream);
+        }
+        //Close the document.
+        loadedDocument.Close(true);
     }
-    //Close the document.
-    loadedDocument.Close(true);
-}
+} 
 

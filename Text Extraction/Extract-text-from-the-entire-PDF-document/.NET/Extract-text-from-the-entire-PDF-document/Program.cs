@@ -3,26 +3,22 @@
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 
-//Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
-
-//Load the PDF document.
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
-
-//Loading page collections.
-PdfLoadedPageCollection loadedPages = loadedDocument.Pages;
-
-string extractedText = string.Empty;
-
-//Extract text from existing PDF document pages.
-foreach (PdfLoadedPage loadedPage in loadedPages)
+// Open existing PDF document stream.
+using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
 {
-    extractedText += loadedPage.ExtractText();
+    // Load the PDF document.
+    using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputStream))
+    {
+        string extractedText = string.Empty;
+        
+        // Extract all text from PDF document pages.
+        foreach (PdfLoadedPage page in loadedDocument.Pages)
+        {
+            extractedText += page.ExtractText();
+        }
+
+        //Write the extracted text in console window.
+        Console.WriteLine("Extracted text from the entire document: " + extractedText);
+        Console.ReadLine();
+    }
 }
-
-//Close the document.
-loadedDocument.Close(true);
-
-//Write the extracted text in console window.
-Console.WriteLine("Extracted text from the entire document: " + extractedText);
-Console.ReadLine();
