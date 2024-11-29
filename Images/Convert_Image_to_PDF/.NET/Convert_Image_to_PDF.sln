@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convert_Image_to_PDF", "Convert_Image_to_PDF\Convert_Image_to_PDF.csproj", "{AFAD39C6-48B5-4416-B8FD-F532728F46FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFAD39C6-48B5-4416-B8FD-F532728F46FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFAD39C6-48B5-4416-B8FD-F532728F46FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFAD39C6-48B5-4416-B8FD-F532728F46FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFAD39C6-48B5-4416-B8FD-F532728F46FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53851137-F7F3-4EFF-BA66-898C77ADF8E3}
+	EndGlobalSection
+EndGlobal
