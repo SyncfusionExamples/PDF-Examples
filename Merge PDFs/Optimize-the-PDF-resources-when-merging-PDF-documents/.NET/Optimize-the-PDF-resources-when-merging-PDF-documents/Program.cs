@@ -2,31 +2,28 @@
 
 using Syncfusion.Pdf;
 
-//Creates a PDF document.
-PdfDocument finalDoc = new PdfDocument();
-
-//Get stream from an existing PDF documents. 
-FileStream stream1 = new FileStream(Path.GetFullPath(@"Data/File1.pdf"), FileMode.Open, FileAccess.Read);
-FileStream stream2 = new FileStream(Path.GetFullPath(@"Data/File2.pdf"), FileMode.Open, FileAccess.Read);
-
-//Creates a PDF stream for merging.
-Stream[] streams = { stream1, stream2 };
-
-//Create the merge option. 
-PdfMergeOptions mergeOptions = new PdfMergeOptions();
-
-//Enable Optimize Resources
-mergeOptions.OptimizeResources = true;
-
-//Merges PDFDocument
-PdfDocumentBase.Merge(finalDoc, mergeOptions, streams);
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream.
-    finalDoc.Save(outputFileStream);
+//Create a new PDF document 
+using (PdfDocument outputDocument = new PdfDocument()) 
+{ 
+    //Load the first PDF document
+    using (FileStream firstPDFStream = new FileStream(Path.GetFullPath(@"Data/File1.pdf"), FileMode.Open, FileAccess.Read)) 
+    { 
+        //Load the second PDF document 
+        using (FileStream secondPDFStream = new FileStream(Path.GetFullPath(@"Data/File2.pdf"), FileMode.Open, FileAccess.Read)) 
+        { 
+            //Create a list of streams to merge 
+            Stream[] streams = { firstPDFStream, secondPDFStream }; 
+            //Create a merge options object 
+            PdfMergeOptions mergeOptions = new PdfMergeOptions(); 
+            //Enable the optimize resources option 
+            mergeOptions.OptimizeResources = true; 
+            //Merge the PDF documents  
+            PdfDocumentBase.Merge(outputDocument, mergeOptions, streams); 
+            //Save the document to a memory stream 
+            using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+            { 
+                outputDocument.Save(outputFileStream); 
+            } 
+        } 
+    } 
 }
-
-//Close the document.
-finalDoc.Close(true);

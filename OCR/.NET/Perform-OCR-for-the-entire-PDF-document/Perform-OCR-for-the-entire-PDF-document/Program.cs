@@ -3,29 +3,28 @@
 using Syncfusion.OCRProcessor;
 using Syncfusion.Pdf.Parsing;
 
-
-//Initialize the OCR processor with tesseract binaries folder path.
+// Initialize the OCR processor
 using (OCRProcessor processor = new OCRProcessor())
 {
-    //Get stream from an existing PDF document. 
-    FileStream stream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open);
-
-    //Load the PDF document.
-    PdfLoadedDocument document = new PdfLoadedDocument(stream);
-
-    //Set OCR language.
-    processor.Settings.Language = Languages.English;
-
-    //Perform OCR with input document and tessdata (Language packs).
-    processor.PerformOCR(document);
-
-    //Create file stream.
+    // Load the existing PDF document
+    using (FileStream stream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open))
+    {    
+      PdfLoadedDocument pdfLoadedDocument = new PdfLoadedDocument(stream);
+      
+      // Set OCR language to process
+      processor.Settings.Language = Languages.English;
+      
+      // Process OCR by providing the PDF document
+      processor.PerformOCR(pdfLoadedDocument);
+      
+      //Create file stream.
     using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
     {
         //Save the PDF document to file stream.
-        document.Save(outputFileStream);
+        pdfLoadedDocument.Save(outputFileStream);
     }
-
-    //Close the document.
-    document.Close(true);
+      
+      //Close the document.
+      pdfLoadedDocument.Close(true);
+    }    
 }
