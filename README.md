@@ -1,7 +1,7 @@
-Syncfusion .NET PDF library 
+Syncfusion&reg; .NET PDF library 
 -------------------------------------
 
-The Syncfusion [.NET PDF library] (https://www.syncfusion.com/document-processing/pdf-framework/net) (Essential PDF) allows you to create, read and write PDF documents programatically in any .NET application. This high-performance and feature-rich .NET PDF framework works without Adobe dependencies. The creation of PDF follows the most popular PDF 1.7 (ISO 32000-1) and latest 2.0 (ISO 32000-2) specifications.
+The Syncfusion&reg; [.NET PDF library] (https://www.syncfusion.com/document-processing/pdf-framework/net) (Essential PDF) allows you to create, read and write PDF documents programatically in any .NET application. This high-performance and feature-rich .NET PDF framework works without Adobe dependencies. The creation of PDF follows the most popular PDF 1.7 (ISO 32000-1) and latest 2.0 (ISO 32000-2) specifications.
 
 Key Features 
 -------------------------------------- 
