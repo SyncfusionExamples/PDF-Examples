@@ -2,6 +2,7 @@
 
 using Syncfusion.Drawing;
 using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Security;
@@ -29,7 +30,7 @@ using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf
     signature.Reason = "I am the author of this document.";
 
     // Load the image for the signature field
-    FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/signature.png"), FileMode.Open, FileAccess.Read);
+    FileStream imageStream = new FileStream(Path.GetFullPath(@"..Data/signature.png"), FileMode.Open, FileAccess.Read);
     PdfBitmap signatureImage = new PdfBitmap(imageStream);
 
     // Draw the image on the signature field

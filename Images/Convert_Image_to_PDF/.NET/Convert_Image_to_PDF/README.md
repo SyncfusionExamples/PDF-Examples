@@ -6,17 +6,17 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
 
 Follow these steps to convert an image into a PDF file using the Syncfusion library:
 
-1. **Create a new project**: Start a new C# Console Application project.
+Step 1: **Create a new project**: Start a new C# Console Application project.
 
-2. **Install the NuGet package**: Add the [Syncfusion.Pdf.Imaging.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Imaging.Net.Core) package as a reference to your project from [NuGet.org](https://www.nuget.org/).
+Step 2: **Install the NuGet package**: Add the [Syncfusion.Pdf.Imaging.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Imaging.Net.Core) package as a reference to your project from [NuGet.org](https://www.nuget.org/).
 
-3. **Include necessary namespaces**: Add the following namespace in your `Program.cs` file:
+Step 3: **Include necessary namespaces**: Add the following namespace in your `Program.cs` file:
 
    ```csharp
    using Syncfusion.Pdf;
    ```
 
-4. **Convert image to PDF**: Implement the following code in `Program.cs` to convert an image into a PDF file:
+Step 4: **Convert image to PDF**: Implement the following code in `Program.cs` to convert an image into a PDF file:
 
    ```csharp
    // Create an instance of the ImageToPdfConverter class

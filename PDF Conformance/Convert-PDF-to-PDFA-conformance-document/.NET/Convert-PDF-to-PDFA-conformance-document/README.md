@@ -6,18 +6,18 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
 
 Follow these steps to convert a PDF document to PDF/A format using the Syncfusion library:
 
-1. **Create a new project**: Start by creating a new C# Console Application project.
+Step 1: **Create a new project**: Start by creating a new C# Console Application project.
 
-2. **Install the NuGet package**: Reference the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package in your project from [NuGet.org](https://www.nuget.org/).
+Step 2: **Install the NuGet package**: Reference the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package in your project from [NuGet.org](https://www.nuget.org/).
 
-3. **Include necessary namespaces**: Add the following namespaces in your `Program.cs` file:
+Step 3: **Include necessary namespaces**: Add the following namespaces in your `Program.cs` file:
 
    ```csharp
    using Syncfusion.Pdf;
    using Syncfusion.Pdf.Parsing;
    ```
 
-4. **Convert PDF to PDF/A**: Implement the following code in `Program.cs` to perform the conversion:
+Step 4: **Convert PDF to PDF/A**: Implement the following code in `Program.cs` to perform the conversion:
 
    ```csharp
    // Load an existing PDF document
@@ -41,6 +41,6 @@ Follow these steps to convert a PDF document to PDF/A format using the Syncfusio
    }
    ```
 
-You can download a complete working sample from the [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/PDF%20Conformance/Get-PDF-to-PDFA-conversion-progress/.NET).
+You can download a complete working sample from the [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/PDF%20Conformance/Convert-PDF-to-PDFA-conformance-document).
 
 To explore additional features of the Syncfusion PDF library, click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).

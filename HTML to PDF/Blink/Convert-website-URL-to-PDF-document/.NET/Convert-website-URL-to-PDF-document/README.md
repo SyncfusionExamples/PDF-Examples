@@ -6,11 +6,11 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
 
 Follow these steps to convert HTML content into a PDF file using the Syncfusion library:
 
-1. **Create a new project**: Initialize a new C# Console Application project.
+Step 1: **Create a new project**: Initialize a new C# Console Application project.
 
-2. **Install the NuGet package**: Add the [Syncfusion.HtmlToPdfConverter.Net.Windows](https://www.nuget.org/packages/Syncfusion.HtmlToPdfConverter.Net.Windows) package as a reference in your .NET Standard application from [NuGet.org](https://www.nuget.org/).
+Step 2: **Install the NuGet package**: Add the [Syncfusion.HtmlToPdfConverter.Net.Windows](https://www.nuget.org/packages/Syncfusion.HtmlToPdfConverter.Net.Windows) package as a reference in your .NET Standard application from [NuGet.org](https://www.nuget.org/).
 
-3. **Include necessary namespaces**: Add the following namespaces in your `Program.cs` file:
+Step 3: **Include necessary namespaces**: Add the following namespaces in your `Program.cs` file:
 
    ```csharp
    using Syncfusion.HtmlConverter;
@@ -18,7 +18,7 @@ Follow these steps to convert HTML content into a PDF file using the Syncfusion 
    using System.Runtime.InteropServices;
    ```
 
-4. **Convert HTML to PDF**: Implement the following code in `Program.cs` to convert a website URL to a PDF file:
+Step 4: **Convert HTML to PDF**: Implement the following code in `Program.cs` to convert a website URL to a PDF file:
 
    ```csharp
    // Initialize the HTML to PDF converter
