@@ -1,52 +1,50 @@
 # Split PDF Files
 
-The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) is used to create, read, and edit PDF documents. This library also provides functionality for splitting PDF files into multiple documents
+The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) allows for creating, reading, and editing PDF documents, as well as splitting them into separate files.
 
-## Steps to split PDF files.
+## Steps to split PDF files
 
-Step 1:  Create a new C# Console Application project.
+1. **Create a new project**: Begin by setting up a new C# Console Application project.
 
-Step 2: Install the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) NuGet package as reference to your .NET Standard applications from [NuGet.org](https://www.nuget.org/).
+2. **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package to your project from [NuGet.org](https://www.nuget.org/).
 
-Step 3: Include the following namespaces in the **Program.cs** file.
+3. **Include necessary namespaces**: In your **Program.cs** file, include the following namespaces:
 
-
-```
-using Syncfusion.Pdf.Parsing;
-using Syncfusion.Pdf
-
+   ```csharp
+   using Syncfusion.Pdf.Parsing;
+   using Syncfusion.Pdf;
 ```
 
-Step 4: Include the below code snippet in **Program.cs** to split PDF files.
-```
-// Create the FileStream object to read the input PDF file
+4. **Split the PDF file:** Implement the following code in **Program.cs** to split the PDF file:
+
+```csharp
+// Create a FileStream object to read the input PDF file
 using (FileStream inputFileStream = new FileStream("Input.pdf", FileMode.Open, FileAccess.Read))
 {
     // Load the PDF document from the input stream
-    using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputFileStream)) 
+    using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputFileStream))
     {
-        // Iterate over the pages of the loaded document
-        for (int pageIndex = 0; pageIndex < loadedDocument.PageCount; pageIndex++) 
+        // Iterate over each page of the loaded document
+        for (int pageIndex = 0; pageIndex < loadedDocument.PageCount; pageIndex++)
         {
-            // Create a new PdfDocument object to hold the output
-            using (PdfDocument outputDocument = new PdfDocument())   
+            // Create a new PdfDocument for the output
+            using (PdfDocument outputDocument = new PdfDocument())
             {
-                // Import the page from the loadedDocument to the outputDocument
-                outputDocument.ImportPage(loadedDocument, pageIndex); 
-                
-                // Create the FileStream object to write the output PDF file
+                // Import the page into the new document
+                outputDocument.ImportPage(loadedDocument, pageIndex);
+
+                // Create a FileStream to write the output PDF file
                 using (FileStream outputFileStream = new FileStream($"Output{pageIndex}.pdf", FileMode.Create, FileAccess.Write))
                 {
-                    // Save the outputDocument into the outputFileStream
+                    // Save the new document to the output stream
                     outputDocument.Save(outputFileStream);
                 }
             }
         }
     }
 }
-
 ```
 
-You can download a complete working sample from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Pages/Splitting-PDF-file-into-individual-pages/).
+You can download a complete working sample from [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Pages/Splitting-PDF-file-into-individual-pages/).
 
-Click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core) to explore the rich set of Syncfusion PDF library features.
+To explore additional features of the Syncfusion PDF library, click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).

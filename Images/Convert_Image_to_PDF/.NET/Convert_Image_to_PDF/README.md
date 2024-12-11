@@ -1,50 +1,51 @@
-# Image to PDF Files
+# Converting Images to PDF
 
-The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) is used to create, read, and edit PDF documents. This library also offers functionality to convert images into PDF files, allowing you to seamlessly integrate image content into PDF documents.
+The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) offers tools to create, read, and edit PDF documents. It also provides functionality to convert images into PDF files, making it easy to integrate image content into your PDF documents.
 
-## Steps to convert Image to PDF files.
+## Steps to convert images to PDF
 
-Step 1:  Create a new C# Console Application project.
+Follow these steps to convert an image into a PDF file using the Syncfusion library:
 
-Step 2: Install the [Syncfusion.Pdf.Imaging.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Imaging.Net.Core) NuGet package as reference to your .NET Standard applications from [NuGet.org](https://www.nuget.org/).
+1. **Create a new project**: Start a new C# Console Application project.
 
-Step 3: Include the following namespaces in the **Program.cs** file.
+2. **Install the NuGet package**: Add the [Syncfusion.Pdf.Imaging.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Imaging.Net.Core) package as a reference to your project from [NuGet.org](https://www.nuget.org/).
 
-```
-using Syncfusion.Pdf;
+3. **Include necessary namespaces**: Add the following namespace in your `Program.cs` file:
 
-```
+   ```csharp
+   using Syncfusion.Pdf;
+   ```
 
-Step 4: Include the below code snippet in **Program.cs** to convert image to PDF files.
-```
-// Create an instance of the ImageToPdfConverter class 
-var imageToPdfConverter = new ImageToPdfConverter();
+4. **Convert image to PDF**: Implement the following code in `Program.cs` to convert an image into a PDF file:
 
-// Set the page size for the PDF 
-imageToPdfConverter.PageSize = PdfPageSize.A4;
+   ```csharp
+   // Create an instance of the ImageToPdfConverter class
+   var imageToPdfConverter = new ImageToPdfConverter();
 
-// Set the position of the image in the PDF 
-imageToPdfConverter.ImagePosition = PdfImagePosition.TopLeftCornerOfPage;
+   // Set the page size for the PDF
+   imageToPdfConverter.PageSize = PdfPageSize.A4;
 
-// Create a file stream to read the image file 
-using (var imageStream = new FileStream("Autumn Leaves.jpg", FileMode.Open, FileAccess.Read))
-{
-    // Convert the image to a PDF document using the ImageToPdfConverter 
-    var pdfDocument = imageToPdfConverter.Convert(imageStream);
+   // Set the position of the image in the PDF
+   imageToPdfConverter.ImagePosition = PdfImagePosition.TopLeftCornerOfPage;
 
-    // Create a file stream for the output PDF file 
-    using (var outputFileStream = new FileStream(Path.GetFullPath("Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-    {
-        // Save the generated PDF document to the output file stream 
-        pdfDocument.Save(outputFileStream);
-    }
+   // Create a file stream to read the image file
+   using (var imageStream = new FileStream("Autumn Leaves.jpg", FileMode.Open, FileAccess.Read))
+   {
+       // Convert the image to a PDF document using the ImageToPdfConverter
+       var pdfDocument = imageToPdfConverter.Convert(imageStream);
 
-    // Close the document 
-    pdfDocument.Close(true);
-}
+       // Create a file stream for the output PDF file
+       using (var outputFileStream = new FileStream(Path.GetFullPath("Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+       {
+           // Save the generated PDF document to the output file stream
+           pdfDocument.Save(outputFileStream);
+       }
 
-```
+       // Close the document
+       pdfDocument.Close(true);
+   }
+   ```
 
-You can download a complete working sample from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Images/Convert_Image_to_PDF/.NET).
+You can download a complete working sample from the [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Images/Convert_Image_to_PDF/.NET).
 
-Click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core) to explore the rich set of Syncfusion PDF library features.
+To explore more features of the Syncfusion PDF library, click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).

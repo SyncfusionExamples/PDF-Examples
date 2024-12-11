@@ -1,52 +1,55 @@
 # PDF Tables
 
-The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) is used to create, read, and edit PDF documents. This library also offers functionality to create and customize tables in PDF files for organizing and presenting data effectively.
+The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) facilitates the creation, reading, and editing of PDF documents. It also provides features to create and customize tables within PDF files, allowing for efficient data organization and presentation.
 
-## Steps to add a table to a PDF document
+## Steps to Add a Table to a PDF Document
 
-Step 1:  Create a new C# Console Application project.
+1. **Create a new project**: Start by setting up a new C# Console Application project.
 
-Step 2: Install the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) NuGet package as reference to your .NET Standard applications from [NuGet.org](https://www.nuget.org/).
+2. **Install the NuGet package**: Reference the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package in your project from [NuGet.org](https://www.nuget.org/).
 
-Step 3: Include the following namespaces in the **Program.cs** file.
+3. **Include necessary namespaces**: Add these namespaces to your **Program.cs** file:
 
-```
-using Syncfusion.Pdf.Grid;
-using Syncfusion.Pdf;
-using Syncfusion.Drawing;
+   ```csharp
+   using Syncfusion.Pdf.Grid;
+   using Syncfusion.Pdf;
+   using Syncfusion.Drawing;
+   ```
 
-```
+4. **Add a table to the PDF**: Use the following code in **Program.cs** to insert a table into the PDF:
 
-Step 4: Include the below code snippet in **Program.cs** to add a table to a PDF files.
-```
-//Create a new PDF document
-using (PdfDocument document = new PdfDocument())
-{
-    //Add a page
-    PdfPage page = document.Pages.Add();
-    //Create a PdfGrid
-    PdfGrid pdfGrid = new PdfGrid();
+   ```csharp
+   // Create a new PDF document
+   using (PdfDocument document = new PdfDocument())
+   {
+       // Add a page
+       PdfPage page = document.Pages.Add();
 
-    //Add values to the list
-    List<object> data = new List<object>();
-    data.Add(new { ID = "E01", Name = "Clay" });
-    data.Add(new { ID = "E02", Name = "Thomas" });
-    data.Add(new { ID = "E03", Name = "John" });
+       // Create a PdfGrid
+       PdfGrid pdfGrid = new PdfGrid();
 
-    //Assign the data source
-    pdfGrid.DataSource = data;
-    //Draw the grid to the page of PDF document
-    pdfGrid.Draw(page, new PointF(10, 10));
+       // Add values to the list
+       List<object> data = new List<object>
+       {
+           new { ID = "E01", Name = "Clay" },
+           new { ID = "E02", Name = "Thomas" },
+           new { ID = "E03", Name = "John" }
+       };
 
-    using (FileStream outputStream = new FileStream("output.pdf", FileMode.Create, FileAccess.Write))
-    {
-        //Save the document
-        document.Save(outputStream);
-    }
-}
+       // Assign the data source
+       pdfGrid.DataSource = data;
 
-```
+       // Draw the grid on the PDF page
+       pdfGrid.Draw(page, new PointF(10, 10));
 
-You can download a complete working sample from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Table/PdfGrid/Create-table-from-data-source-in-a-PDF/.NET).
+       using (FileStream outputStream = new FileStream("output.pdf", FileMode.Create, FileAccess.Write))
+       {
+           // Save the document
+           document.Save(outputStream);
+       }
+   }
+   ```
 
-Click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core) to explore the rich set of Syncfusion PDF library features.
+A complete working example is available on [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Table/PdfGrid/Create-table-from-data-source-in-a-PDF/.NET).
+
+Explore more features of the Syncfusion PDF library [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).

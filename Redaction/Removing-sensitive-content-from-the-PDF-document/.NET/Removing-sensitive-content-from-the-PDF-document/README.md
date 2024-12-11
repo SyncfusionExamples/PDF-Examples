@@ -1,50 +1,52 @@
-# Redaction PDF Files
+# Redacting PDF Files
 
-The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) enables users to create, read, and edit PDF documents effortlessly. In addition to these features, the library provides functionality for redacting PDF content, allowing users to permanently remove or hide sensitive information while preserving the integrity of the rest of the document.
+The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) allows users to create, read, and edit PDFs seamlessly. One of its key features is the ability to redact PDF content, enabling the permanent removal or hiding of sensitive information while maintaining the rest of the document's integrity.
 
-## Steps to redaction PDF files.
+## Steps to Redact PDF Files
 
-Step 1:  Create a new C# Console Application project.
+1. **Create a new project**: Start by creating a new C# Console Application project.
 
-Step 2: Install the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) NuGet package as reference to your .NET Standard applications from [NuGet.org](https://www.nuget.org/).
+2. **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package to your project via [NuGet.org](https://www.nuget.org/).
 
-Step 3: Include the following namespaces in the **Program.cs** file.
+3. **Include necessary namespaces**: Add these namespaces to your **Program.cs** file:
 
-```
-using Syncfusion.Pdf.Parsing;
-using Syncfusion.Pdf.Redaction;
-using Syncfusion.Pdf;
-using Syncfusion.Drawing;
+   ```csharp
+   using Syncfusion.Pdf.Parsing;
+   using Syncfusion.Pdf.Redaction;
+   using Syncfusion.Pdf;
+   using Syncfusion.Drawing;
+   ```
 
-```
+4. **Implement redaction**: Use the following code in **Program.cs** to perform PDF redaction:
 
-Step 4: Include the below code snippet in **Program.cs** to redaction PDF files.
-```
-using (FileStream docStream = new FileStream(@"Input.pdf", FileMode.Open, FileAccess.Read))
-{
-    //Load the PDF document from the input stream
-    using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream))
-    {
-        // Get the first page of the loaded document
-        PdfLoadedPage firstPage = loadedDocument.Pages[0] as PdfLoadedPage;
-        // Create a PDF redaction for the specified rectangle on the page
-        RectangleF redactionRectangle = new RectangleF(340, 120, 140, 20);
-        PdfRedaction redaction = new PdfRedaction(redactionRectangle);
-        // Add the redaction to the first page
-        firstPage.AddRedaction(redaction);
-        //Redact the contents from the PDF document
-        loadedDocument.Redact();
-        
-        // Save the redacted PDF document to a file stream
-        using (FileStream outputFileStream = new FileStream("Redact.pdf", FileMode.Create, FileAccess.ReadWrite))
-        {
-            loadedDocument.Save(outputFileStream);
-        }
-    }
-}
+   ```csharp
+   using (FileStream docStream = new FileStream(@"Input.pdf", FileMode.Open, FileAccess.Read))
+   {
+       // Load the PDF document from the input stream
+       using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream))
+       {
+           // Access the first page of the document
+           PdfLoadedPage firstPage = loadedDocument.Pages[0] as PdfLoadedPage;
 
-```
+           // Define a redaction area
+           RectangleF redactionRectangle = new RectangleF(340, 120, 140, 20);
+           PdfRedaction redaction = new PdfRedaction(redactionRectangle);
 
-You can download a complete working sample from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Redaction/Removing-sensitive-content-from-the-PDF-document/).
+           // Apply the redaction to the page
+           firstPage.AddRedaction(redaction);
 
-Click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core) to explore the rich set of Syncfusion PDF library features.
+           // Execute the redaction
+           loadedDocument.Redact();
+
+           // Save the redacted document
+           using (FileStream outputFileStream = new FileStream("Redact.pdf", FileMode.Create, FileAccess.ReadWrite))
+           {
+               loadedDocument.Save(outputFileStream);
+           }
+       }
+   }
+   ```
+
+You can download a complete working example from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Redaction/Removing-sensitive-content-from-the-PDF-document/).
+
+Discover more features of the Syncfusion PDF library [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).

@@ -1,50 +1,51 @@
-# OCR PDF Files
+# OCR on PDF Files
 
-The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) is used to create, read, and edit PDF documents. This library also offers functionality to perform OCR (Optical Character Recognition) on PDF files, enabling the extraction of text from scanned images.
+The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) enables you to create, read, and edit PDF documents effortlessly. Additionally, the library provides OCR (Optical Character Recognition) capabilities, allowing you to extract text from scanned images within PDF files.
 
-## Steps to OCR PDF files.
+## Steps to perform OCR on PDF files
 
-Step 1:  Create a new C# Console Application project.
+Follow these steps to apply OCR to PDF files using the Syncfusion library:
 
-Step 2: Install the [Syncfusion.PDF.OCR.Net.Core](https://www.nuget.org/packages/Syncfusion.PDF.OCR.Net.Core) NuGet package as reference to your .NET Standard applications from [NuGet.org](https://www.nuget.org/).
+1. **Create a new project**: Set up a new C# Console Application project.
 
-Step 3: Include the following namespaces in the **Program.cs** file.
+2. **Install the NuGet package**: Add the [Syncfusion.PDF.OCR.Net.Core](https://www.nuget.org/packages/Syncfusion.PDF.OCR.Net.Core) package as a reference in your project from [NuGet.org](https://www.nuget.org/).
 
-```
-using Syncfusion.OCRProcessor;
-using Syncfusion.Pdf.Parsing;
+3. **Include necessary namespaces**: Add the following namespaces in your `Program.cs` file:
 
-```
+   ```csharp
+   using Syncfusion.OCRProcessor;
+   using Syncfusion.Pdf.Parsing;
+   ```
 
-Step 4: Include the below code snippet in **Program.cs** to OCR PDF files.
+4. **Implement OCR Processing**: Use the following code snippet in `Program.cs` to perform OCR on a PDF document:
 
-```
-// Initialize the OCR processor
-using (OCRProcessor processor = new OCRProcessor())
-{
-    // Load the existing PDF document
-    using (FileStream stream = new FileStream("Input.pdf", FileMode.Open, FileAccess.Read))
-    {    
-      PdfLoadedDocument pdfLoadedDocument = new PdfLoadedDocument(stream);
-      
-      // Set OCR language to process
-      processor.Settings.Language = Languages.English;   
-      // Process OCR by providing the PDF document
-      processor.PerformOCR(pdfLoadedDocument);
-      
-      // Save the OCRed document
-      using (FileStream outputFileStream = new FileStream(@"Output.pdf", FileMode.Create, FileAccess.ReadWrite))
-      {
-        //Save the PDF document to file stream.
-        pdfLoadedDocument.Save(outputFileStream);
-      }
-      //Close the document.
-      pdfLoadedDocument.Close(true);
-    }    
-}
+   ```csharp
+   // Initialize the OCR processor
+   using (OCRProcessor processor = new OCRProcessor())
+   {
+       // Load the existing PDF document
+       using (FileStream stream = new FileStream("Input.pdf", FileMode.Open, FileAccess.Read))
+       {    
+           PdfLoadedDocument pdfLoadedDocument = new PdfLoadedDocument(stream);
+           
+           // Set the language for OCR processing
+           processor.Settings.Language = Languages.English;   
+           
+           // Perform OCR on the PDF document
+           processor.PerformOCR(pdfLoadedDocument);
+           
+           // Save the OCR-processed document
+           using (FileStream outputFileStream = new FileStream("Output.pdf", FileMode.Create, FileAccess.ReadWrite))
+           {
+               pdfLoadedDocument.Save(outputFileStream);
+           }
+           
+           // Close the document
+           pdfLoadedDocument.Close(true);
+       }    
+   }
+   ```
 
-```
+For a complete working sample, you can download the example from the [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/OCR/.NET/Perform-OCR-for-the-entire-PDF-document).
 
-You can download a complete working sample from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/OCR/.NET/Perform-OCR-for-the-entire-PDF-document).
-
-Click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core) to explore the rich set of Syncfusion PDF library features.
+To explore more features of the Syncfusion PDF library, click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).
