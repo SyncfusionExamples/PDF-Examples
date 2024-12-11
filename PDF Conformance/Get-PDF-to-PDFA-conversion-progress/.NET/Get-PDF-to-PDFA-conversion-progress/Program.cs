@@ -3,22 +3,27 @@
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 
-// Load an existing PDF document
-using (FileStream inputPdfStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
+//Get stream from an existing PDF document.
+FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
+ 
+//Load an existing PDF document.
+PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
+ 
+//Subscribe to the PdfAConversionProgress event to track the PDF to PDF/A conversion process
+loadedDocument.PdfAConversionProgress += new PdfLoadedDocument.PdfAConversionProgressEventHandler(pdfAConversion_TrackProgress);
+ 
+loadedDocument.ConvertToPDFA(PdfConformanceLevel.Pdf_A1B);
+ 
+//Save the document
+FileStream outputStream = new FileStream(Path.GetFullPath(@"Output.pdf"), FileMode.Create, FileAccess.Write);
+loadedDocument.Save(outputStream);
+ 
+//Close the document
+loadedDocument.Close(true);
+ 
+ 
+//Event handler for Track PDF to PDF/A conversion process
+void pdfAConversion_TrackProgress(object sender, PdfAConversionProgressEventArgs arguments)
 {
-    // Initialize PdfLoadedDocument with the input file stream
-    PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputPdfStream);
-
-    // Convert the loaded document to PDF/A format with specified conformance level
-    loadedDocument.ConvertToPDFA(PdfConformanceLevel.Pdf_A1B);
-
-    // Save the converted PDF/A document to a new file
-    using (FileStream outputPdfStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.Write))
-    {
-        // Save the modified PDF document to the output file stream
-        loadedDocument.Save(outputPdfStream);
-    }
-
-    // Close the loaded document to release resources
-    loadedDocument.Close(true);
+    Console.WriteLine(String.Format("PDF to PDF/A conversion process " + arguments.ProgressValue + "% completed"));
 }
