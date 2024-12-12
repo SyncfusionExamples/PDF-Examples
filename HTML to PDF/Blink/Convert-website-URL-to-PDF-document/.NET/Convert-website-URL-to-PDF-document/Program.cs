@@ -6,6 +6,16 @@ using System.Runtime.InteropServices;
 
 //Initialize HTML to PDF converter.
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
+//Create blink converter settings
+BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
+if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+{
+    //Set command line arguments to run without the sandbox.
+    blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
+    blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
+}
+//Assign Blink converter settings to HTML converter.
+htmlConverter.ConverterSettings = blinkConverterSettings;
 //Convert URL to PDF document.
 PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com");
 //Create file stream. 
