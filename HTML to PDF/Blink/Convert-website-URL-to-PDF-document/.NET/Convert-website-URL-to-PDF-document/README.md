@@ -21,18 +21,28 @@ Step 3: **Include necessary namespaces**: Add the following namespaces in your `
 Step 4: **Convert HTML to PDF**: Implement the following code in `Program.cs` to convert a website URL to a PDF file:
 
    ```csharp
-   // Initialize the HTML to PDF converter
-   HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
-   
-   // Convert a URL to a PDF document
-   PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com");
-   
-   // Create the FileStream to save the PDF document
-   FileStream fileStream = new FileStream("HTML-to-PDF.pdf", FileMode.CreateNew, FileAccess.ReadWrite);
-   
-   // Save and close the PDF document
-   document.Save(fileStream);
-   document.Close(true);
+    //Initialize HTML to PDF converter.
+    HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
+    //Create blink converter settings
+    BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
+    if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+    {
+        //Set command line arguments to run without the sandbox.
+        blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
+        blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
+    }
+    //Assign Blink converter settings to HTML converter.
+    htmlConverter.ConverterSettings = blinkConverterSettings;
+    //Convert URL to PDF document.
+    PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com");
+    //Create file stream. 
+    using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+    {
+        //Save the PDF document 
+        document.Save(fileStream);
+    }
+    //Close the document.
+    document.Close(true);
    ```
 
 You can download a complete working sample from the [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/HTML%20to%20PDF/Blink/Convert-website-URL-to-PDF-document).

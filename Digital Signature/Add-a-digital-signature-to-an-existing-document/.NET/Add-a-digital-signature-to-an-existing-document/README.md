@@ -61,6 +61,8 @@ Step 4: **Add digital signature code**: Use the following code snippet in `Progr
 
        // Close the document
        loadedDocument.Close(true);
+       certificateStream.Dispose();
+       imageStream.Dispose();
    }
    ```
 

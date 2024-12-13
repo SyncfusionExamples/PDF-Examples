@@ -44,4 +44,6 @@ using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf
 
     //Close the document.
     loadedDocument.Close(true);
+    certificateStream.Dispose();
+    imageStream.Dispose();
 }
