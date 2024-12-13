@@ -1,10 +1,10 @@
 # PDF Annotations
 
-The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) provides powerful tools to create, read, and edit PDF documents. This library also includes features to add, edit, and manage annotations in PDF files, enabling effective markup and collaboration.
+The Syncfusion&reg; [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) provides powerful tools to create, read, and edit PDF documents. This library also includes features to add, edit, and manage annotations in PDF files, enabling effective markup and collaboration.
 
 ## Steps to add annotations to a PDF
 
-Follow these steps to add a popup annotation to a PDF file using the Syncfusion library:
+Follow these steps to add a popup annotation to a PDF file using the Syncfusion&reg; library:
 
 Step 1. **Create a new project**: Set up a new C# Console Application project.
 
@@ -52,4 +52,4 @@ Step 4. **Code to add annotations**: Use the following code snippet in `Program.
 
 For a complete working example, visit the [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Annotation/Add-a-popup-annotation-to-an-existing-PDF-document/.NET).
 
-To learn more about the extensive features of the Syncfusion PDF library, click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).
+More information about the annotation can be found in this [documentation](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/working-with-annotations) section.

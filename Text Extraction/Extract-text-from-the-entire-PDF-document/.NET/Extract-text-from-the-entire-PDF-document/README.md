@@ -1,6 +1,6 @@
 # Extract Data from PDF
 
-The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) enables the creation, reading, and editing of PDF documents. Additionally, it provides capabilities to extract data from PDFs, such as text, images, and form field values.
+The Syncfusion&reg; [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) enables the creation, reading, and editing of PDF documents. Additionally, it provides capabilities to extract data from PDFs, such as text, images, and form field values.
 
 ## Steps to Extract Data from PDF Files
 
@@ -41,4 +41,4 @@ Step 4: **Extract data from PDF**: Use the following code in **Program.cs** to e
 
 For a complete working example, download it from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Text%20Extraction/Extract-text-from-the-entire-PDF-document/).
 
-Explore more features of the Syncfusion PDF library [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).
+More information about the extract data can be found in this [documentation](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/working-with-text-extraction) section.

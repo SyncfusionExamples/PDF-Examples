@@ -1,10 +1,10 @@
 # Compressing PDF Files
 
-The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) allows users to seamlessly create, read, and edit PDF documents. Additionally, it offers features for compressing PDF files, which helps reduce their size without sacrificing quality—optimizing storage and enhancing the efficiency of file sharing.
+The Syncfusion&reg; [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) allows users to seamlessly create, read, and edit PDF documents. Additionally, it offers features for compressing PDF files, which helps reduce their size without sacrificing quality—optimizing storage and enhancing the efficiency of file sharing.
 
 ## Steps to compress PDF files
 
-Follow these steps to compress PDF files using the Syncfusion library:
+Follow these steps to compress PDF files using the Syncfusion&reg; library:
 
 Step 1: **Create a new project**: Set up a new C# Console Application project.
 
@@ -56,4 +56,4 @@ Step 4: **Implement PDF compression**: Use the following code snippet in `Progra
 
 You can download a complete working sample from the [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Compression/Compress-the-images-in-an-existing-PDF-document).
 
-To explore more features of the Syncfusion PDF library, click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).
+More information about the compressing PDF can be found in this [documentation](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/working-with-compression) section.

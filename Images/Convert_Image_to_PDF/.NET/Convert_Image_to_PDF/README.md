@@ -1,10 +1,10 @@
 # Converting Images to PDF
 
-The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) offers tools to create, read, and edit PDF documents. It also provides functionality to convert images into PDF files, making it easy to integrate image content into your PDF documents.
+The Syncfusion&reg; [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) offers tools to create, read, and edit PDF documents. It also provides functionality to convert images into PDF files, making it easy to integrate image content into your PDF documents.
 
 ## Steps to convert images to PDF
 
-Follow these steps to convert an image into a PDF file using the Syncfusion library:
+Follow these steps to convert an image into a PDF file using the Syncfusion&reg; library:
 
 Step 1: **Create a new project**: Start a new C# Console Application project.
 
@@ -48,4 +48,4 @@ Step 4: **Convert image to PDF**: Implement the following code in `Program.cs` t
 
 You can download a complete working sample from the [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Images/Convert_Image_to_PDF/.NET).
 
-To explore more features of the Syncfusion PDF library, click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).
+More information about the Image to PDF conversion can be found in this [documentation](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/converting-images-to-pdf) section.
