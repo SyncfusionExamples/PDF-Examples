@@ -1,6 +1,6 @@
 # Split PDF Files
 
-The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) allows for creating, reading, and editing PDF documents, as well as splitting them into separate files.
+The Syncfusion&reg; [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) allows for creating, reading, and editing PDF documents, as well as splitting them into separate files.
 
 ## Steps to split PDF files
 
@@ -47,4 +47,4 @@ Step 4: **Split the PDF file:** Implement the following code in **Program.cs** t
 
 You can download a complete working sample from [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Pages/Splitting-PDF-file-into-individual-pages/).
 
-To explore additional features of the Syncfusion PDF library, click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).
+More information about the split PDF can be found in this [documentation](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/split-documents) section.

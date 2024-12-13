@@ -1,10 +1,10 @@
 # Merging PDF Files
 
-The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) allows you to easily create, read, edit, and merge PDF documents. This library provides a straightforward way to combine multiple PDF files into a single document.
+The Syncfusion&reg; [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) allows you to easily create, read, edit, and merge PDF documents. This library provides a straightforward way to combine multiple PDF files into a single document.
 
 ## Steps to merge PDF files
 
-Follow these steps to merge PDF files using the Syncfusion library:
+Follow these steps to merge PDF files using the Syncfusion&reg; library:
 
 Step 1: **Create a new project**: Start by creating a new C# Console Application project.
 
@@ -43,4 +43,4 @@ Step 4: **Merge PDF files**: Use the following code snippet in `Program.cs` to m
 
 You can download a complete working sample from the [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Merge%20PDFs/Merge-multiple-documents-from-stream/).
 
-To explore additional features of the Syncfusion PDF library, click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).
+More information about the merge PDF can be found in this [documentation](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/merge-documents) section.

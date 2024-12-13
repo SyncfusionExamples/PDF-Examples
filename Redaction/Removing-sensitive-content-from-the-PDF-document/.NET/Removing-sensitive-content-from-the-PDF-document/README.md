@@ -1,6 +1,6 @@
 # Redacting PDF Files
 
-The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) allows users to create, read, and edit PDFs seamlessly. One of its key features is the ability to redact PDF content, enabling the permanent removal or hiding of sensitive information while maintaining the rest of the document's integrity.
+The Syncfusion&reg; [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) allows users to create, read, and edit PDFs seamlessly. One of its key features is the ability to redact PDF content, enabling the permanent removal or hiding of sensitive information while maintaining the rest of the document's integrity.
 
 ## Steps to Redact PDF Files
 
@@ -49,4 +49,4 @@ Step 4: **Implement redaction**: Use the following code in **Program.cs** to per
 
 You can download a complete working example from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Redaction/Removing-sensitive-content-from-the-PDF-document/).
 
-Discover more features of the Syncfusion PDF library [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).
+More information about the redacting PDF can be found in this [documentation](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/working-with-redaction) section.

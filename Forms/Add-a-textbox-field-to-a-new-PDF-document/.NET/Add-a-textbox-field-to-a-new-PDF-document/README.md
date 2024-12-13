@@ -1,6 +1,6 @@
 # PDF Forms
 
-The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) provides an easy way to create, read, and edit PDF documents. It also includes features for creating, filling, and editing PDF forms, which can include interactive form fields and form data.
+The Syncfusion&reg; [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) provides an easy way to create, read, and edit PDF documents. It also includes features for creating, filling, and editing PDF forms, which can include interactive form fields and form data.
 
 ## Steps to create PDF forms
 
@@ -65,4 +65,4 @@ Step 4: **Create PDF forms**: Implement the following code in `Program.cs` to ad
 
 For a full working example, you can download the sample from the [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Forms/Add-a-textbox-field-to-a-new-PDF-document).
 
-To explore more features of the Syncfusion PDF library, click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).
+More information about the forms can be found in this [documentation](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/working-with-forms) section.

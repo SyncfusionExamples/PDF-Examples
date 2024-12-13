@@ -1,10 +1,10 @@
 # Digital Signature
 
-The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) offers powerful capabilities for creating, reading, and editing PDF documents. One of its robust features is the ability to apply digital signatures to PDF files, ensuring document authenticity, integrity, and security.
+The Syncfusion&reg; [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) offers powerful capabilities for creating, reading, and editing PDF documents. One of its robust features is the ability to apply digital signatures to PDF files, ensuring document authenticity, integrity, and security.
 
 ## Steps to add a digital signature to PDF files
 
-Follow these steps to digitally sign PDF files using the Syncfusion library:
+Follow these steps to digitally sign PDF files using the Syncfusion&reg; library:
 
 Step 1: **Create a new project**: Start by creating a new C# Console Application project.
 
@@ -66,4 +66,4 @@ Step 4: **Add digital signature code**: Use the following code snippet in `Progr
 
 For a complete working example, visit the [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Digital%20Signature/Add-a-digital-signature-to-an-existing-document/).
 
-To explore more features of the Syncfusion PDF library, click [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).
+More information about the digital signature can be found in this [documentation](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/working-with-digitalsignature) section.

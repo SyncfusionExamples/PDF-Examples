@@ -1,6 +1,6 @@
 # Accessible PDF Files
 
-The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) facilitates the creation, reading, and editing of PDF documents. It also offers features for generating accessible PDFs that adhere to accessibility standards, making content accessible to individuals with disabilities.
+The Syncfusion&reg; [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) facilitates the creation, reading, and editing of PDF documents. It also offers features for generating accessible PDFs that adhere to accessibility standards, making content accessible to individuals with disabilities.
 
 ## Steps to Create Accessible PDF Files
 
@@ -60,4 +60,4 @@ Step 4: **Implement accessibility**: Use the following code in **Program.cs** to
 
 You can download a complete working example from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Tagged%20PDF/Add-tag-for-the-text-element-in-PDF-document).
 
-Discover more features of the Syncfusion PDF library [here](https://www.syncfusion.com/document-processing/pdf-framework/net-core).
+More information about the accessible PDF can be found in this [documentation](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/working-with-tagged-pdf) section.
