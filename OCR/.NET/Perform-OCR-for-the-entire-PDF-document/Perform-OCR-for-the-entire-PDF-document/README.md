@@ -6,18 +6,18 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
 
 Follow these steps to apply OCR to PDF files using the Syncfusion library:
 
-1. **Create a new project**: Set up a new C# Console Application project.
+Step 1: **Create a new project**: Set up a new C# Console Application project.
 
-2. **Install the NuGet package**: Add the [Syncfusion.PDF.OCR.Net.Core](https://www.nuget.org/packages/Syncfusion.PDF.OCR.Net.Core) package as a reference in your project from [NuGet.org](https://www.nuget.org/).
+Step 2: **Install the NuGet package**: Add the [Syncfusion.PDF.OCR.Net.Core](https://www.nuget.org/packages/Syncfusion.PDF.OCR.Net.Core) package as a reference in your project from [NuGet.org](https://www.nuget.org/).
 
-3. **Include necessary namespaces**: Add the following namespaces in your `Program.cs` file:
+Step 3: **Include necessary namespaces**: Add the following namespaces in your `Program.cs` file:
 
    ```csharp
    using Syncfusion.OCRProcessor;
    using Syncfusion.Pdf.Parsing;
    ```
 
-4. **Implement OCR Processing**: Use the following code snippet in `Program.cs` to perform OCR on a PDF document:
+Step 4: **Implement OCR Processing**: Use the following code snippet in `Program.cs` to perform OCR on a PDF document:
 
    ```csharp
    // Initialize the OCR processor

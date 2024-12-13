@@ -6,11 +6,11 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
 
 Follow these steps to create a PDF form with a textbox field:
 
-1. **Create a new project**: Start by creating a new C# Console Application project.
+Step 1: **Create a new project**: Start by creating a new C# Console Application project.
 
-2. **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package to your project from [NuGet.org](https://www.nuget.org/).
+Step 2: **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package to your project from [NuGet.org](https://www.nuget.org/).
 
-3. **Include necessary namespaces**: Add the following namespaces in your `Program.cs` file:
+Step 3: **Include necessary namespaces**: Add the following namespaces in your `Program.cs` file:
 
    ```csharp
    using Syncfusion.Drawing;
@@ -19,7 +19,7 @@ Follow these steps to create a PDF form with a textbox field:
    using Syncfusion.Pdf.Interactive;
    ```
 
-4. **Create PDF forms**: Implement the following code in `Program.cs` to add a textbox field to a PDF document:
+Step 4: **Create PDF forms**: Implement the following code in `Program.cs` to add a textbox field to a PDF document:
 
    ```csharp
    // Create a new PDF document

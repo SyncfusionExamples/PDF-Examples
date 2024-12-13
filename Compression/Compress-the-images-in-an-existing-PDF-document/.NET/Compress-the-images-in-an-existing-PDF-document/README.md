@@ -6,18 +6,18 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
 
 Follow these steps to compress PDF files using the Syncfusion library:
 
-1. **Create a new project**: Set up a new C# Console Application project.
+Step 1: **Create a new project**: Set up a new C# Console Application project.
 
-2. **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package to your project from [NuGet.org](https://www.nuget.org/).
+Step 2: **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package to your project from [NuGet.org](https://www.nuget.org/).
 
-3. **Add required namespaces**: Include the following namespaces in your `Program.cs` file:
+Step 3: **Add required namespaces**: Include the following namespaces in your `Program.cs` file:
 
    ```csharp
    using Syncfusion.Pdf.Parsing;
    using Syncfusion.Pdf;
    ```
 
-4. **Implement PDF compression**: Use the following code snippet in `Program.cs` to compress PDF files:
+Step 4: **Implement PDF compression**: Use the following code snippet in `Program.cs` to compress PDF files:
 
    ```csharp
    // Open a file stream to read the input PDF file

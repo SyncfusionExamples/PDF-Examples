@@ -4,11 +4,11 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
 
 ## Steps to Add a Table to a PDF Document
 
-1. **Create a new project**: Start by setting up a new C# Console Application project.
+Step 1: **Create a new project**: Start by setting up a new C# Console Application project.
 
-2. **Install the NuGet package**: Reference the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package in your project from [NuGet.org](https://www.nuget.org/).
+Step 2: **Install the NuGet package**: Reference the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package in your project from [NuGet.org](https://www.nuget.org/).
 
-3. **Include necessary namespaces**: Add these namespaces to your **Program.cs** file:
+Step 3: **Include necessary namespaces**: Add these namespaces to your **Program.cs** file:
 
    ```csharp
    using Syncfusion.Pdf.Grid;
@@ -16,7 +16,7 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
    using Syncfusion.Drawing;
    ```
 
-4. **Add a table to the PDF**: Use the following code in **Program.cs** to insert a table into the PDF:
+Step 4: **Add a table to the PDF**: Use the following code in **Program.cs** to insert a table into the PDF:
 
    ```csharp
    // Create a new PDF document

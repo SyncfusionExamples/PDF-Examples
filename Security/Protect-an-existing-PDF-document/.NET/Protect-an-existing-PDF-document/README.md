@@ -4,18 +4,18 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
 
 ## Steps to Protect PDF Files
 
-1. **Create a new project**: Begin by setting up a new C# Console Application project.
+Step 1: **Create a new project**: Begin by setting up a new C# Console Application project.
 
-2. **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package to your project from [NuGet.org](https://www.nuget.org/).
+Step 2: **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package to your project from [NuGet.org](https://www.nuget.org/).
 
-3. **Include necessary namespaces**: Add these namespaces in your **Program.cs** file:
+Step 3: **Include necessary namespaces**: Add these namespaces in your **Program.cs** file:
 
    ```csharp
    using Syncfusion.Pdf.Security;
    using Syncfusion.Pdf.Parsing;
    ```
 
-4. **Implement encryption**: Use the following code in **Program.cs** to secure your PDF file:
+Step 4: **Implement encryption**: Use the following code in **Program.cs** to secure your PDF file:
 
    ```csharp
    // Load the PDF document from a file stream

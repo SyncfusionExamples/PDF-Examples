@@ -6,17 +6,17 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
 
 Follow these steps to merge PDF files using the Syncfusion library:
 
-1. **Create a new project**: Start by creating a new C# Console Application project.
+Step 1: **Create a new project**: Start by creating a new C# Console Application project.
 
-2. **Install the NuGet package**: Reference the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package in your project from [NuGet.org](https://www.nuget.org/).
+Step 2: **Install the NuGet package**: Reference the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package in your project from [NuGet.org](https://www.nuget.org/).
 
-3. **Include required namespaces**: Add the following namespace in your `Program.cs` file:
+Step 3: **Include required namespaces**: Add the following namespace in your `Program.cs` file:
 
    ```csharp
    using Syncfusion.Pdf;
    ```
 
-4. **Merge PDF files**: Use the following code snippet in `Program.cs` to merge PDF files:
+Step 4: **Merge PDF files**: Use the following code snippet in `Program.cs` to merge PDF files:
 
    ```csharp
    // Create a PDF document for the final merged output

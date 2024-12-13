@@ -2,6 +2,7 @@
 
 using Syncfusion.Drawing;
 using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Security;

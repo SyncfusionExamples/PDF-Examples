@@ -68,4 +68,5 @@ using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Ou
 }
 
 //Close the document.
+docStream.Dispose();
 loadedDocument.Close(true);

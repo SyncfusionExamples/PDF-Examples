@@ -4,11 +4,11 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
 
 ## Steps to Create Accessible PDF Files
 
-1. **Create a new project**: Start by setting up a new C# Console Application project.
+Step 1: **Create a new project**: Start by setting up a new C# Console Application project.
 
-2. **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package to your project from [NuGet.org](https://www.nuget.org/).
+Step 2: **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package to your project from [NuGet.org](https://www.nuget.org/).
 
-3. **Include necessary namespaces**: Add these namespaces in your **Program.cs** file:
+Step 3: **Include necessary namespaces**: Add these namespaces in your **Program.cs** file:
 
    ```csharp
    using Syncfusion.Drawing;
@@ -16,7 +16,7 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
    using Syncfusion.Pdf.Graphics;
    ```
 
-4. **Implement accessibility**: Use the following code in **Program.cs** to create an accessible PDF:
+Step 4: **Implement accessibility**: Use the following code in **Program.cs** to create an accessible PDF:
 
    ```csharp
    // Create new PDF document

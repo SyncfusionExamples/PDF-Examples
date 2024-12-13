@@ -4,11 +4,11 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
 
 ## Steps to Add a Watermark to a PDF File
 
-1. **Create a new project**: Begin by setting up a new C# Console Application project.
+Step 1: **Create a new project**: Begin by setting up a new C# Console Application project.
 
-2. **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package to your project from [NuGet.org](https://www.nuget.org/).
+Step 2: **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package to your project from [NuGet.org](https://www.nuget.org/).
 
-3. **Include necessary namespaces**: Include the following namespaces in your **Program.cs** file:
+Step 3: **Include necessary namespaces**: Include the following namespaces in your **Program.cs** file:
 
    ```csharp
    using Syncfusion.Pdf.Graphics;
@@ -17,7 +17,7 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
    using Syncfusion.Drawing;
    ```
 
-4. **Add a watermark to the PDF**: Use the following code snippet in **Program.cs** to apply a watermark to an existing PDF:
+Step 4: **Add a watermark to the PDF**: Use the following code snippet in **Program.cs** to apply a watermark to an existing PDF:
 
    ```csharp
    // Create FileStream object to read the input PDF file

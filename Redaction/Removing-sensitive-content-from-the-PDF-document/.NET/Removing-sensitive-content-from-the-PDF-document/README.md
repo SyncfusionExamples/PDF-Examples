@@ -4,11 +4,11 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
 
 ## Steps to Redact PDF Files
 
-1. **Create a new project**: Start by creating a new C# Console Application project.
+Step 1: **Create a new project**: Start by creating a new C# Console Application project.
 
-2. **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package to your project via [NuGet.org](https://www.nuget.org/).
+Step 2: **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package to your project via [NuGet.org](https://www.nuget.org/).
 
-3. **Include necessary namespaces**: Add these namespaces to your **Program.cs** file:
+Step 3: **Include necessary namespaces**: Add these namespaces to your **Program.cs** file:
 
    ```csharp
    using Syncfusion.Pdf.Parsing;
@@ -17,7 +17,7 @@ The Syncfusion [.NET Core PDF library](https://www.syncfusion.com/document-proce
    using Syncfusion.Drawing;
    ```
 
-4. **Implement redaction**: Use the following code in **Program.cs** to perform PDF redaction:
+Step 4: **Implement redaction**: Use the following code in **Program.cs** to perform PDF redaction:
 
    ```csharp
    using (FileStream docStream = new FileStream(@"Input.pdf", FileMode.Open, FileAccess.Read))
