@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Complex Google Fonts Example</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;600;800&family=Montserrat:wght@200;300;500;600&family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            font-family: 'Lobster', cursive;
+            font-size: 48px;
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+
+        .section {
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .section p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: #34495e;
+        }
+
+        .section h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .highlight-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: #e74c3c;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .grid-item {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+        }
+
+        .footer {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+            background-color: #34495e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Welcome to the Complex Google Fonts Example
+    </div>
+
+    <div class="section">
+        <h1>Introduction</h1>
+        <p>
+            This is a demonstration of multiple Google Fonts being used in a single HTML document. We have incorporated several font families such as <strong>Open Sans</strong>, <strong>Montserrat</strong>, <strong>Roboto</strong>, <strong>Lobster</strong>, and <strong>Playfair Display</strong>. The goal is to showcase how different font weights and styles can be used for various sections of content.
+        </p>
+
+        <h2>Content Highlights</h2>
+        <p class="highlight-text">Elegant typography can enhance the readability and visual appeal of your web pages.</p>
+
+        <p>
+            Below is an example grid layout with different text blocks styled using various fonts. The fonts are loaded asynchronously from Google Fonts to ensure fast rendering and proper loading of each style.
+        </p>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <h2>Grid Item 1</h2>
+                <p>
+                    This section uses the <em>Roboto</em> font with a medium weight (500). It's great for paragraphs and large text blocks that need a modern, clean look.
+                </p>
+            </div>
+            <div class="grid-item">
+                <h2>Grid Item 2</h2>
+                <p>
+                    The second grid item uses the <em>Montserrat</em> font with a semi-bold weight (600). This is perfect for headings or emphasized text.
+                </p>
+            </div>
+            <div class="grid-item">
+                <h2>Grid Item 3</h2>
+                <p>
+                    Using <em>Open Sans</em> with a regular weight (400) keeps this paragraph easy to read, with a more standard font appearance for regular body text.
+                </p>
+            </div>
+            <div class="grid-item">
+                <h2>Grid Item 4</h2>
+                <p>
+                    For a more elegant and classic look, <em>Playfair Display</em> in bold (700) gives a sophisticated touch to your content.
+                </p>
+            </div>
+        </div>
+    </div>
+	<div class="section">
+    <h1>Data Tables</h1>
+    <p>Below are two examples of large tables styled with different Google Fonts.</p>
+
+    <h2>Table 1: Employee Information</h2>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 40px;">
+        <thead>
+            <tr style="background-color: #2c3e50; color: white;">
+                <th style="padding: 12px; font-family: 'Montserrat', sans-serif; font-weight: 600;">ID</th>
+                <th style="padding: 12px; font-family: 'Montserrat', sans-serif; font-weight: 600;">Name</th>
+                <th style="padding: 12px; font-family: 'Montserrat', sans-serif; font-weight: 600;">Position</th>
+                <th style="padding: 12px; font-family: 'Montserrat', sans-serif; font-weight: 600;">Department</th>
+                <th style="padding: 12px; font-family: 'Montserrat', sans-serif; font-weight: 600;">Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">1</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">John Doe</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Software Engineer</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">IT</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">$85,000</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">2</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Jane Smith</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Project Manager</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Operations</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">$95,000</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">3</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Emily Johnson</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Data Analyst</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Data Science</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">$75,000</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">4</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Michael Brown</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">UX Designer</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Design</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">$80,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Table 2: Product Inventory</h2>
+    <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr style="background-color: #2c3e50; color: white;">
+                <th style="padding: 12px; font-family: 'Montserrat', sans-serif; font-weight: 600;">Product ID</th>
+                <th style="padding: 12px; font-family: 'Montserrat', sans-serif; font-weight: 600;">Product Name</th>
+                <th style="padding: 12px; font-family: 'Montserrat', sans-serif; font-weight: 600;">Category</th>
+                <th style="padding: 12px; font-family: 'Montserrat', sans-serif; font-weight: 600;">Stock</th>
+                <th style="padding: 12px; font-family: 'Montserrat', sans-serif; font-weight: 600;">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">101</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Laptop</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Electronics</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">20</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">$1,200</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">102</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Smartphone</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Electronics</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">50</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">$800</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">103</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Headphones</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Accessories</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">100</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">$150</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">104</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Smartwatch</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">Wearables</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">30</td>
+                <td style="padding: 12px; font-family: 'Open Sans', sans-serif;">$250</td>
+            </tr>
+        </tbody>
+    </table>
+	<div class="section">
+    <h1>Hyperlinks and Bookmarks</h1>
+    <p style="font-family: 'Open Sans', sans-serif;">
+        In this section, we demonstrate the use of hyperlinks styled with Google Fonts. 
+        Click on the links below to navigate to different sections of this document.
+    </p>
+
+    <ul style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+        <li><a href="#employee-table" style="color: #3498db; text-decoration: none; font-weight: 500;">Employee Information Table</a></li>
+        <li><a href="#product-table" style="color: #3498db; text-decoration: none; font-weight: 500;">Product Inventory Table</a></li>
+        <li><a href="#footer" style="color: #3498db; text-decoration: none; font-weight: 500;">Footer Section</a></li>
+    </ul>
+
+    <h2 id="employee-table" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">Employee Information Table</h2>
+    <p style="font-family: 'Open Sans', sans-serif;">
+        This table contains information about employees and their respective roles in the organization.
+    </p>
+
+    <h2 id="product-table" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">Product Inventory Table</h2>
+    <p style="font-family: 'Open Sans', sans-serif;">
+        Here is a list of products available in the inventory along with their details.
+    </p>
+
+    <h2 id="footer" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">Footer Section</h2>
+    <p style="font-family: 'Open Sans', sans-serif;">
+        This is the footer section of the document. It summarizes the content presented in the page.
+    </p>
+
+    <h2>Useful Links</h2>
+    <p style="font-family: 'Roboto', sans-serif;">
+        Here are some external links you may find useful:
+    </p>
+    <ul style="font-family: 'Open Sans', sans-serif; font-size: 18px;">
+        <li><a href="https://fonts.google.com/" target="_blank" style="color: #3498db; text-decoration: none; font-weight: 500;">Google Fonts</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/" target="_blank" style="color: #3498db; text-decoration: none; font-weight: 500;">MDN Web Docs</a></li>
+        <li><a href="https://www.w3schools.com/" target="_blank" style="color: #3498db; text-decoration: none; font-weight: 500;">W3Schools</a></li>
+    </ul>
+</div>
+
+</div>
+<p style="font-family: 'Open Sans', sans-serif; font-size: 18px; line-height: 1.5;">
+    Welcome to this <span style="font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 700; color: #2c3e50;">intricately designed</span> 
+    example that illustrates the power of <span style="font-family: 'Roboto', sans-serif; font-size: 22px; font-weight: 500; text-decoration: underline; color: #e74c3c;">typography</span>. 
+    Here, we blend <span style="font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 400; color: #3498db;">multiple fonts</span> to create 
+    a <span style="font-family: 'Lora', serif; font-size: 20px; font-style: italic; color: #8e44ad;">dynamic</span> visual experience, enhancing 
+    <span style="font-family: 'Source Sans Pro', sans-serif; font-size: 18px; font-weight: 600; background-color: #f9e79f;">clarity</span> and 
+    <span style="font-family: 'Raleway', sans-serif; font-size: 22px; font-weight: 800; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">engagement</span> 
+    for readers. Each segment of this <span style="font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 1px;">paragraph</span> 
+    demonstrates how <span style="font-family: 'Merriweather', serif; font-size: 18px; font-weight: 400; color: #16a085;">font choices</span> 
+    can significantly impact <span style="font-family: 'Nunito Sans', sans-serif; font-size: 20px; font-weight: 500; color: #d35400;">user experience</span> 
+    and convey the <span style="font-family: 'Catamaran', sans-serif; font-size: 18px; font-weight: 300;">message</span> 
+    with artistic flair and intention.
+</p>
+
+
+    <div class="footer">
+        This page demonstrates complex font loading using Google Fonts, and the content varies in font weights and styles to show versatility.
+    </div>
+</body>
+</html>
