@@ -1,5 +1,6 @@
 ﻿using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
+using System.Runtime.InteropServices;
 
 // Initialize the HTML to PDF converter.
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
