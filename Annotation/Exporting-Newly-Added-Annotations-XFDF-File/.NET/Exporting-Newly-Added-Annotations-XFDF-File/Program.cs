@@ -4,7 +4,7 @@ using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 
 //Load the PDF document from a file stream
-using (FileStream docStream = new FileStream(Path.GetFullPath(@"Data\Input.pdf"), FileMode.Open, FileAccess.Read))
+using (FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
 using (PdfLoadedDocument pdfLoadedDocument = new PdfLoadedDocument(docStream))
 {
     //Create a PDF free text annotation
@@ -22,7 +22,7 @@ using (PdfLoadedDocument pdfLoadedDocument = new PdfLoadedDocument(docStream))
     pdfLoadedDocument.Pages[0].Annotations.Add(freeText);
 
     //Export annotations to the XFDF format and save to a file using a file stream
-    using (FileStream xfdfFileStream = new FileStream(Path.GetFullPath(@"Output\Output.xfdf"), FileMode.Create, FileAccess.Write))
+    using (FileStream xfdfFileStream = new FileStream(Path.GetFullPath(@"Output/Output.xfdf"), FileMode.Create, FileAccess.Write))
     {
         pdfLoadedDocument.ExportAnnotations(xfdfFileStream, AnnotationDataFormat.XFdf);
     }

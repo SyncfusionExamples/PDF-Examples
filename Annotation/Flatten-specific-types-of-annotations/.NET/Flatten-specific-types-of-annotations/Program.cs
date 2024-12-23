@@ -2,7 +2,7 @@
 using Syncfusion.Pdf.Parsing;
 
 //Load the PDF document using a file stream
-using (FileStream docStream = new FileStream(Path.GetFullPath(@"Data\Input.pdf"), FileMode.Open, FileAccess.Read))
+using (FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
 {
     //Load the existing PDF document
     using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream))
@@ -17,7 +17,7 @@ using (FileStream docStream = new FileStream(Path.GetFullPath(@"Data\Input.pdf")
         loadedDocument.FlattenAnnotations(pdfLoadedAnnotationTypes);
 
         //Save the flattened document using a file stream
-        using (FileStream outputStream = new FileStream(Path.GetFullPath(@"Output\Output.pdf"), FileMode.Create, FileAccess.Write))
+        using (FileStream outputStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.Write))
         {
             loadedDocument.Save(outputStream);
         }

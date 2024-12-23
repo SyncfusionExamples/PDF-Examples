@@ -17,7 +17,7 @@ javaScriptAction.Name = "Test";
 javaScriptCollection.Add(javaScriptAction);
 
 // Save the PDF document using a file stream.
-using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output\Output.pdf"), FileMode.Create, FileAccess.Write))
+using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.Write))
 {
     document.Save(fileStream);
 }

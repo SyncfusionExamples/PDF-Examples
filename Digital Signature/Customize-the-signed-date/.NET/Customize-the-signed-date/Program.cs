@@ -15,7 +15,7 @@ signature.SignedName = "Test";
 //Define the bounds for the signature (position and size on the page).
 signature.Bounds = new RectangleF(new PointF(0, 0), new SizeF(200, 100));
 //Save the document to a file using a file stream.
-using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output\Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
     document.Save(fileStream);
 }
