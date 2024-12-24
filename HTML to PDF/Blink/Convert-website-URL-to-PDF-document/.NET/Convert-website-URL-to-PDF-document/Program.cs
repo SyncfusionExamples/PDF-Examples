@@ -13,11 +13,12 @@ if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
     //Set command line arguments to run without the sandbox.
     blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
     blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
+    blinkConverterSettings.AdditionalDelay = 0;
 }
 //Assign Blink converter settings to HTML converter.
 htmlConverter.ConverterSettings = blinkConverterSettings;
 //Convert URL to PDF document.
-PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com");
+PdfDocument document = htmlConverter.Convert("https://www.google.com");
 //Create file stream. 
 using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {

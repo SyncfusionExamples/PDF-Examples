@@ -12,7 +12,7 @@ using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf
         PdfLoadedPage firstPage = document.Pages[0] as PdfLoadedPage;
 
         //Get the annotation on that page
-        PdfLoadedAnnotation annotation = firstPage.Annotations[1] as PdfLoadedAnnotation;
+        PdfLoadedAnnotation annotation = firstPage.Annotations[0] as PdfLoadedAnnotation;
 
         //Get the annotation creation date.
         DateTime creationDate = annotation.CreationDate;
