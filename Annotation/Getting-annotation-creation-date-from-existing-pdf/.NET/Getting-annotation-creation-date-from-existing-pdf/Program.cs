@@ -20,71 +20,16 @@ for (int i = 0; i < loadedPages.Count; i++)
     // Iterate through all annotations on the current page
     for (int j = 0; j < numAnnotations; j++)
     {
-        // Identify the type of the annotation and process accordingly
-        switch (annotations[j].GetType().ToString())
+        // Iterate through rectangle annotations
+        if (annotations[j].GetType().ToString() == "Syncfusion.Pdf.Interactive.PdfLoadedRectangleAnnotation")
         {
-            case "Syncfusion.Pdf.Interactive.PdfLoadedFreeTextAnnotation":
-                // Handle FreeText annotation
-                PdfLoadedFreeTextAnnotation freeTextAnnot = annotations[j] as PdfLoadedFreeTextAnnotation;
-                DateTime creationDate0 = freeTextAnnot.CreationDate;
-                Console.WriteLine(creationDate0);
-                break;
-
-            case "Syncfusion.Pdf.Interactive.PdfLoadedEllipseAnnotation":
-                // Handle Ellipse annotation
-                PdfLoadedEllipseAnnotation ellipseAnnot = annotations[j] as PdfLoadedEllipseAnnotation;
-                DateTime creationDate1 = ellipseAnnot.CreationDate;
-                Console.WriteLine(creationDate1);
-                break;
-
-            case "Syncfusion.Pdf.Interactive.PdfLoadedRectangleAnnotation":
-                // Handle Rectangle annotation
-                PdfLoadedRectangleAnnotation rectangleAnnot = annotations[j] as PdfLoadedRectangleAnnotation;
-                DateTime creationDate2 = rectangleAnnot.CreationDate;
-                Console.WriteLine(creationDate2);
-                break;
-
-            case "Syncfusion.Pdf.Interactive.PdfLoadedSquareAnnotation":
-                // Handle Square annotation
-                PdfLoadedSquareAnnotation squareAnnot = annotations[j] as PdfLoadedSquareAnnotation;
-                DateTime creationDate3 = squareAnnot.CreationDate;
-                Console.WriteLine(creationDate3);
-                break;
-
-            case "Syncfusion.Pdf.Interactive.PdfLoadedAnnotation":
-                // Handle Circle annotation
-                PdfLoadedCircleAnnotation circleAnnot = annotations[j] as PdfLoadedCircleAnnotation;
-                DateTime creationDate4 = circleAnnot.CreationDate;
-                Console.WriteLine(creationDate4);
-                break;
-
-            case "Syncfusion.Pdf.Interactive.PdfLoadedLineAnnotation":
-                // Handle Line annotation
-                PdfLoadedLineAnnotation lineAnnot = annotations[j] as PdfLoadedLineAnnotation;
-                DateTime creationDate5 = lineAnnot.CreationDate;
-                Console.WriteLine(creationDate5);
-                break;
-
-            case "Syncfusion.Pdf.Interactive.PdfLoadedInkAnnotation":
-                // Handle Ink annotation
-                PdfLoadedInkAnnotation inkAnnot = annotations[j] as PdfLoadedInkAnnotation;
-                DateTime creationDate6 = inkAnnot.CreationDate;
-                Console.WriteLine(creationDate6);
-                break;
-
-            case "Syncfusion.Pdf.Interactive.PdfLoadedRubberStampAnnotation":
-                // Handle Rubber Stamp annotation
-                PdfLoadedRubberStampAnnotation stampAnnot = annotations[j] as PdfLoadedRubberStampAnnotation;
-                DateTime creationDate7 = stampAnnot.CreationDate;
-                Console.WriteLine(creationDate7);
-                break;
-
-            case "Syncfusion.Pdf.Interactive.PdfLoadedTextMarkupAnnotation":
-                // Handle Text Markup annotation
-                PdfLoadedTextMarkupAnnotation textAnnot = annotations[j] as PdfLoadedTextMarkupAnnotation;
-                DateTime creationDate8 = textAnnot.CreationDate;
-                Console.WriteLine(creationDate8);
-                break;
+            // Handle rectangle annotation
+            PdfLoadedRectangleAnnotation rectangleAnnot = annotations[j] as PdfLoadedRectangleAnnotation;
+            DateTime creationDate = rectangleAnnot.CreationDate;
+            Console.WriteLine(creationDate);
         }
     }
 }
+//Close the document
+document.Close(true);
+inputStream.Dispose();

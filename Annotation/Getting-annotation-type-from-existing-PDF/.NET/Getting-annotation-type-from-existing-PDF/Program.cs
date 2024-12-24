@@ -2,9 +2,10 @@
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf;
 
-//Load the PDF document using a file stream
+// Load the PDF document using a file stream
 FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
 PdfLoadedDocument document = new PdfLoadedDocument(inputStream);
+
 // Load the page collection from the PDF document
 PdfLoadedPageCollection loadedPages = document.Pages;
 
@@ -21,39 +22,36 @@ for (int i = 0; i < loadedPages.Count; i++)
         foreach (PdfLoadedAnnotation annot in loadedPage.Annotations)
         {
             // Identify the type of the annotation
-            PdfLoadedAnnotationType annotationType = FindType(annot);
+            PdfLoadedAnnotationType annotationType;
+
+            if (annot is PdfLoadedRectangleAnnotation)
+            {
+                annotationType = PdfLoadedAnnotationType.RectangleAnnotation;
+            }
+            else if (annot is PdfLoadedTextMarkupAnnotation)
+            {
+                annotationType = PdfLoadedAnnotationType.TextMarkupAnnotation;
+            }
+            else if (annot is PdfLoadedTextWebLinkAnnotation)
+            {
+                annotationType = PdfLoadedAnnotationType.TextWebLinkAnnotation;
+            }
+            else if (annot is PdfLoadedPopupAnnotation)
+            {
+                annotationType = PdfLoadedAnnotationType.PopupAnnotation;
+            }
+            else
+            {
+                annotationType = PdfLoadedAnnotationType.Null;
+            }
 
             // Print the annotation type to the console
             Console.WriteLine(annotationType);
         }
     }
 }
+
 // Close the document and release resources
 document.Close(true);
 inputStream.Dispose();
 Console.ReadKey();
-
-// Method to find the type of a given annotation
-static PdfLoadedAnnotationType FindType(PdfLoadedAnnotation annotation)
-{
-    if (annotation is PdfLoadedRectangleAnnotation)
-    {
-        return PdfLoadedAnnotationType.RectangleAnnotation;
-    }
-    else if (annotation is PdfLoadedTextMarkupAnnotation)
-    {
-        return PdfLoadedAnnotationType.TextMarkupAnnotation;
-    }
-    else if (annotation is PdfLoadedTextWebLinkAnnotation)
-    {
-        return PdfLoadedAnnotationType.TextWebLinkAnnotation;
-    }
-    else if (annotation is PdfLoadedPopupAnnotation)
-    {
-        return PdfLoadedAnnotationType.PopupAnnotation;
-    }
-    else
-    {
-        return PdfLoadedAnnotationType.Null;
-    }
-}
