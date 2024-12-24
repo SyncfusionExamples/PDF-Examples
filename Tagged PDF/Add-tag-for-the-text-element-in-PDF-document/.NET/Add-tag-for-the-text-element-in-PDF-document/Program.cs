@@ -42,4 +42,3 @@ using (PdfDocument document = new PdfDocument())
         document.Save(outputFileStream);
     }
 }
-

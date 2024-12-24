@@ -42,4 +42,3 @@ using (FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Data/Input
         }
     }
 }
-
