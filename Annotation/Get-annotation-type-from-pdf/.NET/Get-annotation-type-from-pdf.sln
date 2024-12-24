@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Getting-annotation-type-from-existing-PDF", "Getting-annotation-type-from-existing-PDF\Getting-annotation-type-from-existing-PDF.csproj", "{8985CAE2-2683-4690-BFA7-3A2A16065CBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Get-annotation-type-from-pdf", "Get-annotation-type-from-pdf\Get-annotation-type-from-pdf.csproj", "{8985CAE2-2683-4690-BFA7-3A2A16065CBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

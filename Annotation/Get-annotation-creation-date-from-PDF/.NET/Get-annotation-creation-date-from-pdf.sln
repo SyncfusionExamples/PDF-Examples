@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Getting-annotation-creation-date-from-existing-pdf", "Getting-annotation-creation-date-from-existing-pdf\Getting-annotation-creation-date-from-existing-pdf.csproj", "{99C4DAFC-5512-4A2B-AAE0-9CF0464BBD1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Get-annotation-creation-date-from-pdf", "Get-annotation-creation-date-from-pdf\Get-annotation-creation-date-from-pdf.csproj", "{99C4DAFC-5512-4A2B-AAE0-9CF0464BBD1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
