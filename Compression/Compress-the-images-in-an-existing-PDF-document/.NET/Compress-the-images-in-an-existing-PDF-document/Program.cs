@@ -38,4 +38,3 @@ using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Data/imageDoc.p
         loadedDocument.Close(true);
     }
 } 
-

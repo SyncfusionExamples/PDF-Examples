@@ -23,7 +23,6 @@ using (OCRProcessor processor = new OCRProcessor())
         //Save the PDF document to file stream.
         pdfLoadedDocument.Save(outputFileStream);
     }
-      
       //Close the document.
       pdfLoadedDocument.Close(true);
     }    
