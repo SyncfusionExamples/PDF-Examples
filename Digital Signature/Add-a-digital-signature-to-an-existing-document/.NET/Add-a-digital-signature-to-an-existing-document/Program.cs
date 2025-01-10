@@ -18,7 +18,7 @@ using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf
 
     // Load the certificate from a PFX file with a private key
     FileStream certificateStream = new FileStream(Path.GetFullPath(@"Data/PDF.pfx"), FileMode.Open, FileAccess.Read);
-    PdfCertificate pdfCert = new PdfCertificate(certificateStream, "password123");
+    PdfCertificate pdfCert = new PdfCertificate(certificateStream, "syncfusion");
 
     // Create a signature
     PdfSignature signature = new PdfSignature(loadedDocument, page, pdfCert, "Signature");
