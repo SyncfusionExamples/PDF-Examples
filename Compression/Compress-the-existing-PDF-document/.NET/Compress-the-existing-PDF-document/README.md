@@ -54,6 +54,6 @@ Step 4: **Implement PDF compression**: Use the following code snippet in `Progra
    }
    ```
 
-You can download a complete working sample from the [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Compression/Compress-the-images-in-an-existing-PDF-document).
+You can download a complete working sample from the [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Compression/Compress-the-existing-PDF-document).
 
 More information about the compressing PDF can be found in this [documentation](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/working-with-compression) section.
