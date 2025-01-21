@@ -21,7 +21,7 @@ Step 4: **Implement PDF compression**: Use the following code snippet in `Progra
 
    ```csharp
   // Open a file stream to read the input PDF file.
-  using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Data/input.pdf"), FileMode.Open, FileAccess.Read))
+  using (FileStream fileStream = new FileStream(Input.pdf", FileMode.Open, FileAccess.Read))
   { 
       // Create a new PdfLoadedDocument object from the file stream.
       using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(fileStream))
@@ -39,7 +39,7 @@ Step 4: **Implement PDF compression**: Use the following code snippet in `Progra
           loadedDocument.Compress(options);
 
           //Create file stream.
-          using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+          using (FileStream outputFileStream = new FileStream("Output/Output.pdf", FileMode.Create, FileAccess.ReadWrite))
           {
               //Save the PDF document to file stream.
               loadedDocument.Save(outputFileStream);
