@@ -11,7 +11,7 @@ BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
 // Set Blink viewport size
 blinkConverterSettings.ViewPortSize = new Size(1280, 0);
 
-// EnableLocalFileAccess=false restricts external CSS and images in local HTML content
+// Restricts external CSS and images in local HTML content
 blinkConverterSettings.EnableLocalFileAccess = false;
 
 // Assign Blink converter settings to HTML converter

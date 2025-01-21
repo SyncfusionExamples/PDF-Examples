@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enable-local-file-access-HTML-to-PDF", "Enable-local-file-access-HTML-to-PDF\Enable-local-file-access-HTML-to-PDF.csproj", "{FD6E2CEF-5ED9-4218-BB4F-CC04CB50C676}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Disabling-local-file-access-HTML-to-PDF", "Disabling-local-file-access-HTML-to-PDF\Disabling-local-file-access-HTML-to-PDF.csproj", "{FD6E2CEF-5ED9-4218-BB4F-CC04CB50C676}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
