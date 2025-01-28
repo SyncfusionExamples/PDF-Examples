@@ -25,5 +25,5 @@ using (PdfDocument pdfDocument = new PdfDocument())
         //Save the PDF document to file stream.
         pdfDocument.Save(outputFileStream);
     }
-    pdfDocument.Close(true);
+   
 }
