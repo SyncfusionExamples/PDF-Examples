@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>Adding_Document_Level_JavaScript_Actions</RootNamespace>
+    <RootNamespace>Enabling_Edit_Option_for_the_PdfComboboxField</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
