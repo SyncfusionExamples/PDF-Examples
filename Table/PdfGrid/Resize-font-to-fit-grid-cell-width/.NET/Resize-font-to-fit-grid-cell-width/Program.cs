@@ -35,13 +35,13 @@ class Program
         pdfGridHeader.Cells[2].Value = "Details";
 
         // Add rows to the grid.
-        for (int i = 0; i < 5; i++)
+        for (int i = 1; i <= 5; i++)
         {
             PdfGridRow row = grid.Rows.Add();
             row.Height = 20;
             row.Cells[0].Value = "E0" + i;
-            row.Cells[1].Value = "Syncfusion PDF library supports to adjust PDF table row width based on the text length";
-            row.Cells[2].Value = "Syncfusion PDF library supports to adjust PDF table row width based on the text length by enabling the AllowHorizontalOverflow property in the PDF document using C# and VB.NET";
+            row.Cells[1].Value = "Employee " + i;
+            row.Cells[2].Value = String.Format("Employee {0} is a software engineer with over ten years of experience in developing scalable applications. He specializes in full-stack development and enjoys working on innovative projects.", i);
         }
 
         // Adjust the font size to fit the cell content.
@@ -84,7 +84,7 @@ class Program
 
                 while (fontSize > 0)
                 {
-                    //Measure the text
+                    // Measure the text.
                     SizeF textSize = currentFont.MeasureString(text, cellSize.Width);
                     if (textSize.Height <= cellSize.Height)
                     {
