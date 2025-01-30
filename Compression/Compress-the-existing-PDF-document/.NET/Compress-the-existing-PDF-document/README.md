@@ -20,7 +20,7 @@ Step 3: **Add required namespaces**: Include the following namespaces in your `P
 Step 4: **Implement PDF compression**: Use the following code snippet in `Program.cs` to compress PDF files:
 
    ```csharp
-   // Open a file stream to read the input PDF file
+  // Open a file stream to read the input PDF file
    using (FileStream fileStream = new FileStream("Input.pdf", FileMode.Open, FileAccess.Read))
    {
        // Load the PDF document from the file stream
@@ -28,23 +28,23 @@ Step 4: **Implement PDF compression**: Use the following code snippet in `Progra
        {
            // Create a new PdfCompressionOptions object
            PdfCompressionOptions options = new PdfCompressionOptions();
-           
+
            // Enable image compression and set the image quality
            options.CompressImages = true;
            options.ImageQuality = 50;
-           
+
            // Enable font optimization
            options.OptimizeFont = true;
-           
+
            // Enable page content optimization
            options.OptimizePageContents = true;
-           
+
            // Remove metadata from the PDF
            options.RemoveMetadata = true;
-           
+
            // Compress the PDF document
            loadedDocument.Compress(options);
-           
+
            // Save the document into a memory stream
            using (MemoryStream outputStream = new MemoryStream())
            {
