@@ -1,0 +1,153 @@
+%PDF-1.4
+%‚„œ”
+8 0 obj
+<<
+/BBox [0 0 100 20]
+/Type /XObject
+/Subtype /Form
+/Resources <<
+/ProcSet [/PDF]
+>>
+/Length 98
+>>
+stream
+% Change co-ordinate system to left/top.
+1.00 .00 .00 1.00 .00 20.00  cm
+.00 .00 .00 .00 re
+n
+
+endstream
+endobj
+9 0 obj
+<<
+/BBox [0 0 100 20]
+/Type /XObject
+/Subtype /Form
+/Resources <<
+/ProcSet [/PDF]
+>>
+/Length 98
+>>
+stream
+% Change co-ordinate system to left/top.
+1.00 .00 .00 1.00 .00 20.00  cm
+.00 .00 .00 .00 re
+n
+
+endstream
+endobj
+3 0 obj
+<<
+/Type /Page
+/MediaBox [0 0 595 842]
+/Resources <<
+>>
+/Annots [5 0 R 7 0 R]
+/Parent 2 0 R
+>>
+endobj
+5 0 obj
+<<
+/FT /Sig
+/T (Signature1)
+/DA (/TiRo 0 Tf 0 0 0 rg\r\n)
+/Type /Annot
+/F 4
+/Subtype /Widget
+/BS <<
+/Type /Border
+/S /S
+>>
+/P 3 0 R
+/Rect [40 782 140 802]
+/AP <<
+/N 8 0 R
+>>
+/MK <<
+/BC [0 0 0]
+/BG [1 1 1]
+>>
+/Parent 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/T (Signature1)
+/Kids [5 0 R]
+>>
+endobj
+7 0 obj
+<<
+/FT /Sig
+/T (Signature2)
+/DA (/TiRo 0 Tf 0 0 0 rg\r\n)
+/Type /Annot
+/F 4
+/Subtype /Widget
+/BS <<
+/Type /Border
+/S /S
+>>
+/P 3 0 R
+/Rect [40 742 140 762]
+/AP <<
+/N 9 0 R
+>>
+/MK <<
+/BC [0 0 0]
+/BG [1 1 1]
+>>
+/Parent 6 0 R
+>>
+endobj
+6 0 obj
+<<
+/T (Signature2)
+/Kids [7 0 R]
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+/AcroForm <<
+/Fields [4 0 R 6 0 R]
+>>
+>>
+endobj
+10 0 obj
+<<
+/Producer (iLovePDF)
+/ModDate (D:20250122045802Z)
+>>
+endobj
+xref
+0 11
+0000000000 65535 f
+0000001224 00000 n
+0000001167 00000 n
+0000000475 00000 n
+0000000825 00000 n
+0000000585 00000 n
+0000001116 00000 n
+0000000876 00000 n
+0000000015 00000 n
+0000000245 00000 n
+0000001311 00000 n
+trailer
+<<
+/Size 11
+/Root 1 0 R
+/Info 10 0 R
+/ID [<2C07AB275769AE15D3E178A54DD55B30> <6B3BA0E23F99C2AC228F84B5AE03D618>]
+>>
+startxref
+1383
+%%EOF
