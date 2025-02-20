@@ -43,4 +43,4 @@ document.Close(true);
 
 You can download a complete working sample from the [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Getting%20Started/.NET/Create_PDF_NET).
 
-More information about the merge PDF can be found in this [documentation](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/create-pdf-file-in-c-sharp-vb-net) section.
+More information about the creating a PDF can be found in this [documentation](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/create-pdf-file-in-c-sharp-vb-net) section.
