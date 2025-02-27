@@ -9,7 +9,7 @@ using (PdfDocument document = new PdfDocument())
     // Add a page to the document
     PdfPage page = document.Pages.Add();
     // Create a font to be used for the text box.
-    PdfTrueTypeFont font = new PdfTrueTypeFont(Path.GetFullPath(@"../../../Data/arial.ttf"), 12);
+    PdfTrueTypeFont font = new PdfTrueTypeFont(Path.GetFullPath(@"Data/arial.ttf"), 12);
     // Create a text box field with RTL text
     PdfTextBoxField textBox = new PdfTextBoxField(page, "rtlTextBox");
 
@@ -28,7 +28,7 @@ using (PdfDocument document = new PdfDocument())
     document.Form.SetDefaultAppearance(false);
 
     //Create file stream.
-    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
     {
         //Save the PDF document to file stream.
         document.Save(outputFileStream);
