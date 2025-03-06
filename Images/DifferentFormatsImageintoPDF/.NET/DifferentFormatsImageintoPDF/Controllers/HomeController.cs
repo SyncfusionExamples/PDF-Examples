@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Drawing;
+using SkiaSharp;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DifferentFormatsImageintoPDF.Controllers
 {
@@ -32,38 +34,29 @@ namespace DifferentFormatsImageintoPDF.Controllers
             foreach (var file in files)
             {
                 string extension = Path.GetExtension(file);
-
+                //Load the image from the disk
+                FileStream imageStream = new FileStream(file, FileMode.Open, FileAccess.Read);
+                PdfImage image;
                 if (extension == ".jpg" || extension == ".png" || extension == ".jpeg")
                 {
-                    //Add a page to the document
-                    PdfPage page = doc.Pages.Add();
-
-                    //Create PDF graphics for the page
-                    PdfGraphics graphics = page.Graphics;
-
-                    //Load the image from the disk
-                    FileStream imageStream = new FileStream(file, FileMode.Open, FileAccess.Read);
-                    PdfBitmap image = new PdfBitmap(imageStream);
-
-                    //Draw the image
-                    graphics.DrawImage(image, new PointF(0, 0), new SizeF(400, 600));
+                    image = new PdfBitmap(imageStream);
                 }
-
-                else if (extension == ".tiff" || extension == ".tif" || extension == ".bmp" || extension == ".gif")
+                else
                 {
-                    //Add a page to the document
-                    PdfPage page = doc.Pages.Add();
-
-                    //Create PDF graphics for the page
-                    PdfGraphics graphics = page.Graphics;
-
-                    //Load the TIFF image
-                    FileStream imageStream = new FileStream(file, FileMode.Open, FileAccess.Read);
-                    PdfTiffImage image = new PdfTiffImage(imageStream);
-
-                    //Draw the image
-                    graphics.DrawImage(image, new PointF(0, 0), new SizeF(400, 600));
+                    image = new PdfTiffImage(imageStream);
                 }
+
+                //Add section
+                PdfSection section = doc.Sections.Add();
+                //Set margin
+                section.PageSettings.Margins.All = 0;
+                //Set page size as image size.
+                section.PageSettings.Size = new SizeF(image.Width, image.Height);
+                //Add page to the section and initialize graphics for the page
+                PdfPage page = section.Pages.Add();
+                //Create PDF graphics for the page
+                PdfGraphics graphics = page.Graphics;
+                graphics.DrawImage(image, new PointF(0, 0), new SizeF(image.Width, image.Height));
             }
 
             //Saving the PDF to the MemoryStream

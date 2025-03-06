@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Syncfusion.Pdf.Imaging.Net.Core" Version="*" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="wwwroot\Data\256.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
