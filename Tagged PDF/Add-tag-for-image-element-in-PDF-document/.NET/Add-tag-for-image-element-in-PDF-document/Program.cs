@@ -13,8 +13,14 @@ document.DocumentInformation.Title = "Image";
 //Creates new page.
 PdfPage page = document.Pages.Add();
 
-//Draw string.
-page.Graphics.DrawString("JPEG Image:", new PdfStandardFont(PdfFontFamily.Helvetica, 12, PdfFontStyle.Bold), PdfBrushes.Blue, new PointF(0, 0));
+//Load the TrueType font from the local *.ttf file.
+using (FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/Arial.ttf"), FileMode.Open, FileAccess.Read))
+{
+    PdfFont font = new PdfTrueTypeFont(fontStream, 14);
+
+    //Draw string.
+    page.Graphics.DrawString("JPEG Image:", font, PdfBrushes.Blue, new PointF(0, 0));
+}
 
 //Load the image as stream.
 FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/pdf.jpg"), FileMode.Open, FileAccess.Read);
