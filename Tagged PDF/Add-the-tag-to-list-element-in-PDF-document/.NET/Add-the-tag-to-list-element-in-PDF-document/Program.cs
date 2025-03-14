@@ -20,11 +20,12 @@ PdfGraphics graphics = page.Graphics;
 //Get the page graphics size. 
 SizeF size = page.Graphics.ClientSize;
 
-//Create font.
-PdfFont font = new PdfStandardFont(PdfFontFamily.TimesRoman, 10, PdfFontStyle.Italic);
+//Load the TrueType font from the local *.ttf file.
+FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/Arial.ttf"), FileMode.Open, FileAccess.Read);
+PdfFont font = new PdfTrueTypeFont(fontStream, 14);
 
 //Draw text in PDF page. 
-graphics.DrawString("List:", new PdfStandardFont(PdfFontFamily.Helvetica, 12, PdfFontStyle.Bold), PdfBrushes.Blue, new PointF(10, 0));
+graphics.DrawString("List:", font, PdfBrushes.Blue, new PointF(10, 0));
 
 string[] products = { "Tools", "Grid", "Chart", "Edit", "Diagram", "XlsIO", "Grouping", "Calculate", "PDF", "HTMLUI", "DocIO" };
 
@@ -71,4 +72,5 @@ using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Ou
 }
 
 //Close the document.
+fontStream.Dispose();
 document.Close(true);
