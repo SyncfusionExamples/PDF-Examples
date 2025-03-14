@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Verify-digital-sign-in-existing-PDF", "Verify-digital-sign-in-existing-PDF\Verify-digital-sign-in-existing-PDF.csproj", "{3DD425D8-40B2-4D5E-8ADD-66522B701503}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Check-If-PDF-Is-Signed", "Check-If-PDF-Is-Signed\Check-If-PDF-Is-Signed.csproj", "{3DD425D8-40B2-4D5E-8ADD-66522B701503}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
