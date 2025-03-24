@@ -14,13 +14,11 @@ document.DocumentInformation.Title = "LineShape";
 PdfPage page = document.Pages.Add();
 
 //Load the TrueType font from the local *.ttf file.
-using (FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/Arial.ttf"), FileMode.Open, FileAccess.Read))
-{
-    PdfFont font = new PdfTrueTypeFont(fontStream, 14);
+FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/Arial.ttf"), FileMode.Open, FileAccess.Read);
+PdfFont font = new PdfTrueTypeFont(fontStream, 14);
 
-    //Draw text.
-    page.Graphics.DrawString("Line Shape:", font, PdfBrushes.Blue, new PointF(30, 80));
-}
+//Draw text.
+page.Graphics.DrawString("Line Shape:", font, PdfBrushes.Blue, new PointF(30, 80));
 
 //Initialize structure element with tag type as figure.
 PdfStructureElement element = new PdfStructureElement(PdfTagType.Figure);
@@ -48,4 +46,6 @@ using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Ou
 
 //Close the document.
 document.Close(true);
+fontStream.Dispose();
+
 

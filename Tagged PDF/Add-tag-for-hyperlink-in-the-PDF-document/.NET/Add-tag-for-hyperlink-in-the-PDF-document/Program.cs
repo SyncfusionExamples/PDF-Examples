@@ -30,12 +30,10 @@ textLink.Url = "http://www.syncfusion.com";
 textLink.Text = "Syncfusion .NET components and controls";
 
 //Load the TrueType font from the local *.ttf file.
-using (FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/Arial.ttf"), FileMode.Open, FileAccess.Read))
-{
-    PdfFont font = new PdfTrueTypeFont(fontStream, 14);
-    //Set the font.
-    textLink.Font = font;
-}
+FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/Arial.ttf"), FileMode.Open, FileAccess.Read);
+PdfFont font = new PdfTrueTypeFont(fontStream, 14);
+//Set the font.
+textLink.Font = font;
 
 //Set the brush. 
 textLink.Brush = PdfBrushes.Blue;
@@ -52,3 +50,4 @@ using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Ou
 
 //Close the document.
 document.Close(true);
+fontStream.Dispose();
