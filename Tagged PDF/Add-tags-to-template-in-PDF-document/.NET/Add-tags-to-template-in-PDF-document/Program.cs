@@ -13,8 +13,12 @@ pdfDocument.DocumentInformation.Title = "TemplateDocument";
 //Add a page to the PDF document.
 PdfPage pdfPage = pdfDocument.Pages.Add();
 
+//Load the TrueType font from the local *.ttf file.
+FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/Arial.ttf"), FileMode.Open, FileAccess.Read);
+PdfFont font = new PdfTrueTypeFont(fontStream, 14);
+
 //Draw text in page. 
-pdfPage.Graphics.DrawString("Rectangle:", new PdfStandardFont(PdfFontFamily.Helvetica, 12, PdfFontStyle.Bold), PdfBrushes.Blue, new PointF(0, 0));
+pdfPage.Graphics.DrawString("Rectangle:", font, PdfBrushes.Blue, new PointF(0, 0));
 
 //Create a PDF template.
 PdfTemplate template = new PdfTemplate(100, 50);
@@ -27,9 +31,6 @@ structureElement.AlternateText = "Template Figure";
 
 //Adding tag to the template element
 template.PdfTag = structureElement;
-
-//Set the font. 
-PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 14);
 
 //Set the brush. 
 PdfBrush brush = new PdfSolidBrush(Color.Pink);
@@ -49,3 +50,4 @@ using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Ou
 
 //Close the document.
 pdfDocument.Close(true);
+fontStream.Dispose();
