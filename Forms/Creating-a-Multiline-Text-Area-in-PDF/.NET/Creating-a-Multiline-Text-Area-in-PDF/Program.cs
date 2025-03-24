@@ -13,8 +13,6 @@ PdfFont font = new PdfStandardFont(PdfFontFamily.Courier, 12f);
 PdfTextBoxField textBoxField = new PdfTextBoxField(page, "FirstName");
 // Set the bounds (position and size) of the text box field
 textBoxField.Bounds = new RectangleF(0, 0, 200, 50);
-// Set the tooltip that will appear when the user hovers over the text box
-textBoxField.ToolTip = "First Name";
 
 // Enable multiline functionality for the text box (allows multiple lines of text)
 textBoxField.Multiline = true;
