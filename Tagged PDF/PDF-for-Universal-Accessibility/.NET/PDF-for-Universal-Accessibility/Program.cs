@@ -10,7 +10,7 @@ document.FileStructure.Version = PdfVersion.Version2_0;
 
 //Set true to auto tag all elements in document 
 document.AutoTag = true;
-document.DocumentInformation.Title = "PdfTextElement";
+document.DocumentInformation.Title = "PDF Universal Accessibility 2";
 
 // Add a new page 
 PdfPage page = document.Pages.Add();

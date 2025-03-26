@@ -19,7 +19,7 @@ bool found = roleMap.TryGetStandardType(customStructureType, out standardStructu
 document.StructureRoleMap = roleMap; // Assign role map to the document 
 
 // Set document metadata 
-document.DocumentInformation.Title = "PdfTextElement";
+document.DocumentInformation.Title = "Custom Role Map";
 
 // Add a new page to the PDF 
 PdfPage page = document.Pages.Add();
