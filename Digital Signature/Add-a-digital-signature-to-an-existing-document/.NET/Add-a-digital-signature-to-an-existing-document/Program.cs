@@ -24,7 +24,7 @@ using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf
     PdfSignature signature = new PdfSignature(loadedDocument, page, pdfCert, "Signature");
 
     // Set signature information
-    signature.Bounds = new RectangleF(new PointF(0, 0), new SizeF(200, 100));
+    signature.Bounds = new RectangleF(227.6355f, 675.795044f, 150.57901f, 32.58f);
     signature.ContactInfo = "johndoe@owned.us";
     signature.LocationInfo = "Honolulu, Hawaii";
     signature.Reason = "I am the author of this document.";
