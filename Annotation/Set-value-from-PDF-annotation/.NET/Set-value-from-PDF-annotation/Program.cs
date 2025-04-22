@@ -32,8 +32,10 @@ using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf
                 if (annotation != null)
                 {
                     // Set custom state and state model
-                    annotation.SetValues("State", "Unknown");
-                    annotation.SetValues("StateModel", "CustomState");
+                    annotation.SetValues("State", "Approved");
+                    annotation.SetValues("StateModel", "ReviewWorkflow");
+                    annotation.SetValues("ReviewedBy", "John Doe");
+                    annotation.SetValues("ReviewedOn", DateTime.Now.ToString("yyyy-MM-dd"));
                 }
             }
         }
