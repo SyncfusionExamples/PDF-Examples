@@ -6,46 +6,29 @@ using Syncfusion.Pdf;
 // Load the existing PDF document using FileStream
 using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
 {
+    // Load the PDF document from the input stream
     using (PdfLoadedDocument ldoc = new PdfLoadedDocument(inputStream))
     {
-        // Get the first page
-        PdfLoadedPage lpage = ldoc.Pages[0] as PdfLoadedPage;
+        // Access the first page of the document
+        PdfLoadedPage page = ldoc.Pages[0] as PdfLoadedPage;
 
-        // Get all annotations on the page
-        PdfLoadedAnnotationCollection annots = lpage.Annotations;
+        // Get the collection of annotations from the page
+        PdfLoadedAnnotationCollection annotations = page.Annotations;
 
-        // Access the 65th annotation (index starts at 0)
-        if (annots.Count > 64 && annots[64] is PdfLoadedCircleAnnotation Icircle)
+        // Check if at least one annotation exists and it's a popup annotation
+        if (annotations.Count > 0 && annotations[0] is PdfLoadedPopupAnnotation annotation)
         {
-            // Get the author of the circle annotation
-            string author = Icircle.Author;
-
-            // Get the review history and comments
-            PdfLoadedPopupAnnotationCollection collection = Icircle.ReviewHistory;
-            PdfLoadedPopupAnnotationCollection collectionComments = Icircle.Comments;
-
-            // Check if there's at least a second item in the review history
-            if (collection != null && collection.Count > 1)
-            {
-                PdfLoadedPopupAnnotation annotation = collection[1] as PdfLoadedPopupAnnotation;
-
-                if (annotation != null)
-                {
-                    // Set custom state and state model
-                    annotation.SetValues("State", "Approved");
-                    annotation.SetValues("StateModel", "ReviewWorkflow");
-                    annotation.SetValues("ReviewedBy", "John Doe");
-                    annotation.SetValues("ReviewedOn", DateTime.Now.ToString("yyyy-MM-dd"));
-                }
-            }
+            // Set a custom key-value pair in the annotation's metadata
+            annotation.SetValues("custom", "This is the custom data for the annotation");
         }
 
-        // Save the modified document using FileStream
+        // Save the modified document using a new FileStream
         using (FileStream outputStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.Write))
         {
-            ldoc.Save(outputStream);
+            // Save changes to a new PDF file
+            ldoc.Save(outputStream); 
         }
-
+        // Close the document and release resources
         ldoc.Close(true);
     }
 }

@@ -5,36 +5,27 @@ using Syncfusion.Pdf;
 // Load the existing PDF document using FileStream
 using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
 {
+    // Load the PDF document from the input stream
     using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputStream))
     {
-        // Get the first page
-        PdfLoadedPage loadedPage = loadedDocument.Pages[0] as PdfLoadedPage;
+        // Access the first page of the document
+        PdfLoadedPage page = loadedDocument.Pages[0] as PdfLoadedPage;
+        // Get the collection of annotations from the page
+        PdfLoadedAnnotationCollection annotations = page.Annotations;
 
-        // Get all annotations on the page
-        PdfLoadedAnnotationCollection annotations = loadedPage.Annotations;
-
-        // Make sure the 65th annotation exists and is a circle annotation
-        if (annotations.Count > 64 && annotations[64] is PdfLoadedCircleAnnotation circleAnnotation)
+        // Check if at least one annotation exists and it's a popup annotation
+        if (annotations.Count > 0 && annotations[0] is PdfLoadedPopupAnnotation annotation)
         {
-            // Get the review history from the circle annotation
-            PdfLoadedPopupAnnotationCollection reviewHistory = circleAnnotation.ReviewHistory;
+            // Get the custom value from the annotation
+            List<string> customValue = annotation.GetValues("custom");
 
-            // Ensure review history has at least two items
-            if (reviewHistory != null && reviewHistory.Count > 1)
+            foreach (string value in customValue)
             {
-                // Get the second popup annotation from review history
-                PdfLoadedPopupAnnotation popupAnnotation = reviewHistory[1] as PdfLoadedPopupAnnotation;
-
-                if (popupAnnotation != null)
-                {
-                    // Get values for the "State" key
-                    List<string> values = popupAnnotation.GetValues("State");
-                    foreach (string value in values)
-                    {
-                        Console.WriteLine(value);
-                    }
-                }
-            }
+                // Print the custom value to the console
+                Console.WriteLine("Custom value from annotation: " + value);
+            } 
         }
+        // Close the document and release resources
+        loadedDocument.Close(true);
     }
 }
