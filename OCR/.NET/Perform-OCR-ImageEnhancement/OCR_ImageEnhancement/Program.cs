@@ -12,6 +12,9 @@ using (OCRProcessor processor = new OCRProcessor())
     PdfLoadedDocument document = new PdfLoadedDocument(stream);
     //Set OCR language.
     processor.Settings.Language = Languages.English;
+    // Set the page segmentation mode for the OCR processor.
+    // PageSegMode.AutoOsd determines the best way to segment the page automatically
+    processor.Settings.PageSegment = PageSegMode.AutoOsd;
     //Initialize the OCR image processor.
     processor.ImageProcessor = new ImageProcessor();
     //Perform OCR with input document and tessdata (Language packs).

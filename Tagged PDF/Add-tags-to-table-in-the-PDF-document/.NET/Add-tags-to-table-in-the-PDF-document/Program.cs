@@ -32,8 +32,12 @@ pdfGrid.Headers.Add(1);
 //Set table header.
 PdfGridRow pdfGridHeader = pdfGrid.Headers[0];
 
+//Load the TrueType font from the local *.ttf file.
+FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/Arial.ttf"), FileMode.Open, FileAccess.Read);
+PdfFont font = new PdfTrueTypeFont(fontStream, 14);
+
 //Set font and brush. 
-pdfGridHeader.Style.Font = new PdfStandardFont(PdfFontFamily.Helvetica, 12, PdfFontStyle.Bold);
+pdfGridHeader.Style.Font = font;
 pdfGridHeader.Style.TextBrush = PdfBrushes.Brown;
 
 //Adding tag for each row with tag type TR.
@@ -85,3 +89,4 @@ using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Ou
 
 //Close the document.
 pdfDocument.Close(true);
+fontStream.Dispose();
