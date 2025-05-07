@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\FT-Page-Changes\\PDF-Examples\\FT page\\Create-Fillable-PDF-Forms\\.NET\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{18D5CCA6-18F2-42EA-88B2-C776DCDEA246}|Create-Fillable-PDF-Forms\\Create-Fillable-PDF-Forms.csproj|d:\\ft-page-changes\\pdf-examples\\ft page\\create-fillable-pdf-forms\\.net\\create-fillable-pdf-forms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18D5CCA6-18F2-42EA-88B2-C776DCDEA246}|Create-Fillable-PDF-Forms\\Create-Fillable-PDF-Forms.csproj|solutionrelative:create-fillable-pdf-forms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\FT-Page-Changes\\PDF-Examples\\FT page\\Create-Fillable-PDF-Forms\\.NET\\Create-Fillable-PDF-Forms\\Program.cs",
+              "RelativeDocumentMoniker": "Create-Fillable-PDF-Forms\\Program.cs",
+              "ToolTip": "D:\\FT-Page-Changes\\PDF-Examples\\FT page\\Create-Fillable-PDF-Forms\\.NET\\Create-Fillable-PDF-Forms\\Program.cs",
+              "RelativeToolTip": "Create-Fillable-PDF-Forms\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T10:57:55.612Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
