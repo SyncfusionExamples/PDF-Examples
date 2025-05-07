@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "fkANHKBmZSc=",
+  "success": true,
+  "projectFilePath": "D:\\Project\\Split-PDF-files-in-C#\\Split-PDF-files-in-C#\\Split-PDF-files-in-C#.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SameerkhanNainarAliB\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\SameerkhanNainarAliB\\.nuget\\packages\\syncfusion.compression.net.core\\29.1.41\\syncfusion.compression.net.core.29.1.41.nupkg.sha512",
+    "C:\\Users\\SameerkhanNainarAliB\\.nuget\\packages\\syncfusion.licensing\\29.1.41\\syncfusion.licensing.29.1.41.nupkg.sha512",
+    "C:\\Users\\SameerkhanNainarAliB\\.nuget\\packages\\syncfusion.pdf.net.core\\29.1.41\\syncfusion.pdf.net.core.29.1.41.nupkg.sha512",
+    "C:\\Users\\SameerkhanNainarAliB\\.nuget\\packages\\system.text.encoding.codepages\\4.4.0\\system.text.encoding.codepages.4.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
