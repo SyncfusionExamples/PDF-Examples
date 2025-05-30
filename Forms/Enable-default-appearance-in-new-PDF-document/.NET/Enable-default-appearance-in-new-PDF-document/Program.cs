@@ -19,7 +19,7 @@ textBoxField.ToolTip = "First Name";
 document.Form.Fields.Add(textBoxField);
 
 //Enable the default Appearance
-document.Form.SetDefaultAppearance(true);
+document.Form.SetDefaultAppearance(false);
 
 //Create file stream.
 using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))

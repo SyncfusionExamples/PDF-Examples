@@ -16,7 +16,7 @@ PdfLoadedTextBoxField loadedTextBoxField = loadedForm.Fields[0] as PdfLoadedText
 loadedTextBoxField.Text = "First Name";
 
 //Enable the default Appearance.
-loadedDocument.Form.SetDefaultAppearance(true);
+loadedDocument.Form.SetDefaultAppearance(false);
 
 //Create file stream.
 using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
