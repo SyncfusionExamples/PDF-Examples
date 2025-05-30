@@ -15,37 +15,46 @@ public class Program
 
     public static void CompressPdf()
     {
-        // Open the file specified by the path for reading using a FileStream
-        using (FileStream inputDocument = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
+        string path = Path.GetFullPath(@"Input.pdf");
+        Console.WriteLine($"'{path}' pdf compression started.");
+
+        Stopwatch stopwatch = Stopwatch.StartNew();
+        FileStream inputDocument = new FileStream(path, FileMode.Open, FileAccess.Read);
+        Console.WriteLine($"Original   file size: {inputDocument.Length:N0}");
+
+        PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputDocument);
+
+        // Create a new compression option.
+        PdfCompressionOptions options = new PdfCompressionOptions
         {
-            // Load the PDF document from the input file stream
-            using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputDocument))
-            {
-                // Create a new instance of PdfCompressionOptions to specify compression settings
-                PdfCompressionOptions options = new PdfCompressionOptions
-                {
-                    // Enable image compression in the PDF document
-                    CompressImages = true,
-                    // Set the image quality to 30 (on a scale where lower values reduce quality)
-                    ImageQuality = 30,
-                    // Optimize the font usage in the PDF document
-                    OptimizeFont = true,
-                    // Optimize the contents of each page in the PDF document
-                    OptimizePageContents = true,
-                    // Remove metadata from the PDF document to reduce its size
-                    RemoveMetadata = true
-                };
+            // Enable image compression.
+            CompressImages = true,
+            // Set the image quality.
+            ImageQuality = 30,
+            // Optimize fonts in the PDF document.
+            OptimizeFont = true,
+            // Optimize page contents.
+            OptimizePageContents = true,
+            // Remove metadata from the PDF document.
+            RemoveMetadata = true
+        };
 
-                // Apply the compression options to the loaded PDF document
-                loadedDocument.Compress(options);
+        // Compress the PDF document.
+        loadedDocument.Compress(options);
 
-                // Create a file stream to store the compressed PDF document
-                using (FileStream outputDocument = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-                {
-                    // Save the compressed PDF document to the output stream
-                    loadedDocument.Save(outputDocument);
-                }
-            }
-        }
+        // Save the PDF document.
+        MemoryStream outputDocument = new MemoryStream();
+
+        // Save the PDF document to memory stream.
+        loadedDocument.Save(outputDocument);
+
+        stopwatch.Stop();
+        Console.WriteLine($"Compressed file size: {outputDocument.Length:N0}");
+        Console.WriteLine($"Time elapsed: {stopwatch.Elapsed}");
+
+        // Clean up resources.
+        outputDocument.Close();
+        loadedDocument.Close(true);
+        inputDocument.Close();
     }
 }
