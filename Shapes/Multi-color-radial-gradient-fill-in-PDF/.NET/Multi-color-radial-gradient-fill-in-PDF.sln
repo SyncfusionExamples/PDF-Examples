@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apply-Radial-Gradient-fill-to-shapes", "Apply-Radial-Gradient-fill-to-shapes\Apply-Radial-Gradient-fill-to-shapes.csproj", "{6A8258DB-87FA-4361-B464-70774FD0E6AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multi-color-radial-gradient-fill-in-PDF", "Multi-color-radial-gradient-fill-in-PDF\Multi-color-radial-gradient-fill-in-PDF.csproj", "{6A8258DB-87FA-4361-B464-70774FD0E6AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
