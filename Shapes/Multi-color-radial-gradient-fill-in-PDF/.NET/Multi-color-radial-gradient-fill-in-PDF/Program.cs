@@ -2,7 +2,7 @@
 using Syncfusion.Pdf;
 using Syncfusion.Drawing;
 
-// Create a new PDF document.
+// Create a new PDF document. 
 PdfDocument document = new PdfDocument();
 
 // Add a page to the document.
@@ -24,14 +24,14 @@ float rectY = 50; // Distance from the top
 PdfPath path = new PdfPath();
 path.AddRectangle(new RectangleF(rectX, rectY, rectWidth, rectHeight));
 
-// Define gradient colors.
+// Define gradient colors using RGB (byte values from 0 to 255).
 List<PdfColor> finalGradientColors = new List<PdfColor>
-        {
-            new PdfColor(0, 0.247058809f, 1, 0),
-            new PdfColor(0, 0.247058809f, 1, 0),
-            new PdfColor(1, 0, 0.545454562f, 80),
-            new PdfColor(1, 0, 0.545454562f, 80)
-        };
+{
+    new PdfColor(0, 63, 255),  // Blue-ish
+    new PdfColor(0, 63, 255),  // Same blue
+    new PdfColor(255, 0, 139), // Reddish-purple
+    new PdfColor(255, 0, 139)  // Same reddish-purple
+};
 
 // Define positions for the gradient colors.
 List<float> finalGradientPositions = new List<float> { 0, 0.2f, 0.8f, 1 };
@@ -60,10 +60,10 @@ PdfRadialGradientBrush rectangleGradientBrush = new PdfRadialGradientBrush(
 // Draw the gradient-filled rectangle.
 graphics.DrawPath(rectangleGradientBrush, path);
 
-// Save the PDF document to a file using a file stream.
-using (FileStream fs = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.Write))
+//Create file stream.
+using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
 {
-    document.Save(fs);
+    document.Save(outputFileStream);
 }
 
 // Close the document and release resources.
