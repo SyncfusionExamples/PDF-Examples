@@ -27,10 +27,10 @@ path.AddRectangle(new RectangleF(rectX, rectY, rectWidth, rectHeight));
 // Define gradient colors using RGB (byte values from 0 to 255).
 List<PdfColor> finalGradientColors = new List<PdfColor>
 {
-    new PdfColor(0, 63, 255),  // Blue-ish
-    new PdfColor(0, 63, 255),  // Same blue
-    new PdfColor(255, 0, 139), // Reddish-purple
-    new PdfColor(255, 0, 139)  // Same reddish-purple
+    new PdfColor(0, 63, 255),     // Blue
+    new PdfColor(0, 200, 83),     // Green
+    new PdfColor(255, 193, 7),    // Amber
+    new PdfColor(255, 0, 139)     // Magenta
 };
 
 // Define positions for the gradient colors.
