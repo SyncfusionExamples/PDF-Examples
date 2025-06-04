@@ -47,19 +47,19 @@ pdfGridHeader.PdfTag = new PdfStructureElement(PdfTagType.TableRow);
 pdfGridHeader.Cells[0].Value = "Employee ID";
 
 //Adding tag for header cell with tag type TH
-pdfGridHeader.Cells[0].PdfTag = new PdfStructureElement(PdfTagType.TableHeader);
+pdfGridHeader.Cells[0].PdfTag = new PdfStructureElement(PdfTagType.TableHeader) { Scope = ScopeType.Column };
 
 //Set the cell value. 
 pdfGridHeader.Cells[1].Value = "Employee Name";
 
 //Adding tag for header cell with tag type TH.
-pdfGridHeader.Cells[1].PdfTag = new PdfStructureElement(PdfTagType.TableHeader);
+pdfGridHeader.Cells[1].PdfTag = new PdfStructureElement(PdfTagType.TableHeader) { Scope = ScopeType.Column };
 
 //Set the cell value. 
 pdfGridHeader.Cells[2].Value = "Salary";
 
 //Adding tag for header cell with tag type TH.
-pdfGridHeader.Cells[2].PdfTag = new PdfStructureElement(PdfTagType.TableHeader);
+pdfGridHeader.Cells[2].PdfTag = new PdfStructureElement(PdfTagType.TableHeader) { Scope = ScopeType.Column };
 
 //Add rows.
 PdfGridRow pdfGridRow = pdfGrid.Rows.Add();
