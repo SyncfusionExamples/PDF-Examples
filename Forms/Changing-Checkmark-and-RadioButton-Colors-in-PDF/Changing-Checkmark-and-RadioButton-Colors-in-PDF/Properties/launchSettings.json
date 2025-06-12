@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Changing-Checkmark-and-RadioButton-Colors-in-PDF": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
