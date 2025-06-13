@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custom-Headers-and-Footers-in-PDF", "Custom-Headers-and-Footers-in-PDF\Custom-Headers-and-Footers-in-PDF.csproj", "{6A94ADAE-5F1B-42A5-9F82-2CBB511B2F82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A94ADAE-5F1B-42A5-9F82-2CBB511B2F82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A94ADAE-5F1B-42A5-9F82-2CBB511B2F82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A94ADAE-5F1B-42A5-9F82-2CBB511B2F82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A94ADAE-5F1B-42A5-9F82-2CBB511B2F82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
