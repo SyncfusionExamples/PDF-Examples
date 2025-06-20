@@ -8,11 +8,6 @@ HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 //Create blink converter settings
 BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
 
-//Set command line arguments to run without the sandbox
-blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
-blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
-blinkConverterSettings.AdditionalDelay = 0;
-
 //Assign Blink converter settings to HTML converter.
 htmlConverter.ConverterSettings = blinkConverterSettings;
 //Convert URL to PDF document.
