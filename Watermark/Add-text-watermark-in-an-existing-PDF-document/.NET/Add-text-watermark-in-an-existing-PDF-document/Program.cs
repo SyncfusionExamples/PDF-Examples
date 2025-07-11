@@ -29,7 +29,7 @@ using (FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Data/Input
         loadedPage.Graphics.RotateTransform(-45);
 
         //Set transparency
-        loadedPage.Graphics..SetTransparency(0.25f);
+        loadedPage.Graphics.SetTransparency(0.25f);
 
         // Draw the watermark text
         loadedPage.Graphics.DrawString(watermarkText, font, PdfBrushes.Red, new PointF(-watermarkTextSize.Width / 2, -watermarkTextSize.Height / 2));
