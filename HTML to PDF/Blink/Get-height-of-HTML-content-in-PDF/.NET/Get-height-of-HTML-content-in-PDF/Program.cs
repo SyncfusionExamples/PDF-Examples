@@ -8,14 +8,6 @@ using System.Runtime.InteropServices;
 
 //Initialize the HTML to PDF converter.
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
-BlinkConverterSettings settings = new BlinkConverterSettings();
-if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-{
-    settings.CommandLineArguments.Add("--no-sandbox");
-    settings.CommandLineArguments.Add("--disable-setuid-sandbox");
-}
-//Assign Blink converter settings to HTML converter.
-htmlConverter.ConverterSettings = settings;
 PdfLayoutResult layoutResult = null;
 
 //Convert URL to PDF document. 

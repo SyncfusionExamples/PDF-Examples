@@ -9,11 +9,6 @@ namespace HTML_to_PDF_page_size_customization {
             HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
             //Initialize blink converter settings. 
             BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
-			if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-			{
-				blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
-				blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
-			}
             //Set the page size.
             blinkConverterSettings.PdfPageSize = PdfPageSize.A4;
             //Assign Blink converter settings to HTML converter.

@@ -9,11 +9,6 @@ namespace HTML_to_PDF_page_orientation_customization {
             HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
             //Initialize blink converter settings. 
             BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
-			if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-			{
-				blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
-				blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
-			}
             //Set the Orientation.
             blinkConverterSettings.Orientation = PdfPageOrientation.Landscape;
             //Assign Blink converter settings to HTML converter.

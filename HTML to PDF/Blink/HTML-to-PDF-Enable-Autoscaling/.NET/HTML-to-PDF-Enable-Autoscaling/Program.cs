@@ -6,16 +6,8 @@ using System.Runtime.InteropServices;
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 // Initialize BlinkConverterSettings to configure the Blink rendering engine.
 BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
-if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-{
-    //Set command line arugument to run without the sandbox.
-    blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
-    blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
-}
-
 // Enables automatic scaling to adjust the HTML content to fit the PDF's dimensions.
 blinkConverterSettings.EnableAutoScaling = true;
-
 // Assigns the Blink settings to the HTML to PDF converter.
 htmlConverter.ConverterSettings = blinkConverterSettings;
 // Converts the HTML file to a PDF document, using the path of the HTML file.

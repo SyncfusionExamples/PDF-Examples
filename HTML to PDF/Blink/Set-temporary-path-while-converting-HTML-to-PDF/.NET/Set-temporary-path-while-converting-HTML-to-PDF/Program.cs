@@ -10,12 +10,6 @@ HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 //Set blink converter settings. 
 BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
 
-if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-{
-    blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
-    blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
-}
-
 //Set Temporary Path to generate temporary files.
 blinkConverterSettings.TempPath = @"D:/HtmlConversion/Temp/";
 

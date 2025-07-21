@@ -7,11 +7,6 @@ using System.Runtime.InteropServices;
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 //Initialize the blink converter settings.
 BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
-if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-{
-    blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
-    blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
-}
 // Set the conversion timeout to 5000 milliseconds 
 blinkConverterSettings.ConversionTimeout = 5000;
 //Assign Blink converter settings to HTML converter
