@@ -11,11 +11,6 @@ HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 
 //Initialize the blink converter settings. 
 BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
-if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-{
-    blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
-    blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
-}
 //Set the Blink viewport size.
 blinkConverterSettings.ViewPortSize = new Size(1280, 0);
 blinkConverterSettings.Margin.All = 30;

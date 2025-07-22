@@ -9,12 +9,6 @@ HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 
 //Initialize blink converter settings. 
 BlinkConverterSettings settings = new BlinkConverterSettings();
-if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-{
-    //Set command line arugument to run without the sandbox.
-    settings.CommandLineArguments.Add("--no-sandbox");
-    settings.CommandLineArguments.Add("--disable-setuid-sandbox");
-}
 //Add HTTP post parameters to HttpPostFields.
 settings.HttpPostFields.Add("firstName", "Andrew");
 settings.HttpPostFields.Add("lastName", "Fuller");

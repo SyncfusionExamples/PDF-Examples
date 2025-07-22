@@ -10,12 +10,6 @@ HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 //Initialize blink converter settings.  
 BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
 
-if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-{
-    blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
-    blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
-}
-
 // Set additional delay; units in milliseconds.
 blinkConverterSettings.AdditionalDelay = 3000;
 

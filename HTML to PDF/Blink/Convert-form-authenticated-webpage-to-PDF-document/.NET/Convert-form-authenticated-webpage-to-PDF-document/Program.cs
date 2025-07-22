@@ -10,12 +10,6 @@ HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 
 //Initialize blink converter settings.
 BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
-if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-{
-    //Set command line arugument to run without the sandbox.
-    blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
-    blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
-}
 //Add cookies as name and value pair.
 blinkConverterSettings.Cookies.Add("CookieName1", "CookieValue1");
 blinkConverterSettings.Cookies.Add("CookieName2", "CookieValue2");

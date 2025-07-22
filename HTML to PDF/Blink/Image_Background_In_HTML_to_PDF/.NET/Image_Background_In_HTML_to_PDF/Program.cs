@@ -9,11 +9,6 @@ HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 //Initialize the BlinkConverterSettings
 BlinkConverterSettings settings = new BlinkConverterSettings();
 
-if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-{
-    settings.CommandLineArguments.Add("--no-sandbox");
-    settings.CommandLineArguments.Add("--disable-setuid-sandbox");
-}
 //Set the Image Background color.
 settings.ImageBackgroundColor = Color.Transparent;
 
