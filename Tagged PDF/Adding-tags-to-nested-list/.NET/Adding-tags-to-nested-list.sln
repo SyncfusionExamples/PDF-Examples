@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36221.1 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tagged-Nested-Ordered-Lists", "Tagged-Nested-Ordered-Lists\Tagged-Nested-Ordered-Lists.csproj", "{04561C02-EB81-40BE-A859-F01B29D64216}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adding-tags-to-nested-list", "Adding-tags-to-nested-list\Adding-tags-to-nested-list.csproj", "{04561C02-EB81-40BE-A859-F01B29D64216}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

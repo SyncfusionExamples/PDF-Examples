@@ -3,7 +3,6 @@ using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Lists;
 
-Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
 // Create a new PDF document
 PdfDocument document = new PdfDocument();
 
