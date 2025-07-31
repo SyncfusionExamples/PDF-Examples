@@ -26,7 +26,6 @@ class Program
             // Store all loaded documents in an array
             PdfLoadedDocument[] docs = { fsharpDoc, httpDoc, windowsStoreDoc };
 
-
             // Create new document
             document = new PdfDocument();
             document.PageSettings.Size = fsharpDoc.Pages[0].Size;
@@ -56,7 +55,6 @@ class Program
 
             // Define TOC entries (title and corresponding page index)
             List<(string Title, int PageIndex)> tocEntries = GetTocEntries();
-
             // Adjust TOC entries
             tocEntries = AdjustTOCEntriesWithOffset(tocEntries, tocPages);
             // Draw TOC entries
