@@ -67,7 +67,7 @@ This concludes the instructional workflow for auto-paginated, footer-enhanced PD
             layoutFormat
         );
         // Save and close
-        using (FileStream outputFileStream = new FileStream(@"Output/Output.pdf", FileMode.Create, FileAccess.Write))
+        using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.Write))
         {
             document.Save(outputFileStream);
         }
