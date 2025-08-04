@@ -27,7 +27,8 @@ using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"
             }
         }
     }
-
+    // Disable the default appearance to allow custom rendering of form fields.
+    form.SetDefaultAppearance(false);
     // Create the output file stream.
     using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
     {
