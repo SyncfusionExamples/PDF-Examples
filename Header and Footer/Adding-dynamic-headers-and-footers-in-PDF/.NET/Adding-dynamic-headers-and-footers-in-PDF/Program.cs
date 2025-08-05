@@ -6,84 +6,94 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Create a new PDF document
+        // Create a new PDF document.
         PdfDocument document = new PdfDocument();
 
-        // Add a section with space at the bottom for the footer
-        PdfSection section1 = document.Sections.Add();
-        section1.PageSettings.Margins.Bottom = 30;
+        // Subscribe to the PageAdded event to add header and footer for every page.
+        document.Pages.PageAdded += (sender, e) => PageAddedHandler(sender, e);
 
-        // Subscribe to the PageAdded event to add dynamic footer on each new page
-        section1.PageAdded += (sender, e) => PageAddedHandler(sender, e, 1);
-
-        // Add the first page (the rest will be added with page overflow)
-        section1.Pages.Add();
-
-        // Prepare the content font and brush
+        // Define content font and brush for main text.
         PdfFont contentFont = new PdfStandardFont(PdfFontFamily.TimesRoman, 18);
         PdfBrush contentBrush = new PdfSolidBrush(Color.Black);
 
-        // Define formatting for the main content
-        PdfStringFormat format = new PdfStringFormat()
-        {
-            ParagraphIndent = 35f,
-            LineSpacing = 20f
-        };
-        // Instructional content (long enough to require multiple pages)
+        // Define the main instructional text.
         string overflowText =
-@"Creating PDF documentation programmatically with Syncfusion .NET libraries enables automation of reports, invoices, and technical manuals.
+ @"Creating PDF documentation programmatically with Syncfusion .NET libraries enables automation of reports, invoices, and technical manuals.
+
 Key Features:
 - Multi-page automatic content flow using pagination
 - Support for rich text formatting: headers, bullets, and tables
 - Insert images, tables, and charts seamlessly
 - Add interactive elements: bookmarks, hyperlinks, and attachments
 - Control layout: margins, page breaks, and dynamic footers
+
 Usage Example:
 This project demonstrates how to paginate multiple paragraphs of text describing PDF functionality. When the content exceeds a single page, Syncfusion’s PdfTextElement automatically creates new pages and triggers the PageAdded event. This allows you to attach custom footers, such as page numbers or custom codes, to each page for improved navigation and professional document appearance.
+
 Adding dynamic footers is useful for:
 - Section labeling in large documents
 - Including secure or traceable codes for each page
 - Ensuring readers always know their page context
+
 Other advanced scenarios:
 - Creating Table of Contents with page navigation
 - Inserting named destinations for quick jumps
 - Using graphics and interactive elements within the same document
+
 Experiment by updating this program to add headers, watermarks, or section-based page numbers based on your specific requirements.
+
 For more information, visit:
 https://help.syncfusion.com/file-formats/pdf/working-with-text
 https://help.syncfusion.com/file-formats/pdf/working-with-graphics
+
 This concludes the instructional workflow for auto-paginated, footer-enhanced PDF generation in .NET.";
 
-        // Draw text with automatic pagination (triggers PageAdded for each extra page)
-        var textElement = new PdfTextElement(overflowText, contentFont, PdfPens.Black, contentBrush,format);
-        PdfLayoutFormat layoutFormat = new PdfLayoutFormat
+        // Set the header and footer height 
+        float headerHeight = 40f;
+        float footerHeight = 30f;
+
+        // Create a text element for automatic pagination.
+        PdfTextElement textElement = new PdfTextElement(overflowText, contentFont, contentBrush);
+
+        // Subscribe to the BeginPageLayout event to offset text on each new page below the header.
+        textElement.BeginPageLayout += (sender, args) =>
         {
-            Layout = PdfLayoutType.Paginate,
-            PaginateBounds = new RectangleF(0, 0, section1.Pages[0].GetClientSize().Width, section1.Pages[0].GetClientSize().Height - 30)
+            // Always start content BELOW the header on every page.
+            args.Bounds = new RectangleF(0, headerHeight, args.Page.GetClientSize().Width, args.Page.GetClientSize().Height - headerHeight - footerHeight);
         };
-        textElement.Draw(
-            section1.Pages[0],
-            new RectangleF(0, 0, section1.Pages[0].GetClientSize().Width, section1.Pages[0].GetClientSize().Height - 30),
-            layoutFormat
-        );
-        // Save and close
+
+        // Add the first page.
+        PdfPage firstPage = document.Pages.Add();
+
+        // Start drawing content (pagination and event will handle rest).
+        textElement.Draw(firstPage, new PointF(0, headerHeight));
+
+        // Save and close the document.
         using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.Write))
         {
             document.Save(outputFileStream);
         }
         document.Close(true);
     }
-    // Handles the PageAdded event to draw a dynamic footer on each page.
-    static void PageAddedHandler(object sender, PageAddedEventArgs e, int sectionNumber)
+
+    // Add header and footer to every page.
+    static void PageAddedHandler(object sender, PageAddedEventArgs e)
     {
         PdfPage page = e.Page;
         int currentPage = page.Section.Pages.IndexOf(page) + 1;
 
-        // Generate a human-readable timestamp for the footer
-        string timestamp = DateTime.Now.ToString("'Date:' yyyy-MM-dd 'Time:' HH:mm:ss");
-        string footerText = $"Section {sectionNumber} - Page {currentPage} - {timestamp}";
+        // Draw header at the top (within reserved header bounds).
+        string headerText = $"This is the header - Page {currentPage}";
+        page.Graphics.DrawString(
+            headerText,
+            new PdfStandardFont(PdfFontFamily.Helvetica, 14, PdfFontStyle.Bold),
+            new PdfSolidBrush(Color.DimGray),
+            new PointF(10, 10) // Within header area
+        );
 
-        // Draw footer on the current page
+        // Draw footer at the bottom (within reserved footer area).
+        string timestamp = DateTime.Now.ToString("'Date:' yyyy-MM-dd 'Time:' HH:mm:ss");
+        string footerText = $"Page {currentPage}    {timestamp}";
         page.Graphics.DrawString(
             footerText,
             new PdfStandardFont(PdfFontFamily.Helvetica, 12),
