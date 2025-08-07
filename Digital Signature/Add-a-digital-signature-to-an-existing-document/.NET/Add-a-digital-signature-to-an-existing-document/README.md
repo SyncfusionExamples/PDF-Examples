@@ -14,7 +14,7 @@
 - [NuGet Installation](#nuget-installation)
 - [Installer & License](#installer--license)
 
-## 📹 Video Illustration
+## Video Illustration
 
 Watch this video to see how to digitally sign PDF files using Syncfusion .NET Core PDF Library:
 
