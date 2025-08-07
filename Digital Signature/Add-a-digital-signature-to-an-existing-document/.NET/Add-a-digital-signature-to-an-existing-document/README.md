@@ -7,20 +7,18 @@
 - [Overview](#overview)
 - [Steps to add a digital signature to PDF files](#steps-to-add-a-digital-signature-to-pdf-files)
   - [Step 1: Create a New Project](#step-1-create-a-new-project)
-  - [Step 2: Install NuGet Package](#step-2-install-nuget-package)
+  - [Step 2: Install NuGet Package](#step-2-install-the-nuget-package)
   - [Step 3: Include Namespaces](#step-3-include-namespaces)
   - [Step 4: Add Digital Signature Code](#step-4-add-digital-signature-code)
 - [GitHub Repository](#github-repository)
 - [NuGet Installation](#nuget-installation)
 - [Installer & License](#installer--license)
-- [Documentation](#documentation)
 
 ## 📹 Video Illustration
 
 Watch this video to see how to digitally sign PDF files using Syncfusion .NET Core PDF Library:
 
-[![Watch the video](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)]()
-
+[![Watch the video]()](https://www.youtube.com/watch?v=NNIFh1Ckdzw&t=672s)
 
 ## Overview
 
@@ -34,11 +32,11 @@ Follow these steps to digitally sign PDF files using the Syncfusion&reg; library
 
 Start by creating a new C# Console Application project.
 
-### Step 2: Install the NuGet package: 
+### Step 2: Install the NuGet package:
 
 Add the [Syncfusion.Pdf.Net.Core](https://www.nuget.org/packages/Syncfusion.Pdf.Net.Core/) package to your project from [NuGet.org](https://www.nuget.org/).
 
-### Step 3: Include necessary namespaces:
+### Step 3: Include namespaces:
 
 Add the following namespaces in your `Program.cs` file:
 
@@ -99,7 +97,7 @@ Use the following code snippet in `Program.cs` to add a digital signature to a P
    ```
 ## GitHub Repository
 
-[![GitHub](https://raw.githubusercontent.com/github/explore/main/topics/github/github.png#gh-dark-mode-only)](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Digital%20Signature/Add-a-digital-signature-to-an-existing-document/) [Syncfusion PDF Digital Signature Example](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Digital%20Signature/Add-a-digital-signature-to-an-existing-document/)
+[![GitHub](https://raw.githubusercontent.com/github/explore/main/topics/github/github.png#gh-dark-mode-only)](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Digital%20Signature/Add-a-digital-signature-to-an-existing-document/){:width="40" height="40" loading="lazy"} [Syncfusion PDF Digital Signature Example](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Digital%20Signature/Add-a-digital-signature-to-an-existing-document/)
 
 ## NuGet Installation
 
