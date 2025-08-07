@@ -1,16 +1,10 @@
 # Digital Signature with Syncfusion .NET Core PDF Library
 
-![Digital Signature Banner](https://www.syncfusion.com/content/images/banner/digital-signature.png)
-
 ## Table of Contents
 - [Video Illustration](#video-illustration)
 - [Overview](#overview)
-- [Steps to add a digital signature to PDF files](#steps-to-add-a-digital-signature-to-pdf-files)
-  - [Step 1: Create a New Project](#step-1-create-a-new-project)
-  - [Step 2: Install NuGet Package](#step-2-install-the-nuget-package)
-  - [Step 3: Include Namespaces](#step-3-include-namespaces)
-  - [Step 4: Add Digital Signature Code](#step-4-add-digital-signature-code)
-- [GitHub Repository](#github-repository)
+- [Add a digital signature to PDF file](#steps-to-add-a-digital-signature-to-pdf-files)
+- [GitHub Project](#github-project)
 - [NuGet Installation](#nuget-installation)
 - [Installer & License](#installer--license)
 
@@ -95,9 +89,12 @@ Use the following code snippet in `Program.cs` to add a digital signature to a P
        imageStream.Dispose();
    }
    ```
-## GitHub Repository
+## GitHub Project
 
-[![GitHub](https://raw.githubusercontent.com/github/explore/main/topics/github/github.png#gh-dark-mode-only)](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Digital%20Signature/Add-a-digital-signature-to-an-existing-document/){:width="40" height="40" loading="lazy"} [Syncfusion PDF Digital Signature Example](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Digital%20Signature/Add-a-digital-signature-to-an-existing-document/)
+<a href="https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Digital%20Signature/Add-a-digital-signature-to-an-existing-document/">
+  <img src="https://raw.githubusercontent.com/github/explore/main/topics/github/github.png" alt="GitHub" width="20" height="20" style="vertical-align:middle;"/>
+  Syncfusion PDF Digital Signature Example
+</a>
 
 ## NuGet Installation
 
@@ -105,3 +102,4 @@ Use the following code snippet in `Program.cs` to add a digital signature to a P
 
 ## Installer & License
 
+-will add the new Document SDK Download & License page link.
