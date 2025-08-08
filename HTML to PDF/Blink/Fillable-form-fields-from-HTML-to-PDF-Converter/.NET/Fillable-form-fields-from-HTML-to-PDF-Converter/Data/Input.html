@@ -1,0 +1,62 @@
+<!-- template.html -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      font-size: 18px; /* Increase base font size */
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff; /* Set background to white */
+      font-family: Arial, sans-serif;
+    }
+    .center-rectangle {
+      background: #fff;
+      border: 2.5px solid #313163;
+      border-radius: 12px;
+      padding: 48px 62px 46px 62px;
+      min-width: 420px;
+      max-width: 650px;
+      box-shadow: 0 4px 30px rgba(49,49,99,0.10);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .center-rectangle h1 {
+      font-size: 2.8em;  /* Big headline */
+      font-weight: 800;
+      margin-top: 0;
+      margin-bottom: 38px;
+      color: #313163;
+      letter-spacing: 1.4px;
+    }
+    .center-rectangle p {
+      font-size: 1.5em;  /* Larger paragraph text */
+      margin: 22px 0 0 0;
+      width: 100%;
+      text-align: left;
+      color: #222;
+      font-weight: 500;
+      letter-spacing: 0.7px;
+    }
+    .center-rectangle p:last-child {
+      margin-top: 56px;
+      text-align: center;
+      color: #757575;
+      font-size: 1.23em;
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+  <div class="center-rectangle">
+    <h1>Welcome, {{name}}</h1>
+    <p>Date: {{date}}</p>
+    <p>Signature: {{signature}}</p>
+    <p>Thank you for using our service.</p>
+  </div>
+</body>
+</html>
