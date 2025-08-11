@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>Add_roman_page_numbers_to_PDF_sections</RootNamespace>
+    <RootNamespace>Setting-Section-Page-Numbers-With-Custom-Styles</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
