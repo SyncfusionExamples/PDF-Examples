@@ -9,6 +9,7 @@ PdfSection section = document.Sections.Add();
 PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 12);
 //Create section page number field.
 PdfSectionPageNumberField sectionPageNumber = new PdfSectionPageNumberField();
+//Set the page number style as LowerRoman
 sectionPageNumber.NumberStyle = PdfNumberStyle.LowerRoman;
 sectionPageNumber.Font = font;
 //Draw the sectionPageNumber in section.
