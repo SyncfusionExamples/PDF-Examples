@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Test via Controller</h3>
+        <a href="@Url.Action("TestPdfService", "Home")" class="btn btn-primary">
+            Generate PDF via Controller
+        </a>
+    </div>
+
+    <div class="col-md-6">
+        <h3>Test ASMX Service Directly</h3>
+        <p>Visit the ASMX service page: <a href="/Services/PdfService.asmx">/Services/PdfService.asmx</a></p>
+    </div>
+</div>
