@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36408.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multi-line-text-redaction-using-quad-points", "Multi-line-text-redaction-using-quad-points\Multi-line-text-redaction-using-quad-points.csproj", "{4ACF1F8B-A43B-4148-9452-0587200478F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4ACF1F8B-A43B-4148-9452-0587200478F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ACF1F8B-A43B-4148-9452-0587200478F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ACF1F8B-A43B-4148-9452-0587200478F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ACF1F8B-A43B-4148-9452-0587200478F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {735E1E3B-6CCF-41EC-9ABA-187BF9AA9851}
+	EndGlobalSection
+EndGlobal
