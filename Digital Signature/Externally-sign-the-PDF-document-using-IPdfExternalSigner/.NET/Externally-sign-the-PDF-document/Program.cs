@@ -11,7 +11,7 @@ namespace Externally_sign_the_PDF_document
         static void Main(string[] args)
         {
             // Get the stream from the document
-            FileStream documentStream = new FileStream(Path.GetFullPath(@"Data/Barcode.pdf"), FileMode.Open, FileAccess.Read);
+            FileStream documentStream = new FileStream(Path.GetFullPath(@"../../../Data/Barcode.pdf"), FileMode.Open, FileAccess.Read);
 
             // Load the existing PDF document
             PdfLoadedDocument loadedDocument = new PdfLoadedDocument(documentStream);
@@ -29,11 +29,11 @@ namespace Externally_sign_the_PDF_document
 
             // Add public certificates
             List<X509Certificate2> certificates = new List<X509Certificate2>();
-            certificates.Add(new X509Certificate2(Path.GetFullPath(@"Data/PDF.pfx"), "password123"));
+            certificates.Add(new X509Certificate2(Path.GetFullPath(@"../../../Data/PDF.pfx"), "password123"));
             signature.AddExternalSigner(externalSignature, certificates, null);
 
             // Create file stream
-            using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+            using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"../../../Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
             {
                 // Save the PDF document to file stream
                 loadedDocument.Save(outputFileStream);
@@ -61,21 +61,19 @@ namespace Externally_sign_the_PDF_document
             public byte[] Sign(byte[] message, out byte[] timeStampResponse)
             {
                 timeStampResponse = null;
+                X509Certificate2 digitalID = new X509Certificate2(Path.GetFullPath(@"../../../Data/PDF.pfx"), "password123");
 
-                FileStream certificateStream = new FileStream("PDF.pfx", FileMode.Open, FileAccess.Read);
-                X509Certificate2 digitalID = new X509Certificate2(certificateStream, "password123");
-
-                if (digitalID.PrivateKey is System.Security.Cryptography.RSACryptoServiceProvider rsaProvider)
+                if (digitalID.PrivateKey is RSACryptoServiceProvider rsaProvider)
                 {
                     return rsaProvider.SignData(message, HashAlgorithm);
                 }
                 else if (digitalID.PrivateKey is RSACng rsaCng)
                 {
-                    return rsaCng.SignData(message, System.Security.Cryptography.HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
+                    return rsaCng.SignData(message, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
                 }
-                else if (digitalID.PrivateKey is System.Security.Cryptography.RSAOpenSsl rsaOpenSsl)
+                else if (digitalID.PrivateKey is RSAOpenSsl rsaOpenSsl)
                 {
-                    return rsaOpenSsl.SignData(message, System.Security.Cryptography.HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
+                    return rsaOpenSsl.SignData(message, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
                 }
 
                 return null;
