@@ -11,8 +11,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
-    <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="3.119.0" />
-    <PackageReference Include="Syncfusion.PDF.OCR.Net.Core" Version="31.1.18" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="*" />
+    <PackageReference Include="Syncfusion.PDF.OCR.Net.Core" Version="*" />
   </ItemGroup>
 
   <ItemGroup>
