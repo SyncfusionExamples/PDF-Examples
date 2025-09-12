@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Offline-Tesseract-OCR-Integration": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
