@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "Offline-Tesseract-OCR-Integration": {
+    "OCR-with-Tesseract-in-Docker-on-Linux": {
       "commandName": "Project"
     },
     "Container (Dockerfile)": {
