@@ -11,19 +11,19 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Offline-Tesseract-OCR-Integration/Offline-Tesseract-OCR-Integration.csproj", "Offline-Tesseract-OCR-Integration/"]
-RUN dotnet restore "./Offline-Tesseract-OCR-Integration/Offline-Tesseract-OCR-Integration.csproj"
+COPY ["OCR-with-Tesseract-in-Docker-on-Linux/OCR-with-Tesseract-in-Docker-on-Linux.csproj", "OCR-with-Tesseract-in-Docker-on-Linux/"]
+RUN dotnet restore "./OCR-with-Tesseract-in-Docker-on-Linux/OCR-with-Tesseract-in-Docker-on-Linux.csproj"
 COPY . .
-WORKDIR "/src/Offline-Tesseract-OCR-Integration"
-RUN dotnet build "./Offline-Tesseract-OCR-Integration.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/OCR-with-Tesseract-in-Docker-on-Linux"
+RUN dotnet build "./OCR-with-Tesseract-in-Docker-on-Linux.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Offline-Tesseract-OCR-Integration.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./OCR-with-Tesseract-in-Docker-on-Linux.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Offline-Tesseract-OCR-Integration.dll"]
+ENTRYPOINT ["dotnet", "OCR-with-Tesseract-in-Docker-on-Linux.dll"]
