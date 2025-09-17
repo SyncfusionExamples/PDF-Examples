@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "OCR-with-Tesseract-in-Docker-on-Linux": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
