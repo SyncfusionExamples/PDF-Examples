@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Tessract-KB-Sample\\PDF-Examples\\OCR\\.NET\\OCR-with-Tesseract-in-Docker-on-Linux\\",
+  "Documents": [],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": []
+    }
+  ]
+}
