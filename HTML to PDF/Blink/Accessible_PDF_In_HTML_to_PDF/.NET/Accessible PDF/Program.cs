@@ -1,6 +1,5 @@
 ﻿using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
-using System.Runtime.InteropServices;
 
 //Initialize HTML to PDF converter.
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
@@ -12,11 +11,8 @@ settings.EnableAccessibilityTags = true;
 htmlConverter.ConverterSettings = settings;
 //Convert URL to PDF.
 PdfDocument document = htmlConverter.Convert("file:///D:/PDF-Examples/HTML%20to%20PDF/Blink/Accessible_PDF_In_HTML_to_PDF/.NET/Accessible%20PDF/Data/Input.html");
-//Create file stream. 
-using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/HTML-to-PDF.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document 
-    document.Save(fileStream);
-}
+
+//Save the PDF document 
+document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 //Close the document.
 document.Close(true);

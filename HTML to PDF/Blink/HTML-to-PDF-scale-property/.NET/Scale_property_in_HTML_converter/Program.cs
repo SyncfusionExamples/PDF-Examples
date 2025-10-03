@@ -1,7 +1,6 @@
 ﻿
 using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
-using System.Runtime.InteropServices;
 
 //Initialize the HTML to PDF converter.
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
@@ -13,11 +12,8 @@ blinkConverterSettings.Scale = 1.0f;
 htmlConverter.ConverterSettings = blinkConverterSettings;
 //Convert URL to PDF document. 
 PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com");
-//Create file stream. 
-using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document 
-    document.Save(fileStream);
-}
+
+//Save the PDF document 
+document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 //Close the document.
 document.Close(true);

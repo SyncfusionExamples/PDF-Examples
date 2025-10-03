@@ -2,7 +2,6 @@
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf;
 using Syncfusion.Drawing;
-using System.Runtime.InteropServices;
 
 namespace HTML_to_PDF_Header_and_footer {
     internal class Program {
@@ -36,13 +35,8 @@ namespace HTML_to_PDF_Header_and_footer {
             htmlConverter.ConverterSettings = blinkConverterSettings;
             //Convert URL to PDF.
             PdfDocument document = htmlConverter.Convert("https://www.google.com/");
-
-            //Create file stream. 
-            using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-            {
-                //Save the PDF document 
-                document.Save(fileStream);
-            }
+            //Save the PDF document 
+            document.Save(Path.GetFullPath(@"Output/Output.pdf"));
             //Close the document.
             document.Close(true);
         }

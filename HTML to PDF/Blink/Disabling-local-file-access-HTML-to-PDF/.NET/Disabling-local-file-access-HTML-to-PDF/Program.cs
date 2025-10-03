@@ -1,5 +1,4 @@
-﻿
-using Syncfusion.Drawing;
+﻿using Syncfusion.Drawing;
 using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
 
@@ -21,10 +20,6 @@ string html = File.ReadAllText(Path.GetFullPath(@"Data/Sample.html"));
 // Convert HTML to PDF document
 using (PdfDocument document = htmlConverter.Convert(html, ""))
 {
-    // Create a file stream with a using statement to ensure disposal
-    using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-    {
-        // Save the PDF document to the file stream
-        document.Save(fileStream);
-    }
+    // Save the PDF document to the file stream
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }

@@ -1,7 +1,6 @@
 ﻿using Syncfusion.Drawing;
 using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
-using System.Runtime.InteropServices;
 
 namespace HTML_Header_and_Footer {
     internal class Program {
@@ -27,13 +26,8 @@ namespace HTML_Header_and_Footer {
             htmlConverter.ConverterSettings = blinkConverterSettings;
             //Convert the URL to a PDF document.
             PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com");
-
-            //Create file stream. 
-            using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-            {
-                //Save the PDF document 
-                document.Save(fileStream);
-            }
+            //Save the PDF document 
+            document.Save(Path.GetFullPath(@"Output/Output.pdf"));
             //Close the document.
             document.Close(true);
         }

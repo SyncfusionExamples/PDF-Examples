@@ -1,9 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.HtmlConverter;
+﻿using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
 using System.IO;
-using System.Runtime.InteropServices;
 
 //Initialize the HTML to PDF converter.
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();

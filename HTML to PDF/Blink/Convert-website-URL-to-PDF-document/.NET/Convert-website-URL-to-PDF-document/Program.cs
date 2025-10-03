@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.HtmlConverter;
+﻿using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
 
 //Initialize HTML to PDF converter.
@@ -12,11 +10,8 @@ BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
 htmlConverter.ConverterSettings = blinkConverterSettings;
 //Convert URL to PDF document.
 PdfDocument document = htmlConverter.Convert("https://www.google.com");
-//Create file stream. 
-using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document 
-    document.Save(fileStream);
-}
+
+//Save the PDF document 
+document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 //Close the document.
 document.Close(true);

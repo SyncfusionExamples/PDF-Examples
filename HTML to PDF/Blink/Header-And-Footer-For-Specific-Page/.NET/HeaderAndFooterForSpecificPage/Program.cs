@@ -23,19 +23,13 @@ using Syncfusion.Pdf.Parsing;
         {
             Directory.CreateDirectory("Output");
         }
-        using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output-HTML-To-PDF.pdf"), FileMode.OpenOrCreate, FileAccess.ReadWrite))
-        {
             // Save the converted PDF document
-            document.Save(fileStream);
-        }
+            document.Save(Path.GetFullPath(@"Output/Output.pdf"));
     }
     htmlConverter.Close();
 
-// Load the source
-using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Output/Output-HTML-To-PDF.pdf"), FileMode.Open, FileAccess.Read))
-{
     //Load the converted document
-    using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputStream))
+    using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Output/Output.pdf")))
     {
 
         // Define pages requiring headers
@@ -83,14 +77,10 @@ using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Output/Output-
                     destPage.Graphics.DrawPdfTemplate(contentTemplate, new PointF(0, 0));
                 }
             }
-            using (FileStream fileStream1 = new FileStream(Path.GetFullPath(@"Output/Output-With-HeaderAndFooter.pdf"), FileMode.Create, FileAccess.ReadWrite))
-            {
                 // Save the converted PDF document
-                finalDocument.Save(fileStream1);
-            }
+                finalDocument.Save(Path.GetFullPath(@"Output/Output-With-HeaderandFooter.pdf"));
         }
     }
-}
 
 static void AddHeaderAndFooter(PdfPage page, string headerText, string footerText, PdfFont font)
 {
