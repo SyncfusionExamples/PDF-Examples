@@ -35,11 +35,8 @@ using (FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/ARIALUNI.T
     // Convert HTML to PDF
     PdfDocument document = htmlConverter.Convert(Path.GetFullPath(@"Data/Input.html"));
 
-    // Save and close the PDF document
-    using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-    {
-        document.Save(fileStream);
-    }
+    //Save the PDF document
+    document.Save(fileStream);
     //Close the PDF document
     document.Close(true);
 }

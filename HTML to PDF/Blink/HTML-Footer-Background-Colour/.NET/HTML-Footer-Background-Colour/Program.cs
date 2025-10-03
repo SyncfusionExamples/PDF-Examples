@@ -2,7 +2,6 @@
 using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
 using Syncfusion.Drawing;
-using System.Runtime.InteropServices;
 
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 //Initialize blink converter settings. 
@@ -22,11 +21,7 @@ htmlConverter.ConverterSettings = blinkConverterSettings;
 //Convert the URL to a PDF document.
 PdfDocument document = htmlConverter.Convert("<div>Hello World</div>",string.Empty);
 
-//Create file stream. 
-using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document 
-    document.Save(fileStream);
-}
+//Save the PDF document 
+document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 //Close the document.
 document.Close(true);

@@ -1,7 +1,5 @@
-﻿//Initialize the HTML to PDF converter.
-using Syncfusion.HtmlConverter;
+﻿using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
-using System.Runtime.InteropServices;
 
 //Initialize the HTML to PDF converter.
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
@@ -13,11 +11,8 @@ blinkConverterSettings.ConversionTimeout = 5000;
 htmlConverter.ConverterSettings = blinkConverterSettings;
 //Convert URL to PDF
 PdfDocument document = htmlConverter.Convert("https://www.google.com");
-//Create file stream. 
-using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document 
-    document.Save(fileStream);
-}
+
+//Save the PDF document 
+document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 //Close the document.
 document.Close(true);

@@ -1,6 +1,5 @@
 ﻿using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
-using System.Runtime.InteropServices;
 
 namespace HTML_to_PDF_rotate_page {
     internal class Program {
@@ -16,12 +15,8 @@ namespace HTML_to_PDF_rotate_page {
             //Convert URL to PDF document.  
             PdfDocument document = htmlConverter.Convert("https://www.google.com");
 
-            //Create file stream. 
-            using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-            {
-                //Save the PDF document 
-                document.Save(fileStream);
-            }
+            //Save the PDF document 
+            document.Save(Path.GetFullPath(@"Output/Output.pdf"));
             //Close the document.
             document.Close(true);
         }

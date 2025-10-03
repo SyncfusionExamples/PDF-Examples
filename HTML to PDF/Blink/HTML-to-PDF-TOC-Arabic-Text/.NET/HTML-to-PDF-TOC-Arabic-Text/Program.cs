@@ -28,11 +28,8 @@ settings.Toc.SetItemStyle(4, tocstyleH1);
 htmlConverter.ConverterSettings = settings;
 //Convert HTML to PDF document. 
 PdfDocument document = htmlConverter.Convert(Path.GetFullPath(@"Data/input1.html"));
-//Create file stream to save the PDF document. 
-using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/HTML-to-PDF.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document 
-    document.Save(fileStream);
-}
+
+//Save the PDF document 
+document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 //Close the PDF document 
 document.Close(true);

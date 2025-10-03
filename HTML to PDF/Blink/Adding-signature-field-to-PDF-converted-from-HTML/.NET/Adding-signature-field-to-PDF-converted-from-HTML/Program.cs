@@ -27,9 +27,9 @@ internal class Program
         // Save the PDF to a memory stream for further processing
         using (MemoryStream stream = new MemoryStream())
         {
-            document.Save(stream);            // Save converted PDF to memory
-            stream.Position = 0;              // Reset stream position
-            document.Close(true);             // Close the original document
+            document.Save(stream);           
+            stream.Position = 0;          
+            document.Close(true); 
 
             // Replace the "signature" textarea with an actual signature field
             AddPdfSignatureField(stream);
@@ -67,11 +67,8 @@ internal class Program
                 loadedForm.Fields.Add(signatureField);
             }
 
-            // Save the modified document to disk
-            using (FileStream outputStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.Write))
-            {
-                loadedDocument.Save(outputStream);
-            }
+            // Save the modified document
+            loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
             // Close the document and release resources
             loadedDocument.Close(true);
         }
