@@ -34,9 +34,6 @@ namespace Add_file_link_annotation_in_PDF
 
             //Close the document. 
             document.Close(true);
-
-            //This will open the PDF file so, the result will be seen in default PDF viewer
-            Process.Start("FileLinkAnnotation.pdf");
         }
     }
 }

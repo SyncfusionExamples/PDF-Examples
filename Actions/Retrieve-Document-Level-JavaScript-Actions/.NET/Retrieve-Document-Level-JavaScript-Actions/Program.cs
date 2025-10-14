@@ -2,9 +2,8 @@
 using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 
-//Load an existing PDF document using a file stream
-using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
-using (PdfLoadedDocument document = new PdfLoadedDocument(fileStream))
+//Load an existing PDF document
+using (PdfLoadedDocument document = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
     //Retrieve the JavaScript collection from the loaded document
     PdfDocumentJavaScriptCollection javaScriptCollection = document.DocumentJavaScripts;

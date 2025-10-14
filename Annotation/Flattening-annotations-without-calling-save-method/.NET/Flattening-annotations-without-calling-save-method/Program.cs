@@ -1,21 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf.Parsing;
-
-//Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
+﻿using Syncfusion.Pdf.Parsing;
 
 //Load the PDF document. 
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
-
-//Flatten all the annotations without popups in the document.
-loadedDocument.FlattenAnnotations();
-
-//Save the document.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    loadedDocument.Save(outputFileStream);
-}
+    //Flatten all the annotations without popups in the document.
+    loadedDocument.FlattenAnnotations();
 
-//Close the document.
-loadedDocument.Close(true);
+    //Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}

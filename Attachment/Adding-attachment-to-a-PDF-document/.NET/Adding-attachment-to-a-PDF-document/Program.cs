@@ -1,29 +1,21 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.Pdf.Interactive;
 
-//Create a new PDF document. 
-PdfDocument document = new PdfDocument();
-
-//Get stream from an existing PDF document. 
-Stream fileStream = new FileStream(Path.GetFullPath(@"Data/Input.txt"), FileMode.Open, FileAccess.Read);
-
-//Creates an attachment with properties. 
-PdfAttachment attachment = new PdfAttachment("Input.txt", fileStream);
-attachment.ModificationDate = DateTime.Now;
-attachment.Description = "Input.txt";
-attachment.MimeType = "application/txt";
-
-//Adds the attachment to the document.
-document.Attachments.Add(attachment);
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+//Create a new PDF document.
+using (PdfDocument document = new PdfDocument())
 {
-    //Save the PDF document to file stream.
-    document.Save(outputFileStream);
-}
+    //Get stream from an existing PDF document. 
+    Stream fileStream = new FileStream(Path.GetFullPath(@"Data/Input.txt"), FileMode.Open, FileAccess.Read);
 
-//Close the document.
-document.Close(true);
+    //Creates an attachment with properties. 
+    PdfAttachment attachment = new PdfAttachment("Input.txt", fileStream);
+    attachment.ModificationDate = DateTime.Now;
+    attachment.Description = "Input.txt";
+    attachment.MimeType = "application/txt";
+
+    //Adds the attachment to the document.
+    document.Attachments.Add(attachment);
+
+    //Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}

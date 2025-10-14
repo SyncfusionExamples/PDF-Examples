@@ -6,53 +6,45 @@ using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Redaction;
 
-//Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
-
 //Load the PDF document. 
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
-
-foreach (PdfAnnotation annot in loadedDocument.Pages[0].Annotations)
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    //Check for the Redaction annotation.
-    if (annot is PdfLoadedRedactionAnnotation)
+    foreach (PdfAnnotation annot in loadedDocument.Pages[0].Annotations)
     {
-        //Load the redaction annotation. 
-        PdfLoadedRedactionAnnotation redactAnnot = annot as PdfLoadedRedactionAnnotation;
+        //Check for the Redaction annotation.
+        if (annot is PdfLoadedRedactionAnnotation)
+        {
+            //Load the redaction annotation. 
+            PdfLoadedRedactionAnnotation redactAnnot = annot as PdfLoadedRedactionAnnotation;
 
-        //Assign the Bounds values.
-        redactAnnot.Bounds = new RectangleF(50, 50, 100, 100);
+            //Assign the Bounds values.
+            redactAnnot.Bounds = new RectangleF(50, 50, 100, 100);
 
-        //Assign the OverlayText.
-        redactAnnot.OverlayText = "Redaction";
+            //Assign the OverlayText.
+            redactAnnot.OverlayText = "Redaction";
 
-        //Assign the InnerColor.
-        redactAnnot.InnerColor = Color.Yellow;
+            //Assign the InnerColor.
+            redactAnnot.InnerColor = Color.Yellow;
 
-        //Assign the BorderColor.
-        redactAnnot.BorderColor = Color.Green;
+            //Assign the BorderColor.
+            redactAnnot.BorderColor = Color.Green;
 
-        //Assign the TextColor.
-        redactAnnot.TextColor = Color.Red;
+            //Assign the TextColor.
+            redactAnnot.TextColor = Color.Red;
 
-        //Assign the TextAlignment.
-        redactAnnot.TextAlignment = PdfTextAlignment.Right;
+            //Assign the TextAlignment.
+            redactAnnot.TextAlignment = PdfTextAlignment.Right;
 
-        //Assign the RepeatText.
-        redactAnnot.RepeatText = true;
+            //Assign the RepeatText.
+            redactAnnot.RepeatText = true;
 
-        //Flatten the annotations in the page.
-        redactAnnot.Flatten = true;
+            //Flatten the annotations in the page.
+            redactAnnot.Flatten = true;
+        }
     }
-}
-loadedDocument.Redact();
+    loadedDocument.Redact();
 
-//Save the document.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    loadedDocument.Save(outputFileStream);
+    //Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }
-
-//Close the document.
-loadedDocument.Close(true);
 
