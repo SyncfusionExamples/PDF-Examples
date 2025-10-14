@@ -44,9 +44,6 @@ namespace Compress_and_replace_image_in_a_PDF_document
             //Save and close the document.
             loadedDocument.Save("Output.pdf");
             loadedDocument.Close(true);
-
-            //This will open the PDF file so, the result will be seen in default PDF viewer
-            Process.Start("Output.pdf");
         }
     }
 }

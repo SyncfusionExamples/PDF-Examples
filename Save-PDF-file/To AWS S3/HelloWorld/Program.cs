@@ -17,12 +17,8 @@ using (PdfDocument document = new PdfDocument())
     // Draw text on the page
     graphics.DrawString("Hello, Syncfusion PDF!", new PdfStandardFont(PdfFontFamily.Helvetica, 12), PdfBrushes.Black, new PointF(10, 10));
 
-    // Save the PDF to a stream
-    MemoryStream stream = new MemoryStream();
-    document.Save(stream);
-
-    // Save the stream to a file (optional)
-    File.WriteAllBytes("HelloWorld.pdf", stream.ToArray());
+    // Save the PDF document
+    document.Save("HelloWorld.pdf");
 
     // Upload the PDF to AWS S3 (see next step)
 

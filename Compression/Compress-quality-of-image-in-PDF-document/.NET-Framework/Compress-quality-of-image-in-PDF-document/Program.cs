@@ -35,9 +35,6 @@ namespace Compress_quality_of_image_in_PDF_document
 
             //Close the document.
             document.Close(true);
-
-            //This will open the PDF file so, the result will be seen in default PDF viewer
-            Process.Start("Output.pdf");
         }
     }
 }

@@ -1,34 +1,23 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Drawing;
+﻿using Syncfusion.Drawing;
 using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 
-//Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
-
-//Load the PDF document.
-PdfLoadedDocument document = new PdfLoadedDocument(docStream);
-
-//Creates document bookmarks.
-PdfBookmark bookmark = document.Bookmarks.Add("Page 1");
-
-//Sets the destination page.
-bookmark.Destination = new PdfDestination(document.Pages[0]);
-
-//Sets the text style and color.
-bookmark.TextStyle = PdfTextStyle.Bold;
-bookmark.Color = Color.Red;
-
-//Sets the destination location.
-bookmark.Destination.Location = new PointF(20, 20);
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+//Load the PDF document. 
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    //Save the PDF document to file stream.
-    document.Save(outputFileStream);
-}
+    //Creates document bookmarks.
+    PdfBookmark bookmark = loadedDocument.Bookmarks.Add("Page 1");
 
-//Close the document.
-document.Close(true);
+    //Sets the destination page.
+    bookmark.Destination = new PdfDestination(loadedDocument.Pages[0]);
+
+    //Sets the text style and color.
+    bookmark.TextStyle = PdfTextStyle.Bold;
+    bookmark.Color = Color.Red;
+
+    //Sets the destination location.
+    bookmark.Destination.Location = new PointF(20, 20);
+
+    //Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}

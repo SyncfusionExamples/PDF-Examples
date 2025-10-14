@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf.Barcode;
+﻿using Syncfusion.Pdf.Barcode;
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Drawing;
 

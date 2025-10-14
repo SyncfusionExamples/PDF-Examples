@@ -1,33 +1,21 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 
-// Open a file stream to read the input PDF file.
-using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Data/input.pdf"), FileMode.Open, FileAccess.Read))
-{ 
-    // Create a new PdfLoadedDocument object from the file stream.
-    using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(fileStream))
-    { 
-        // Create a new PdfCompressionOptions object.
-        PdfCompressionOptions options = new PdfCompressionOptions(); 
-        
-        //Enable the compress image.
-        options.CompressImages = true;
+//Load the PDF document. 
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
+{
+    // Create a new PdfCompressionOptions object.
+    PdfCompressionOptions options = new PdfCompressionOptions();
 
-        //Set the image quality.
-        options.ImageQuality = 50;
-        
-        // Compress the PDF document.
-        loadedDocument.Compress(options);
+    //Enable the compress image.
+    options.CompressImages = true;
 
-        //Create file stream.
-        using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-        {
-            //Save the PDF document to file stream.
-            loadedDocument.Save(outputFileStream);
-        }
-        //Close the document.
-        loadedDocument.Close(true);
-    }
-} 
+    //Set the image quality.
+    options.ImageQuality = 50;
+
+    // Compress the PDF document.
+    loadedDocument.Compress(options);
+
+    //Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}

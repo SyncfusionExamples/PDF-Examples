@@ -26,9 +26,7 @@ using (ExcelEngine excelEngine = new ExcelEngine())
         pdfDocument = renderer.ConvertToPDF(sheet);
 
         //Save the PDF file.
-        Stream stream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite);
-        pdfDocument.Save(stream);
-        stream.Dispose();
+        pdfDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
     }
 
     excelStream.Dispose();

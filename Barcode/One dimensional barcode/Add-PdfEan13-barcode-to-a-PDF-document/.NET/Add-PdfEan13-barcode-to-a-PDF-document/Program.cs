@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Drawing;
+﻿using Syncfusion.Drawing;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Barcode;
 
@@ -13,21 +11,15 @@ barcode.BarHeight = 50;
 //Set the barcode text.
 barcode.Text = "400638133393";
 
-//Creating new PDF document.
-PdfDocument document = new PdfDocument();
-
-//Adding new page to PDF document.
-PdfPage page = document.Pages.Add();
-
-//Printing barcode on to the PDF document.
-barcode.Draw(page, new PointF(25, 70));
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+//Create a new PDF document.
+using (PdfDocument document = new PdfDocument())
 {
-    //Save the PDF document to file stream.
-    document.Save(outputFileStream);
-}
+    //Adding new page to PDF document.
+    PdfPage page = document.Pages.Add();
 
-//Close the document.
-document.Close(true);
+    //Printing barcode on to the PDF document.
+    barcode.Draw(page, new PointF(25, 70));
+
+    //Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}

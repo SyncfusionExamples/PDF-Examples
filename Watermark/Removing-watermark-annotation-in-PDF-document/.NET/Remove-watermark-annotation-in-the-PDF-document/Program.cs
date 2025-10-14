@@ -2,28 +2,23 @@
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Interactive;
 
-//Load the PDF document
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
-
-// Iterate through the annotations collection and remove PdfLoadedWatermark annotations
-foreach (PdfPageBase page in loadedDocument.Pages)
+//Load the PDF document. 
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    for (int i = page.Annotations.Count - 1; i >= 0; i--)
+    // Iterate through the annotations collection and remove PdfLoadedWatermark annotations
+    foreach (PdfPageBase page in loadedDocument.Pages)
     {
-        // Check if the annotation is a PdfLoadedWatermarkAnnotation
-        if (page.Annotations[i] is PdfLoadedWatermarkAnnotation)
+        for (int i = page.Annotations.Count - 1; i >= 0; i--)
         {
-            // Remove the PdfLoadedWatermarkAnnotation
-            page.Annotations.RemoveAt(i);
+            // Check if the annotation is a PdfLoadedWatermarkAnnotation
+            if (page.Annotations[i] is PdfLoadedWatermarkAnnotation)
+            {
+                // Remove the PdfLoadedWatermarkAnnotation
+                page.Annotations.RemoveAt(i);
+            }
         }
     }
-}
 
-//Save the document.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    loadedDocument.Save(outputFileStream);
+    //Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }
-//Close the document.
-loadedDocument.Close(true);
