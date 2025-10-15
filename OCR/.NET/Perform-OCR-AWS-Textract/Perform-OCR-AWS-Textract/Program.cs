@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.OCRProcessor;
+﻿using Syncfusion.OCRProcessor;
 using Syncfusion.Pdf.Parsing;
 
 namespace OCR.Test
@@ -26,16 +24,12 @@ namespace OCR.Test
                 //Perform OCR with input document.
                 string text = processor.PerformOCR(lDoc);
 
-                //Create file stream.
-                FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite);
-
-                //Save the document into stream.
-                lDoc.Save(fileStream);
+                //Save the document
+                lDoc.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
                 //Close the document.
                 lDoc.Close();
                 stream.Dispose();
-                fileStream.Dispose();
             }
         }
     }

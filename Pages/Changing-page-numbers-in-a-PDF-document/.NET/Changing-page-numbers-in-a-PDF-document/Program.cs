@@ -1,32 +1,21 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 
-//Get file stream from an existing PDF document.
-FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-
-//Load the PDF document.
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputFileStream);
-
-//Create a page label.
-PdfPageLabel pageLabel = new PdfPageLabel();
-
-//Set the number style with upper case roman letters.
-pageLabel.NumberStyle = PdfNumberStyle.UpperRoman;
-
-//Set the staring number as 1.
-pageLabel.StartNumber = 1;
-
-//Set the page label to PDF document. 
-loadedDocument.LoadedPageLabel = pageLabel;
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+//Load the PDF document. 
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    //Save the PDF document to file stream.
-    loadedDocument.Save(outputFileStream);
-}
+    //Create a page label.
+    PdfPageLabel pageLabel = new PdfPageLabel();
 
-//Close the document.
-loadedDocument.Close(true);
+    //Set the number style with upper case roman letters.
+    pageLabel.NumberStyle = PdfNumberStyle.UpperRoman;
+
+    //Set the staring number as 1.
+    pageLabel.StartNumber = 1;
+
+    //Set the page label to PDF document. 
+    loadedDocument.LoadedPageLabel = pageLabel;
+
+    //Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}

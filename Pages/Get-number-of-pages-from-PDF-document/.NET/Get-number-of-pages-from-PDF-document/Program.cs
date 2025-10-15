@@ -1,19 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Syncfusion.Pdf.Parsing;
 
-using Syncfusion.Pdf.Parsing;
+//Load the PDF document. 
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
+{
+    //Get the page count.
+    int pageCount = loadedDocument.Pages.Count;
 
-//Get stream from an existing PDF document.
-FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-
-//Load the PDF document.
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputFileStream);
-
-//Get the page count.
-int pageCount = loadedDocument.Pages.Count;
-
-//Close the document.
-loadedDocument.Close(true);
-
-//Write the number of pages in a PDF document in console window. 
-Console.WriteLine("Number of pages in the PDF document is " + pageCount);
-Console.ReadLine();
+    //Write the number of pages in a PDF document in console window. 
+    Console.WriteLine("Number of pages in the PDF document is " + pageCount);
+}

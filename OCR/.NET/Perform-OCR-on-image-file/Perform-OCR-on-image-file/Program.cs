@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.OCRProcessor;
+﻿using Syncfusion.OCRProcessor;
 using Syncfusion.Pdf.Graphics;
 using System.Drawing;
 

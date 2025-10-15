@@ -1,14 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 using System.Text;
 
-//Get file stream from an existing PDF document.
-FileStream fileStream = new FileStream(Path.GetFullPath(@"Data/Test.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-
 //Create a new instance for the PDF analyzer.
-PdfDocumentAnalyzer analyzer = new PdfDocumentAnalyzer(fileStream);
+PdfDocumentAnalyzer analyzer = new PdfDocumentAnalyzer(Path.GetFullPath(@"Data/Test.pdf");
 
 //Get the syntax errors.
 SyntaxAnalyzerResult result = analyzer.AnalyzeSyntax();
