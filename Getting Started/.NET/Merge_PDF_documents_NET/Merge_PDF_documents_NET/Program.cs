@@ -1,5 +1,4 @@
-﻿
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 
 //Generate the PDF document.
 PdfDocument finalDoc = new PdfDocument();
@@ -10,11 +9,8 @@ Stream[] streams = { stream1, stream2 };
 // Merges PDFDocument.
 PdfDocumentBase.Merge(finalDoc, streams);
 
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream.
-    finalDoc.Save(outputFileStream);
-}
+//Save the PDF document
+finalDoc.Save(Path.GetFullPath(@"Output/Output.pdf"));
+
 //Close the document.
 finalDoc.Close(true);

@@ -6,19 +6,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Create a new PDF document.
-        PdfDocument document = new PdfDocument();
+        //Create a new PDF document.
+using (PdfDocument document = new PdfDocument())
+{
+    // Subscribe to the PageAdded event to add header and footer for every page.
+    document.Pages.PageAdded += (sender, e) => PageAddedHandler(sender, e);
 
-        // Subscribe to the PageAdded event to add header and footer for every page.
-        document.Pages.PageAdded += (sender, e) => PageAddedHandler(sender, e);
+    // Define content font and brush for main text.
+    PdfFont contentFont = new PdfStandardFont(PdfFontFamily.TimesRoman, 18);
+    PdfBrush contentBrush = new PdfSolidBrush(Color.Black);
 
-        // Define content font and brush for main text.
-        PdfFont contentFont = new PdfStandardFont(PdfFontFamily.TimesRoman, 18);
-        PdfBrush contentBrush = new PdfSolidBrush(Color.Black);
-
-        // Define the main instructional text.
-        string overflowText =
- @"Creating PDF documentation programmatically with Syncfusion .NET libraries enables automation of reports, invoices, and technical manuals.
+    // Define the main instructional text.
+    string overflowText =
+@"Creating PDF documentation programmatically with Syncfusion .NET libraries enables automation of reports, invoices, and technical manuals.
 
 Key Features:
 - Multi-page automatic content flow using pagination
@@ -48,33 +48,29 @@ https://help.syncfusion.com/file-formats/pdf/working-with-graphics
 
 This concludes the instructional workflow for auto-paginated, footer-enhanced PDF generation in .NET.";
 
-        // Set the header and footer height 
-        float headerHeight = 40f;
-        float footerHeight = 30f;
+    // Set the header and footer height 
+    float headerHeight = 40f;
+    float footerHeight = 30f;
 
-        // Create a text element for automatic pagination.
-        PdfTextElement textElement = new PdfTextElement(overflowText, contentFont, contentBrush);
+    // Create a text element for automatic pagination.
+    PdfTextElement textElement = new PdfTextElement(overflowText, contentFont, contentBrush);
 
-        // Subscribe to the BeginPageLayout event to offset text on each new page below the header.
-        textElement.BeginPageLayout += (sender, args) =>
-        {
-            // Always start content BELOW the header on every page.
-            args.Bounds = new RectangleF(0, headerHeight, args.Page.GetClientSize().Width, args.Page.GetClientSize().Height - headerHeight - footerHeight);
-        };
+    // Subscribe to the BeginPageLayout event to offset text on each new page below the header.
+    textElement.BeginPageLayout += (sender, args) =>
+    {
+        // Always start content BELOW the header on every page.
+        args.Bounds = new RectangleF(0, headerHeight, args.Page.GetClientSize().Width, args.Page.GetClientSize().Height - headerHeight - footerHeight);
+    };
 
-        // Add the first page.
-        PdfPage firstPage = document.Pages.Add();
+    // Add the first page.
+    PdfPage firstPage = document.Pages.Add();
 
-        // Start drawing content (pagination and event will handle rest).
-        textElement.Draw(firstPage, new PointF(0, headerHeight));
+    // Start drawing content (pagination and event will handle rest).
+    textElement.Draw(firstPage, new PointF(0, headerHeight));
 
-        // Save and close the document.
-        using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.Write))
-        {
-            document.Save(outputFileStream);
-        }
-        document.Close(true);
-    }
+    //Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}
 
     // Add header and footer to every page.
     static void PageAddedHandler(object sender, PageAddedEventArgs e)

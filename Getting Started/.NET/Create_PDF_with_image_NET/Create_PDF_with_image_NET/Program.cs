@@ -2,22 +2,18 @@
 using Syncfusion.Pdf;
 
 //Create a new PDF document.
-PdfDocument doc = new PdfDocument();
-//Add a page to the document.
-PdfPage page = doc.Pages.Add();
-//Create PDF graphics for the page.
-PdfGraphics graphics = page.Graphics;
-//Load the image from the disk.
-FileStream imageStream = new FileStream(@"Data/Autumn Leaves.jpg", FileMode.Open, FileAccess.Read);
-PdfBitmap image = new PdfBitmap(imageStream);
-//Draw the image.
-graphics.DrawImage(image, 0, 0);
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (PdfDocument document = new PdfDocument())
 {
-    //Save the PDF document to file stream.
-    doc.Save(outputFileStream);
+    //Add a page to the document.
+    PdfPage page = document.Pages.Add();
+    //Create PDF graphics for the page.
+    PdfGraphics graphics = page.Graphics;
+    //Load the image from the disk.
+    FileStream imageStream = new FileStream(@"Data/Autumn Leaves.jpg", FileMode.Open, FileAccess.Read);
+    PdfBitmap image = new PdfBitmap(imageStream);
+    //Draw the image.
+    graphics.DrawImage(image, 0, 0);
+
+    //Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }
-//Close the document.
-doc.Close(true);

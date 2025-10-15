@@ -1,5 +1,4 @@
-﻿
-using Syncfusion.HtmlConverter;
+﻿using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
 using System.IO;
 
@@ -11,11 +10,8 @@ string htmlText = "<html><body><img src=\"" + path + "\" alt=\"Syncfusion_logo\"
 string baseUrl = @"C:/Temp/HTMLFiles/";
 //Convert URL to PDF.
 PdfDocument document = htmlConverter.Convert(htmlText, baseUrl);
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream.
-    document.Save(outputFileStream);
-}
+
+//Save the PDF document
+document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 //Close the document.
 document.Close(true);

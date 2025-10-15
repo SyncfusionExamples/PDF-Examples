@@ -39,9 +39,6 @@ namespace Open_a_file_in_relative_path_using_action
 
             //Close the document.
             document.Close();
-
-            //This will open the PDF file so, the result will be seen in default PDF Viewer 
-            Process.Start("Output.pdf");
         }
     }
 }
