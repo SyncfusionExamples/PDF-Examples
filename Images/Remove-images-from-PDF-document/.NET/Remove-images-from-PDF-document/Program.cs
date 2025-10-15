@@ -1,28 +1,19 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.Pdf.Exporting;
 using Syncfusion.Pdf.Parsing;
 
-//Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
-
-//Load the first page.
-PdfPageBase pageBase = loadedDocument.Pages[0];
-
-//Extract images from the first page.
-PdfImageInfo[] imageInfo = loadedDocument.Pages[0].GetImagesInfo();
-
-//Remove the Image.
-pageBase.RemoveImage(imageInfo[0]);
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+//Load the PDF document. 
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    //Save the PDF document to file stream
-    loadedDocument.Save(outputFileStream);
-}
+    //Load the first page.
+    PdfPageBase pageBase = loadedDocument.Pages[0];
 
-//Close the document
-loadedDocument.Close(true);
+    //Extract images from the first page.
+    PdfImageInfo[] imageInfo = loadedDocument.Pages[0].GetImagesInfo();
+
+    //Remove the Image.
+    pageBase.RemoveImage(imageInfo[0]);
+
+    //Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}

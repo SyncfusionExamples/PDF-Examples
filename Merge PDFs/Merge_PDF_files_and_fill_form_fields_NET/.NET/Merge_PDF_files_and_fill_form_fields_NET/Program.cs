@@ -1,8 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf.Parsing;
+﻿using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf;
 using System.Reflection.Metadata;
 using Syncfusion.Pdf.Interactive;
@@ -34,12 +30,8 @@ loadedTextBoxField1.Text = "Smith";
 PdfLoadedTextBoxField loadedTextBoxField2 = loadedForm.Fields[4] as PdfLoadedTextBoxField;
 loadedTextBoxField2.Text = "SSN0001";
 
-//Create file stream
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream
-    finalDocument.Save(outputFileStream);
-}
+//Save the PDF document
+finalDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
 //Close the document
 finalDocument.Close(true);

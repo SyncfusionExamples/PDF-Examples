@@ -1,15 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf.Interactive;
+﻿using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Drawing;
 
-//Get the stream from an existing PDF document.
-FileStream stream1 = new FileStream(Path.GetFullPath(@"Data/File1.pdf"), FileMode.Open, FileAccess.Read);
 //Load the PDF document. 
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(stream1);
+PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/File1.pdf"));
 //Load the page.
 PdfLoadedPage loadedPage = loadedDocument.Pages[0] as PdfLoadedPage;
 //Create the template from the page.
@@ -43,12 +39,8 @@ Stream[] streams = { stream, stream2 };
 //Merges PDF documents.
 PdfDocumentBase.Merge(finalDocument, streams);
 
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream.
-    finalDocument.Save(outputFileStream);
-}
+//Save the PDF document
+finalDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
 //Close the documents.
 finalDocument.Close(true);

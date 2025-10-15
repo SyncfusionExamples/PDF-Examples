@@ -15,13 +15,9 @@ using (FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/Autumn Le
     // Convert the image to a PDF document using the ImageToPdfConverter 
     PdfDocument pdfDocument = imageToPdfConverter.Convert(imageStream);
 
-    //Create file stream.
-    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-    {
-        //Save the PDF document to file stream.
-        pdfDocument.Save(outputFileStream);
-    }
-
+    //Save the PDF document to file stream.
+    pdfDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
+    
     // Close the document 
     pdfDocument.Close(true);
 }

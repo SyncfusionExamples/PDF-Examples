@@ -1,33 +1,25 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 
-//Create Document.
-PdfDocument document = new PdfDocument();
-
-//Add new page.
-PdfPage page = document.Pages.Add();
-
-//Load a bitmap.
-FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/Autumn Leaves.jpg"), FileMode.Open, FileAccess.Read);
-PdfBitmap image = new PdfBitmap(imageStream);
-
-//Set layout property to make the element break across the pages.
-PdfLayoutFormat format = new PdfLayoutFormat();
-format.Break = PdfLayoutBreakType.FitPage;
-format.Layout = PdfLayoutType.Paginate;
-
-//Draw image.
-image.Draw(page, 20, 400, format);
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+//Create a new PDF document.
+using (PdfDocument document = new PdfDocument())
 {
-    //Save the PDF document to file stream
-    document.Save(outputFileStream);
-}
+    //Add new page.
+    PdfPage page = document.Pages.Add();
 
-//Close the document
-document.Close(true);
+    //Load a bitmap.
+    FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/Autumn Leaves.jpg"), FileMode.Open, FileAccess.Read);
+    PdfBitmap image = new PdfBitmap(imageStream);
+
+    //Set layout property to make the element break across the pages.
+    PdfLayoutFormat format = new PdfLayoutFormat();
+    format.Break = PdfLayoutBreakType.FitPage;
+    format.Layout = PdfLayoutType.Paginate;
+
+    //Draw image.
+    image.Draw(page, 20, 400, format);
+
+    //Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}
 

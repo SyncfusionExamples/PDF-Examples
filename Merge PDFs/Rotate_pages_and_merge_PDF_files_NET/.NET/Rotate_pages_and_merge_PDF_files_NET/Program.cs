@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf.Parsing;
+﻿using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf;
 using System.Reflection.Metadata;
 
@@ -8,8 +6,7 @@ using System.Reflection.Metadata;
 PdfDocument finalDocument = new PdfDocument();
 
 //Load the PDF document.
-FileStream docStream1 = new FileStream(Path.GetFullPath(@"Data/File1.pdf"), FileMode.Open, FileAccess.Read);
-PdfLoadedDocument loadedDocument1 = new PdfLoadedDocument(docStream1);
+PdfLoadedDocument loadedDocument1 = new PdfLoadedDocument(Path.GetFullPath(@"Data/File1.pdf"));
 //Gets the page
 PdfPageBase loadedPage1 = loadedDocument1.Pages[0] as PdfPageBase;
 //Set the rotation for loaded page.
@@ -27,12 +24,8 @@ loadedPage2.Rotation = PdfPageRotateAngle.RotateAngle270;
 //Imports the page at 1 from the loaded document
 finalDocument.ImportPageRange(loadedDocument2, 0, loadedDocument2.Pages.Count - 1);
 
-//Create file stream
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream
-    finalDocument.Save(outputFileStream);
-}
+//Save the PDF document
+finalDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
 //Close the document
 finalDocument.Close(true);
