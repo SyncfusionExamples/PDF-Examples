@@ -1,13 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf.Interactive;
+﻿using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 
-//Get the stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
-
 //Load the PDF document.
-PdfLoadedDocument document = new PdfLoadedDocument(docStream, "password");
+PdfLoadedDocument document = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf"), "password");
 
 //Accessing the attachments.
 foreach (PdfAttachment attachment in document.Attachments)

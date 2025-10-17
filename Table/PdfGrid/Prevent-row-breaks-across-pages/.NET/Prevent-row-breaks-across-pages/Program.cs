@@ -1,7 +1,7 @@
 ﻿using Syncfusion.Pdf.Grid;
 using Syncfusion.Pdf;
 
-// Create a new PDF document
+//Create a new PDF document.
 using (PdfDocument document = new PdfDocument())
 {
     // Add a page
@@ -17,7 +17,7 @@ using (PdfDocument document = new PdfDocument())
                 new
                 {
                     ID = "E03",
-                    Description = new string('A', 5000) 
+                    Description = new string('A', 5000)
                 },
                 new { ID = "E04", Description = "Short text 3" }
             };
@@ -31,10 +31,6 @@ using (PdfDocument document = new PdfDocument())
     // Draw the grid on the page
     pdfGrid.Draw(page, new Syncfusion.Drawing.PointF(0, 0));
 
-    //Create file stream.
-    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-    {
-        //Save the PDF document to file stream.
-        document.Save(outputFileStream);
-    }
+    //Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }
