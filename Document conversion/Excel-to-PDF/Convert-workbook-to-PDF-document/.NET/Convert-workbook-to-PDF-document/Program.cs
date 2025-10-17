@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.XlsIO;
 using Syncfusion.XlsIORenderer;
 
@@ -15,12 +13,9 @@ using (ExcelEngine excelEngine = new ExcelEngine())
 
     //Convert Excel document into PDF document 
     PdfDocument pdfDocument = renderer.ConvertToPDF(workbook);
-
-    Stream stream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite);
-    pdfDocument.Save(stream);
+    pdfDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
     excelStream.Dispose();
-    stream.Dispose();
 
     //Close the document. 
     pdfDocument.Close(true);

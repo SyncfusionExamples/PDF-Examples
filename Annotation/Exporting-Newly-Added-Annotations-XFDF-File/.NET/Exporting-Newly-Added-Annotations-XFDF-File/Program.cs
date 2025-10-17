@@ -3,9 +3,8 @@ using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 
-//Load the PDF document from a file stream
-using (FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
-using (PdfLoadedDocument pdfLoadedDocument = new PdfLoadedDocument(docStream))
+//Load the PDF document. 
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
     //Create a PDF free text annotation
     PdfFreeTextAnnotation freeText = new PdfFreeTextAnnotation(new RectangleF(10, 0, 50, 50));
@@ -19,11 +18,8 @@ using (PdfLoadedDocument pdfLoadedDocument = new PdfLoadedDocument(docStream))
     freeText.Border = new PdfAnnotationBorder(0.5f); //Set border thickness
 
     //Add the annotation to the first page of the PDF
-    pdfLoadedDocument.Pages[0].Annotations.Add(freeText);
+    loadedDocument.Pages[0].Annotations.Add(freeText);
 
-    //Export annotations to the XFDF format and save to a file using a file stream
-    using (FileStream xfdfFileStream = new FileStream(Path.GetFullPath(@"Output/Output.xfdf"), FileMode.Create, FileAccess.Write))
-    {
-        pdfLoadedDocument.ExportAnnotations(xfdfFileStream, AnnotationDataFormat.XFdf);
-    }
+    //Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }

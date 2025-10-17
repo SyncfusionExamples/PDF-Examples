@@ -1,11 +1,9 @@
-﻿
-using Syncfusion.Pdf.Interactive;
+﻿using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf;
 
-//Load an existing PDF document using a file stream
-using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
-using (PdfLoadedDocument document = new PdfLoadedDocument(inputStream))
+//Load an existing PDF document
+using (PdfLoadedDocument document = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
     //Retrieve the JavaScript collection from the document
     PdfDocumentJavaScriptCollection javaScriptCollection = document.DocumentJavaScripts;
@@ -16,9 +14,6 @@ using (PdfLoadedDocument document = new PdfLoadedDocument(inputStream))
     //Remove the selected JavaScript action from the collection
     javaScriptCollection.Remove(javaScriptAction);
 
-    //Save the modified document using a file stream
-    using (FileStream outputStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-    {
-        document.Save(outputStream);
-    }
+    //Save the modified document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }

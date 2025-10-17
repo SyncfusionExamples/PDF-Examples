@@ -1,22 +1,18 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf.Interactive;
+﻿using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 
-//Get stream from the existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
-
 //Load the PDF document. 
-PdfLoadedDocument document = new PdfLoadedDocument(docStream);
-
-//Iterates the attachments.
-foreach (PdfAttachment attachment in document.Attachments)
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    //Extracts the attachment and saves it to the disk.
-    FileStream s = new FileStream(Path.GetFullPath(@"Output/"+ attachment.FileName), FileMode.Create);
-    s.Write(attachment.Data, 0, attachment.Data.Length);
-    s.Dispose();
-}
+    //Iterates the attachments.
+    foreach (PdfAttachment attachment in loadedDocument.Attachments)
+    {
+        //Extracts the attachment and saves it to the disk.
+        FileStream s = new FileStream(Path.GetFullPath(@"Output/" + attachment.FileName), FileMode.Create);
+        s.Write(attachment.Data, 0, attachment.Data.Length);
+        s.Dispose();
+    }
 
-//Close the document. 
-document.Close(true);
+    //Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}

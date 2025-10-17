@@ -5,12 +5,9 @@ using Syncfusion.Pdf;
 using Syncfusion.Drawing;
 using System.Reflection.Metadata;
 
-//Create FileStream object to read the input PDF file
-using (FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
+//Load the PDF document. 
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    // Load the existing PDF file
-    PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputFileStream);
-
     // Get the first page of the PDF
     PdfLoadedPage lpage = loadedDocument.Pages[0] as PdfLoadedPage;
 
@@ -46,13 +43,6 @@ using (FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Data/Input
     // Set default appearance for form fields
     loadedDocument.Form.SetDefaultAppearance(false);
 
-    //Create file stream.
-    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-    {
-        //Save the PDF document to file stream.
-        loadedDocument.Save(outputFileStream);
-    }
-
-    //Close the document.
-    loadedDocument.Close(true);
+    //Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }

@@ -8,7 +8,7 @@ namespace Remove_Unused_Resources_when_Splitting_PDF_Documents
         static void Main(string[] args)
         {
             //Load the existing PDF file.
-            PdfLoadedDocument loadDocument = new PdfLoadedDocument(new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open));
+            PdfLoadedDocument loadDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf"));
             //Subscribe to the document split event.
             loadDocument.DocumentSplitEvent += LoadDocument_DocumentSplitEvent;
             void LoadDocument_DocumentSplitEvent(object sender, PdfDocumentSplitEventArgs args)

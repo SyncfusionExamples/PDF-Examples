@@ -1,25 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf.Parsing;
-
-//Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
+﻿using Syncfusion.Pdf.Parsing;
 
 //Load the PDF document. 
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
-
-//Import annotation data from FDF stream.
-FileStream fdfStream = new FileStream(Path.GetFullPath(@"Data/Annotations.fdf"), FileMode.Open, FileAccess.Read);
-
-//Import annotations from FDF file to PDF document. 
-loadedDocument.ImportAnnotations(fdfStream, AnnotationDataFormat.Fdf);
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    //Save the PDF document to file stream.
-    loadedDocument.Save(outputFileStream);
-}
+    //Import annotation data from FDF stream
+    FileStream fdfStream = new FileStream("Annotations.fdf", FileMode.Open, FileAccess.Read);
+    loadedDocument.ImportAnnotations(fdfStream, AnnotationDataFormat.Fdf);
 
-//Close the document.
-loadedDocument.Close(true);
+    //Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}

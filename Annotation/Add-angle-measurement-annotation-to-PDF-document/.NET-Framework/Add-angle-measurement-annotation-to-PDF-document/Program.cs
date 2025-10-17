@@ -41,9 +41,6 @@ namespace Add_angle_measurement_annotation_to_PDF_document
 
             //Close the document. 
             document.Close(true);
-
-            //This will open the PDF file so, the result will be seen in default PDF viewer.
-            Process.Start("AngleMeasurementAnnotation.pdf");
         }
     }
 }

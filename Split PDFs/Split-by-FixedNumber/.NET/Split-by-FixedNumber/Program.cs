@@ -1,9 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf.Parsing;
+﻿using Syncfusion.Pdf.Parsing;
 
 //Load an existing PDF file.
-PdfLoadedDocument loadDocument = new PdfLoadedDocument(new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open));
+PdfLoadedDocument loadDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf"));
 //Subscribe to the document split event.
 loadDocument.DocumentSplitEvent += LoadDocument_DocumentSplitEvent;
 void LoadDocument_DocumentSplitEvent(object sender, PdfDocumentSplitEventArgs args)

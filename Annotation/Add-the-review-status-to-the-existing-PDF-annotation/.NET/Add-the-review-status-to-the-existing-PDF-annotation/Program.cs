@@ -1,48 +1,37 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 
-//Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
-
 //Load the PDF document. 
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
-
-//Get the existing PDF page.
-PdfLoadedPage lpage = loadedDocument.Pages[0] as PdfLoadedPage;
-
-//Get the existing annotations.
-PdfLoadedAnnotationCollection annots = lpage.Annotations;
-
-//Get the existing rectangle annotation.
-PdfLoadedRectangleAnnotation loadedRectangleAnnotation = annots[0] as PdfLoadedRectangleAnnotation;
-
-//Create a new review annotation.
-PdfPopupAnnotation review = new PdfPopupAnnotation();
-
-//Set author.
-review.Author = "John";
-
-//Set review state model.
-review.StateModel = PdfAnnotationStateModel.Review;
-
-//Set review state.
-review.State = PdfAnnotationState.Accepted;
-
-//Set modification date.
-review.ModifiedDate = DateTime.Now;
-
-//Add the review to the annotation.
-loadedRectangleAnnotation.ReviewHistory.Add(review);
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    //Save the PDF document to file stream.
-    loadedDocument.Save(outputFileStream);
-}
+    //Get the existing PDF page.
+    PdfLoadedPage lpage = loadedDocument.Pages[0] as PdfLoadedPage;
 
-//Close the document.
-loadedDocument.Close(true);
+    //Get the existing annotations.
+    PdfLoadedAnnotationCollection annots = lpage.Annotations;
+
+    //Get the existing rectangle annotation.
+    PdfLoadedRectangleAnnotation loadedRectangleAnnotation = annots[0] as PdfLoadedRectangleAnnotation;
+
+    //Create a new review annotation.
+    PdfPopupAnnotation review = new PdfPopupAnnotation();
+
+    //Set author.
+    review.Author = "John";
+
+    //Set review state model.
+    review.StateModel = PdfAnnotationStateModel.Review;
+
+    //Set review state.
+    review.State = PdfAnnotationState.Accepted;
+
+    //Set modification date.
+    review.ModifiedDate = DateTime.Now;
+
+    //Add the review to the annotation.
+    loadedRectangleAnnotation.ReviewHistory.Add(review);
+
+    //Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}

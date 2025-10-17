@@ -1,22 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 
-//Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
+//Load the PDF document. 
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
+{
+    //Load first page.
+    PdfPageBase page = loadedDocument.Pages[0];
 
-//Load the PDF document.
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
+    //Extract text from first page.
+    string extractedTexts = page.ExtractText(true);
 
-//Load first page.
-PdfPageBase page = loadedDocument.Pages[0];
-
-//Extract text from first page.
-string extractedTexts = page.ExtractText(true);
-
-//Close the document.
-loadedDocument.Close(true);
-
-Console.WriteLine("Extracted text: " + extractedTexts);
-Console.ReadLine();
+    Console.WriteLine("Extracted text: " + extractedTexts);
+}

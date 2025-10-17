@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.DocIO.DLS;
+﻿using Syncfusion.DocIO.DLS;
 using Syncfusion.DocIORenderer;
 using Syncfusion.Pdf;
 using System.Reflection.Metadata;
@@ -21,12 +19,8 @@ PdfDocument pdfDocument = render.ConvertToPDF(wordDocument);
 render.Dispose();
 wordDocument.Dispose();
 
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream.
-    pdfDocument.Save(outputFileStream);
-}
+//Save the PDF document to file stream.
+pdfDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
 //Close the document.
 pdfDocument.Close(true);

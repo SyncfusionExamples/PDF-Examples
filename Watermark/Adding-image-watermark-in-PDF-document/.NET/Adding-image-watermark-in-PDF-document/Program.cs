@@ -1,39 +1,32 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Drawing;
+﻿using Syncfusion.Drawing;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 
 //Create a new PDF document.
-PdfDocument pdfDocument = new PdfDocument();
-
-//Add a page to the PDF document.
-PdfPage pdfPage = pdfDocument.Pages.Add();
-
-//Create graphics for PDF page. 
-PdfGraphics graphics = pdfPage.Graphics;
-
-//Load the image as stream.
-FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/design.png"), FileMode.Open, FileAccess.Read);
-
-//Image watermark.
-PdfImage image = new PdfBitmap(imageStream);
-
-//Create state for page graphics. 
-PdfGraphicsState state = graphics.Save();
-
-//Set transparency for page graphics. 
-graphics.SetTransparency(0.25f);
-
-//Draw image in the page. 
-graphics.DrawImage(image, new PointF(0, 0), pdfPage.Graphics.ClientSize);
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (PdfDocument document = new PdfDocument())
 {
-    //Save the PDF document to file stream.
-    pdfDocument.Save(outputFileStream);
+    //Add a page to the PDF document.
+    PdfPage pdfPage = document.Pages.Add();
+
+    //Create graphics for PDF page. 
+    PdfGraphics graphics = pdfPage.Graphics;
+
+    //Load the image as stream.
+    FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/design.png"), FileMode.Open, FileAccess.Read);
+
+    //Image watermark.
+    PdfImage image = new PdfBitmap(imageStream);
+
+    //Create state for page graphics. 
+    PdfGraphicsState state = graphics.Save();
+
+    //Set transparency for page graphics. 
+    graphics.SetTransparency(0.25f);
+
+    //Draw image in the page. 
+    graphics.DrawImage(image, new PointF(0, 0), pdfPage.Graphics.ClientSize);
+
+    //Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }
 
-//Close the document.
-pdfDocument.Close(true);

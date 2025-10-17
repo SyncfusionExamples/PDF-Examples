@@ -18,8 +18,6 @@ using (PdfDocument doc = new PdfDocument())
     // Create a memory stream to save the PDF document
     MemoryStream stream = new MemoryStream();
     doc.Save(stream);
-    // Write the contents of the memory stream to a file named "sample.pdf"
-    File.WriteAllBytes("sample.pdf", stream.ToArray());
     // Close the document
     doc.Close(true);
 }

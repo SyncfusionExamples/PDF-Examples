@@ -1,27 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 
-//Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
-
 //Load the PDF document. 
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
-
-//Get all the pages
-foreach (PdfLoadedPage loadedPage in loadedDocument.Pages)
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    //Flatten all the annotations in the page
-    loadedPage.Annotations.Flatten = true;
-}
+    //Get all the pages
+    foreach (PdfLoadedPage loadedPage in loadedDocument.Pages)
+    {
+        //Flatten all the annotations in the page
+        loadedPage.Annotations.Flatten = true;
+    }
 
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream.
-    loadedDocument.Save(outputFileStream);
+    //Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }
-
-//Close the document.
-loadedDocument.Close(true);

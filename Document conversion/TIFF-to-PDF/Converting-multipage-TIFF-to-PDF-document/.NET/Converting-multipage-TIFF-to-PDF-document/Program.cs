@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf.Graphics;
+﻿using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf;
 
 //Create a new PDF document.
@@ -43,13 +41,8 @@ for (int i = 0; i < frameCount; i++)
     //Draw TIFF image into the PDF page.
     page.Graphics.DrawImage(tiffImage, Syncfusion.Drawing.PointF.Empty, size);
 }
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream.
-    document.Save(outputFileStream);
-}
+//Save the PDF document to file stream.
+document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
 //Close the document.
 document.Close(true);
