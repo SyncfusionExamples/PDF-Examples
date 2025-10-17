@@ -1,18 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Drawing;
+﻿using Syncfusion.Drawing;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Security;
 
-//Open existing PDF document as stream
-using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
+//Open existing PDF document
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(@"Data/Input.pdf"))
 {
-    // Load the existing PDF document
-    PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputStream);
-
     // Gets the first page of the document
     PdfPageBase page = loadedDocument.Pages[0];
 
@@ -25,6 +20,7 @@ using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf
 
     // Set signature information
     signature.Bounds = new RectangleF(227.6355f, 675.795044f, 150.57901f, 32.58f);
+    signature.SignedName = "Syncfusion";
     signature.ContactInfo = "johndoe@owned.us";
     signature.LocationInfo = "Honolulu, Hawaii";
     signature.Reason = "I am the author of this document.";
@@ -36,14 +32,8 @@ using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf
     // Draw the image on the signature field
     signature.Appearance.Normal.Graphics.DrawImage(signatureImage, new RectangleF(0, 0, signature.Bounds.Width, signature.Bounds.Height));
 
-    // Save the document to a file stream
-    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-    {
-        loadedDocument.Save(outputFileStream);
-    }
-
-    //Close the document.
-    loadedDocument.Close(true);
+    // Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
     certificateStream.Dispose();
     imageStream.Dispose();
 }
