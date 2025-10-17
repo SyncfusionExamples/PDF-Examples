@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Interactive;
 
@@ -35,12 +33,7 @@ PdfFont font = new PdfTrueTypeFont(fontStream, 14);
 //Draw the text.
 graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, 0));
 
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream.
-    document.Save(outputFileStream);
-}
-
+//Save the PDF document
+document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 //Close the document.
 document.Close(true);

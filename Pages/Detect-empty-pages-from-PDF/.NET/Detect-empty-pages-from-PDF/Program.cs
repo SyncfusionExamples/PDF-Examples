@@ -1,30 +1,23 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 
-//Get stream from an existing PDF document.
-FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-
-//Load the PDF document.
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputFileStream);
-
-//Gets the page.
-PdfPageBase loadedPage = loadedDocument.Pages[0] as PdfPageBase;
-
-//Get the page is blank or not.
-bool isEmpty = loadedPage.IsBlank;
-
-//Check whether page is blank or not. 
-if (isEmpty)
+//Load the PDF document. 
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    Console.WriteLine("The page is blank");
-}
-else
-{
-    Console.WriteLine("The page is not blank");
-}
+    //Gets the page.
+    PdfPageBase loadedPage = loadedDocument.Pages[0] as PdfPageBase;
 
-//Close the document.
-loadedDocument.Close(true);
+    //Get the page is blank or not.
+    bool isEmpty = loadedPage.IsBlank;
+
+    //Check whether page is blank or not. 
+    if (isEmpty)
+    {
+        Console.WriteLine("The page is blank");
+    }
+    else
+    {
+        Console.WriteLine("The page is not blank");
+    }
+}
 

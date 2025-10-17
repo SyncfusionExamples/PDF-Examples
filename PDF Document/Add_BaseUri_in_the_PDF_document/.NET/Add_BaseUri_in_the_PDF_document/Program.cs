@@ -1,23 +1,15 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Syncfusion.Pdf;
 
-using Syncfusion.Pdf;
-
-//Create a new instance of the PdfDocument class.
-PdfDocument document = new PdfDocument();
-
-//Set the Base URI.
-document.BaseUri = "https://www.syncfusion.com/";
-
-//Create a new page.
-PdfPage page = document.Pages.Add();
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+//Create a new PDF document.
+using (PdfDocument document = new PdfDocument())
 {
-    //Save the PDF document to file stream.
-    document.Save(outputFileStream);
-}
+    //Set the Base URI.
+    document.BaseUri = "https://www.syncfusion.com/";
 
-//Close the document.
-document.Close(true);
+    //Create a new page.
+    PdfPage page = document.Pages.Add();
+
+    //Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}
 

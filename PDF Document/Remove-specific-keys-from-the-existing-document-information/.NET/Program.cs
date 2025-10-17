@@ -4,8 +4,7 @@ namespace Remove_specific_keys_from_the_existing_document_information {
     internal class Program {
         static void Main(string[] args) {
             //Load an existing PDF document. 
-            FileStream fileStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
-            PdfLoadedDocument document = new PdfLoadedDocument(fileStream);
+            PdfLoadedDocument document = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf"));
             //Remove the document information properties. 
             document.DocumentInformation.Remove("Title");
             document.DocumentInformation.Remove("Author");
@@ -15,12 +14,9 @@ namespace Remove_specific_keys_from_the_existing_document_information {
             document.DocumentInformation.Remove("Producer");
             document.DocumentInformation.Remove("ModDate");
             document.DocumentInformation.Remove("CreationDate");
-
-            //Creating the stream object. 
-            MemoryStream stream = new MemoryStream();
-            //Save the document into stream.
-            document.Save(stream);
-            File.WriteAllBytes(Path.GetFullPath(@"Output/Output.pdf"), stream.ToArray());
+            
+            //Save the document
+            document.Save(Path.GetFullPath(@"Output/Output.pdf"));
             //Close the document.
             document.Close(true);
         }

@@ -4,10 +4,8 @@ using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Security;
 
-using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
-{
-    // Load the encrypted PDF document from the input stream
-    PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputStream, "syncfusion");
+    // Load the encrypted PDF document
+    PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf"), "syncfusion");
 
     // Set the document permissions to default (removes any restrictions)
     loadedDocument.Security.Permissions = PdfPermissionsFlags.Default;
@@ -16,11 +14,7 @@ using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf
     loadedDocument.Security.OwnerPassword = string.Empty;
     loadedDocument.Security.UserPassword = string.Empty;
 
-    using (FileStream outputStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.Write))
-    {
-        // Save the decrypted PDF document to the output stream
-        loadedDocument.Save(outputStream);
-    }
-    // Close the loaded PDF document and release resources
+    // Save the decrypted PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
+    // Close the loaded PDF document
     loadedDocument.Close(true);
-}

@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Drawing;
+﻿using Syncfusion.Drawing;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Security;
@@ -36,12 +34,8 @@ signature.Reason = "I am author of this document.";
 //Draw the image in signature appearance. 
 signature.Appearance.Normal.Graphics.DrawImage(signatureImage, new RectangleF(0, 0, 100, 100));
 
-//Create file stream
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream
-    finalDocument.Save(outputFileStream);
-}
+//Save the PDF document
+finalDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
 //Close the document
 finalDocument.Close(true);

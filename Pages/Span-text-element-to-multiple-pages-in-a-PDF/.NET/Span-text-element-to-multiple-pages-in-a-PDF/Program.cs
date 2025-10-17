@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Drawing;
+﻿using Syncfusion.Drawing;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 using System.Text;
@@ -38,12 +36,8 @@ PdfLayoutResult result = textElement.Draw(page, new RectangleF(0, 0, page.GetCli
 //Draw the second paragraph from the first paragraph’s end position.
 result = textElement.Draw(result.Page, new RectangleF(0, result.Bounds.Bottom + paragraphGap, page.GetClientSize().Width / 2, page.GetClientSize().Height), layoutFormat);
 
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream.
-    document.Save(outputFileStream);
-}
+//Save the PDF document
+document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
 //Close the document.
 document.Close(true);

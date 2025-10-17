@@ -1,13 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-//Get file stream from an existing PDF document
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 
-FileStream fileStreamPath = new FileStream(Path.GetFullPath(@"Data/File1.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-
 //Load the PDF document.
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(fileStreamPath);
+PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/File1.pdf"));
 
 //Create a new PDF document.
 PdfDocument document = new PdfDocument();
@@ -18,14 +13,10 @@ document.EnableMemoryOptimization = true;
 //Append the document with source document.
 document.Append(loadedDocument);
 
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream
-    document.Save(outputFileStream);
-}
+//Save the PDF document
+document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
 //Close the document
 document.Close(true);
-
+loadedDocument.Close(true);
 

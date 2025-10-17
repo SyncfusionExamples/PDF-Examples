@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information  
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.Pdf.Interactive;
 using Syncfusion.Drawing;
 using System.Reflection.Metadata;
@@ -30,12 +28,8 @@ using (PdfDocument finalDocument = new PdfDocument())
         //Sets the destination location for second bookmark.  
         bookmark2.Destination.Location = new PointF(20, 20);
         
-        //Create file stream.
-        using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-        {
-            //Save the PDF document to file stream.
-            finalDocument.Save(outputFileStream);
-        }
+        //Save the PDF document
+        finalDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
     }
 }

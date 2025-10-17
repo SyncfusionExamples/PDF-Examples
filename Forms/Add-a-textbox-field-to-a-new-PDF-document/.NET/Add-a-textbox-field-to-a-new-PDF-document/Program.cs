@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Drawing;
+﻿using Syncfusion.Drawing;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Interactive;
@@ -38,10 +36,6 @@ using (PdfDocument pdfDocument = new PdfDocument())
     emailField.ToolTip = "Email address";
     pdfDocument.Form.Fields.Add(emailField);
 
-    //Create file stream.
-    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-    {
-        //Save the PDF document to file stream.
-        pdfDocument.Save(outputFileStream);
-    }
+    //Save the PDF document
+    pdfDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }

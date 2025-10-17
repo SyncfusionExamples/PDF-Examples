@@ -1,11 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Drawing;
+﻿using Syncfusion.Drawing;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Grid;
 using System.Data;
 
-//Create a new PDF document
+//Create a new PDF document.
 using (PdfDocument document = new PdfDocument())
 {
     //Add a page
@@ -26,10 +24,6 @@ using (PdfDocument document = new PdfDocument())
     //Draw the grid to the page of PDF document
     pdfGrid.Draw(page, new PointF(10, 10));
 
-    //Create file stream.
-    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-    {
-        //Save the PDF document to file stream.
-        document.Save(outputFileStream);
-    }
+    //Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }

@@ -1,26 +1,19 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf.Parsing;
+﻿using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Xmp;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Exporting;
 
-//Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
+//Load the PDF document. 
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
+{
+    //Load the first page.
+    PdfPageBase pageBase = loadedDocument.Pages[0];
 
-//Load the PDF document.
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
+    //Extracts all the images info from first page.
+    PdfImageInfo[] imagesInfo = pageBase.GetImagesInfo();
 
-//Load the first page.
-PdfPageBase pageBase = loadedDocument.Pages[0];
+    //Extracts the XMP metadata from PDF image.
+    XmpMetadata metadata = imagesInfo[0].Metadata;
 
-//Extracts all the images info from first page.
-PdfImageInfo[] imagesInfo = pageBase.GetImagesInfo();
-
-//Extracts the XMP metadata from PDF image.
-XmpMetadata metadata = imagesInfo[0].Metadata;
-
-Console.WriteLine(metadata.XmlData);
-
-//Close the document.
-loadedDocument.Close(true);
+    Console.WriteLine(metadata.XmlData);
+}

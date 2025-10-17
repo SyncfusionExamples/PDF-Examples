@@ -1,32 +1,24 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.Pdf.Xmp;
 
-//Create a Pdf document.
-PdfDocument pdfDoc = new PdfDocument();
-
-//Create a Page.
-PdfPage page = pdfDoc.Pages.Add();
-
-//Gets XMP object.
-XmpMetadata metaData = pdfDoc.DocumentInformation.XmpMetadata;
-
-//XMP Page text Schema.
-PagedTextSchema pagedText = metaData.PagedTextSchema;
-
-//Sets the Page text Schema details of the document.
-pagedText.MaxPageSize.Width = 500;
-pagedText.MaxPageSize.Height = 750;
-pagedText.NPages = 1;
-pagedText.PlateNames.Add("Sample page");
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+//Create a new PDF document.
+using (PdfDocument document = new PdfDocument())
 {
-    //Save the PDF document to file stream.
-    pdfDoc.Save(outputFileStream);
-}
+    //Create a Page.
+    PdfPage page = document.Pages.Add();
 
-//Close the document.
-pdfDoc.Close(true);
+    //Gets XMP object.
+    XmpMetadata metaData = document.DocumentInformation.XmpMetadata;
+
+    //XMP Page text Schema.
+    PagedTextSchema pagedText = metaData.PagedTextSchema;
+
+    //Sets the Page text Schema details of the document.
+    pagedText.MaxPageSize.Width = 500;
+    pagedText.MaxPageSize.Height = 750;
+    pagedText.NPages = 1;
+    pagedText.PlateNames.Add("Sample page");
+
+    //Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}

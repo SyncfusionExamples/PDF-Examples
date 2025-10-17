@@ -8,41 +8,37 @@ namespace Header_Management_in_PDF_Sections
     {
         public static void Main(string[] args)
         {
-            // Initialize the PDF document
-            PdfDocument document = new PdfDocument();
-
-            // Define the font for the header
-            PdfFont headerfont = new PdfStandardFont(PdfFontFamily.Helvetica, 12);
-
-            // Create the first section with headers
-            PdfSection sectionWithHeaders = document.Sections.Add();
-            // Apply header to this section
-            sectionWithHeaders.Template.Top = CreateHeaderTemplate(headerfont);
-
-            // Add 5 pages in the first section
-            for (int i = 0; i < 5; i++)
+            //Create a new PDF document.
+            using (PdfDocument document = new PdfDocument())
             {
-                PdfPage page = sectionWithHeaders.Pages.Add();
-                DrawContentOnPage(page, $"Content for page {i + 1} in section with headers");
-            }
+                // Define the font for the header
+                PdfFont headerfont = new PdfStandardFont(PdfFontFamily.Helvetica, 12);
 
-            // Create the second section without headers
-            PdfSection sectionWithoutHeaders = document.Sections.Add();
+                // Create the first section with headers
+                PdfSection sectionWithHeaders = document.Sections.Add();
+                // Apply header to this section
+                sectionWithHeaders.Template.Top = CreateHeaderTemplate(headerfont);
 
-            // Add 5 pages in the second section
-            for (int i = 0; i < 5; i++)
-            {
-                PdfPage page = sectionWithoutHeaders.Pages.Add();
-                DrawContentOnPage(page, $"Content for page {i + 6} in section without headers");
-            }
+                // Add 5 pages in the first section
+                for (int i = 0; i < 5; i++)
+                {
+                    PdfPage page = sectionWithHeaders.Pages.Add();
+                    DrawContentOnPage(page, $"Content for page {i + 1} in section with headers");
+                }
 
-            // Save the PDF document
-            using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.Write))
-            {
-                document.Save(outputFileStream);
+                // Create the second section without headers
+                PdfSection sectionWithoutHeaders = document.Sections.Add();
+
+                // Add 5 pages in the second section
+                for (int i = 0; i < 5; i++)
+                {
+                    PdfPage page = sectionWithoutHeaders.Pages.Add();
+                    DrawContentOnPage(page, $"Content for page {i + 6} in section without headers");
+                }
+
+                //Save the PDF document
+                document.Save(Path.GetFullPath(@"Output/Output.pdf"));
             }
-            document.Close(true);
-        }
 
         private static PdfPageTemplateElement CreateHeaderTemplate(PdfFont headerfont)
         {

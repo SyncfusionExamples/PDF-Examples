@@ -1,24 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf.Parsing;
-
-//Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
+﻿using Syncfusion.Pdf.Parsing;
 
 //Load the PDF document.
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
+PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf");
 
 //Load an existing form. 
 PdfLoadedForm loadedForm = loadedDocument.Form;
 
-//Create memory stream.
-MemoryStream ms = new MemoryStream();
-
-//Load the FDF file. 
-FileStream stream1 = new FileStream(Path.GetFullPath("Output/Output.fdf"), FileMode.Create, FileAccess.ReadWrite);
-
 //Export the existing PDF document to FDF file. 
-loadedForm.ExportData(stream1, DataFormat.Fdf, "AcroForm1");
+loadedForm.ExportData(Path.GetFullPath("Output/Output.fdf", DataFormat.Fdf, "AcroForm1");
 
 //Close the document.
 loadedDocument.Close(true);

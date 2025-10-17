@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.OCRProcessor;
+﻿using Syncfusion.OCRProcessor;
 using Syncfusion.Pdf.Parsing;
 
 namespace OCR.Test
@@ -13,8 +11,7 @@ namespace OCR.Test
             using (OCRProcessor processor = new OCRProcessor())
             {
                 //Load an existing PDF document.
-                FileStream stream = new FileStream(Path.GetFullPath(@"Data/Region.pdf"), FileMode.Open);
-                PdfLoadedDocument lDoc = new PdfLoadedDocument(stream);
+                PdfLoadedDocument lDoc = new PdfLoadedDocument(Path.GetFullPath(@"Data/Region.pdf"));
 
                 //Set OCR language.
                 processor.Settings.Language = Languages.English;
@@ -26,18 +23,11 @@ namespace OCR.Test
                 //Perform OCR.
                 processor.PerformOCR(lDoc);
 
-                //Create file stream.
-                FileStream outputStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite);
-
-                //Save the document into stream.
-                lDoc.Save(outputStream);
-
-                //If the position is not set to '0' then the PDF will be empty. 
-                outputStream.Position = 0;
+                //Save the document
+                lDoc.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
                 //Close the document. 
                 lDoc.Close(true);
-                outputStream.Close();
             }
         }
     }

@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf.Parsing;
+﻿using Syncfusion.Pdf.Parsing;
 using System.IO;
 
 //Initialize the PDF document extractor.

@@ -6,8 +6,7 @@ using Syncfusion.Pdf.Graphics;
 using SkiaSharp;
 
 //Get stream from an existing PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
+PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf"));
 
 //Sample level font event handling  
 loadedDocument.SubstituteFont += LoadedDocument_SubstituteFont;
@@ -23,16 +22,11 @@ options.SubsetFonts = true;
 // Convert to PDF/A conformance 
 loadedDocument.ConvertToPDFA(options);
 
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream.
-    loadedDocument.Save(outputFileStream);
-}
+//Save the PDF document
+loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
 //Close the document.
 loadedDocument.Close(true);
-docStream.Close();
 
 static void LoadedDocument_SubstituteFont(object sender, PdfFontEventArgs args)
 {

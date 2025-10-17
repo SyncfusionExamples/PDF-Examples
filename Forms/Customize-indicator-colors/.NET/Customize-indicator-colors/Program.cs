@@ -1,12 +1,9 @@
 ﻿using Syncfusion.Drawing;
 using Syncfusion.Pdf.Parsing;
 
-// Open the input PDF file stream.
-using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
+//Load the PDF document. 
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    // Load the PDF document from the input stream.
-    PdfLoadedDocument loadedDocument = new PdfLoadedDocument(fileStream);
-
     // Access the existing form fields in the PDF.
     PdfLoadedForm form = loadedDocument.Form;
 
@@ -29,13 +26,7 @@ using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"
     }
     // Disable the default appearance to allow custom rendering of form fields.
     form.SetDefaultAppearance(false);
-    // Create the output file stream.
-    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-    {
-        // Save the modified PDF document to the new file stream.
-        loadedDocument.Save(outputFileStream);
-    }
 
-    // Close the PDF document.
-    loadedDocument.Close(true);
+    //Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }

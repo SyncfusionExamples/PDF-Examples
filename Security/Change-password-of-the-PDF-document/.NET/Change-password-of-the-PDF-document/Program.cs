@@ -1,22 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-//Get stream from an existing PDF document. 
-using Syncfusion.Pdf.Parsing;
-
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
+﻿using Syncfusion.Pdf.Parsing;
 
 //Load the PDF document.
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream, "password");
+PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf"), "password");
 
 //Change the user password .
 loadedDocument.Security.UserPassword = "NewPassword";
 
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream.
-    loadedDocument.Save(outputFileStream);
-}
+//Save the PDF document
+loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
 //Close the document.
 loadedDocument.Close(true);

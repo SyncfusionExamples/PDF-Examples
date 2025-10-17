@@ -1,35 +1,28 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Drawing;
+﻿using Syncfusion.Drawing;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 
 //Create a new PDF document.
-PdfDocument document = new PdfDocument();
-
-//Set the page size.
-document.PageSettings.Size = PdfPageSize.A4;
-
-//Change the page orientation to 90°.
-document.PageSettings.Rotate = PdfPageRotateAngle.RotateAngle90;
-
-//Add a page to the document.
-PdfPage page = document.Pages.Add();
-
-//Create PDF graphics for the page.
-PdfGraphics graphics = page.Graphics;
-
-//Set the font.
-PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
-
-//Draw text in the page. 
-graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
-
-//Save the document.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (PdfDocument document = new PdfDocument())
 {
-    document.Save(outputFileStream);
-}
+    //Set the page size.
+    document.PageSettings.Size = PdfPageSize.A4;
 
-//Close the document.
-document.Close(true);
+    //Change the page orientation to 90°.
+    document.PageSettings.Rotate = PdfPageRotateAngle.RotateAngle90;
+
+    //Add a page to the document.
+    PdfPage page = document.Pages.Add();
+
+    //Create PDF graphics for the page.
+    PdfGraphics graphics = page.Graphics;
+
+    //Set the font.
+    PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
+
+    //Draw text in the page. 
+    graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
+
+    //Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}

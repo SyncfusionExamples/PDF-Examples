@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 
 //Create a PDF document 
 using (PdfDocument finalDocument = new PdfDocument()) 
@@ -13,10 +11,7 @@ using (PdfDocument finalDocument = new PdfDocument())
         Stream[] streams = { firstStream, secondStream }; 
         //Merge PDF documents 
         PdfDocumentBase.Merge(finalDocument, streams); 
-        //Save the document into a stream 
-        using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-        { 
-            finalDocument.Save(outputFileStream); 
-        } 
+        //Save the document
+        finalDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));  
     } 
 }

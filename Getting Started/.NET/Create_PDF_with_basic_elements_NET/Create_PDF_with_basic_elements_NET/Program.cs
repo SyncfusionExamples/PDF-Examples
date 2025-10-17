@@ -149,12 +149,8 @@ namespace Create_PDF_with_basic_elements_NET
             pos += grid.Columns[4].Width;
             gridResult.Page.Graphics.DrawString('$' + string.Format("{0:N2}", total), font, new PdfSolidBrush(new PdfColor(131, 130, 136)), new RectangleF(new PointF(pos, gridResult.Bounds.Bottom + 20), new SizeF(grid.Columns[4].Width - pos, 20)), new PdfStringFormat(PdfTextAlignment.Right));
 
-            //Create file stream.
-            using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-            {
-                //Save the PDF document to file stream.
-                document.Save(outputFileStream);
-            }
+            //Save the PDF document
+            document.Save(Path.GetFullPath(@"Output/Output.pdf"));
             //Close the document.
             document.Close(true);
         }

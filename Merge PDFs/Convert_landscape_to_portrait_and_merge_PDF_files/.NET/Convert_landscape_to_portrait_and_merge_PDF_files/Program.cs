@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf.Parsing;
+﻿using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf;
 using System.Reflection.Metadata;
 using Syncfusion.Pdf.Graphics;
@@ -15,8 +13,7 @@ finalDocument.PageSettings.Orientation = PdfPageOrientation.Landscape;
 finalDocument.PageSettings.Margins.All = 0;
 
 //Load an existing PDF document. 
-FileStream stream1 = new FileStream(Path.GetFullPath(@"Data/File1.pdf"), FileMode.Open, FileAccess.Read);
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(stream1);
+PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/File1.pdf"));
 
 for (int i = 0; i < loadedDocument.Pages.Count; i++)
 {
@@ -33,16 +30,11 @@ for (int i = 0; i < loadedDocument.Pages.Count; i++)
 }
 
 //Load an existing PDF document. 
-FileStream stream2 = new FileStream(Path.GetFullPath(@"Data/File2.pdf"), FileMode.Open, FileAccess.Read);
-PdfLoadedDocument loadedDocument2 = new PdfLoadedDocument(stream2);
+PdfLoadedDocument loadedDocument2 = new PdfLoadedDocument(Path.GetFullPath(@"Data/File2.pdf"));
 finalDocument.ImportPageRange(loadedDocument2, 0, loadedDocument2.Pages.Count - 1);
 
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream.
-    finalDocument.Save(outputFileStream);
-}
+//Save the PDF document.
+finalDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
 //Close the document.
 finalDocument.Close(true);

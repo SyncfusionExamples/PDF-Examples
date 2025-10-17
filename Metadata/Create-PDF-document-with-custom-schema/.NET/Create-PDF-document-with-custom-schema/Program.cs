@@ -1,30 +1,22 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf;
+﻿using Syncfusion.Pdf;
 using Syncfusion.Pdf.Xmp;
 
-//Create Pdf document.
-PdfDocument pdfDoc = new PdfDocument();
-
-//Create a page in document. 
-PdfPage page = pdfDoc.Pages.Add();
-
-//Get metaData object.
-XmpMetadata metaData = pdfDoc.DocumentInformation.XmpMetadata;
-
-//Create custom schema field.
-CustomSchema customSchema = new CustomSchema(metaData, "custom", "http://www.syncfusion.com");
-customSchema["creationDate"] = DateTime.Now.ToString();
-customSchema["DOCID"] = "SYNCSAM001";
-customSchema["Encryption"] = "Standard";
-customSchema["Project"] = "Data processing";
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+//Create a new PDF document.
+using (PdfDocument document = new PdfDocument())
 {
-    //Save the PDF document to file stream.
-    pdfDoc.Save(outputFileStream);
-}
+    //Create a page in document. 
+    PdfPage page = document.Pages.Add();
 
-//Close the document.
-pdfDoc.Close(true);
+    //Get metaData object.
+    XmpMetadata metaData = document.DocumentInformation.XmpMetadata;
+
+    //Create custom schema field.
+    CustomSchema customSchema = new CustomSchema(metaData, "custom", "http://www.syncfusion.com");
+    customSchema["creationDate"] = DateTime.Now.ToString();
+    customSchema["DOCID"] = "SYNCSAM001";
+    customSchema["Encryption"] = "Standard";
+    customSchema["Project"] = "Data processing";
+
+    //Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}

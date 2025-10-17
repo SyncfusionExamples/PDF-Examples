@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Drawing;
+﻿using Syncfusion.Drawing;
 using Syncfusion.OCRProcessor;
 using Syncfusion.Pdf.Parsing;
 
@@ -10,11 +8,8 @@ string tessdataPath = Path.GetFullPath(@"Tessdata");
 //Initialize the OCR processor by providing the path of tesseract.
 using (OCRProcessor processor = new OCRProcessor())
 {
-    //Get stream from an existing PDF document. 
-    FileStream stream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open);
-
     //Load the PDF document. 
-    PdfLoadedDocument loadedDocument = new PdfLoadedDocument(stream);
+    PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf"));
 
     //Set OCR language to process.
     processor.Settings.Language = Languages.English;

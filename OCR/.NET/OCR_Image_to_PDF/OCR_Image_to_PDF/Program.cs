@@ -1,5 +1,4 @@
-﻿
-using Syncfusion.OCRProcessor;
+﻿using Syncfusion.OCRProcessor;
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf;
 
@@ -24,12 +23,8 @@ using (OCRProcessor processor = new OCRProcessor())
     //Process OCR by providing the bitmap image.  
     PdfDocument document = processor.PerformOCR(imageStream);
 
-    //Create file stream.
-    using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-    {
-        //Save the PDF document to file stream.
-        document.Save(outputFileStream);
-    }
+    //Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
     //Close the document.
     document.Close(true);

@@ -1,15 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using SkiaSharp;
+﻿using SkiaSharp;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Parsing;
 
-//Get stream from the PDF document. 
-FileStream docStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
-
 //Load the PDF document. 
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream);
+PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf"));
 
 //Sample level font event handling
 loadedDocument.SubstituteFont += LoadedDocument_SubstituteFont;
@@ -60,13 +55,8 @@ void LoadedDocument_SubstituteFont(object sender, PdfFontEventArgs args)
 //Convert the loaded document to PDF/A document
 loadedDocument.ConvertToPDFA(PdfConformanceLevel.Pdf_A1B);
 
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-{
-    //Save the PDF document to file stream.
-    loadedDocument.Save(outputFileStream);
-}
+//Save the PDF document to file stream.
+loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 
 //Close the document.
-docStream.Dispose();
 loadedDocument.Close(true);

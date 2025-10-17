@@ -5,10 +5,8 @@ using Syncfusion.Pdf.Parsing;
 using (OCRProcessor processor = new OCRProcessor())
 {
     // Load the existing PDF document
-    using (FileStream stream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open))
+    using (PdfLoadedDocument pdfLoadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
     {
-        PdfLoadedDocument pdfLoadedDocument = new PdfLoadedDocument(stream);
-
         // Set OCR language to process
         processor.Settings.Language = Languages.English;
 
@@ -18,13 +16,8 @@ using (OCRProcessor processor = new OCRProcessor())
         processor.PerformOCR(pdfLoadedDocument, processor.TessDataPath, out OCRLayoutResult layoutResult);
         string ocrText = string.Join("\n", layoutResult.Pages[0].Lines.Select(line => line.Text));
 
-
-        //Create file stream.
-        using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-        {
-            //Save the PDF document to file stream.
-            pdfLoadedDocument.Save(outputFileStream);
-        }
+        //Save the PDF document
+        pdfLoadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
         //Close the document.
         pdfLoadedDocument.Close(true);
         File.WriteAllText(Path.GetFullPath(@"Output/Output.txt"), ocrText);

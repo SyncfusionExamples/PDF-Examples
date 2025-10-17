@@ -1,29 +1,18 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Pdf.Parsing;
-
-//Get stream from an existing PDF document.  
-FileStream fileStreamPath = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+﻿using Syncfusion.Pdf.Parsing;
 
 //Load the PDF document. 
-PdfLoadedDocument document = new PdfLoadedDocument(fileStreamPath);
-
-//Modify the document information.
-document.DocumentInformation.Author = "Syncfusion";
-document.DocumentInformation.CreationDate = DateTime.Now;
-document.DocumentInformation.Creator = "Essential PDF";
-document.DocumentInformation.Keywords = "PDF";
-document.DocumentInformation.Subject = "Document information DEMO";
-document.DocumentInformation.Title = "Essential PDF Sample";
-document.DocumentInformation.ModificationDate = DateTime.Now;
-document.DocumentInformation.Producer = "Syncfusion PDF";
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    //Save the PDF document.
-    document.Save(outputFileStream);
-}
+    //Modify the document information.
+    loadedDocument.DocumentInformation.Author = "Syncfusion";
+    loadedDocument.DocumentInformation.CreationDate = DateTime.Now;
+    loadedDocument.DocumentInformation.Creator = "Essential PDF";
+    loadedDocument.DocumentInformation.Keywords = "PDF";
+    loadedDocument.DocumentInformation.Subject = "Document information DEMO";
+    loadedDocument.DocumentInformation.Title = "Essential PDF Sample";
+    loadedDocument.DocumentInformation.ModificationDate = DateTime.Now;
+    loadedDocument.DocumentInformation.Producer = "Syncfusion PDF";
 
-//Closes the PDF document
-document.Close(true);
+    //Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}
