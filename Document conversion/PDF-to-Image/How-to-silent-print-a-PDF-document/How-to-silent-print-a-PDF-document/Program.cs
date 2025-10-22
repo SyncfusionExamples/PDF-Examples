@@ -2,55 +2,33 @@
 using System.Drawing;
 using System.Drawing.Printing;
 
-class Program
+// Initialize the PdfToImageConverter with the path to the PDF file
+using (PdfToImageConverter imageConverter = new PdfToImageConverter())
 {
-    static Bitmap[] bitmaps;
-    static int currentPageIndex = 0;
-    static void Main()
+    // Load the PDF document
+    imageConverter.Load(new FileStream("Data/Input.pdf", FileMode.Open, FileAccess.Read));
+
+    //Convert all the PDF pages to images
+    Stream[] images = imageConverter.Convert(0, imageConverter.PageCount - 1, false, false);
+
+    //Create a print document object to print the images
+    using (PrintDocument printDocument = new PrintDocument())
     {
-        // Initialize PDF to Image converter.
-        PdfToImageConverter imageConverter = new PdfToImageConverter();
-        // Load the PDF document as a stream
-        using (FileStream inputStream = new FileStream("Data/Input.pdf", FileMode.Open, FileAccess.ReadWrite))
+        int currentPageIndex = 0;
+        //Handle the PrintPage event to print each image
+        printDocument.PrintPage += (sender, e) =>
         {
-            imageConverter.Load(inputStream);
-            // Convert PDF to Image.
-            Stream[] outputStream = imageConverter.Convert(0, imageConverter.PageCount - 1, false, false);
-            // Convert streams to bitmaps.
-            bitmaps = BitmapConverter.ConvertStreamsToBitmaps(outputStream);
-        }
-        // Initialize PrintDocument
-        PrintDocument printDocument = new PrintDocument();
-        // Attach the PrintPage event handler
-        printDocument.PrintPage += PrintDocument_PrintPage;
-        // Print the document
+            Stream imageStream = images[currentPageIndex];
+            imageStream.Position = 0; // Reset stream position
+            Image currentImage = Image.FromStream(imageStream);
+            //Draw the current image on the print page
+            e.Graphics.DrawImage(currentImage, e.PageBounds);
+            //Move to the next page
+            currentPageIndex++;
+            //Check if there are more pages to print
+            e.HasMorePages = currentPageIndex < images.Length;
+        };
+        //Print the document
         printDocument.Print();
-    }
-    private static void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
-    {
-        Bitmap bitmap = bitmaps[currentPageIndex];
-        Graphics graphics = e.Graphics;
-        // Center the image on the page without scaling
-        float offsetX = (e.PageBounds.Width - bitmap.Width) / 2;
-        float offsetY = (e.PageBounds.Height - bitmap.Height) / 2;
-        graphics.DrawImage(bitmap, offsetX, offsetY);
-        currentPageIndex++;
-        e.HasMorePages = currentPageIndex < bitmaps.Length;
-        if (!e.HasMorePages)
-        {
-            currentPageIndex = 0;
-        }
-    }
-    public static class BitmapConverter
-    {
-        public static Bitmap[] ConvertStreamsToBitmaps(Stream[] streams)
-        {
-            Bitmap[] bitmaps = new Bitmap[streams.Length];
-            for (int i = 0; i < streams.Length; i++)
-            {
-                bitmaps[i] = new Bitmap(streams[i]);
-            }
-            return bitmaps;
-        }
     }
 }
