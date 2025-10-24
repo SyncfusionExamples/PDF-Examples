@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    Html.BeginForm("PerformOCR", "Home", FormMethod.Get);
+    {
+        <div>
+            <input type="submit" value="Perform OCR on PDF" style="width:200px;height:27px" />
+        </div>
+    }
+    Html.EndForm();
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
