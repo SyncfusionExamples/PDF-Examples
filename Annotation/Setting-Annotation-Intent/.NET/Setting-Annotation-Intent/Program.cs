@@ -30,7 +30,4 @@ using (PdfDocument document = new PdfDocument())
 
     // Save the document
     document.Save(Path.GetFullPath(@"Output/Output.pdf"));
-
-    // Close the document
-    document.Close(true);
 }
