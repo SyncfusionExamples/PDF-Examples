@@ -2,7 +2,6 @@
 using Syncfusion.Pdf.Grid;
 using Syncfusion.Pdf;
 using Syncfusion.Drawing;
-using System.Reflection.Metadata;
 
 //Create a new PDF document.
 using (PdfDocument document = new PdfDocument())
