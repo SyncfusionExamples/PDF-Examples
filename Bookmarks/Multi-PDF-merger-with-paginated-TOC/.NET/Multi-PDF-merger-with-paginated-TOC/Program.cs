@@ -3,8 +3,6 @@ using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
-using System.Collections.Generic;
-
 class Program
 {
     public static PdfDocument document;
@@ -12,194 +10,122 @@ class Program
 
     static void Main(string[] args)
     {
-        // Load source PDFs using file streams
-        using (FileStream fsharpStream = new FileStream(Path.GetFullPath(@"Data/Fsharp_Succinctly.pdf"), FileMode.Open, FileAccess.Read))
-        using (PdfLoadedDocument fsharpDoc = new PdfLoadedDocument(fsharpStream))
+        // Load the PDF documents
+        PdfLoadedDocument doc1 = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input1.pdf"));
+        PdfLoadedDocument doc2 = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input2.pdf"));
+        PdfLoadedDocument doc3 = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input3.pdf"));
+        object[] documentsToMerge = { doc1, doc2, doc3 };
 
-        using (FileStream httpStream = new FileStream(Path.GetFullPath(@"Data/HTTP_Succinctly.pdf"), FileMode.Open, FileAccess.Read))
-        using (PdfLoadedDocument httpDoc = new PdfLoadedDocument(httpStream))
-
-        using (FileStream windowsStoreStream = new FileStream(Path.GetFullPath(@"Data/WindowsStoreApps_Succinctly.pdf"), FileMode.Open, FileAccess.Read))
-        using (PdfLoadedDocument windowsStoreDoc = new PdfLoadedDocument(windowsStoreStream))
+        // Create a new PDF document
+        using (document = new PdfDocument())
         {
+            document.PageSettings.Size = doc1.Pages[0].Graphics.Size;
 
-            // Store all loaded documents in an array
-            PdfLoadedDocument[] docs = { fsharpDoc, httpDoc, windowsStoreDoc };
+            // Add initial TOC page
+            PdfPage tocPage = document.Pages.Add();
+            font = new PdfStandardFont(PdfFontFamily.Helvetica, 10f);
 
-            // Create new document
-            document = new PdfDocument();
-            document.PageSettings.Size = fsharpDoc.Pages[0].Size;
+            // Draw TOC title
+            PdfStringFormat format = new PdfStringFormat(PdfTextAlignment.Center, PdfVerticalAlignment.Middle);
+            tocPage.Graphics.DrawString("Table Of Contents", font, PdfBrushes.Black,
+                new RectangleF(PointF.Empty, new SizeF(tocPage.Graphics.ClientSize.Width, 20)), format);
 
-            // Estimate TOC pages needed
-            int totalEntries = 60;
-            int entriesPerPage = 30;
-            int tocPages = (int)Math.Ceiling(totalEntries / (double)entriesPerPage);
+            // Merge the loaded documents into the new document
+            PdfDocument.Merge(document, documentsToMerge);
 
-            // Add TOC pages
-            List<PdfPage> tocPagesList = new List<PdfPage>();
-            for (int i = 0; i < tocPages; i++)
-            {
-                PdfPage tocPage = document.Pages.Add();
-                tocPagesList.Add(tocPage);
-                if (i == 0)
-                {
-                    font = new PdfStandardFont(PdfFontFamily.Helvetica, 10f);
-                    PdfStringFormat format = new PdfStringFormat(PdfTextAlignment.Center, PdfVerticalAlignment.Middle);
-                    tocPage.Graphics.DrawString("Table Of Contents", font, PdfBrushes.Black,
-                        new RectangleF(PointF.Empty, new SizeF(tocPage.Graphics.ClientSize.Width, 20)), format);
-                }
-            }
-
-            // Merge PDFs after TOC pages
-            PdfDocument.Merge(document, docs);
-
-            // Define TOC entries (title and corresponding page index)
-            List<(string Title, int PageIndex)> tocEntries = GetTocEntries();
-            // Adjust TOC entries
-            tocEntries = AdjustTOCEntriesWithOffset(tocEntries, tocPages);
-            // Draw TOC entries
+            // Initialize TOC entry layout
             float currentY = 30;
-            int tocPageIndex = 0;
-            PdfPage currentTocPage = tocPagesList[tocPageIndex];
-            foreach (var (title, pageIndex) in tocEntries)
+            int totalEntries = 30;
+            int pageOffset = 1;
+            // Generate TOC entries dynamically
+            for (int i = 0; i < totalEntries; i++)
             {
-                if (currentY > currentTocPage.Graphics.ClientSize.Height - 50)
+                // If current Y exceeds page height, add a new TOC page
+                if (currentY > tocPage.Graphics.ClientSize.Height - 50)
                 {
-                    tocPageIndex++;
-                    currentTocPage = tocPagesList[tocPageIndex];
+                    int currentPageIndex = document.Pages.IndexOf(tocPage);
+                    tocPage = document.Pages.Add();
+                    document.Pages.Insert(currentPageIndex + 1, tocPage);
                     currentY = 30;
                 }
 
-                currentY = AddBookmark(document.Pages[pageIndex], currentTocPage, title, currentY);
+                // Calculate page index for bookmark
+                int pageIndex = Math.Min(document.Pages.Count - 1, pageOffset + i);
+
+                // Simulate long TOC entry title
+                string longTitle = $"Chapter {i + 1} - This is a very long table of contents entry designed to test how the text wrapping functionality behaves when the content exceeds the width of the page layout in the PDF document.";
+
+                // Add bookmark and TOC entry
+                currentY = AddBookmark(document.Pages[pageIndex], tocPage, longTitle, currentY);
             }
 
-            //Create file stream.
-            using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-            {
-                //Save the PDF document to file stream.
-                document.Save(outputFileStream);
-            }
-            //Close the document
-            document.Close(true);
+            // Save the final PDF
+            document.Save(Path.GetFullPath(@"Output/Output.pdf"));
         }
     }
 
-    // Generates a list of Table of Contents (TOC) entries with titles and corresponding page indices.
-    static List<(string Title, int PageIndex)> GetTocEntries()
+    // Adds a bookmark and corresponding TOC entry to the document.
+    private static float AddBookmark(PdfPage targetPage, PdfPage tocPage, string title, float currentY)
     {
-        List<(string Title, int PageIndex)> entries = new List<(string, int)>();
+        // Create bookmark
+        PdfBookmark bookmark = document.Bookmarks.Add(title);
 
-        for (int i = 1; i <= 60; i++)
+        // Add TOC entry and get updated Y position
+        float newY = AddTableOfContent(targetPage, tocPage, title, new PointF(0, currentY));
+
+        // Create named destination for navigation
+        PdfNamedDestination namedDestination = new PdfNamedDestination(title)
         {
-            // Pages 1–20: F# document
-            if (i <= 20)
+            Destination = new PdfDestination(targetPage, new PointF(0, currentY))
             {
-                entries.Add(($"F# - This is first document {i}", i));
-            }
-            // Pages 21–40: HTTP document
-            else if (i > 20 && i <= 40)
-            {
-                entries.Add(($"HTTP - This is second document {i}", i));
-            }
-            // Pages 41–60: Windows Store Apps document
-            else
-            {
-                entries.Add(($"Windows Store Apps - This is third document {i}", i));
-            }
-        }
-
-        return entries;
-    }
-
-    //Adjusts the page indices of the Table of Contents (TOC) entries by adding an offset.
-    public static List<(string Title, int PageIndex)> AdjustTOCEntriesWithOffset(List<(string Title, int PageIndex)> tocEntries, int tocPages)
-    {
-        List<(string, int)> adjustedList = new List<(string, int)>();
-
-        // Loop through each TOC entry and add the TOC page count to its page index
-        foreach (var (title, pageIndex) in tocEntries)
-        {
-            adjustedList.Add((title, pageIndex + tocPages));
-        }
-
-        return adjustedList;
-    }
-
-    // Adding bookmarks and drawing TOC entries
-    private static float AddBookmark(PdfPage page, PdfPage toc, string content, float currentY)
-    {
-        // Add a new bookmark to the document with the given title
-        PdfBookmark bookmark = document.Bookmarks.Add(content);
-
-        // Draw the TOC entry text on the TOC page and get the updated Y-position
-        float newY = AddTableOfContent(page, toc, content, new PointF(0, currentY));
-
-        // Create a named destination pointing to the specified page and location
-        PdfNamedDestination namedDestination = new PdfNamedDestination(content)
-        {
-            Destination = new PdfDestination(page, new PointF(0, currentY))
-            {
-                Mode = PdfDestinationMode.FitToPage // Ensures the destination fits the entire page in view
+                Mode = PdfDestinationMode.FitToPage
             }
         };
 
-        // Add the named destination to the document's collection
         document.NamedDestinationCollection.Add(namedDestination);
-
-        // Link the bookmark to the named destination
         bookmark.NamedDestination = namedDestination;
 
-        // Return the updated Y-position for the next TOC entry
         return newY;
     }
 
-    //Draws a TOC entry on the specified page, adds the corresponding page number, and creates a clickable link that navigates to the target content page.
-    private static float AddTableOfContent(PdfPage page, PdfPage toc, string content, PointF point)
+    // Draws TOC entry text, page number, and adds clickable link annotation.
+    private static float AddTableOfContent(PdfPage targetPage, PdfPage tocPage, string title, PointF position)
     {
-        // Define the width available for the TOC entry text
-        float textWidth = toc.Graphics.ClientSize.Width - 60;
+        float textWidth = tocPage.Graphics.ClientSize.Width - 60;
+        RectangleF textBounds = new RectangleF(position.X, position.Y, textWidth, 100);
 
-        // Define the bounds where the TOC entry will be drawn
-        RectangleF textBounds = new RectangleF(point.X, point.Y, textWidth, 100);
-
-        // Create a text element for the TOC entry
-        PdfTextElement element = new PdfTextElement(content, font, PdfBrushes.Blue);
-
-        // Set layout format to fit within the page and allow pagination if needed
-        PdfLayoutFormat format = new PdfLayoutFormat
+        // Draw TOC entry text
+        PdfTextElement textElement = new PdfTextElement(title, font, PdfBrushes.Blue);
+        PdfLayoutFormat layoutFormat = new PdfLayoutFormat
         {
             Break = PdfLayoutBreakType.FitPage,
             Layout = PdfLayoutType.Paginate
         };
 
-        // Draw the TOC entry text and get the layout result
-        PdfLayoutResult result = element.Draw(toc, textBounds, format);
+        PdfLayoutResult layoutResult = textElement.Draw(tocPage, textBounds, layoutFormat);
 
-        // Draw the corresponding page number on the right side of the TOC page
-        string pageNum = (document.Pages.IndexOf(page) + 1).ToString();
-        PdfTextElement pageNumber = new PdfTextElement(pageNum, font, PdfBrushes.Black);
-        pageNumber.Draw(toc, new PointF(toc.Graphics.ClientSize.Width - 40, point.Y));
+        // Draw page number
+        string pageNumberText = (document.Pages.IndexOf(targetPage) + 1).ToString();
+        PdfTextElement pageNumberElement = new PdfTextElement(pageNumberText, font, PdfBrushes.Black);
+        pageNumberElement.Draw(tocPage, new PointF(tocPage.Graphics.ClientSize.Width - 40, position.Y));
 
-        // Create a clickable link annotation over the TOC entry text
-        RectangleF bounds = result.Bounds;
+        // Add clickable link annotation
+        RectangleF bounds = layoutResult.Bounds;
         bounds.Width = textWidth;
 
-        PdfDocumentLinkAnnotation documentLinkAnnotation = new PdfDocumentLinkAnnotation(bounds)
+        PdfDocumentLinkAnnotation linkAnnotation = new PdfDocumentLinkAnnotation(bounds)
         {
             AnnotationFlags = PdfAnnotationFlags.NoRotate,
-            Text = content,
-            Color = Color.Transparent, // Invisible clickable area
-            Destination = new PdfDestination(page),
-            Border = new PdfAnnotationBorder(0) // No visible border
+            Text = title,
+            Color = Color.Transparent,
+            Destination = new PdfDestination(targetPage),
+            Border = new PdfAnnotationBorder(0)
         };
 
-        // Set the destination location on the target page
-        documentLinkAnnotation.Destination.Location = point;
+        linkAnnotation.Destination.Location = position;
+        tocPage.Annotations.Add(linkAnnotation);
 
-        // Add the link annotation to the TOC page
-        toc.Annotations.Add(documentLinkAnnotation);
-
-        // Return the updated Y-position for the next TOC entry
-        return result.Bounds.Bottom + 10;
+        // Return updated Y position for next entry
+        return layoutResult.Bounds.Bottom + 10;
     }
 }
