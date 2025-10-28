@@ -14,7 +14,7 @@ using (PdfDocument document = new PdfDocument())
         PdfSection section = document.Sections.Add();
 
         //Initialize unit converter
-        PdfUnitConvertor converter = new PdfUnitConvertor();
+        PdfUnitConverter converter = new PdfUnitConverter();
 
         //Convert the image size from pixel to points
         SizeF size = converter.ConvertFromPixels(image.PhysicalDimension, PdfGraphicsUnit.Pixel);
