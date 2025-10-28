@@ -1,62 +1,51 @@
-<!-- template.html -->
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <style>
-    body {
-      font-size: 18px; /* Increase base font size */
-      min-height: 100vh;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff; /* Set background to white */
-      font-family: Arial, sans-serif;
-    }
-    .center-rectangle {
-      background: #fff;
-      border: 2.5px solid #313163;
-      border-radius: 12px;
-      padding: 48px 62px 46px 62px;
-      min-width: 420px;
-      max-width: 650px;
-      box-shadow: 0 4px 30px rgba(49,49,99,0.10);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .center-rectangle h1 {
-      font-size: 2.8em;  /* Big headline */
-      font-weight: 800;
-      margin-top: 0;
-      margin-bottom: 38px;
-      color: #313163;
-      letter-spacing: 1.4px;
-    }
-    .center-rectangle p {
-      font-size: 1.5em;  /* Larger paragraph text */
-      margin: 22px 0 0 0;
-      width: 100%;
-      text-align: left;
-      color: #222;
-      font-weight: 500;
-      letter-spacing: 0.7px;
-    }
-    .center-rectangle p:last-child {
-      margin-top: 56px;
-      text-align: center;
-      color: #757575;
-      font-size: 1.23em;
-      font-weight: 400;
-    }
-  </style>
+    <title>Fillable PDF Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            width: 400px;
+            margin: 100px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
-  <div class="center-rectangle">
-    <h1>Welcome, {{name}}</h1>
-    <p>Date: {{date}}</p>
-    <p>Signature: {{signature}}</p>
-    <p>Thank you for using our service.</p>
-  </div>
+    <div class="form-container">
+        <h2>Job Application Form</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" name="name" />
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" />
+
+            <label for="gender">Gender:</label>
+            <select name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label for="signature">Signature:</label>
+            <input type="text" name="signature" />
+        </form>
+    </div>
 </body>
 </html>

@@ -1,112 +1,64 @@
-﻿using Syncfusion.HtmlConverter;
+﻿using Syncfusion.Drawing;
+using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
-using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Interactive;
 using Syncfusion.Pdf.Parsing;
-using Syncfusion.Pdf.Redaction;
-using Syncfusion.Pdf.Security;
 
-class Program
+// Initialize the HTML to PDF converter
+HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
+// Enable form conversion
+BlinkConverterSettings settings = new BlinkConverterSettings
 {
-    static void Main(string[] args)
+    EnableForm = true
+};
+htmlConverter.ConverterSettings = settings;
+// Convert the HTML file to a PDF document
+using (PdfDocument document = htmlConverter.Convert(Path.GetFullPath(@"Data/Input.html")))
+{
+    // Set default appearance for form fields
+    document.Form.SetDefaultAppearance(false);
+
+    // Save the PDF document to a memory stream
+    using (MemoryStream stream = new MemoryStream())
     {
-        // Initialize HTML to PDF converter and load HTML
-        HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
-        string htmlFilePath = Path.GetFullPath(@"Data/Input.html");
-        PdfDocument document = htmlConverter.Convert(htmlFilePath);
-
-        // Save the PDF to a memory stream
-        using (MemoryStream memoryStream = new MemoryStream())
+        // Load the saved PDF document
+        document.Save(stream);
+        // Load the PDF document containing form fields
+        PdfLoadedDocument loadedDocument = new PdfLoadedDocument(stream);
+        // Fill the form fields
+        PdfLoadedForm form = loadedDocument.Form;
+        // Fill the "name" field
+        if (form.Fields["name"] is PdfLoadedTextBoxField nameField)
         {
-            document.Save(memoryStream);
-            document.Close(true);
-
-            // Load back the PDF for further processing
-            memoryStream.Position = 0;
-            PdfLoadedDocument loadedDocument = new PdfLoadedDocument(memoryStream);
-
-            // This will collect (pageIndex, word) for each form field
-            List<(int pageIdx, TextWord word)> fieldData = new List<(int pageIdx, TextWord word)>();
-
-            // Pass 1: Locate each placeholder and add a redaction on its bound
-            for (int i = 0; i < loadedDocument.Pages.Count; i++)
-            {
-                PdfLoadedPage page = loadedDocument.Pages[i] as PdfLoadedPage;
-                page.ExtractText(out TextLineCollection lines);
-                if (lines == null) continue;
-                foreach (TextLine line in lines.TextLine)
-                {
-                    foreach (TextWord word in line.WordCollection)
-                    {
-                        if (word == null) continue;
-                        if (word.Text == "{{name}}" ||
-                            word.Text == "{{date}}" ||
-                            word.Text == "{{signature}}")
-                        {
-                            page.AddRedaction(new PdfRedaction(word.Bounds));
-                            fieldData.Add((i, word));
-                        }
-                    }
-                }
-            }
-            loadedDocument.Redact();
-
-            // Pass 2: Add form fields exactly over the bounds
-            foreach (var (pageIdx, word) in fieldData)
-            {
-                PdfPageBase page = loadedDocument.Pages[pageIdx];
-
-                if (word.Text == "{{name}}")
-                {
-                    PdfTextBoxField textBox = new PdfTextBoxField(page, "FirstName")
-                    {
-                        Bounds = word.Bounds,
-                        ToolTip = "First Name",
-                        Text = "John"
-                    };
-                    loadedDocument.Form.Fields.Add(textBox);
-                }
-                else if (word.Text == "{{date}}")
-                {
-                    PdfTextBoxField dateField = new PdfTextBoxField(page, "DateField")
-                    {
-                        Bounds = word.Bounds
-                    };
-                    dateField.Actions.KeyPressed = new PdfJavaScriptAction("AFDate_KeystrokeEx(\"m/d/yy\")");
-                    dateField.Actions.Format = new PdfJavaScriptAction("AFDate_FormatEx(\"m/d/yy\")");
-                    loadedDocument.Form.Fields.Add(dateField);
-                }
-                else if (word.Text == "{{signature}}")
-                {
-                    PdfSignatureField sigField = new PdfSignatureField(page, "SignatureField")
-                    {
-                        Bounds = word.Bounds,
-                        Signature = new PdfSignature()
-                    };
-                    // Optionally draw a signature image in the field area
-                    FileStream imageStream = new FileStream(Path.GetFullPath("Data/signature.png"), FileMode.Open, FileAccess.Read);
-                    PdfBitmap image = new PdfBitmap(imageStream);
-                    (page as PdfLoadedPage).Graphics.DrawImage(image, word.Bounds);
-                    imageStream.Dispose();
-
-                    // Optional: add digital certificate
-                    using (FileStream certStream = new FileStream(Path.GetFullPath(@"Data/PDF.pfx"), FileMode.Open, FileAccess.Read))
-                    {
-                        sigField.Signature.Certificate = new PdfCertificate(certStream, "syncfusion");
-                        sigField.Signature.Reason = "I am author of this document";
-                    }
-                    loadedDocument.Form.Fields.Add(sigField);
-                }
-            }
-            //Create file stream.
-            using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-            {
-                //Save the PDF document to file stream.
-                loadedDocument.Save(outputFileStream);
-            }
-
-            //Close the document.
-            loadedDocument.Close(true);
+            nameField.Text = "XYZ";
         }
+        // Fill the "email" field
+        if (form.Fields["email"] is PdfLoadedTextBoxField emailField)
+        {
+            emailField.Text = "xyz@example.com";
+        }
+        // Select "Male" in the "gender" dropdown
+        if (form.Fields["gender"] is PdfLoadedComboBoxField genderField)
+        {
+            genderField.SelectedValue = "Male";
+        }
+        // Fill the "signature" field
+        if (form.Fields["signature"] is PdfLoadedTextBoxField signatureTextBox)
+        {
+            // Get the original field's position and page
+            RectangleF bounds = signatureTextBox.Bounds;
+            PdfPageBase page = signatureTextBox.Page;
+            // Remove the original textbox field
+            form.Fields.Remove(signatureTextBox);
+            // Create a new signature field at the same location
+            PdfSignatureField signatureField = new PdfSignatureField(page, "ClientSignature")
+            {
+                Bounds = bounds
+            };
+            // Add the new signature field to the form
+            form.Fields.Add(signatureField);
+        }
+        // Save the PDF document
+        loadedDocument.Save(Path.GetFullPath(@"Output/Output2.pdf"));
     }
 }
