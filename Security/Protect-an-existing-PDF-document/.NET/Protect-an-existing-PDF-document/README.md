@@ -1,6 +1,6 @@
 # Protect PDF Files
 
-The Syncfusion&reg; [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) provides tools for creating, reading, and editing PDF documents. It also allows you to protect your PDF files by applying encryption and setting password-based permissions.
+The Syncfusion<sup>&reg;</sup> [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) provides tools for creating, reading, and editing PDF documents. It also allows you to protect your PDF files by applying encryption and setting password-based permissions.
 
 ## Steps to Protect PDF Files
 
@@ -10,41 +10,29 @@ Step 2: **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https:/
 
 Step 3: **Include necessary namespaces**: Add these namespaces in your **Program.cs** file:
 
-   ```csharp
-   using Syncfusion.Pdf.Security;
-   using Syncfusion.Pdf.Parsing;
-   ```
+```csharp
+using Syncfusion.Pdf.Parsing;
+using Syncfusion.Pdf.Security;
+```
 
 Step 4: **Implement encryption**: Use the following code in **Program.cs** to secure your PDF file:
 
-   ```csharp
-   // Load the PDF document from a file stream
-   using (FileStream inputFileStream = new FileStream("Input.pdf", FileMode.Open, FileAccess.Read))
-   {
-       // Load the PDF document
-       PdfLoadedDocument document = new PdfLoadedDocument(inputFileStream);
-
-       // Access the document's security settings
-       PdfSecurity security = document.Security;
-
-       // Set key size and encryption algorithm
-       security.KeySize = PdfEncryptionKeySize.Key256Bit;
-       security.Algorithm = PdfEncryptionAlgorithm.AES;
-
-       // Specify owner and user passwords
-       security.OwnerPassword = "owner123";
-       security.UserPassword = "user123";
-
-       // Save the protected PDF document to a file stream
-       using (FileStream outputFileStream = new FileStream("Output.pdf", FileMode.Create))
-       {
-           document.Save(outputFileStream);
-       }
-
-       // Close the document
-       document.Close(true);
-   }
-   ```
+```csharp
+//Load the PDF document. 
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
+{
+    // Get the security settings of the document
+    PdfSecurity security = loadedDocument.Security;
+    // Set encryption to AES with a 256-bit key
+    security.KeySize = PdfEncryptionKeySize.Key256Bit;
+    security.Algorithm = PdfEncryptionAlgorithm.AES;
+    // Set owner and user passwords for the document
+    security.OwnerPassword = "owner123";
+    security.UserPassword = "user123";
+    // Save the secured PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}
+```
 
 You can download a complete working example from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Security/Protect-an-existing-PDF-document/).
 
