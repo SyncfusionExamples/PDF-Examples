@@ -9,7 +9,7 @@ using (PdfDocument document = new PdfDocument())
     PdfPage page = document.Pages.Add();
 
     // Initialize unit converter
-    PdfUnitConvertor converter = new PdfUnitConvertor();
+    PdfUnitConverter converter = new PdfUnitConverter();
 
     // Convert margins from inches to points
     float margin = converter.ConvertUnits(1f, PdfGraphicsUnit.Inch, PdfGraphicsUnit.Point);
