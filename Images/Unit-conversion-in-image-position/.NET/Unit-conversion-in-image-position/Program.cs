@@ -17,7 +17,7 @@ using (PdfDocument document = new PdfDocument())
         PdfUnitConverter converter = new PdfUnitConverter();
 
         //Convert the image size from pixel to points
-        SizeF size = converter.ConvertFromPixels(image.PhysicalDimension, PdfGraphicsUnit.Pixel);
+        SizeF size = converter.ConvertFromPixels(image.PhysicalDimension, PdfGraphicsUnit.Point);
 
         //Set section size based on the image size
         section.PageSettings.Size = size;
