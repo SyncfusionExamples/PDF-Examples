@@ -20,12 +20,10 @@ using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(@"Data/Input.pdf
     signature.LocationInfo = "Honolulu, Hawaii";
     signature.Reason = "I am the author of this document.";
     // Load the image for the signature field
-    using (FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/signature.png"), FileMode.Open, FileAccess.Read))
-    {
-        PdfBitmap signatureImage = new PdfBitmap(imageStream);
-        // Draw the image on the signature field
-        signature.Appearance.Normal.Graphics.DrawImage(signatureImage, new RectangleF(0, 0, signature.Bounds.Width, signature.Bounds.Height));
-        // Save the PDF document
-        loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
-    }
+    using FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/signature.png"), FileMode.Open, FileAccess.Read);
+    PdfBitmap signatureImage = new PdfBitmap(imageStream);
+    // Draw the image on the signature field
+    signature.Appearance.Normal.Graphics.DrawImage(signatureImage, new RectangleF(0, 0, signature.Bounds.Width, signature.Bounds.Height));
+    // Save the PDF document
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }
