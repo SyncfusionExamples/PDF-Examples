@@ -8,34 +8,28 @@ using (PdfDocument pdfDocument = new PdfDocument())
 {
     // Add a new page to the PDF document
     PdfPage pdfPage = pdfDocument.Pages.Add();
-
-    // Set the standard font
+    // Create a standard font
     PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 16);
-
-    // Draw the string "Job Application"
+    // Draw the title text on the page
     pdfPage.Graphics.DrawString("Job Application", font, PdfBrushes.Black, new PointF(250, 0));
-
-    // Change the font size for the form fields
+    // Change the font size for form field labels
     font = new PdfStandardFont(PdfFontFamily.Helvetica, 12);
-
-    // Draw the string "Name"
+    // Draw the label "Name" on the page
     pdfPage.Graphics.DrawString("Name", font, PdfBrushes.Black, new PointF(10, 20));
-
-    // Create a text box field for name
+    // Create a text box field for entering the name
     PdfTextBoxField nameField = new PdfTextBoxField(pdfPage, "Name");
     nameField.Bounds = new RectangleF(10, 40, 200, 20);
     nameField.ToolTip = "Name";
-    pdfDocument.Form.Fields.Add(nameField);
-
-    // Draw the string "Email address"
+    // Add the field to the form
+    pdfDocument.Form.Fields.Add(nameField); 
+    // Draw the label "Email address" on the page
     pdfPage.Graphics.DrawString("Email address", font, PdfBrushes.Black, new PointF(10, 80));
-
-    // Create a text box field for email address
+    // Create a text box field for entering the email address
     PdfTextBoxField emailField = new PdfTextBoxField(pdfPage, "Email address");
     emailField.Bounds = new RectangleF(10, 100, 200, 20);
     emailField.ToolTip = "Email address";
-    pdfDocument.Form.Fields.Add(emailField);
-
-    //Save the PDF document
+    // Add the field to the form
+    pdfDocument.Form.Fields.Add(emailField); 
+    // Save the PDF document
     pdfDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }

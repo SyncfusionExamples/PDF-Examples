@@ -10,45 +10,37 @@ Step 2: **Install the NuGet package**: Reference the [Syncfusion.Pdf.Net.Core](h
 
 Step 3: **Include necessary namespaces**: Add these namespaces to your **Program.cs** file:
 
-   ```csharp
-   using Syncfusion.Pdf.Grid;
-   using Syncfusion.Pdf;
-   using Syncfusion.Drawing;
-   ```
+```csharp
+using Syncfusion.Pdf.Grid;
+using Syncfusion.Pdf;
+using Syncfusion.Drawing;
+```
 
 Step 4: **Add a table to the PDF**: Use the following code in **Program.cs** to insert a table into the PDF:
 
-   ```csharp
-   // Create a new PDF document
-   using (PdfDocument document = new PdfDocument())
-   {
-       // Add a page
-       PdfPage page = document.Pages.Add();
-
-       // Create a PdfGrid
-       PdfGrid pdfGrid = new PdfGrid();
-
-       // Add values to the list
-       List<object> data = new List<object>
+```csharp
+// Create a new PDF document
+using (PdfDocument document = new PdfDocument())
+{
+    //Add a page to the document
+    PdfPage page = document.Pages.Add();
+    // Create a PdfGrid
+    PdfGrid pdfGrid = new PdfGrid();
+    // Add values to the list
+    List<object> data = new List<object>
        {
            new { ID = "E01", Name = "Clay" },
            new { ID = "E02", Name = "Thomas" },
            new { ID = "E03", Name = "John" }
        };
-
-       // Assign the data source
-       pdfGrid.DataSource = data;
-
-       // Draw the grid on the PDF page
-       pdfGrid.Draw(page, new PointF(10, 10));
-
-       using (FileStream outputStream = new FileStream("output.pdf", FileMode.Create, FileAccess.Write))
-       {
-           // Save the document
-           document.Save(outputStream);
-       }
-   }
-   ```
+    // Assign the data source to the grid
+    pdfGrid.DataSource = data;
+    // Draw the grid on the PDF page
+    pdfGrid.Draw(page, new PointF(10, 10));
+    // Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}
+```
 
 A complete working example is available on [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Table/PdfGrid/Create-table-from-data-source-in-a-PDF/.NET).
 

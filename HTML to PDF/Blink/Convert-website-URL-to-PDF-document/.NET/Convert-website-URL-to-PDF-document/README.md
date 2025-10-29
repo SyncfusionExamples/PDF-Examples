@@ -1,6 +1,6 @@
 # HTML to PDF Conversion
 
-The Syncfusion&reg; [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) allows you to create, read, and edit PDF documents. It also includes functionality for accurately converting HTML content into PDF files.
+The Syncfusion<sup>&reg;</sup> [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) allows you to create, read, and edit PDF documents. It also includes functionality for accurately converting HTML content into PDF files.
 
 ## Steps to convert HTML to PDF
 
@@ -12,31 +12,23 @@ Step 2: **Install the NuGet package**: Add the [Syncfusion.HtmlToPdfConverter.Ne
 
 Step 3: **Include necessary namespaces**: Add the following namespaces in your `Program.cs` file:
 
-   ```csharp
-   using Syncfusion.HtmlConverter;
-   using Syncfusion.Pdf;
-   ```
+```csharp
+using Syncfusion.HtmlConverter;
+using Syncfusion.Pdf;
+```
 
 Step 4: **Convert HTML to PDF**: Implement the following code in `Program.cs` to convert a website URL to a PDF file:
 
-   ```csharp
-    //Initialize HTML to PDF converter.
-    HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
-    //Create blink converter settings
-    BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
-    //Assign Blink converter settings to HTML converter.
-    htmlConverter.ConverterSettings = blinkConverterSettings;
-    //Convert URL to PDF document.
-    PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com");
-    //Create file stream. 
-    using (FileStream fileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-    {
-        //Save the PDF document 
-        document.Save(fileStream);
-    }
-    //Close the document.
-    document.Close(true);
-   ```
+```csharp
+//Initialize HTML to PDF converter
+HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
+//Convert URL to PDF
+using (PdfDocument document = htmlConverter.Convert("https://www.google.com"))
+{
+    //Save the PDF document
+    document.Save("Output.pdf");
+}
+```
 
 You can download a complete working sample from the [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/HTML%20to%20PDF/Blink/Convert-website-URL-to-PDF-document).
 

@@ -13,32 +13,26 @@ Step 2: **Install the NuGet package**: Reference the [Syncfusion.Pdf.NET](https:
 Step 3: **Include required namespaces**: Add the following namespace in your `Program.cs` file:
 
 ```csharp
-    using Syncfusion.Pdf;
-    using Syncfusion.Pdf.Graphics;
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
+using Syncfusion.Drawing;
 ```
 
 Step 4: **Create PDF document**: Use the following code snippet in `Program.cs` to merge PDF files:
 
 ```csharp
-//Create a new PDF document.
-PdfDocument document = new PdfDocument();
-//Add a page to the document.
-PdfPage page = document.Pages.Add();
-//Create PDF graphics for the page.
-PdfGraphics graphics = page.Graphics;
-//Set the standard font.
-PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
-//Draw the text.
-graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, 0));
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+//Create a new PDF document
+using (PdfDocument document = new PdfDocument())
 {
-    //Save the PDF document to file stream.
-    document.Save(outputFileStream);
+    //Add a page to the document
+    PdfPage page = document.Pages.Add();
+    // Create a standard font
+    PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
+    //Draw the text using page graphics
+    page.Graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
+    //Save the PDF document
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }
-//Close the document.
-document.Close(true);
 ```
 
 You can download a complete working sample from the [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Getting%20Started/.NET/Create_PDF_NET).
