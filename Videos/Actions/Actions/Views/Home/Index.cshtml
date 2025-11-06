@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h2 style="margin-bottom: 20px">Working with Actions in PDF</h2>
+    <div>
+        <button style="width: 200px; margin-bottom: 20px; height: 40px;display:block;font-size:18px;"
+                onclick="location.href='@Url.Action("AddUriAction", "Home")'">
+            URI Action
+        </button>
+        <button style="width: 200px; margin-bottom: 20px; height: 40px;display:block;font-size: 18px;"
+                onclick="location.href='@Url.Action("AddGoToAction", "Home")'">
+            GoTo Action
+        </button>
+        <button style="width: 200px; margin-bottom: 20px; height: 40px;display:block;font-size: 18px;"
+                onclick="location.href='@Url.Action("AddNamedAction", "Home")'">
+            Named Action
+        </button>
+        <button style="width: 200px; margin-bottom: 20px; height: 40px;display:block;font-size: 18px;"
+                onclick="location.href='@Url.Action("AddLaunchAction", "Home")'">
+            Launch Action
+        </button>
+    </div>
+</div>
