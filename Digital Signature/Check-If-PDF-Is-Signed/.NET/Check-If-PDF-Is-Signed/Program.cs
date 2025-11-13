@@ -1,15 +1,8 @@
-﻿using System;
-using System.IO;
-using System.Reflection.Metadata;
-using Syncfusion.Pdf.Parsing;
+﻿using Syncfusion.Pdf.Parsing;
 
-
-// Open the signed PDF file for reading
-using (FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read))
+//Load the PDF document.
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    // Load the PDF document
-    PdfLoadedDocument loadedDocument = new PdfLoadedDocument(inputFileStream);
-
     // Check if the document contains a form with fields
     if (loadedDocument.Form == null || loadedDocument.Form.Fields.Count == 0)
     {
@@ -32,6 +25,6 @@ using (FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Data/Input
             }
         }
     }
-    //Close the document
-    loadedDocument.Close(true);
+    //Save the PDF document 
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }

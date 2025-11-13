@@ -1,5 +1,4 @@
-﻿//Load existing PDF document.
-using Syncfusion.Pdf.Parsing;
+﻿using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Security;
 using Syncfusion.Pdf;
 using System.Security.Cryptography.X509Certificates;
@@ -13,23 +12,16 @@ X509Certificate2Collection fcollection = (X509Certificate2Collection)collection.
 X509Certificate2 digitalID = fcollection[0];
 
 //Load existing PDF document.
-FileStream documentStream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.Read);
-PdfLoadedDocument loadedDocument = new PdfLoadedDocument(documentStream);
-//Load X509Certificate2.
-PdfCertificate certificate = new PdfCertificate(digitalID);
-
-//Create a Revision 2 signature with loaded digital ID.
-PdfSignature signature = new PdfSignature(loadedDocument, loadedDocument.Pages[0], certificate, "DigitalSignature");
-//Changing the digital signature standard and hashing algorithm.
-signature.Settings.CryptographicStandard = CryptographicStandard.CADES;
-signature.Settings.DigestAlgorithm = DigestAlgorithm.SHA512;
-
-//Create file stream.
-using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    //Save the PDF document to file stream.
-    loadedDocument.Save(outputFileStream);
-}
+    //Load X509Certificate2.
+    PdfCertificate certificate = new PdfCertificate(digitalID);
 
-//Close the document.
-loadedDocument.Close(true);
+    //Create a Revision 2 signature with loaded digital ID.
+    PdfSignature signature = new PdfSignature(loadedDocument, loadedDocument.Pages[0], certificate, "DigitalSignature");
+    //Changing the digital signature standard and hashing algorithm.
+    signature.Settings.CryptographicStandard = CryptographicStandard.CADES;
+    signature.Settings.DigestAlgorithm = DigestAlgorithm.SHA512;
+    //Save the PDF document.
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
+}
