@@ -14,34 +14,24 @@ namespace Externally_sign_the_PDF_document
     {
         static void Main(string[] args)
         {
-            //Get the stream from the document
-            FileStream documentStream = new FileStream(Path.GetFullPath(@"Data/Barcode.pdf"), FileMode.Open, FileAccess.Read);
-            //Load the existing PDF document
-            PdfLoadedDocument loadedDocument = new PdfLoadedDocument(documentStream);
-
-            //Creates a digital signature.
-            PdfSignature signature = new PdfSignature(loadedDocument, loadedDocument.Pages[0], null, "Signature");
-            //Sets the signature information.
-            signature.Bounds = new RectangleF(new PointF(0, 0), new SizeF(100, 30));
-            signature.Settings.CryptographicStandard = CryptographicStandard.CADES;
-            signature.Settings.DigestAlgorithm = DigestAlgorithm.SHA1;
-
-            //Create an external signer.
-            IPdfExternalSigner externalSignature = new ExternalSigner("SHA1");
-
-            //Add public certificates.
-            List<X509Certificate2> certificates = new List<X509Certificate2>();
-            certificates.Add(new X509Certificate2(new X509Certificate2(Path.GetFullPath(@"Data/PDF.pfx"), "password123")));
-            signature.AddExternalSigner(externalSignature, certificates, null);
-
-            //Create file stream.
-            using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
+            //Load the PDF document.
+            using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Barcode.pdf")))
             {
-                //Save the PDF document to file stream.
-                loadedDocument.Save(outputFileStream);
+                //Creates a digital signature.
+                PdfSignature signature = new PdfSignature(loadedDocument, loadedDocument.Pages[0], null, "Signature");
+                //Sets the signature information.
+                signature.Bounds = new RectangleF(new PointF(0, 0), new SizeF(100, 30));
+                signature.Settings.CryptographicStandard = CryptographicStandard.CADES;
+                signature.Settings.DigestAlgorithm = DigestAlgorithm.SHA1;
+                //Create an external signer.
+                IPdfExternalSigner externalSignature = new ExternalSigner("SHA1");
+                //Add public certificates.
+                List<X509Certificate2> certificates = new List<X509Certificate2>();
+                certificates.Add(new X509Certificate2(new X509Certificate2(Path.GetFullPath(@"Data/PDF.pfx"), "password123")));
+                signature.AddExternalSigner(externalSignature, certificates, null);
+                //Save the PDF document 
+                loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
             }
-            //Close the document.
-            loadedDocument.Close(true);
         }
         //Create the external signer class and sign the document hash.
         class ExternalSigner : IPdfExternalSigner

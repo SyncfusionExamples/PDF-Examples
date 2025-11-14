@@ -9,41 +9,23 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        //Open the Word document file stream.
-        using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Data/TestPDF.pdf"), FileMode.Open, FileAccess.Read))
+        //Load the PDF document.
+        using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
         {
-
-            PdfLoadedDocument pdfLoadedDocument = new PdfLoadedDocument(inputStream);
-
-            PdfLoadedPage ldPage = pdfLoadedDocument.Pages[3] as PdfLoadedPage;
-
+            PdfLoadedPage ldPage = loadedDocument.Pages[3] as PdfLoadedPage;
             //Create a certificate instance from a PFX file with a private key.
             FileStream certificateStream = new FileStream(Path.GetFullPath(@"Data/PDF.pfx"), FileMode.Open, FileAccess.Read);
             PdfCertificate pdfCert = new PdfCertificate(certificateStream, "password123");
-
-            PdfSignature signature = new PdfSignature(pdfLoadedDocument, ldPage, pdfCert, "Signature1");
-
+            PdfSignature signature = new PdfSignature(loadedDocument, ldPage, pdfCert, "Signature1");
             RectangleF bounds = new RectangleF(new PointF(20, 20), new SizeF(240, 70));
-
-
             signature.Bounds = GetRelativeBounds(ldPage, bounds);
-
             PdfGraphics graphics = signature.Appearance.Normal.Graphics;
-
             FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/TestImage.png"), FileMode.Open, FileAccess.Read);
             //Set an image for signature field.
             PdfBitmap signatureImage = new PdfBitmap(imageStream);
-
             RotateSignatureAppearance(signatureImage, signature.Appearance.Normal.Graphics, ldPage.Rotation, signature.Bounds);
-
-            using (FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/Output.pdf"), FileMode.Create, FileAccess.ReadWrite))
-            {
-                //Save the PDF document to file stream.
-                pdfLoadedDocument.Save(outputFileStream);
-            }
-            //Closes the document 
-            pdfLoadedDocument.Close(true);
-
+            //Save the PDF document 
+            loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
         }
     }
     private static RectangleF GetRelativeBounds(PdfLoadedPage page, RectangleF bounds)
@@ -76,7 +58,6 @@ internal class Program
     private static void RotateSignatureAppearance(PdfImage image, PdfGraphics graphics, PdfPageRotateAngle angle, RectangleF bounds)
     {
         graphics.Save();
-
         if (angle == PdfPageRotateAngle.RotateAngle90)
         {
             graphics.TranslateTransform(0, bounds.Height);
@@ -103,4 +84,3 @@ internal class Program
     }
 
 }
-

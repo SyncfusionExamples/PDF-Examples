@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Syncfusion.Drawing;
+﻿using Syncfusion.Drawing;
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Security;
 using System.Security.Cryptography;
@@ -20,57 +18,41 @@ class Program
 
     static void CreateEmptySignedPDF()
     {
-        // Get the stream from the document.
-        FileStream documentStream = new FileStream(Path.GetFullPath(@"Data/Barcode.pdf"), FileMode.Open, FileAccess.Read);
-
         //Load an existing PDF document.
-        PdfLoadedDocument loadedDocument = new PdfLoadedDocument(documentStream);
-
+        PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Barcode.pdf"));
         //Creates a digital signature.
         PdfSignature signature = new PdfSignature(loadedDocument, loadedDocument.Pages[0], null, "Signature");
-
         //Sets the signature information.
         signature.Bounds = new RectangleF(new PointF(0, 0), new SizeF(100, 30));
         signature.Settings.CryptographicStandard = CryptographicStandard.CADES;
         signature.Settings.DigestAlgorithm = DigestAlgorithm.SHA1;
-
         //Create an external signer.
         IPdfExternalSigner externalSignature = new SignEmpty("SHA1");
-
         //Add public certificates.
         System.Collections.Generic.List<X509Certificate2> certificates = new System.Collections.Generic.List<X509Certificate2>();
         certificates.Add(new X509Certificate2(Convert.FromBase64String(PublicCert)));
         signature.AddExternalSigner(externalSignature, certificates, null);
-
         //Save the document.
-        FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Output/EmptySignature.pdf"), FileMode.Create, FileAccess.ReadWrite);
-        loadedDocument.Save(inputFileStream);
-
+        loadedDocument.Save(Path.GetFullPath(@"Output/EmptySignature.pdf"));
         //Close the PDF document.
         loadedDocument.Close(true);
-        inputFileStream.Close();
     }
 
     static void DeferredSign()
     {
         //Create an external signer with a signed hash message.
         IPdfExternalSigner externalSigner = new ExternalSigner("SHA1", Program.SignedHash);
-
         //Add public certificates.
         System.Collections.Generic.List<X509Certificate2> publicCertificates = new System.Collections.Generic.List<X509Certificate2>();
         publicCertificates.Add(new X509Certificate2(Convert.FromBase64String(PublicCert)));
-
         //Create an output file stream.
         FileStream outputFileStream = new FileStream(Path.GetFullPath(@"Output/DeferredSign.pdf"), FileMode.Create, FileAccess.ReadWrite);
-
         // Get the stream from the document
         FileStream inputFileStream = new FileStream(Path.GetFullPath(@"Output/EmptySignature.pdf"), FileMode.Open, FileAccess.Read);
-
         string pdfPassword = string.Empty;
-
         //Replace an empty signature.
         PdfSignature.ReplaceEmptySignature(inputFileStream, pdfPassword, outputFileStream, "Signature", externalSigner, publicCertificates);
-
+        inputFileStream.Close();
         outputFileStream.Close();
     }
 
@@ -115,7 +97,7 @@ class Program
                 Program.SignedHash = rsa.SignData(documentHash, System.Security.Cryptography.HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
             }
             else if (digitalID.PrivateKey is System.Security.Cryptography.RSAOpenSsl)
-            {       
+            {
                 System.Security.Cryptography.RSAOpenSsl rsa = (System.Security.Cryptography.RSAOpenSsl)digitalID.PrivateKey;
                 Program.SignedHash = rsa.SignData(documentHash, System.Security.Cryptography.HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
             }
@@ -132,13 +114,11 @@ class Program
         {
             get { return _hashAlgorithm; }
         }
-
         public ExternalSigner(string hashAlgorithm, byte[] hash)
         {
             _hashAlgorithm = hashAlgorithm;
             _signedHash = hash;
         }
-
         public byte[] Sign(byte[] message, out byte[] timeStampResponse)
         {
             //Set the signed hash message to replace an empty signature.
