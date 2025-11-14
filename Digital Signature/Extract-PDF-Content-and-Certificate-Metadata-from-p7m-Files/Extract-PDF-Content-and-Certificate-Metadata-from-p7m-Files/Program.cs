@@ -9,7 +9,7 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             // Load the signed CMS (assumes signedCmsBytes contains the Signed CMS data)
-            byte[] signedCmsBytes = File.ReadAllBytes("../../../TestCert.pdf.p7s");
+            byte[] signedCmsBytes = File.ReadAllBytes(Path.GetFullPath(@"Data/TestCert.pdf.p7s"));
 
             SignedCms signedCms = new SignedCms();
 
@@ -21,7 +21,6 @@ namespace ConsoleApp
 
             // Extract the original content
             byte[] originalMessage = signedCms.ContentInfo.Content;
-            File.WriteAllBytes("D://Decoded.pdf", originalMessage);
 
             // Extract signer information
             foreach (SignerInfo signerInfo in signedCms.SignerInfos)
