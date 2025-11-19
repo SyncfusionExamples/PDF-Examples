@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>Adding-radio-buttons-to-multiple-PDF-pages</RootNamespace>
+    <RootNamespace>Adding-Radio-Buttons-to-Multiple-PDF-Pages</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
