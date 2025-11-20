@@ -2,11 +2,7 @@
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        //Create a new PDF document.
+//Create a new PDF document.
 using (PdfDocument document = new PdfDocument())
 {
     // Subscribe to the PageAdded event to add header and footer for every page.
@@ -72,29 +68,28 @@ This concludes the instructional workflow for auto-paginated, footer-enhanced PD
     document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }
 
-    // Add header and footer to every page.
-    static void PageAddedHandler(object sender, PageAddedEventArgs e)
-    {
-        PdfPage page = e.Page;
-        int currentPage = page.Section.Pages.IndexOf(page) + 1;
+// Add header and footer to every page.
+static void PageAddedHandler(object sender, PageAddedEventArgs e)
+{
+    PdfPage page = e.Page;
+    int currentPage = page.Section.Pages.IndexOf(page) + 1;
 
-        // Draw header at the top (within reserved header bounds).
-        string headerText = $"This is the header - Page {currentPage}";
-        page.Graphics.DrawString(
-            headerText,
-            new PdfStandardFont(PdfFontFamily.Helvetica, 14, PdfFontStyle.Bold),
-            new PdfSolidBrush(Color.DimGray),
-            new PointF(10, 10) // Within header area
-        );
+    // Draw header at the top (within reserved header bounds).
+    string headerText = $"This is the header - Page {currentPage}";
+    page.Graphics.DrawString(
+        headerText,
+        new PdfStandardFont(PdfFontFamily.Helvetica, 14, PdfFontStyle.Bold),
+        new PdfSolidBrush(Color.DimGray),
+        new PointF(10, 10) // Within header area
+    );
 
-        // Draw footer at the bottom (within reserved footer area).
-        string timestamp = DateTime.Now.ToString("'Date:' yyyy-MM-dd 'Time:' HH:mm:ss");
-        string footerText = $"Page {currentPage}    {timestamp}";
-        page.Graphics.DrawString(
-            footerText,
-            new PdfStandardFont(PdfFontFamily.Helvetica, 12),
-            new PdfSolidBrush(Color.Black),
-            new PointF(10, page.GetClientSize().Height - 30)
-        );
-    }
+    // Draw footer at the bottom (within reserved footer area).
+    string timestamp = DateTime.Now.ToString("'Date:' yyyy-MM-dd 'Time:' HH:mm:ss");
+    string footerText = $"Page {currentPage}    {timestamp}";
+    page.Graphics.DrawString(
+        footerText,
+        new PdfStandardFont(PdfFontFamily.Helvetica, 12),
+        new PdfSolidBrush(Color.Black),
+        new PointF(10, page.GetClientSize().Height - 30)
+    );
 }
