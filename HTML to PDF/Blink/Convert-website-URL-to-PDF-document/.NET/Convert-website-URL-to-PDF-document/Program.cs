@@ -7,5 +7,5 @@ HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 using (PdfDocument document = htmlConverter.Convert("https://www.google.com"))
 {
     //Save the PDF document
-    document.Save("Output.pdf");
+    document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }
