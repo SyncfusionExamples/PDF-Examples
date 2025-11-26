@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h2 style="margin-bottom: 20px">Working with Layers in PDF</h2>
+    <div>
+        <button style="width: 250px; margin-bottom: 20px; height: 40px;display:block;font-size:18px;"
+                onclick="location.href='@Url.Action("CreateLayer", "Home")'">
+            Create Layer
+        </button>
+        <button style="width: 250px; margin-bottom: 20px; height: 40px;display:block;font-size:18px;"
+                onclick="location.href='@Url.Action("AddLayerToDocument", "Home")'">
+            Add Layer
+        </button>
+        <button style="width: 250px; margin-bottom: 20px; height: 40px;display:block;font-size:18px;"
+                onclick="location.href='@Url.Action("SetLayerVisibility", "Home")'">
+            Set Layer Visibility
+        </button>
+        <button style="width: 250px; margin-bottom: 20px; height: 40px;display:block;font-size:18px;"
+                onclick="location.href='@Url.Action("RemoveLayer", "Home")'">
+            Remove Layer
+        </button>
+    </div>
+</div>
