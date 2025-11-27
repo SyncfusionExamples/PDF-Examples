@@ -10,7 +10,8 @@ using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(@"Data/Input.pdf
     // Gets the first page of the document
     PdfPageBase page = loadedDocument.Pages[0];
     // Load the certificate from a PFX file with a private key
-    PdfCertificate pdfCert = new PdfCertificate(Path.GetFullPath(@"Data/PDF.pfx"), "syncfusion");
+    using FileStream certificate = new FileStream(Path.GetFullPath(@"Data/PDF.pfx"), FileMode.Open, FileAccess.Read);
+    PdfCertificate pdfCert = new PdfCertificate(certificate, "syncfusion");
     // Create a signature
     PdfSignature signature = new PdfSignature(loadedDocument, page, pdfCert, "Signature");
     // Set signature information
