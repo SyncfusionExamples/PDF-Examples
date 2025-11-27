@@ -4,5 +4,5 @@
 using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
     //Split the pages into separate documents
-    loadedDocument.Split("Output" + "{0}.pdf");
+    loadedDocument.Split(Path.GetFullPath(@"Output/Output"+ "{0}.pdf"));
 }
