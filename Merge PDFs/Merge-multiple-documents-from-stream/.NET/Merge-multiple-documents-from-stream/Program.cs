@@ -1,12 +1,14 @@
 ﻿using Syncfusion.Pdf;
 
-//Creates a new PDF document
+//Creates a PDF document.
 using (PdfDocument document = new PdfDocument())
 {
-    //Creates a string array of source files to be merged
-    string[] source = { Path.GetFullPath(@"Data/file1.pdf"), Path.GetFullPath(@"Data/file2.pdf") };
-    //Merge PDF documents
-    PdfDocument.Merge(document, source);
-    //Saves the PDF document
+    using FileStream stream1 = new FileStream(Path.GetFullPath(@"Data/file1.pdf"), FileMode.Open, FileAccess.Read);
+    using FileStream stream2 = new FileStream(Path.GetFullPath(@"Data/file2.pdf"), FileMode.Open, FileAccess.Read);
+    //Creates a PDF stream for merging.
+    Stream[] streams = { stream1, stream2 };
+    //Merges PDFDocument.
+    PdfDocumentBase.Merge(document, streams);
+    //Save the merged document
     document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }
