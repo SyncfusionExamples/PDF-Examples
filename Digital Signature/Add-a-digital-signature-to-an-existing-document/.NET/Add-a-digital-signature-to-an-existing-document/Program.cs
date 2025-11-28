@@ -5,7 +5,7 @@ using Syncfusion.Pdf.Parsing;
 using Syncfusion.Pdf.Security;
 
 //Load the PDF document
-using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(@"Data/Input.pdf"))
+using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
     // Gets the first page of the document
     PdfPageBase page = loadedDocument.Pages[0];
