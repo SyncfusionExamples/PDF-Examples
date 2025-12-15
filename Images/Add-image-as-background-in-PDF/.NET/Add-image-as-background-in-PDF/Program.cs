@@ -5,6 +5,8 @@ using Syncfusion.Pdf.Graphics;
 // Create the new PDF document
 using (PdfDocument document = new PdfDocument())
 {
+    //Set margin
+    document.PageSettings.Margins.All = 0;
     // Add a new page to the document
     PdfPage page = document.Pages.Add();
     // Get the client size
@@ -25,8 +27,8 @@ using (PdfDocument document = new PdfDocument())
         new SizeF(clientSize.Width, clientSize.Height)
     );
     page.Graphics.Restore(state);
-    // Define a small margin for the text content.
-    const float margin = 10f;
+    // Define a margin for the text content.
+    const float margin = 40f;
     // Text bounds: fill the page within margins.
     RectangleF textBounds = new RectangleF(
         margin,
