@@ -25,8 +25,6 @@ using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath
 {
     // Create a new PdfCompressionOptions object
     PdfCompressionOptions options = new PdfCompressionOptions();
-    //Enable the compress image
-    options.CompressImages = true;
     //Set the image quality
     options.ImageQuality = 50;
     // Compress the PDF document
