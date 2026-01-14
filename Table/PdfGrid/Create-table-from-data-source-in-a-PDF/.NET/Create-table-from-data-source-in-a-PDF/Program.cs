@@ -5,21 +5,41 @@ using Syncfusion.Pdf.Grid;
 // Create a new PDF document
 using (PdfDocument document = new PdfDocument())
 {
-    //Add a page to the document
+    // Add a new page to the PDF document
     PdfPage page = document.Pages.Add();
-    // Create a PdfGrid
+    // Create a PdfGrid to display tabular data
     PdfGrid pdfGrid = new PdfGrid();
-    // Add values to the list
-    List<object> data = new List<object>
-       {
-           new { ID = "E01", Name = "Clay" },
-           new { ID = "E02", Name = "Thomas" },
-           new { ID = "E03", Name = "John" }
-       };
-    // Assign the data source to the grid
+    // Prepare sample data for the grid
+    object data = new List<object>
+    {
+        new { ID = "E01", Name = "Clay" },
+        new { ID = "E02", Name = "Thomas" },
+        new { ID = "E03", Name = "John" }
+    };
+    // Assign the data source to the grid (auto-generates a header row)
     pdfGrid.DataSource = data;
-    // Draw the grid on the PDF page
-    pdfGrid.Draw(page, new PointF(10, 10));
+    // Access the auto-generated header row and set custom column names
+    PdfGridRow header = pdfGrid.Headers[0];
+    header.Cells[0].Value = "ID";
+    header.Cells[1].Value = "Name";
+    // Define padding and font for header and body cells
+    PdfPaddings paddings = new PdfPaddings(10, 8, 10, 8);
+    PdfStandardFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 12, PdfFontStyle.Bold);
+    // Create header style with padding, white text, blue background, and bold font
+    PdfGridCellStyle headerStyle = new PdfGridCellStyle
+    {
+        CellPadding = paddings,
+        TextBrush = new PdfSolidBrush(Color.White),
+        BackgroundBrush = new PdfSolidBrush(Color.Blue),
+        Font = font
+    };
+    // Apply the header style to the header row
+    pdfGrid.Headers[0].ApplyStyle(headerStyle);
+    // Apply padding and font style to body cells
+    pdfGrid.Style.CellPadding = paddings;
+    pdfGrid.Style.Font = font;
+    // Draw the grid on the PDF page at specified position (with margin)
+    pdfGrid.Draw(page, new PointF(20, 40));
     // Save the PDF document
     document.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }
