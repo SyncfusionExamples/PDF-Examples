@@ -11,15 +11,15 @@ namespace Perform_OCR_on_Tiff_images
     {
         static void Main(string[] args)
         {
-            string filePath = "../../Input/multipage_tiff_example.tif";
+            string filePath = Path.GetFullPath(@"Data/multipage_tiff_example.tif");
 
-            var output = new StringBuilder();
+            StringBuilder output = new StringBuilder();
 
-            using (var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
-            using (var img = Image.FromStream(fs, useEmbeddedColorManagement: false, validateImageData: false))
-            using (var processor = new OCRProcessor())
+            using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+            using (Image img = Image.FromStream(fs, useEmbeddedColorManagement: false, validateImageData: false))
+            using (OCRProcessor processor = new OCRProcessor())
             {
-                processor.TessDataPath = "../../TessdataBest/";
+                processor.TessDataPath = Path.GetFullPath(@"TessdataBest/");
                 processor.Settings.Language = Languages.English;
                 processor.Settings.TesseractVersion = TesseractVersion.Version5_0;
 
@@ -40,8 +40,8 @@ namespace Perform_OCR_on_Tiff_images
                     catch { /* fallback if needed */ }
 
                     // Clone the selected frame to a standalone Bitmap for OCR (important for some engines)
-                    using (var frameBmp = new Bitmap(img.Width, img.Height))
-                    using (var g = Graphics.FromImage(frameBmp))
+                    using (Bitmap frameBmp = new Bitmap(img.Width, img.Height))
+                    using (Graphics g = Graphics.FromImage(frameBmp))
                     {
                         g.DrawImage(img, 0, 0, img.Width, img.Height);
 
@@ -52,7 +52,7 @@ namespace Perform_OCR_on_Tiff_images
                     }
                 }
             }
-            File.WriteAllText("Output.txt", output.ToString());
+            File.WriteAllText(Path.GetFullPath(@"Output/Output.txt"), output.ToString());
             
         }
     }
