@@ -17,8 +17,6 @@ using (PdfLoadedDocument document = new PdfLoadedDocument(Path.GetFullPath(@"Dat
     // Load the signature image once 
     using FileStream imageStream = new FileStream(Path.GetFullPath(@"Data/Signature.png"), FileMode.Open, FileAccess.Read);
     PdfBitmap signatureImage = new PdfBitmap(imageStream);
-    // use this flag. Set to 'false' to draw for each signature field
-    bool appearanceApplied = false;
     // Iterate pages and add a signature field to each page
     for (int i = 0; i < document.Pages.Count; i++)
     {
@@ -27,22 +25,14 @@ using (PdfLoadedDocument document = new PdfLoadedDocument(Path.GetFullPath(@"Dat
         // Create a signature field on the page using the certificate
         PdfSignature signature = new PdfSignature(document, page, pdfCert, "Signature");
         // Position & size of the signature field
-        signature.Bounds = new RectangleF(new PointF(10, 10), new SizeF(100, 60));
-        // Optional metadata shown in the signature properties
-        signature.ContactInfo = "johndoe@owned.us";
-        signature.LocationInfo = "Honolulu, Hawaii";
-        signature.Reason = "I am author of this document.";
+        signature.Bounds = new RectangleF(new PointF(350, 200), new SizeF(100, 60));
         // Draw the signature image into the signature appearance once
-        if (!appearanceApplied)
-        {
-            signature.Appearance.Normal.Graphics.DrawImage(
-                signatureImage,
-                0, 0,
-                signature.Bounds.Width,
-                signature.Bounds.Height
-            );
-            appearanceApplied = true;
-        }
+        signature.Appearance.Normal.Graphics.DrawImage(
+            signatureImage,
+            0, 0,
+            signature.Bounds.Width,
+            signature.Bounds.Height
+        );
     }
     // Save the PDF document
     document.Save(Path.GetFullPath(@"Output/Output.pdf"));
