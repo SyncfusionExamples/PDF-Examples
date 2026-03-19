@@ -29,6 +29,8 @@ using (PdfDocument document = new PdfDocument())
     jsAction.Next = new PdfJavaScriptAction("app.alert(\"This is the second action.\");");
     jsAction.Next.Next = new PdfJavaScriptAction("app.alert(\"This is the third action.\");");
     page3.Actions.OnOpen = jsAction;
-    //Save the document
+    // Save the document
     document.Save(Path.GetFullPath(@"Output/Output.pdf"));
+    // Close the document
+    document.Close(true);
 }

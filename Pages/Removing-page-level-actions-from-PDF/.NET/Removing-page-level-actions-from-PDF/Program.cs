@@ -37,4 +37,6 @@ using (PdfDocument document = new PdfDocument())
     page3.Actions.Clear(false);
     //Save the document
     document.Save(Path.GetFullPath(@"Output/Output.pdf"));
+    // Close the document
+    document.Close(true);
 }
