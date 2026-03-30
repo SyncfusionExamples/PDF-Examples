@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div>
+    <h2 style="margin-bottom: 20px">Working with QR Code in PDF</h2>
+    <div>
+        <button style="width: 200px; margin-bottom: 20px; height: 40px; display:block; font-size:18px;"
+                onclick="location.href='@Url.Action("AddQRToPDF", "Home")'">
+            Add QR to PDF
+        </button>
+        <button style="width: 200px; margin-bottom: 20px; height: 40px; display:block; font-size:18px;"
+                onclick="location.href='@Url.Action("CustomizeQR", "Home")'">
+            Customize QR
+        </button>
+        <button style="width: 200px; margin-bottom: 20px; height: 40px; display:block; font-size:18px;"
+                onclick="location.href='@Url.Action("QRWithLogo", "Home")'">
+            QR with Logo
+        </button>
+        <button style="width: 200px; margin-bottom: 20px; height: 40px; display:block; font-size:18px;"
+                onclick="location.href='@Url.Action("QRToHeader", "Home")'">
+            QR to Header
+        </button>
+    </div>
+</div>
+
