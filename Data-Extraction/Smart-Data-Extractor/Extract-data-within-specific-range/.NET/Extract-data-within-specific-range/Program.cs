@@ -9,7 +9,7 @@ namespace ExtractDataWithinSpecificRange
 		static void Main(string[] args)
 		{
 			// Open the input PDF file as a stream.
-			using (FileStream stream = new FileStream(@"Data\Input.pdf", FileMode.Open, FileAccess.Read))
+			using (FileStream stream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), FileMode.Open, FileAccess.ReadWrite))
 			{
 				// Initialize the Smart Data Extractor.
 				DataExtractor extractor = new DataExtractor();
@@ -21,7 +21,7 @@ namespace ExtractDataWithinSpecificRange
 				PdfLoadedDocument pdf = extractor.ExtractDataAsPdfDocument(stream);
 
 				// Save the extracted output as a new PDF file.
-				pdf.Save(@"Output\Output.pdf");
+				pdf.Save(Path.GetFullPath(@"Output\Output.pdf"));
 
 				// Close the document to release resources.
 				pdf.Close(true);
