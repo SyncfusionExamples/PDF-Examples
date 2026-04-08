@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11626.88 stable
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recognize-forms-using-Pdf-async", "Recognize-forms-using-Pdf-async\Recognize-forms-using-Pdf-async.csproj", "{D355558D-65BA-40B1-A1BC-B28A3EDD007D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D355558D-65BA-40B1-A1BC-B28A3EDD007D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D355558D-65BA-40B1-A1BC-B28A3EDD007D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D355558D-65BA-40B1-A1BC-B28A3EDD007D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D355558D-65BA-40B1-A1BC-B28A3EDD007D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A5FCF39-DF2F-48D7-B27A-7A2568BA8F7E}
+	EndGlobalSection
+EndGlobal
