@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11626.88 stable
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extract_Data", "Extract_Data\Extract_Data.csproj", "{44B27CCF-F05D-44CD-A375-88E0B8BBEFC8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44B27CCF-F05D-44CD-A375-88E0B8BBEFC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44B27CCF-F05D-44CD-A375-88E0B8BBEFC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44B27CCF-F05D-44CD-A375-88E0B8BBEFC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44B27CCF-F05D-44CD-A375-88E0B8BBEFC8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABE3B25D-16B8-451C-B2BE-801CCD7E4DD8}
+	EndGlobalSection
+EndGlobal
