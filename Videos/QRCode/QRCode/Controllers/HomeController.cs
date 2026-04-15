@@ -136,6 +136,7 @@ namespace QRCode.Controllers
 
         public IActionResult QRToHeader()
         {
+            // Create a new PDF document instance
             PdfDocument document = new PdfDocument();
 
             //Add page to the document
@@ -150,10 +151,13 @@ namespace QRCode.Controllers
             //Read the text from the text file
             string text = System.IO.File.ReadAllText("data\\input.txt");
 
+            // Create a standard Helvetica font with size 12
             PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 12);
 
+            // Create a text element using the file content and fon
             PdfTextElement element = new PdfTextElement(text, font);
 
+            // Draw the text element on the PDF page
             element.Draw(page, new PointF(0, 0));
 
             // Create a memory stream to hold the output PDF
@@ -178,12 +182,8 @@ namespace QRCode.Controllers
             //Create PdfPageTemplateElement
             PdfPageTemplateElement header = new PdfPageTemplateElement(new RectangleF(0, 0, headerSize.Width, headerSize.Height));
 
-            string headerText = "PDF Succinctly";
-
+            // Create a font for the header text
             PdfStandardFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 16, PdfFontStyle.Regular);
-
-            //Measure the text size
-            SizeF textSize = font.MeasureString(headerText);
 
             //Draw the text with center alignment
             header.Graphics.DrawString("PDF Succinctly", font, PdfBrushes.Black, new PointF(0, (headerSize.Height - font.Height) / 2));
