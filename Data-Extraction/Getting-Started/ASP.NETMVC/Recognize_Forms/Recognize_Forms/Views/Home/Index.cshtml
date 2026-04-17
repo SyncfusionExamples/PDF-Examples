@@ -1,0 +1,10 @@
+﻿@{
+	ViewBag.Title = "Home Page";
+}
+
+<div style="margin-top:20px;">
+	@using (Html.BeginForm("RecognizeForm", "Home", FormMethod.Get))
+	{
+		<input type="submit" value="Recognize Form from PDF" style="width:250px;height:30px" />
+	}
+</div>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11626.88 stable
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recognize-forms-using-JSON", "Recognize-forms-using-JSON\Recognize-forms-using-JSON.csproj", "{2CF79BCA-ABB8-499B-AFE8-FF2C63B06717}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CF79BCA-ABB8-499B-AFE8-FF2C63B06717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CF79BCA-ABB8-499B-AFE8-FF2C63B06717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CF79BCA-ABB8-499B-AFE8-FF2C63B06717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CF79BCA-ABB8-499B-AFE8-FF2C63B06717}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6DD770AE-1644-4958-8E8F-425EEA29A51A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11626.88 stable
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recognize-forms-using-Stream-async", "Recognize-forms-using-Stream-async\Recognize-forms-using-Stream-async.csproj", "{9A6DE038-252B-4B04-9DA2-73D38D6B0C3D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A6DE038-252B-4B04-9DA2-73D38D6B0C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A6DE038-252B-4B04-9DA2-73D38D6B0C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A6DE038-252B-4B04-9DA2-73D38D6B0C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A6DE038-252B-4B04-9DA2-73D38D6B0C3D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB5EF239-DC9F-4C10-B92E-0105D2DD94FC}
+	EndGlobalSection
+EndGlobal
