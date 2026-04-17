@@ -4,8 +4,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:13035",
-      "sslPort": 44361
+      "applicationUrl": "http://localhost:11943",
+      "sslPort": 44373
     }
   },
   "profiles": {
@@ -13,7 +13,7 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5134",
+      "applicationUrl": "http://localhost:5172",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -22,7 +22,7 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7076;http://localhost:5134",
+      "applicationUrl": "https://localhost:7044;http://localhost:5172",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

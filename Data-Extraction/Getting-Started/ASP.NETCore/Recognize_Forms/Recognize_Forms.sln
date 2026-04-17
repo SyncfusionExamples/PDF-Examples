@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.4.11626.88 stable
+VisualStudioVersion = 18.5.11709.299 stable
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recognize_Forms", "Recognize_Forms\Recognize_Forms.csproj", "{A641CDDE-5818-4343-B668-635B41874BE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recognize_Forms", "Recognize_Forms\Recognize_Forms.csproj", "{4AE5A73B-6F06-44B7-BBCF-4624FE313034}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A641CDDE-5818-4343-B668-635B41874BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A641CDDE-5818-4343-B668-635B41874BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A641CDDE-5818-4343-B668-635B41874BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A641CDDE-5818-4343-B668-635B41874BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AE5A73B-6F06-44B7-BBCF-4624FE313034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AE5A73B-6F06-44B7-BBCF-4624FE313034}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AE5A73B-6F06-44B7-BBCF-4624FE313034}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AE5A73B-6F06-44B7-BBCF-4624FE313034}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {034B5367-0C75-49C4-88E8-84A410FD01A3}
+		SolutionGuid = {BCA4FBF6-FB92-498E-A599-D1C18B479B61}
 	EndGlobalSection
 EndGlobal
