@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11626.88 stable
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extract_Table_Data", "Extract_Table_Data\Extract_Table_Data.csproj", "{454D0559-8FB8-4FF8-8523-F6CB12BE0A8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{454D0559-8FB8-4FF8-8523-F6CB12BE0A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{454D0559-8FB8-4FF8-8523-F6CB12BE0A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{454D0559-8FB8-4FF8-8523-F6CB12BE0A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{454D0559-8FB8-4FF8-8523-F6CB12BE0A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
