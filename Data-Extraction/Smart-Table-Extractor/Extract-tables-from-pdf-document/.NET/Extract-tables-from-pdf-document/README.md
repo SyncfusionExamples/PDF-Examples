@@ -1,15 +1,14 @@
-# Create Word document using C#
+#  Extract Structured Table Data from PDF using C#
 
-The Syncfusion® Smart Table Extractor is a .NET library used to extract table data from PDFs and images in Console Application.
+The Syncfusion® [Smart Table Extractor](https://www.syncfusion.com/document-sdk/net-pdf-data-extraction) is a .NET library used to extract table data from PDFs and images.
 
-## Steps to Extract Data from PDF in Console App
+## Steps to Structured Table Data from PDF Files
 
-Step 1: Create a new .NET Core console application project.
+Step 1: **Create a new project:** Begin by setting up a new C# Console Application project.
 
-Step 2: Install the [Syncfusion.SmartTableExtractor.Net.Core](https://www.nuget.org/packages/Syncfusion.SmartTableExtractor.Net.Core) NuGet package as a reference to your project from [NuGet.org](https://www.nuget.org/).
+Step 2: **Install the NuGet package:** Add the [Syncfusion.SmartTableExtractor.Net.Core](https://www.nuget.org/packages/Syncfusion.SmartTableExtractor.Net.Core) package to your project from [NuGet.org](https://www.nuget.org/).
 
-Step 3: Include the following namespaces in the Program.cs file.
-
+Step 3: **Include necessary namespaces:** Add these namespaces in your Program.cs file:
 ```csharp
 using System.IO;
 using System.Text;
@@ -30,5 +29,6 @@ using (FileStream stream = new FileStream(Path.GetFullPath(@"Input.pdf"), FileMo
 	File.WriteAllText(Path.GetFullPath(@"Output.json"), data, Encoding.UTF8);
 }
 ```
+For a complete working example, download it from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Data-Extraction/Smart-Table-Extractor/Extract-tables-from-pdf-document/.NET). 
 
 More information about Extract Table Data from PDF can be refer in this [documentation](https://help.syncfusion.com/document-processing/data-extraction/smart-table-extractor/overview)section.

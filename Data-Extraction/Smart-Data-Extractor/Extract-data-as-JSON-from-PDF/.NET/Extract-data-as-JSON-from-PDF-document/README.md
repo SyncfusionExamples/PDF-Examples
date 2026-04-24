@@ -1,14 +1,14 @@
-# Create Word document using C#
+# Extract Structured Data from PDF
 
-The Syncfusion® Smart Data Extractor is a .NET library used to extract structured data and document elements from PDFs and images in Console Application.
+The Syncfusion® [Smart Data Extractor](https://www.syncfusion.com/document-sdk/net-pdf-data-extraction) is a .NET library used to extract document structures such as hierarchies, text blocks, images, headers, and footers from PDFs and scanned images by analyzing visual layout patterns like lines, boxes, and alignment. It returns structured JSON with per-field confidence scores
 
-## Steps to Extract Data from PDF in Console App
+## Steps to Extract Structured Data from PDF Files
 
-Step 1: Create a new .NET Core console application project.
+Step 1: **Create a new project:** Begin by setting up a new C# Console Application project.
 
-Step 2: Install the [Syncfusion.SmartDataExtractor.Net.Core](https://www.nuget.org/packages/Syncfusion.SmartDataExtractor.Net.Core) NuGet package as a reference to your project from [NuGet.org](https://www.nuget.org/).
+Step 2: **Install the NuGet package:** Add the [Syncfusion.SmartDataExtractor.Net.Core](https://www.nuget.org/packages/Syncfusion.SmartDataExtractor.Net.Core) package to your project from [NuGet.org](https://www.nuget.org/).
 
-Step 3: Include the following namespaces in the Program.cs file.
+Step 3: **Include necessary namespaces:** Add these namespaces in your Program.cs file:
 
 ```csharp
 using System.IO;
@@ -32,5 +32,6 @@ using (FileStream stream = new FileStream(Path.GetFullPath("Input.pdf"), FileMod
 }
 
 ```
+For a complete working example, download it from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Data-Extraction/Smart-Data-Extractor/Extract-data-as-JSON-from-PDF/.NET).
 
 More information about Extract data from PDF can be refer in this [documentation](https://help.syncfusion.com/document-processing/data-extraction/smart-data-extractor/overview)section.
