@@ -23,7 +23,7 @@ namespace Externally_sign_the_PDF_document
                 IPdfExternalSigner externalSignature = new ExternalSigner("SHA1");
                 // Add public certificates
                 List<X509Certificate2> certificates = new List<X509Certificate2>();
-                certificates.Add(new X509Certificate2(Path.GetFullPath(@"../../../Data/PDF.pfx"), "password123"));
+                certificates.Add(new X509Certificate2(Path.GetFullPath(@"Data/PDF.pfx"), "password123"));
                 signature.AddExternalSigner(externalSignature, certificates, null);
 
                 //Save the PDF document 
@@ -49,7 +49,7 @@ namespace Externally_sign_the_PDF_document
             public byte[] Sign(byte[] message, out byte[] timeStampResponse)
             {
                 timeStampResponse = null;
-                X509Certificate2 digitalID = new X509Certificate2(Path.GetFullPath(@"../../../Data/PDF.pfx"), "password123");
+                X509Certificate2 digitalID = new X509Certificate2(Path.GetFullPath(@"Data/PDF.pfx"), "password123");
 
                 if (digitalID.PrivateKey is RSACryptoServiceProvider rsaProvider)
                 {
