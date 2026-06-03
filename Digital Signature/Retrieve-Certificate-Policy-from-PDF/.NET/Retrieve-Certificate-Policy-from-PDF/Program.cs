@@ -7,7 +7,6 @@ using (PdfLoadedDocument document = new PdfLoadedDocument(Path.GetFullPath(@"Dat
 {
     // Get the PDF form
     PdfLoadedForm form = document.Form;
-
     if (form != null && form.Fields != null && form.Fields.Count > 0)
     {
         foreach (PdfLoadedField field in form.Fields)
@@ -15,27 +14,24 @@ using (PdfLoadedDocument document = new PdfLoadedDocument(Path.GetFullPath(@"Dat
             // Check for signature field
             if (field is PdfLoadedSignatureField signatureField && signatureField.IsSigned)
             {
+                Console.WriteLine($"Signature Field: {signatureField.Name}");
                 // Validate signature
                 PdfSignatureValidationResult result = signatureField.ValidateSignature();
-
                 if (result?.Certificates != null && result.Certificates.Count > 0)
                 {
                     X509Certificate2 certificate = result.Certificates[0];
-
+                    Console.WriteLine("Issuer: " + certificate.Issuer);
+                    Console.WriteLine("Subject: " + certificate.Subject);
                     string policyId = GetCertificatePolicyOID(certificate);
 
                     if (!string.IsNullOrEmpty(policyId))
                     {
                         Console.WriteLine($"Policy OID: {policyId}");
-
-                        string certClass = MapCertificateClass(policyId);
-                        Console.WriteLine($"Certificate Type: {certClass}");
                     }
                     else
                     {
                         Console.WriteLine("❌ Certificate policy not found.");
                     }
-
                     Console.WriteLine("-----------------------------------");
                 }
             }
@@ -51,7 +47,6 @@ string GetCertificatePolicyOID(X509Certificate2 certificate)
         if (extension?.Oid?.Value == "2.5.29.32")
         {
             string formatted = extension.Format(true);
-
             // Example format contains: "Policy Identifier=OID"
             return ExtractPolicyID(formatted);
         }
@@ -83,39 +78,14 @@ string CleanOID(string oid)
 {
     if (string.IsNullOrEmpty(oid))
         return null;
-
     // Remove line breaks, tabs, spaces
     oid = oid.Replace("\r", "")
              .Replace("\n", "")
              .Replace("\t", "")
              .Trim();
-
     // Remove anything after invalid characters like '['
     int index = oid.IndexOfAny(new char[] { '[', ' ' });
     if (index > 0)
         oid = oid.Substring(0, index);
-
     return oid.Trim();
-}
-
-// Map OID to Certificate Type
-string MapCertificateClass(string oid)
-{
-    switch (oid)
-    {
-        case "2.16.356.100.2.1":
-            return "Class 1 Certificate";
-
-        case "2.16.356.100.2.2":
-            return "Class 2 Certificate";
-
-        case "2.16.356.100.2.3":
-            return "Class 3 Certificate";
-
-        case "2.16.840.1.114028.10.1.6":
-            return "DocuSign High Assurance (Equivalent to Class 3)";
-
-        default:
-            return "Unknown / Custom Certificate Policy";
-    }
 }
