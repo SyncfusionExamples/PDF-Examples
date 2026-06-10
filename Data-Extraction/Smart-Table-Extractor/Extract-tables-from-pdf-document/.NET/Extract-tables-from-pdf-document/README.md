@@ -31,4 +31,4 @@ using (FileStream stream = new FileStream(Path.GetFullPath(@"Input.pdf"), FileMo
 ```
 For a complete working example, download it from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Data-Extraction/Smart-Table-Extractor/Extract-tables-from-pdf-document/.NET). 
 
-More information about Extract Table Data from PDF can be refer in this [documentation](https://help.syncfusion.com/document-processing/data-extraction/smart-table-extractor/overview)section.
+More information about Extract Table Data from PDF can be refer in this [documentation](https://help.syncfusion.com/document-processing/data-extraction/net/working-with-table-extraction)section.

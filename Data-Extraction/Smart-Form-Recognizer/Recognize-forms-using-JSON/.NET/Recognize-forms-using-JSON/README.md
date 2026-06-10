@@ -31,4 +31,4 @@ using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Input.pdf"), F
 ```
 For a complete working example, download it from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Data-Extraction/Smart-Form-Recognizer/Recognize-forms-using-JSON/.NET). 
 
-More information about SmartFormRecognizer can be refer in this [documentation](https://help.syncfusion.com/document-processing/data-extraction/smart-form-recognizer/overview)section.
+More information about SmartFormRecognizer can be refer in this [documentation](https://help.syncfusion.com/document-processing/data-extraction/net/working-with-form-recognition)section.
