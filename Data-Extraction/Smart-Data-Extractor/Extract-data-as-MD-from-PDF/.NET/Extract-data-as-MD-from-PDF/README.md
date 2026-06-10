@@ -32,4 +32,4 @@ using (FileStream stream = new FileStream("Input.pdf", FileMode.Open, FileAccess
 }
 
 ```
-More information about Extract data from PDF can be refer in this [documentation](https://help.syncfusion.com/document-processing/data-extraction/smart-data-extractor/overview)section.
+More information about Extract data from PDF can be refer in this [documentation](https://help.syncfusion.com/document-processing/data-extraction/net/working-with-data-extraction)section.
