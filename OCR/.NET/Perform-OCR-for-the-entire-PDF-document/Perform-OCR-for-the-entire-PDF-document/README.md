@@ -38,4 +38,4 @@ using (OCRProcessor processor = new OCRProcessor())
 
 For a complete working sample, you can download the example from the [GitHub repository](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/OCR/.NET/Perform-OCR-for-the-entire-PDF-document).
 
-More information about the OCR on PDF can be found in this [documentation](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/working-with-ocr/features) section.
+More information about the OCR on PDF can be found in this [documentation](https://help.syncfusion.com/document-processing/data-extraction/net/ocr-processor/features) section.

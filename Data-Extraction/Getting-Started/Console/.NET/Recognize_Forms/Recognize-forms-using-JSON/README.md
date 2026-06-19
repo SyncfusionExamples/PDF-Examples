@@ -30,4 +30,4 @@ using (FileStream inputStream = new FileStream(Path.GetFullPath(@"Input.pdf"), F
 }
 ```
 
-More information about SmartFormRecognizer can be refer in this [documentation](https://help.syncfusion.com/document-processing/data-extraction/smart-form-recognizer/overview)section.
+More information about SmartFormRecognizer can be refer in this [documentation](https://help.syncfusion.com/document-processing/data-extraction/net/working-with-form-recognition)section.
