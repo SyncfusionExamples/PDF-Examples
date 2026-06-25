@@ -1,6 +1,6 @@
 # Convert PDF to PDF/A
 
-The Syncfusion<sup>&reg;</sup> [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) provides tools for creating, reading, and editing PDF documents. Among its features, the library enables conversion of standard PDF files into the PDF/A format, suitable for long-term archiving and meeting archival standards.
+The [.NET Core PDF library](https://www.syncfusion.com/document-sdk/net-pdf-library) provides tools for creating, reading, and editing PDF documents. Among its features, the library enables conversion of standard PDF files into the PDF/A format, suitable for long-term archiving and meeting archival standards.
 
 ## Steps to convert a PDF to PDF/A
 

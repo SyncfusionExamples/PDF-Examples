@@ -1,6 +1,6 @@
 # PDF Tables
 
-The Syncfusion&reg; [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) facilitates the creation, reading, and editing of PDF documents. It also provides features to create and customize tables within PDF files, allowing for efficient data organization and presentation.
+The [.NET Core PDF library](https://www.syncfusion.com/document-sdk/net-pdf-library) facilitates the creation, reading, and editing of PDF documents. It also provides features to create and customize tables within PDF files, allowing for efficient data organization and presentation.
 
 ## Steps to Add a Table to a PDF Document
 

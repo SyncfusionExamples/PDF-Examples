@@ -1,6 +1,6 @@
 # OCR on PDF Files
 
-The Syncfusion<sup>&reg;</sup> [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) enables you to create, read, and edit PDF documents effortlessly. Additionally, the library provides OCR (Optical Character Recognition) capabilities, allowing you to extract text from scanned images within PDF files.
+The [.NET Core PDF library](https://www.syncfusion.com/document-sdk/net-pdf-library) enables you to create, read, and edit PDF documents effortlessly. Additionally, the library provides OCR (Optical Character Recognition) capabilities, allowing you to extract text from scanned images within PDF files.
 
 ## Steps to perform OCR on PDF files
 

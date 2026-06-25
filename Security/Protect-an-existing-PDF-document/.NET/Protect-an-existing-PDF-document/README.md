@@ -1,6 +1,6 @@
 # Protect PDF Files
 
-The Syncfusion<sup>&reg;</sup> [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) provides tools for creating, reading, and editing PDF documents. It also allows you to protect your PDF files by applying encryption and setting password-based permissions.
+The [.NET Core PDF library](https://www.syncfusion.com/document-sdk/net-pdf-library) provides tools for creating, reading, and editing PDF documents. It also allows you to protect your PDF files by applying encryption and setting password-based permissions.
 
 ## Steps to Protect PDF Files
 

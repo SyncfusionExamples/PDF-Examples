@@ -1,6 +1,6 @@
 # Converting Images to PDF
 
-The Syncfusion<sup>&reg;</sup> [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) offers tools to create, read, and edit PDF documents. It also provides functionality to convert images into PDF files, making it easy to integrate image content into your PDF documents.
+The [.NET Core PDF library](https://www.syncfusion.com/document-sdk/net-pdf-library) offers tools to create, read, and edit PDF documents. It also provides functionality to convert images into PDF files, making it easy to integrate image content into your PDF documents.
 
 ## Steps to convert images to PDF
 
