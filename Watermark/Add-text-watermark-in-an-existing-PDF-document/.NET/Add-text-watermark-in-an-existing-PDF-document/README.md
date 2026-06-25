@@ -1,6 +1,6 @@
 # Edit PDF Files
 
-The Syncfusion<sup>&reg;</sup> [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) provides tools for creating, reading, and editing PDF documents. It also supports modifying existing PDF files, including updating text, images, and other content.
+The [.NET Core PDF library](https://www.syncfusion.com/document-sdk/net-pdf-library) provides tools for creating, reading, and editing PDF documents. It also supports modifying existing PDF files, including updating text, images, and other content.
 
 ## Steps to Add a Watermark to a PDF File
 

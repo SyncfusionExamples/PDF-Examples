@@ -1,6 +1,6 @@
 # Compressing PDF Files
 
-The Syncfusion<sup>&reg;</sup> [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) allows users to seamlessly create, read, and edit PDF documents. Additionally, it offers features for compressing PDF files, which helps reduce their size without sacrificing quality—optimizing storage and enhancing the efficiency of file sharing.
+The [.NET Core PDF library](https://www.syncfusion.com/document-sdk/net-pdf-library) allows users to seamlessly create, read, and edit PDF documents. Additionally, it offers features for compressing PDF files, which helps reduce their size without sacrificing quality—optimizing storage and enhancing the efficiency of file sharing.
 
 ## Steps to compress PDF files
 
@@ -13,14 +13,14 @@ Step 2: **Install the NuGet package**: Add the [Syncfusion.Pdf.Net.Core](https:/
 Step 3: **Add required namespaces**: Include the following namespaces in your `Program.cs` file:
 
 ```csharp
-   using Syncfusion.Pdf.Parsing;
-   using Syncfusion.Pdf;
+using Syncfusion.Pdf.Parsing;
+using Syncfusion.Pdf;
 ```
 
 Step 4: **Implement PDF compression**: Use the following code snippet in `Program.cs` to compress PDF files:
 
 ```csharp
- //Load the PDF document
+//Load the PDF document
 using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
     // Create a new PdfCompressionOptions object

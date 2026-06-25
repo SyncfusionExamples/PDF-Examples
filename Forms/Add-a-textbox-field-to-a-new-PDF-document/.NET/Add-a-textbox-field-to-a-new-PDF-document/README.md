@@ -1,6 +1,6 @@
 # PDF Forms
 
-The Syncfusion<sup>&reg;</sup> [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) provides an easy way to create, read, and edit PDF documents. It also includes features for creating, filling, and editing PDF forms, which can include interactive form fields and form data.
+The [.NET Core PDF library](https://www.syncfusion.com/document-sdk/net-pdf-library) provides an easy way to create, read, and edit PDF documents. It also includes features for creating, filling, and editing PDF forms, which can include interactive form fields and form data.
 
 ## Steps to create PDF forms
 

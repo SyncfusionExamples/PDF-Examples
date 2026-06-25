@@ -1,6 +1,6 @@
 # Digital Signature
 
-The Syncfusion<sup>&reg;</sup> [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) offers powerful capabilities for creating, reading, and editing PDF documents. One of its robust features is the ability to apply digital signatures to PDF files, ensuring document authenticity, integrity, and security.
+The [.NET Core PDF library](https://www.syncfusion.com/document-sdk/net-pdf-library) offers powerful capabilities for creating, reading, and editing PDF documents. One of its robust features is the ability to apply digital signatures to PDF files, ensuring document authenticity, integrity, and security.
 
 ## Steps to add a digital signature to PDF files
 

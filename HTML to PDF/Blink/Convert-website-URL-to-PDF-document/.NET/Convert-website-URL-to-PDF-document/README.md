@@ -1,6 +1,6 @@
 # HTML to PDF Conversion
 
-The Syncfusion<sup>&reg;</sup> [.NET Core PDF library](https://www.syncfusion.com/document-processing/pdf-framework/net-core/pdf-library) allows you to create, read, and edit PDF documents. It also includes functionality for accurately converting HTML content into PDF files.
+The [.NET Core PDF library](https://www.syncfusion.com/document-sdk/net-pdf-library) allows you to create, read, and edit PDF documents. It also includes functionality for accurately converting HTML content into PDF files.
 
 ## Steps to convert HTML to PDF
 
