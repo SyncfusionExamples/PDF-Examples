@@ -5,53 +5,56 @@ using Syncfusion.Pdf.Grid;
 using Syncfusion.Pdf.Parsing;
 using System.Data;
 
-//Create a new PDF document.
-PdfDocument finalDocumentSettings = new PdfDocument();
-finalDocumentSettings.PageSettings.Margins.All = 0;
-PdfPage page = finalDocumentSettings.Pages.Add();
-PointF pdfGridLocation = new PointF(0, 100);
-
-// Create PdfGrid
-PdfGrid pdfGrid = new PdfGrid();
+// Create PDF document
+PdfDocument document = new PdfDocument();
+document.PageSettings.Size = PdfPageSize.A4;
+document.PageSettings.Margins.All = 0;
+// Create data source
 DataTable dataTable = new DataTable();
-dataTable.Columns.Add("ID");
-dataTable.Columns.Add("Table Name");
+dataTable.Columns.Add("Order ID");
+dataTable.Columns.Add("Product Name");
 for (int i = 1; i <= 200; i++)
 {
-    dataTable.Rows.Add($"E-{i}", $"PDF Table - {i}");
+    dataTable.Rows.Add($"ORD-{i:000}", $"Product {i}");
 }
+// Create PdfGrid
+PdfGrid pdfGrid = new PdfGrid();
 pdfGrid.DataSource = dataTable;
-
-// Step 1 - Draw PdfGrid with Header
+// Apply grid styling
+pdfGrid.Style.CellPadding = new PdfPaddings(5, 5, 5, 5);
+pdfGrid.Headers[0].Style.Font = new PdfStandardFont(PdfFontFamily.Helvetica, 11, PdfFontStyle.Bold);
+pdfGrid.Headers[0].Style.BackgroundBrush = new PdfSolidBrush(new PdfColor(31, 78, 121));
+pdfGrid.Headers[0].Style.TextBrush = PdfBrushes.White;
+// Create page header template
 RectangleF headerBounds = new RectangleF(0, 0, PdfPageSize.A4.Width, 50);
-PdfPageTemplateElement header = new PdfPageTemplateElement(headerBounds);
-header.Graphics.DrawString("Header", new PdfStandardFont(PdfFontFamily.TimesRoman, 16), PdfBrushes.Black, new PointF((PdfPageSize.A4.Width / 2) - 20, 0));
-finalDocumentSettings.Template.Top = header;
-pdfGrid.Draw(page, new RectangleF(30, pdfGridLocation.Y - headerBounds.Height, 550, PdfPageSize.A4.Height));
-using MemoryStream finalDocumentMS = new MemoryStream();
-finalDocumentSettings.Save(finalDocumentMS);
-finalDocumentSettings.Close(true);
-
-// Step 2 - Draw PdfGrid without Header
+PdfPageTemplateElement headerTemplate = new PdfPageTemplateElement(headerBounds);
+headerTemplate.Graphics.DrawRectangle(new PdfSolidBrush(new PdfColor(31, 78, 121)), headerBounds);
+headerTemplate.Graphics.DrawString("Product Details Report", new PdfStandardFont(PdfFontFamily.Helvetica, 16, PdfFontStyle.Bold), PdfBrushes.White, new PointF(20, 15));
+document.Template.Top = headerTemplate;
+// Draw grid with header template
+PdfPage page = document.Pages.Add();
+pdfGrid.Draw(page, new RectangleF(30, 50, page.GetClientSize().Width - 60, page.GetClientSize().Height));
+// Save document with header
+MemoryStream documentStream = new MemoryStream();
+document.Save(documentStream);
+document.Close(true);
+// Create temporary document without header
 PdfDocument tempDocument = new PdfDocument();
-// Copy the same page settings
-tempDocument.PageSettings.Size = finalDocumentSettings.PageSettings.Size;
-tempDocument.PageSettings.Orientation = finalDocumentSettings.PageSettings.Orientation;
+tempDocument.PageSettings.Size = PdfPageSize.A4;
 tempDocument.PageSettings.Margins.All = 0;
 PdfPage tempPage = tempDocument.Pages.Add();
-pdfGrid.Draw(tempPage, new RectangleF(30, pdfGridLocation.Y, 550, PdfPageSize.A4.Height));
-using MemoryStream tempDocumentMS = new MemoryStream();
-tempDocument.Save(tempDocumentMS);
+pdfGrid.Draw(tempPage, new RectangleF(30, 100, tempPage.GetClientSize().Width - 60, tempPage.GetClientSize().Height));
+MemoryStream tempStream = new MemoryStream();
+tempDocument.Save(tempStream);
 tempDocument.Close(true);
-
-// Step 3 - Replace First Page
-finalDocumentMS.Position = 0;
-tempDocumentMS.Position = 0;
-PdfLoadedDocument finalDocument = new PdfLoadedDocument(finalDocumentMS);
-PdfLoadedDocument tempLoadedDocument = new PdfLoadedDocument(tempDocumentMS);
-finalDocument.Pages.RemoveAt(0);
-finalDocument.Pages.Insert(0, tempLoadedDocument.Pages[0]);
-// Save output
-finalDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
-tempLoadedDocument.Close(true);
-finalDocument.Close(true);
+// Replace the first page
+documentStream.Position = 0;
+tempStream.Position = 0;
+PdfLoadedDocument loadedDocument = new PdfLoadedDocument(documentStream);
+PdfLoadedDocument loadedTempDocument = new PdfLoadedDocument(tempStream);
+loadedDocument.Pages.RemoveAt(0);
+loadedDocument.Pages.Insert(0, loadedTempDocument.Pages[0]);
+// Save the result
+loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
+loadedTempDocument.Close(true);
+loadedDocument.Close(true);
