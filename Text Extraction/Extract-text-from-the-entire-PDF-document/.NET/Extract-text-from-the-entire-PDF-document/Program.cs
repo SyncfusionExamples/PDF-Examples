@@ -12,5 +12,5 @@ using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath
         extractedText += page.ExtractText();
     }
     // Save the extracted JSON data into an output file.
-	File.WriteAllText(Path.GetFullPath(@"Output/Output.json"), extractedText, Encoding.UTF8);
+	File.WriteAllText(Path.GetFullPath(@"Output/Output.txt"), extractedText, Encoding.UTF8);
 }
