@@ -13,9 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Data\ARIALUNI.TTF">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Data\Input.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

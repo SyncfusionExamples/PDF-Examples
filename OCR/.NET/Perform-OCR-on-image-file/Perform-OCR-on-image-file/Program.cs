@@ -1,22 +1,14 @@
 ﻿using Syncfusion.OCRProcessor;
-using Syncfusion.Pdf.Graphics;
 
-//Initialize the OCR processor by providing the path of the tesseract binaries.
+//Create an OCR processor instance.
 using (OCRProcessor processor = new OCRProcessor())
 {
-    //Get stream from the image file.
+    //Open the input image as a file stream.
     FileStream stream = new FileStream(Path.GetFullPath(@"Data/Input.jpg"), FileMode.Open);
- 
-    //Set OCR language to process.
+    //Specify English as the language for text recognition.
     processor.Settings.Language = Languages.English;
- 
-    //Sets Unicode font to preserve the Unicode characters in a PDF document.
-    FileStream fontStream = new FileStream(Path.GetFullPath(@"Data/ARIALUNI.ttf"), FileMode.Open);
- 
-    processor.UnicodeFont = new PdfTrueTypeFont(fontStream, 8);
- 
-    //Perform the OCR process for an image steam.
+    //Extract text from the image using the OCR engine and tessdata path.
     string ocrText = processor.PerformOCR(stream, processor.TessDataPath);
- 
-    System.IO.File.WriteAllText(Path.GetFullPath(@"Output/Output.txt"), ocrText);  
+    //Save the recognized text to a text file.
+    File.WriteAllText(Path.GetFullPath(@"Output/Output.txt"), ocrText);
 }

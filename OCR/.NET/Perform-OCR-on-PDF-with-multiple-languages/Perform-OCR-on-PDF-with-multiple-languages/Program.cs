@@ -2,19 +2,19 @@
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Parsing;
 
-// Load the PDF document
+//Open the existing PDF document.
 using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath(@"Data/Input.pdf")))
 {
-    // Initialize OCR processor
+    //Create an OCR processor instance.
     OCRProcessor processor = new OCRProcessor();
-    //Sets Unicode font to preserve the Unicode characters in a PDF document.
+    //Assign a Unicode font to retain multilingual characters in the OCR output PDF.
     processor.UnicodeFont = new PdfTrueTypeFont(Path.GetFullPath(@"Data/ARIALUNI.ttf"), 8);
-    // Set OCR language
+    //Specify the languages to be recognized during OCR processing.
     processor.Settings.Language = "eng+deu+ara+ell+fra"; // English, German, Arabic, Greek, French
-    // Set the path to the Tesseract language data folder
+    //Set the directory containing Tesseract language data files.
     processor.TessDataPath = Path.GetFullPath(@"Tessdata");
-    // Perform OCR
+    //Run OCR on the PDF document and make its content searchable.
     processor.PerformOCR(loadedDocument);
-    // Save the PDF document
+    //Save the OCR-processed PDF to the output location.
     loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }
