@@ -12,7 +12,7 @@ using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath
     // Set OCR language
     processor.Settings.Language = "eng+deu+ara+ell+fra"; // English, German, Arabic, Greek, French
     // Set the path to the Tesseract language data folder
-    processor.TessDataPath = Path.GetFullPath(@"../../Tessdata");
+    processor.TessDataPath = Path.GetFullPath(@"Tessdata");
     // Perform OCR
     processor.PerformOCR(loadedDocument);
     // Save the PDF document
