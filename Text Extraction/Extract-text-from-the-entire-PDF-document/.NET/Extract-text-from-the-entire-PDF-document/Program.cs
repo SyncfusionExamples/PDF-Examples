@@ -11,6 +11,6 @@ using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath
     {
         extractedText += page.ExtractText();
     }
-    // Display the extracted text in the console
-    Console.WriteLine("Extracted text from the entire document: " + extractedText);
+    // Save the extracted text content to a TXT file
+	File.WriteAllText(Path.GetFullPath(@"Output/Output.txt"), extractedText);
 }
