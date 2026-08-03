@@ -10,7 +10,7 @@ using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath
     //Assign a Unicode font to retain multilingual characters in the OCR output PDF.
     processor.UnicodeFont = new PdfTrueTypeFont(Path.GetFullPath(@"Data/ARIALUNI.ttf"), 8);
     //Specify the languages to be recognized during OCR processing.
-    processor.Settings.Language = "eng+deu+ara+ell+fra"; // English, German, Arabic, Greek, French
+    processor.Settings.Language = "eng+spa+deu+fra+chi_sim+ara";
     //Set the directory containing Tesseract language data files.
     processor.TessDataPath = Path.GetFullPath(@"Tessdata");
     //Run OCR on the PDF document and make its content searchable.
