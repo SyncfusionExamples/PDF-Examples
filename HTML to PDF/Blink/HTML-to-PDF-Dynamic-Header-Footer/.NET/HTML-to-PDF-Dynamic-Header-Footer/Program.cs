@@ -8,8 +8,6 @@ using Syncfusion.Pdf.Parsing;
 //Initialize HTML to PDF converter.
 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
 BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
-//Set Blink viewport size.
-blinkConverterSettings.ViewPortSize = new Syncfusion.Drawing.Size(1280, 0);
 blinkConverterSettings.Margin.Top = 50;
 blinkConverterSettings.Margin.Bottom = 50;
 //Assign Blink converter settings to HTML converter.
@@ -18,86 +16,86 @@ htmlConverter.ConverterSettings = blinkConverterSettings;
 PdfDocument pdfDocument = htmlConverter.Convert("https://www.syncfusion.com");
 MemoryStream stream = new MemoryStream();
 pdfDocument.Save(stream);
+pdfDocument.Close(true);
+htmlConverter.Close();
 
 PdfDocument document = new PdfDocument();
-document.PageSettings.Margins = new PdfMargins
-{
-    Top = 300,    // Space for the header
-    Bottom = 300, // Space for the footer
-    Left = 10,
-    Right = 10
-};
 PdfLoadedDocument pdfLoaded = new PdfLoadedDocument(stream);
-for (int i = 0; i < pdfDocument.Pages.Count; i++)
+for (int i = 0; i < pdfLoaded.Pages.Count; i++)
 {
     // Import each page from the source document into the target document.
     document.ImportPage(pdfLoaded, i);
 }
-document.Pages.Add();
-document.Pages.Add();
 
-for (int i = 0; i < document.Pages.Count; i++)
-{
-    PdfPage page = document.Pages[i];
 
-    if (i % 2 == 0) // Even pages (0-based index, so 0 is the first page)
-    {
-        PdfTemplate oddHeader = createOddPageHeader();
-        PdfTemplate oddFooter = createOddPageFooter();
-        // Add even page header and footer
-        page.Graphics.DrawPdfTemplate(oddHeader, new PointF(0, 0));
-        page.Graphics.DrawPdfTemplate(oddFooter, new PointF(0, page.Size.Height - 50));
-    }
-    else // Odd pages
-    {
-        PdfTemplate evenHeader = createEvenPageHeader();
-        PdfTemplate evenFooter = createEvenPageFooter();
-        // Add odd page header and footer
-        page.Graphics.DrawPdfTemplate(evenHeader, new PointF(0, 0));
-        page.Graphics.DrawPdfTemplate(evenFooter, new PointF(0, page.Size.Height - 50));
-    }
-}
+//Create and set the header and footer for even and odd pages.
+document.Template.OddTop = createPageHeader(isOdd: true);
+document.Template.OddBottom = createPageFooter(isOdd: true);
+document.Template.EvenTop = createPageHeader(isOdd: false);
+document.Template.EvenBottom = createPageFooter(isOdd: false);
+
 
 //Save and close the PDF document.
-document.Save("../../../HTML-to-PDF.pdf");
+document.Save("HTML-to-PDF.pdf");
 document.Close(true);
 
-// Method to create odd-page header
-static PdfTemplate createOddPageHeader()
+// Method to create page header based on page type (odd/even)
+static PdfPageTemplateElement createPageHeader(bool isOdd)
 {
-    PdfTemplate headerTemplate = new PdfTemplate(PdfPageSize.A4.Width, 50);
-    PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 10);
-    PdfBrush brush = new PdfSolidBrush(Color.Black);
-    headerTemplate.Graphics.DrawString("Odd Page Header", font, brush, new PointF(10, 10));
+    PdfPageTemplateElement headerTemplate = new PdfPageTemplateElement(PdfPageSize.A4.Width, 50);
+    PdfFont titleFont = new PdfStandardFont(PdfFontFamily.Helvetica, 12, PdfFontStyle.Bold);
+    PdfFont regularFont = new PdfStandardFont(PdfFontFamily.Helvetica, 9);
+
+    // Set colors and text based on page type
+    Color textColor = isOdd ? Color.Black : Color.FromArgb(64, 64, 64);
+    PdfBrush brush = new PdfSolidBrush(textColor);
+    PdfPen pen = new PdfPen(textColor, 1);
+
+    // Draw top border line
+    headerTemplate.Graphics.DrawLine(pen, new PointF(10, 45), new PointF(PdfPageSize.A4.Width - 10, 45));
+
+    // Draw title with odd/even indication
+    string pageType = isOdd ? "[ODD PAGE]" : "[EVEN PAGE]";
+    string headerText = isOdd
+        ? $"{pageType} - Syncfusion HTML to PDF Conversion"
+        : $"{pageType} - Dynamic Header and Footer Demo";
+    headerTemplate.Graphics.DrawString(headerText, titleFont, brush, new PointF(10, 5));
+
+    // Draw date/time on the right
+    string infoText = isOdd
+        ? "Date: " + DateTime.Now.ToString("MMM dd, yyyy")
+        : "Time: " + DateTime.Now.ToString("hh:mm tt");
+    SizeF size = regularFont.MeasureString(infoText);
+    headerTemplate.Graphics.DrawString(infoText, regularFont, brush, new PointF(PdfPageSize.A4.Width - size.Width - 10, 20));
+
     return headerTemplate;
 }
 
-// Method to create even-page header
-static PdfTemplate createEvenPageHeader()
+// Method to create page footer based on page type (odd/even)
+static PdfPageTemplateElement createPageFooter(bool isOdd)
 {
-    PdfTemplate headerTemplate = new PdfTemplate(PdfPageSize.A4.Width, 50);
-    PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 10);
-    PdfBrush brush = new PdfSolidBrush(Color.Gray);
-    headerTemplate.Graphics.DrawString("Even Page Header", font, brush, new PointF(10, 10));
-    return headerTemplate;
-}
+    PdfPageTemplateElement footerTemplate = new PdfPageTemplateElement(PdfPageSize.A4.Width, 50);
+    PdfFont regularFont = new PdfStandardFont(PdfFontFamily.Helvetica, 9);
+    PdfFont pageNumberFont = new PdfStandardFont(PdfFontFamily.Helvetica, 10, PdfFontStyle.Bold);
 
-// Method to create odd-page footer
-static PdfTemplate createOddPageFooter()
-{
-    PdfTemplate footerTemplate = new PdfTemplate(PdfPageSize.A4.Width, 50);
-    PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 10);
-    PdfBrush brush = new PdfSolidBrush(Color.Black);
-    footerTemplate.Graphics.DrawString("Odd Page Footer", font, brush, new PointF(10, 10));
-    return footerTemplate;
-}
+    // Set colors based on page type
+    Color textColor = isOdd ? Color.Black : Color.FromArgb(64, 64, 64);
+    PdfBrush brush = new PdfSolidBrush(textColor);
+    PdfPen pen = new PdfPen(textColor, 1);
 
-// Method to create even-page footer
-static PdfTemplate createEvenPageFooter()
-{
-    PdfTemplate footerTemplate = new PdfTemplate(PdfPageSize.A4.Width, 50);
-    PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 10);
-    PdfBrush brush = new PdfSolidBrush(Color.Gray);
-    footerTemplate.Graphics.DrawString("Even Page Footer", font, brush, new PointF(10, 10));
+    // Draw bottom border line
+    footerTemplate.Graphics.DrawLine(pen, new PointF(10, 5), new PointF(PdfPageSize.A4.Width - 10, 5));
+
+    // Draw company info on the left with odd/even indicator
+    string pageType = isOdd ? "ODD" : "EVEN";
+    string copyRight = $"© {DateTime.Now.Year} Syncfusion, Inc. All rights reserved. [{pageType} FOOTER]";
+    footerTemplate.Graphics.DrawString(copyRight, regularFont, brush, new PointF(10, 15));
+
+    // Draw page number on the right with field placeholder
+    // Note: Use a placeholder that can be replaced with actual page numbers
+    // PageNumber field will be added as a template field
+    PdfPageNumberField pageNumberField = new PdfPageNumberField(pageNumberFont, brush);
+    pageNumberField.Draw(footerTemplate.Graphics, new PointF(PdfPageSize.A4.Width - 50, 15));
+
     return footerTemplate;
 }
