@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    Html.BeginForm("ExportToPDF", "Home", FormMethod.Post);
+    {
+        <div>
+            <input type="submit" value="Convert HTML to PDF" style="width:250px;height:27px" />
+        </div>
+    }
+    Html.EndForm();
+}

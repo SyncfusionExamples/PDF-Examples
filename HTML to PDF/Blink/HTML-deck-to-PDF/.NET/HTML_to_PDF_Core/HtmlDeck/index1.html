@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Presentation Deck - Web Technologies 2026</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --white: #ffffff;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--dark);
+            color: var(--dark);
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Presentation Container */
+        .deck-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Slides Wrapper */
+        .slides {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        /* Slide Styles */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+            color: var(--white);
+            box-sizing: border-box;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Slide Content Box */
+        .slide-content {
+            max-width: 1100px;
+            width: 100%;
+            height: auto;
+            max-height: 85%;
+            background-color: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transform: translateY(20px);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slide.active .slide-content {
+            transform: translateY(0);
+        }
+
+        /* Typography & Layouts */
+        .slide-header {
+            margin-bottom: 2rem;
+        }
+
+        .slide-subtitle {
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-title {
+            font-size: 2.7rem;
+            font-weight: 800;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff 30%, #a5f3fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .slide-body {
+            flex-grow: 1;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #cbd5e1;
+        }
+
+        .col-left {
+            flex: 1.2;
+        }
+
+        .col-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Utility Elements */
+        .highlight {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.6rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* --- SLIDE 1: Title/Cover Specifics --- */
+        .slide-cover {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .slide-cover .slide-content {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 5rem 3rem;
+        }
+
+        .welcome-badge {
+            background-color: rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            color: #93c5fd;
+            padding: 0.4rem 1.2rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .main-title {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 40%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .author-info {
+            margin-top: 3rem;
+            font-size: 1rem;
+            color: var(--gray);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 1.5rem;
+            width: 100%;
+            max-width: 400px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .author-item span {
+            display: block;
+        }
+
+        .author-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .author-value {
+            color: #e2e8f0;
+            font-weight: 500;
+            margin-top: 0.2rem;
+        }
+
+        /* --- SLIDE 2: About Illustration --- */
+        .concept-image {
+            width: 100%;
+            max-width: 400px;
+            height: 280px;
+            border-radius: 16px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- SLIDE 3: Cards/Features --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .feature-icon-wrapper {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(37, 99, 235, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            color: #60a5fa;
+        }
+
+        .feature-card:nth-child(2) .feature-icon-wrapper {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+        }
+
+        .feature-card:nth-child(3) .feature-icon-wrapper {
+            background-color: rgba(139, 92, 246, 0.2);
+            color: #a78bfa;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--white);
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        /* --- SLIDE 4: Stats & Table --- */
+        .stats-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 2rem;
+        }
+
+        .stats-table-wrapper {
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .stats-table th {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--secondary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .stats-table td {
+            padding: 1.1rem 1.5rem;
+            font-size: 1rem;
+            color: #cbd5e1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .stats-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .stats-table tr:hover td {
+            background-color: rgba(255, 255, 255, 0.02);
+            color: var(--white);
+        }
+
+        .progress-bar {
+            background-color: rgba(255, 255, 255, 0.1);
+            height: 8px;
+            width: 100%;
+            border-radius: 999px;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 999px;
+        }
+
+        /* --- SLIDE 5: Contact / Form --- */
+        .info-panel {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2.5rem;
+            width: 100%;
+        }
+
+        .info-panel h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item svg {
+            color: var(--secondary);
+        }
+
+        /* Navigation Controls Overlay */
+        .controls {
+            position: absolute;
+            bottom: 2rem;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 4rem;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .nav-btn:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            background-color: rgba(255, 255, 255, 0.02);
+            border-color: rgba(255, 255, 255, 0.05);
+            transform: none !important;
+        }
+
+        .indicators {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .indicator.active {
+            width: 30px;
+            border-radius: 9999px;
+            background-color: var(--primary);
+        }
+
+        .progress-line-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: rgba(255, 255, 255, 0.05);
+            z-index: 200;
+        }
+
+        .progress-line {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            width: 0%;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .keyboard-hint {
+            position: absolute;
+            bottom: 2rem;
+            right: 4.5rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--gray);
+            background-color: rgba(0,0,0,0.3);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .key-badge {
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            font-family: inherit;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 968px) {
+            .slide-body {
+                flex-direction: column-reverse;
+                gap: 1.5rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .slide-content {
+                padding: 2rem;
+                max-height: 90%;
+            }
+            .slide-title {
+                font-size: 2rem;
+            }
+            .main-title {
+                font-size: 2.5rem;
+            }
+            .col-right img {
+                max-height: 150px;
+            }
+            .controls {
+                padding: 0 1.5rem;
+                bottom: 1rem;
+            }
+            .keyboard-hint {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="deck-container">
+        <!-- Progress bar top -->
+        <div class="progress-line-container">
+            <div id="progressLine" class="progress-line"></div>
+        </div>
+
+        <!-- Slides Wrapper -->
+        <div class="slides">
+
+            <!-- SLIDE 1: Cover Slide -->
+            <section class="slide active slide-cover" id="slide-1">
+                <div class="slide-content">
+                    <div>
+                        <div class="welcome-badge">ANNUAL KEYNOTE PRESENTATION</div>
+                        <h1 class="main-title">The Next Era of<br>Web Technologies</h1>
+                        <p style="color: #94a3b8; font-size: 1.3rem; max-width: 700px; margin: 0 auto 2rem auto;">
+                            Exploring bleeding-edge performance, advanced container constructs, and real-time interactive rendering protocols.
+                        </p>
+                    </div>
+
+                    <div class="author-info">
+                        <div class="author-item">
+                            <span class="author-label">Presented By</span>
+                            <span class="author-value">Code Studio</span>
+                        </div>
+                        <div class="author-item">
+                            <span class="author-label">Published</span>
+                            <span class="author-value">August 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 2: Introduction -->
+            <section class="slide" id="slide-2">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-subtitle">01 / Introduction</div>
+                        <h2 class="slide-title">Hyper-Performance Web Architectures</h2>
+                    </div>
+                    <div class="slide-body">
+                        <div class="col-left">
+                            <p style="margin-bottom: 1.25rem;">
+                                In <span class="highlight">2026</span>, building for the web requires more than just reactive interfaces. Applications demand hyper-efficient resource loading, serverless state synchronization, and sub-millisecond visual responses.
+                            </p>
+                            <p style="margin-bottom: 1.5rem;">
+                                This slide deck presents a high-level view of current paradigms. By adopting modern standards like web assembly binaries, edge databases, and advanced design languages, we bridge the gap between native and cloud capabilities.
+                            </p>
+                            <button class="btn btn-primary" onclick="goToSlide(2)">Explore Core Features →</button>
+                        </div>
+                        <div class="col-right">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800" class="concept-image" alt="Clean code development concept">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 3: Features Grid -->
+            <section class="slide" id="slide-3">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-subtitle">02 / Features</div>
+                        <h2 class="slide-title">Key Pillars of Modern Sites</h2>
+                    </div>
+                    <div class="slide-body">
+                        <div class="features-grid">
+                            <!-- Feature 1 -->
+                            <div class="feature-card">
+                                <div class="feature-icon-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                                </div>
+                                <h3>Lightning Fast Speed</h3>
+                                <p>Leveraging edge compute caching and dynamic hydration mechanisms to achieve instantaneous page-ready rendering states across all device cohorts.</p>
+                            </div>
+
+                            <!-- Feature 2 -->
+                            <div class="feature-card">
+                                <div class="feature-icon-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                </div>
+                                <h3>Zero-Trust Security</h3>
+                                <p>Integrated cryptography alongside fine-grained authorization layers, securing application states even across distributed decentralized networks.</p>
+                            </div>
+
+                            <!-- Feature 3 -->
+                            <div class="feature-card">
+                                <div class="feature-icon-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/></svg>
+                                </div>
+                                <h3>Scalable Design</h3>
+                                <p>Highly modular structural patterns using advanced web components and container queries, seamlessly tailoring visual layout to fit screen profiles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 4: Performance Data -->
+            <section class="slide" id="slide-4">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-subtitle">03 / Market Analysis</div>
+                        <h2 class="slide-title">2026 Architectural Performance Metrics</h2>
+                    </div>
+                    <div class="slide-body">
+                        <div class="stats-container">
+                            <p style="margin-bottom: -0.5rem; color: #94a3b8;">
+                                Comparative analysis outlining different application types and their corresponding Core Web Vitals standard ratings.
+                            </p>
+                            <div class="stats-table-wrapper">
+                                <table class="stats-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Framework Category</th>
+                                            <th>LCP Target Score</th>
+                                            <th>CLS stability</th>
+                                            <th>Adoption Growth</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Edge Hydration Engine</strong></td>
+                                            <td>0.8s (Excellent)</td>
+                                            <td>0.01</td>
+                                            <td>
+                                                <span style="display:inline-block; width:60px; margin-right: 10px;">85%</span>
+                                                <div class="progress-bar" style="max-width: 100px;"><div class="progress-fill" style="width: 85%;"></div></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Conventional SSR</strong></td>
+                                            <td>1.4s (Good)</td>
+                                            <td>0.04</td>
+                                            <td>
+                                                <span style="display:inline-block; width:60px; margin-right: 10px;">62%</span>
+                                                <div class="progress-bar" style="max-width: 100px;"><div class="progress-fill" style="width: 62%;"></div></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Client-Only SPAs</strong></td>
+                                            <td>2.2s (Fair)</td>
+                                            <td>0.09</td>
+                                            <td>
+                                                <span style="display:inline-block; width:60px; margin-right: 10px;">40%</span>
+                                                <div class="progress-bar" style="max-width: 100px;"><div class="progress-fill" style="width: 40%;"></div></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 5: Conclusion & Contact -->
+            <section class="slide" id="slide-5">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-subtitle">04 / Conclusion</div>
+                        <h2 class="slide-title">Step Into the Future of Web</h2>
+                    </div>
+                    <div class="slide-body">
+                        <div class="col-left">
+                            <p style="margin-bottom: 1.5rem;">
+                                The future represents a highly unified development story where servers serve as global edge caches and client applications are as fluid as physical interactions.
+                            </p>
+                            <div class="info-panel">
+                                <h3>Connect & Get Started</h3>
+                                <ul class="contact-list">
+                                    <li class="contact-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                        <span>contact@codestudio.com</span>
+                                    </li>
+                                    <li class="contact-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.49-11.05 1-11.6 8.56"/></svg>
+                                        <span>www.codestudio.com</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-right">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" class="concept-image" alt="Abstract space and networking illustration">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Controls Overlay -->
+        <div class="controls">
+            <button class="nav-btn" id="prevBtn" onclick="prevSlide()" disabled aria-label="Previous Slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            </button>
+            <div class="indicators" id="indicators">
+                <!-- Indicators dynamically rendered -->
+            </div>
+            <button class="nav-btn" id="nextBtn" onclick="nextSlide()" aria-label="Next Slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+        </div>
+
+        <!-- Keyboard hints -->
+        <div class="keyboard-hint">
+            <span>Use</span>
+            <span class="key-badge">←</span>
+            <span>/</span>
+            <span class="key-badge">→</span>
+            <span>Arrow keys</span>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const indicatorsContainer = document.getElementById('indicators');
+        const progressLine = document.getElementById('progressLine');
+        let currentSlideIndex = 0;
+
+        // Create Indicators
+        slides.forEach((_, idx) => {
+            const ind = document.createElement('div');
+            ind.className = `indicator ${idx === 0 ? 'active' : ''}`;
+            ind.onclick = () => goToSlide(idx);
+            indicatorsContainer.appendChild(ind);
+        });
+
+        const indicators = document.querySelectorAll('.indicator');
+
+        function updateSlideUI() {
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('active', idx === currentSlideIndex);
+            });
+            indicators.forEach((indicator, idx) => {
+                indicator.classList.toggle('active', idx === currentSlideIndex);
+            });
+
+            // Enable/Disable buttons
+            prevBtn.disabled = currentSlideIndex === 0;
+            nextBtn.disabled = currentSlideIndex === slides.length - 1;
+
+            // Update progress line
+            const percentage = (currentSlideIndex / (slides.length - 1)) * 100;
+            progressLine.style.width = `${percentage}%`;
+        }
+
+        function nextSlide() {
+            if (currentSlideIndex < slides.length - 1) {
+                currentSlideIndex++;
+                updateSlideUI();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                updateSlideUI();
+            }
+        }
+
+        function goToSlide(index) {
+            if (index >= 0 && index < slides.length) {
+                currentSlideIndex = index;
+                updateSlideUI();
+            }
+        }
+
+        // Add Key Bindings
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'Backspace') {
+                prevSlide();
+            }
+        });
+
+        // Initialize display states
+        updateSlideUI();
+    </script>
+</body>
+</html>
