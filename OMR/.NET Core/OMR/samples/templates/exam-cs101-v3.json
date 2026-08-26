@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "1.0",
+  "templateId": "exam-cs101",
+  "templateVersion": "3",
+  "page": {
+    "width": 8.5,
+    "height": 11.0,
+    "unit": "inch",
+    "orientation": "portrait"
+  },
+  "regions": [
+    { "id": "tl-anchor", "kind": "anchor", "rect": { "x": 0.035, "y": 0.032, "w": 0.055, "h": 0.042 } },
+    { "id": "tr-anchor", "kind": "anchor", "rect": { "x": 0.93, "y": 0.04, "w": 0.03, "h": 0.023 } },
+    { "id": "bl-anchor", "kind": "anchor", "rect": { "x": 0.04, "y": 0.94, "w": 0.03, "h": 0.023 } },
+    { "id": "br-anchor", "kind": "anchor", "rect": { "x": 0.93, "y": 0.94, "w": 0.03, "h": 0.023 } },
+    { "id": "qr", "kind": "barcode", "rect": { "x": 0.70, "y": 0.035, "w": 0.22, "h": 0.12 } }
+  ],
+  "groups": [
+    {
+      "id": "q1",
+      "groupKind": "answer",
+      "linkedGroupId": "q1-confidence",
+      "selectionPolicy": "single",
+      "marks": [
+        { "id": "A", "shape": "oval", "rect": { "x": 0.16, "y": 0.24, "w": 0.045, "h": 0.028 } },
+        { "id": "B", "shape": "oval", "rect": { "x": 0.28, "y": 0.24, "w": 0.045, "h": 0.028 } },
+        { "id": "C", "shape": "oval", "rect": { "x": 0.40, "y": 0.24, "w": 0.045, "h": 0.028 } },
+        { "id": "D", "shape": "oval", "rect": { "x": 0.52, "y": 0.24, "w": 0.045, "h": 0.028 } }
+      ]
+    },
+    {
+      "id": "q1-confidence",
+      "groupKind": "confidence",
+      "selectionPolicy": "single",
+      "marks": [
+        { "id": "H", "shape": "oval", "rect": { "x": 0.68, "y": 0.24, "w": 0.045, "h": 0.028 } },
+        { "id": "M", "shape": "oval", "rect": { "x": 0.78, "y": 0.24, "w": 0.045, "h": 0.028 } },
+        { "id": "L", "shape": "oval", "rect": { "x": 0.88, "y": 0.24, "w": 0.045, "h": 0.028 } }
+      ]
+    },
+    {
+      "id": "q2",
+      "groupKind": "answer",
+      "linkedGroupId": "q2-confidence",
+      "selectionPolicy": "single",
+      "marks": [
+        { "id": "A", "shape": "oval", "rect": { "x": 0.16, "y": 0.36, "w": 0.045, "h": 0.028 } },
+        { "id": "B", "shape": "oval", "rect": { "x": 0.28, "y": 0.36, "w": 0.045, "h": 0.028 } },
+        { "id": "C", "shape": "oval", "rect": { "x": 0.40, "y": 0.36, "w": 0.045, "h": 0.028 } },
+        { "id": "D", "shape": "oval", "rect": { "x": 0.52, "y": 0.36, "w": 0.045, "h": 0.028 } }
+      ]
+    },
+    {
+      "id": "q2-confidence",
+      "groupKind": "confidence",
+      "selectionPolicy": "single",
+      "marks": [
+        { "id": "H", "shape": "oval", "rect": { "x": 0.68, "y": 0.36, "w": 0.045, "h": 0.028 } },
+        { "id": "M", "shape": "oval", "rect": { "x": 0.78, "y": 0.36, "w": 0.045, "h": 0.028 } },
+        { "id": "L", "shape": "oval", "rect": { "x": 0.88, "y": 0.36, "w": 0.045, "h": 0.028 } }
+      ]
+    },
+    {
+      "id": "q3",
+      "groupKind": "answer",
+      "linkedGroupId": "q3-confidence",
+      "selectionPolicy": "single",
+      "marks": [
+        { "id": "A", "shape": "oval", "rect": { "x": 0.16, "y": 0.48, "w": 0.045, "h": 0.028 } },
+        { "id": "B", "shape": "oval", "rect": { "x": 0.28, "y": 0.48, "w": 0.045, "h": 0.028 } },
+        { "id": "C", "shape": "oval", "rect": { "x": 0.40, "y": 0.48, "w": 0.045, "h": 0.028 } },
+        { "id": "D", "shape": "oval", "rect": { "x": 0.52, "y": 0.48, "w": 0.045, "h": 0.028 } }
+      ]
+    },
+    {
+      "id": "q3-confidence",
+      "groupKind": "confidence",
+      "selectionPolicy": "single",
+      "marks": [
+        { "id": "H", "shape": "oval", "rect": { "x": 0.68, "y": 0.48, "w": 0.045, "h": 0.028 } },
+        { "id": "M", "shape": "oval", "rect": { "x": 0.78, "y": 0.48, "w": 0.045, "h": 0.028 } },
+        { "id": "L", "shape": "oval", "rect": { "x": 0.88, "y": 0.48, "w": 0.045, "h": 0.028 } }
+      ]
+    },
+    {
+      "id": "q4",
+      "groupKind": "answer",
+      "linkedGroupId": "q4-confidence",
+      "selectionPolicy": "single",
+      "marks": [
+        { "id": "A", "shape": "oval", "rect": { "x": 0.16, "y": 0.60, "w": 0.045, "h": 0.028 } },
+        { "id": "B", "shape": "oval", "rect": { "x": 0.28, "y": 0.60, "w": 0.045, "h": 0.028 } },
+        { "id": "C", "shape": "oval", "rect": { "x": 0.40, "y": 0.60, "w": 0.045, "h": 0.028 } },
+        { "id": "D", "shape": "oval", "rect": { "x": 0.52, "y": 0.60, "w": 0.045, "h": 0.028 } }
+      ]
+    },
+    {
+      "id": "q4-confidence",
+      "groupKind": "confidence",
+      "selectionPolicy": "single",
+      "marks": [
+        { "id": "H", "shape": "oval", "rect": { "x": 0.68, "y": 0.60, "w": 0.045, "h": 0.028 } },
+        { "id": "M", "shape": "oval", "rect": { "x": 0.78, "y": 0.60, "w": 0.045, "h": 0.028 } },
+        { "id": "L", "shape": "oval", "rect": { "x": 0.88, "y": 0.60, "w": 0.045, "h": 0.028 } }
+      ]
+    },
+    {
+      "id": "q5",
+      "groupKind": "answer",
+      "linkedGroupId": "q5-confidence",
+      "selectionPolicy": "single",
+      "marks": [
+        { "id": "A", "shape": "oval", "rect": { "x": 0.16, "y": 0.72, "w": 0.045, "h": 0.028 } },
+        { "id": "B", "shape": "oval", "rect": { "x": 0.28, "y": 0.72, "w": 0.045, "h": 0.028 } },
+        { "id": "C", "shape": "oval", "rect": { "x": 0.40, "y": 0.72, "w": 0.045, "h": 0.028 } },
+        { "id": "D", "shape": "oval", "rect": { "x": 0.52, "y": 0.72, "w": 0.045, "h": 0.028 } }
+      ]
+    },
+    {
+      "id": "q5-confidence",
+      "groupKind": "confidence",
+      "selectionPolicy": "single",
+      "marks": [
+        { "id": "H", "shape": "oval", "rect": { "x": 0.68, "y": 0.72, "w": 0.045, "h": 0.028 } },
+        { "id": "M", "shape": "oval", "rect": { "x": 0.78, "y": 0.72, "w": 0.045, "h": 0.028 } },
+        { "id": "L", "shape": "oval", "rect": { "x": 0.88, "y": 0.72, "w": 0.045, "h": 0.028 } }
+      ]
+    }
+  ]
+}
