@@ -11,7 +11,7 @@ using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath
     // Convert the document to PDF/A-2B format
     loadedDocument.ConvertToPDFA(PdfConformanceLevel.Pdf_A2B);
     // Save the PDF document
-    loadedDocument.Save(Path.GetFullPath(@"Output/Output2.pdf"));
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
 }
 
 // Event handler to substitute missing fonts during conversion
