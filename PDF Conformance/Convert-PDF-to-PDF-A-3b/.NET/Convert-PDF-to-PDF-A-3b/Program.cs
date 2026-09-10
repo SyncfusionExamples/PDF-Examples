@@ -25,10 +25,8 @@ using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath
         loadedDocument.CreateAttachment();
     //Add the attachment to the existing document. 
     loadedDocument.Attachments.Add(attachment);
-
     // Convert the document to PDF/A-3B format
     loadedDocument.ConvertToPDFA(PdfConformanceLevel.Pdf_A3B);
-
     // Save the PDF document
     loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));    
 }
