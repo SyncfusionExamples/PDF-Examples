@@ -9,12 +9,8 @@ using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath
 {
     // Handle font substitution during PDF/A conversion
     loadedDocument.SubstituteFont += LoadedDocument_SubstituteFont;
-    // Convert the document to PDF/A-3B format
-    loadedDocument.ConvertToPDFA(PdfConformanceLevel.Pdf_A3B);
-    //Get stream from the XML file
-    FileStream invoiceStream = new FileStream(Path.GetFullPath("Data/ZUGFeRD_invoice.xml"), FileMode.Open, FileAccess.Read);
     //Create an attachment
-    PdfAttachment attachment = new PdfAttachment("ZUGFeRD_invoice.xml", invoiceStream)
+    PdfAttachment attachment = new PdfAttachment(Path.GetFullPath("Data/ZUGFeRD_invoice.xml"))
     {
         //Add the attachment relationship
         Relationship = PdfAttachmentRelationship.Alternative,
@@ -29,9 +25,12 @@ using (PdfLoadedDocument loadedDocument = new PdfLoadedDocument(Path.GetFullPath
         loadedDocument.CreateAttachment();
     //Add the attachment to the existing document. 
     loadedDocument.Attachments.Add(attachment);
+
+    // Convert the document to PDF/A-3B format
+    loadedDocument.ConvertToPDFA(PdfConformanceLevel.Pdf_A3B);
+
     // Save the PDF document
-    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));
-    invoiceStream.Dispose();
+    loadedDocument.Save(Path.GetFullPath(@"Output/Output.pdf"));    
 }
 
 // Event handler to substitute missing fonts during conversion
