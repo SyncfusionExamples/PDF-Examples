@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML-to-PDF-Framework-Footer-Custom-Font", "HTML-to-PDF-Framework-Footer-Custom-Font\HTML-to-PDF-Framework-Footer-Custom-Font.csproj", "{DFF2E432-36D2-4AF2-8AA5-C715C9CF0773}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFF2E432-36D2-4AF2-8AA5-C715C9CF0773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFF2E432-36D2-4AF2-8AA5-C715C9CF0773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFF2E432-36D2-4AF2-8AA5-C715C9CF0773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFF2E432-36D2-4AF2-8AA5-C715C9CF0773}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB1E6B03-346E-426C-84B6-45CC1A0277B0}
+	EndGlobalSection
+EndGlobal
