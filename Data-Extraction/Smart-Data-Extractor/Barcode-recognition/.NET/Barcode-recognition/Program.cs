@@ -9,5 +9,5 @@ using (FileStream stream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), F
 	//Extract data as JSON.
 	string data = extractor.ExtractDataAsJson(stream);
 	//Save the extracted JSON data into an output file.
-	File.WriteAllText(Path.GetFullPath(@"Output/Output.pdf"), data, Encoding.UTF8);
+	File.WriteAllText(Path.GetFullPath(@"Output/Output.json"), data, Encoding.UTF8);
 }
