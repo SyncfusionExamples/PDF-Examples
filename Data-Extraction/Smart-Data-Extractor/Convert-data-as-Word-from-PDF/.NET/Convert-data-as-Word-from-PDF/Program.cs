@@ -9,6 +9,6 @@ using (FileStream stream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), F
 	//Extract data as WordDocument.
 	WordDocument word = extractor.ExtractDataAsWordDocument(stream);
 	//Save the extracted Word data into an output file.
-	word.Save(Path.GetFullPath(@"Output/Output.docx")); ;
+	word.Save(Path.GetFullPath(@"Output/Output.docx"));
 	word.Close();
 }
