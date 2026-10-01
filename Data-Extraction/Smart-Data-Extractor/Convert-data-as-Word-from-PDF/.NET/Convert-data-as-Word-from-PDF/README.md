@@ -11,7 +11,6 @@ Step 2: **Install the NuGet package:** Add the [Syncfusion.SmartDataExtractor.Ne
 Step 3: **Include necessary namespaces:** Add these namespaces in your Program.cs file:
 
 ```csharp
-using System.IO;
 using Syncfusion.DocIO.DLS;
 using Syncfusion.SmartDataExtractor;
 
@@ -20,16 +19,16 @@ using Syncfusion.SmartDataExtractor;
 Step 4: Add the following code snippet in Program.cs file to extract data from PDF.
 
 ```csharp
-// Open the input PDF file as a stream.
-using (FileStream stream = new FileStream(Path.GetFullPath("Input.pdf"), FileMode.Open, FileAccess.ReadWrite))
+//Open the input PDF file as a stream.
+using (FileStream stream = new FileStream("Input.pdf", FileMode.Open, FileAccess.Read))
 {
-    // Initialize the Smart Data Extractor.
-    DataExtractor extractor = new DataExtractor();
-    // Extract data as a Word document.
-    WordDocument word = extractor.ExtractDataAsWordDocument(stream);
-    // Save the extracted Word data into an output file.
-    word.Save(Path.GetFullPath(@"Output/Output.docx"));
-    word.Close();
+  //Initialize the Data Extractor.
+  DataExtractor extractor = new DataExtractor();
+  //Extract data as WordDocument.
+  WordDocument word = extractor.ExtractDataAsWordDocument(stream);
+  //Save the extracted Word data into an output file.
+  word.Save("Output.docx");
+  word.Close();
 }
 
 ```

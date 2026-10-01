@@ -11,24 +11,23 @@ Step 2: **Install the NuGet package:** Add the [Syncfusion.SmartDataExtractor.Ne
 Step 3: **Include necessary namespaces:** Add these namespaces in your Program.cs file:
 
 ```csharp
-using System.IO;
-using System.Text;
+
 using Syncfusion.SmartDataExtractor;
 
 ```
-
 Step 4: Add the following code snippet in Program.cs file to extract data from PDF.
 
 ```csharp
-// Open the input PDF file as a stream.
-using (FileStream stream = new FileStream(Path.GetFullPath("Input.pdf"), FileMode.Open, FileAccess.Read))
-{
-    // Initialize the Smart Data Extractor.
-    DataExtractor extractor = new DataExtractor();
-    // Extract data as HTML.
-    string htmlContent = extractor.ExtractDataAsHtml(stream);
-    // Save the extracted HTML data into an output file.
-    File.WriteAllText(Path.GetFullPath(@"Output/Output.html"), htmlContent);
+
+//Open the input PDF file as a stream. 
+using (FileStream stream = new FileStream("Input.pdf", FileMode.Open, FileAccess.Read)) 
+{ 
+  //Initialize the Data Extractor. 
+  DataExtractor extractor = new DataExtractor(); 
+  //Extract data as HTML. 
+  string  htmlContent = extractor.ExtractDataAsHtml(stream); 
+  //Save the extracted data into the HTML file. 
+  File.WriteAllText("Output.html", htmlContent); 
 }
 
 ```
