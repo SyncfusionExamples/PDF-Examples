@@ -20,17 +20,19 @@ Step 4: Add the following code snippet in Program.cs file to extract data from P
 
 ```csharp
 //Open the input PDF file as a stream.
+
 using (FileStream stream = new FileStream("Input.pdf", FileMode.Open, FileAccess.Read))
 {
-  //Initialize the Data Extractor.
-  DataExtractor extractor = new DataExtractor();
-  //Extract data as WordDocument.
-  WordDocument word = extractor.ExtractDataAsWordDocument(stream);
-  //Save the extracted Word data into an output file.
-  word.Save("Output.docx");
-  word.Close();
-}
 
+    //Initialize the Data Extractor.
+	DataExtractor extractor = new DataExtractor();
+    //Extract data as WordDocument.
+	WordDocument document = extractor.ExtractDataAsWordDocument(stream);
+    using MemoryStream saveStream = new MemoryStream();
+    //Save the extracted Word data into an output file.
+	document.Save(saveStream, FormatType.Docx);
+    document.Close();
+}
 ```
 For a complete working example, download it from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Data-Extraction/Smart-Data-Extractor/Convert-data-as-Word-from-PDF/.NET).
 
