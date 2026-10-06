@@ -1,6 +1,6 @@
 # Convert PDF to Word
 
-The Syncfusion® [Smart Data Extractor](https://www.syncfusion.com/document-sdk/net-pdf-data-extraction) is a .NET library used to extract document structures such as hierarchies, text blocks, images, headers, and footers from PDFs and scanned images by analyzing visual layout patterns like lines, boxes, and alignment. It converts the extracted content into a Word document for easy editing, formatting, and sharing.
+The Syncfusion® [Smart Data Extractor](https://www.syncfusion.com/document-sdk/net-pdf-data-extraction) is a .NET library used to extract document structures such as hierarchies, text blocks, images, barcodes, headers, and footers from PDFs and scanned images by analyzing visual layout patterns like lines, boxes, and alignment. It converts the extracted content into a Word document for easy editing, formatting, and sharing.
 
 ## Steps to Convert PDF to Word
 
