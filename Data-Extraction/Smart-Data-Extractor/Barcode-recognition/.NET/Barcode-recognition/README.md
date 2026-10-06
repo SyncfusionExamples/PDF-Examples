@@ -1,8 +1,8 @@
-# Extract Structured Data from PDF
+# Recognize Barcodes from PDF Files
 
-The Syncfusion® [Smart Data Extractor](https://www.syncfusion.com/document-sdk/net-pdf-data-extraction) is a .NET library used to extract document structures such as hierarchies, text blocks, images, headers, and footers from PDFs and scanned images by analyzing visual layout patterns like lines, boxes, and alignment. It can also help recognize barcode content and return structured JSON with per-field confidence scores.
+The Syncfusion® [Smart Data Extractor](https://www.syncfusion.com/document-sdk/net-pdf-data-extraction) is a .NET library used to extract document structures such as hierarchies, text blocks, images, barcodes, headers, and footers from PDFs and scanned images by analyzing visual layout patterns like lines, boxes, and alignment. It can also help recognize barcode content and return structured JSON with per-field confidence scores.
 
-## Steps to Extract Structured Data from PDF Files
+## Steps to Recognize Barcodes from PDF Files
 
 Step 1: **Create a new project:** Begin by setting up a new C# Console Application project.
 
