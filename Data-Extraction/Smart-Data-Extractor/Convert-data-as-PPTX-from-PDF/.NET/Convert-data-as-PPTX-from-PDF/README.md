@@ -1,8 +1,8 @@
-# Convert PDF to Word
+# Convert PDF to PowerPoint
 
-The Syncfusion® [Smart Data Extractor](https://www.syncfusion.com/document-sdk/net-pdf-data-extraction) is a .NET library used to extract document structures such as hierarchies, text blocks, images, barcodes, headers, and footers from PDFs and scanned images by analyzing visual layout patterns like lines, boxes, and alignment. It converts the extracted content into a Word document for easy editing, formatting, and sharing.
+The Syncfusion® [Smart Data Extractor](https://www.syncfusion.com/document-sdk/net-pdf-data-extraction) is a .NET library used to extract document structures such as hierarchies, text blocks, images, barcodes, headers, and footers from PDFs and scanned images by analyzing visual layout patterns like lines, boxes, and alignment. It converts the extracted content into a PowerPoint presentation for easy editing, formatting, and sharing.
 
-## Steps to Convert PDF to Word
+## Steps to Convert PDF to PowerPoint
 
 Step 1: **Create a new project:** Begin by setting up a new C# Console Application project.
 
@@ -11,7 +11,7 @@ Step 2: **Install the NuGet package:** Add the [Syncfusion.SmartDataExtractor.Ne
 Step 3: **Include necessary namespaces:** Add these namespaces in your Program.cs file:
 
 ```csharp
-using Syncfusion.DocIO.DLS;
+using Syncfusion.Presentation;
 using Syncfusion.SmartDataExtractor;
 
 ```
@@ -26,14 +26,14 @@ using (FileStream stream = new FileStream("Input.pdf", FileMode.Open, FileAccess
 
     //Initialize the Data Extractor.
 	DataExtractor extractor = new DataExtractor();
-    //Extract data as WordDocument.
-	WordDocument document = extractor.ExtractDataAsWordDocument(stream);
+    //Extract data as Presentation.
+	IPresentation presentation = extractor.ExtractDataAsPresentation(stream);
     using MemoryStream saveStream = new MemoryStream();
-    //Save the extracted Word data into an output file.
-	document.Save(saveStream, FormatType.Docx);
-    document.Close();
+    //Save the extracted PowerPoint data into an output file.
+	presentation.Save(saveStream);
+    presentation.Close();
 }
 ```
-For a complete working example, download it from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Data-Extraction/Smart-Data-Extractor/Convert-data-as-Word-from-PDF/.NET).
+For a complete working example, download it from [GitHub](https://github.com/SyncfusionExamples/PDF-Examples/tree/master/Data-Extraction/Smart-Data-Extractor/Convert-data-as-PPTX-from-PDF/.NET).
 
-More information about Extract data from PDF can be refer in this [documentation](https://help.syncfusion.com/document-processing/data-extraction/net/conversions/pdf-to-word#convert-pdf-or-image-to-word-document) section.
+More information about Extract data from PDF can be refer in this [documentation](https://help.syncfusion.com/document-processing/data-extraction/net/conversions/pdf-to-pptx#convert-pdf-or-image-to-pptx-document) section.
