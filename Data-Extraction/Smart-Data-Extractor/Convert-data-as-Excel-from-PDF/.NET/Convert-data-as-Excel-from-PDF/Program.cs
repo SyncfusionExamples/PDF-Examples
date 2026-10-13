@@ -6,9 +6,9 @@ using (FileStream stream = new FileStream(Path.GetFullPath(@"Data/Input.pdf"), F
 {
 	//Initialize the Data Extractor.
 	DataExtractor extractor = new DataExtractor();
-	//Extract data as WordDocument.
-	WordDocument word = extractor.ExtractDataAsWordDocument(stream);
-	//Save the extracted Word data into an output file.
-	word.Save(Path.GetFullPath(@"Output/Output.docx"));
-	word.Close();
+	//Extract data as Excel Document.
+	IWorkbook excel = extractor.ExtractDataAsExcel(stream);
+	//Save the extracted excel data into an output file.
+	excel.Save(Path.GetFullPath(@"Output/Output.docx"));
+	excel.Close();
 }
