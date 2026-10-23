@@ -20,7 +20,7 @@ class Program
         using (PdfDocument document = new PdfDocument())
         {
             // Set document title and metadata for accessibility (WCAG / PDF/UA compliance)
-            document.DocumentInformation.Title = "Accessible Tagged PDF with Hierarchical Headings";
+            document.DocumentInformation.Title = "Accessible Tagged PDF with Multiple Hierarchical Sections";
             document.ViewerPreferences.DisplayTitle = true;
 
             // Add a new page to the document
@@ -29,11 +29,10 @@ class Program
 
             // Define standard fonts for headings and body content
             PdfFont h1Font = new PdfStandardFont(PdfFontFamily.Helvetica, 18, PdfFontStyle.Bold);
-            PdfFont h2Font = new PdfStandardFont(PdfFontFamily.Helvetica, 15, PdfFontStyle.Bold);
-            PdfFont h3Font = new PdfStandardFont(PdfFontFamily.Helvetica, 13, PdfFontStyle.Bold);
-            PdfFont h4Font = new PdfStandardFont(PdfFontFamily.Helvetica, 11, PdfFontStyle.Bold);
-            PdfFont h5Font = new PdfStandardFont(PdfFontFamily.Helvetica, 10, PdfFontStyle.Bold);
-            PdfFont bodyFont = new PdfStandardFont(PdfFontFamily.Helvetica, 10, PdfFontStyle.Regular);
+            PdfFont h2Font = new PdfStandardFont(PdfFontFamily.Helvetica, 14, PdfFontStyle.Bold);
+            PdfFont h3Font = new PdfStandardFont(PdfFontFamily.Helvetica, 12, PdfFontStyle.Bold);
+            PdfFont h4Font = new PdfStandardFont(PdfFontFamily.Helvetica, 10.5f, PdfFontStyle.Bold);
+            PdfFont bodyFont = new PdfStandardFont(PdfFontFamily.Helvetica, 9.5f, PdfFontStyle.Regular);
 
             // Define brushes for styling
             PdfBrush headingBrush = new PdfSolidBrush(new PdfColor(24, 43, 73));
@@ -43,196 +42,304 @@ class Program
             float pageWidth = page.Graphics.ClientSize.Width;
 
             // ====================================================================================
-            // 1. H1 (Main Heading)
-            // ------------------------------------------------------------------------------------
-            // In the PDF logical structure tree (StructTreeRoot), H1 is a top-level heading.
-            // Leaving Parent as null attaches this structure element directly under the Document root.
+            // Document Tag Hierarchy Overview:
+            //
+            // H1 (Main Heading)
+            //   H2 (Section 1)
+            //     Paragraph
+            //     H3 (Subsection 1.1)
+            //       Paragraph
+            //     H3 (Subsection 1.2)
+            //       Paragraph
+            //       H4 (Deep Subsection 1.2.1)
+            //         Paragraph
+            //   H2 (Section 2)
+            //     Paragraph
+            //     H3 (Subsection 2.1)
+            //       Paragraph
+            //     H3 (Subsection 2.2)
+            //       Paragraph
+            //       H4 (Deep Subsection 2.2.1)
+            //         Paragraph
             // ====================================================================================
+
+            // ------------------------------------------------------------------------------------
+            // H1 (Main Heading)
+            // In the PDF logical structure tree (StructTreeRoot), H1 is a top-level heading.
+            // Leaving Parent unassigned attaches this element directly under Document root.
+            // ------------------------------------------------------------------------------------
             PdfStructureElement h1Tag = new PdfStructureElement(PdfTagType.HeadingLevel1)
             {
                 Title = "Main Heading (H1)"
             };
 
-            PdfTextElement h1Element = new PdfTextElement("H1: Document Accessibility and Semantic Structure Guide", h1Font, headingBrush)
+            PdfTextElement h1Element = new PdfTextElement("H1: Document Accessibility and Semantic Heading Architecture", h1Font, headingBrush)
             {
                 PdfTag = h1Tag
             };
             PdfLayoutResult result = h1Element.Draw(page, new RectangleF(0, yPos, pageWidth, 50), layoutFormat);
-            yPos = result.Bounds.Bottom + 6;
+            yPos = result.Bounds.Bottom + 12;
 
-            // Sample content under H1 (introductory paragraph at root level)
-            PdfStructureElement h1ContentTag = new PdfStructureElement(PdfTagType.Paragraph)
+            // ====================================================================================
+            // SECTION 1 (H2)
+            // ====================================================================================
+
+            // H2 Section 1: Attached directly under Document root (or top-level section)
+            PdfStructureElement h2Section1Tag = new PdfStructureElement(PdfTagType.HeadingLevel2)
             {
-                Title = "Introductory Content under H1"
+                Title = "Section 1 Heading (H2)"
             };
 
-            PdfTextElement h1ContentElement = new PdfTextElement(
-                "Accessible Tagged PDF documents ensure that all users, including those using assistive technologies " +
-                "like screen readers, can easily navigate, interpret, and understand digital publications. " +
-                "Semantic heading tags establish a navigational outline that facilitates sequential and hierarchical exploration.",
+            PdfTextElement h2Section1Element = new PdfTextElement("H2: Section 1 - Core Web Accessibility Principles", h2Font, headingBrush)
+            {
+                PdfTag = h2Section1Tag
+            };
+            result = h2Section1Element.Draw(page, new RectangleF(0, yPos, pageWidth, 50), layoutFormat);
+            yPos = result.Bounds.Bottom + 4;
+
+            // Paragraph under Section 1 (H2) - Parent set to h2Section1Tag
+            PdfStructureElement pSection1Tag = new PdfStructureElement(PdfTagType.Paragraph)
+            {
+                Title = "Paragraph under Section 1 (H2)",
+                Parent = h2Section1Tag // Parent-child relationship: H2 (Section 1) -> Paragraph
+            };
+
+            PdfTextElement pSection1Element = new PdfTextElement(
+                "Accessible digital documents rely on semantic structure to convey visual hierarchy and reading order to assistive technologies.",
                 bodyFont,
                 bodyBrush
             )
             {
-                PdfTag = h1ContentTag
+                PdfTag = pSection1Tag
             };
-            result = h1ContentElement.Draw(page, new RectangleF(0, yPos, pageWidth, 50), layoutFormat);
-            yPos = result.Bounds.Bottom + 16;
+            result = pSection1Element.Draw(page, new RectangleF(0, yPos, pageWidth, 50), layoutFormat);
+            yPos = result.Bounds.Bottom + 8;
 
-            // ====================================================================================
-            // 2. H2 (Section Heading)
-            // ------------------------------------------------------------------------------------
-            // H2 serves as the primary section header.
-            // In this hierarchy, H2 acts as the parent container tag for subsections H3, H4, and H5.
-            // ====================================================================================
-            PdfStructureElement h2Tag = new PdfStructureElement(PdfTagType.HeadingLevel2)
+            // Subsection 1.1 (H3) - Parent set to h2Section1Tag
+            PdfStructureElement h3Sec1Sub1Tag = new PdfStructureElement(PdfTagType.HeadingLevel3)
             {
-                Title = "Section Heading (H2)"
+                Title = "Subsection 1.1 Heading (H3)",
+                Parent = h2Section1Tag // Parent-child relationship: H2 (Section 1) -> H3 (Subsection 1.1)
             };
 
-            PdfTextElement h2Element = new PdfTextElement("H2: Core Accessibility Guidelines and Standards", h2Font, headingBrush)
+            PdfTextElement h3Sec1Sub1Element = new PdfTextElement("H3: Subsection 1.1 - Perceivable Information Structure", h3Font, headingBrush)
             {
-                PdfTag = h2Tag
+                PdfTag = h3Sec1Sub1Tag
             };
-            result = h2Element.Draw(page, new RectangleF(0, yPos, pageWidth, 50), layoutFormat);
-            yPos = result.Bounds.Bottom + 6;
+            result = h3Sec1Sub1Element.Draw(page, new RectangleF(15, yPos, pageWidth - 15, 50), layoutFormat);
+            yPos = result.Bounds.Bottom + 4;
 
-            // Sample content under H2 - establishing parent-child relationship by assigning h2ContentTag.Parent = h2Tag
-            PdfStructureElement h2ContentTag = new PdfStructureElement(PdfTagType.Paragraph)
+            // Paragraph under Subsection 1.1 (H3) - Parent set to h3Sec1Sub1Tag
+            PdfStructureElement pSec1Sub1Tag = new PdfStructureElement(PdfTagType.Paragraph)
             {
-                Title = "Content under H2",
-                Parent = h2Tag // Parent-child relationship: H2 -> Paragraph
+                Title = "Paragraph under Subsection 1.1 (H3)",
+                Parent = h3Sec1Sub1Tag // Parent-child relationship: H3 (Subsection 1.1) -> Paragraph
             };
 
-            PdfTextElement h2ContentElement = new PdfTextElement(
-                "This section outlines international accessibility standards (WCAG 2.1 and PDF/UA-1). " +
-                "The subsections below (H3, H4, and H5) demonstrate how subsections are structurally nested " +
-                "under this H2 section tag in the PDF document structure tree.",
+            PdfTextElement pSec1Sub1Element = new PdfTextElement(
+                "Users must be able to comprehend presented information through text alternatives and structured outlines.",
                 bodyFont,
                 bodyBrush
             )
             {
-                PdfTag = h2ContentTag
+                PdfTag = pSec1Sub1Tag
             };
-            result = h2ContentElement.Draw(page, new RectangleF(0, yPos, pageWidth, 50), layoutFormat);
+            result = pSec1Sub1Element.Draw(page, new RectangleF(15, yPos, pageWidth - 15, 50), layoutFormat);
+            yPos = result.Bounds.Bottom + 8;
+
+            // Subsection 1.2 (H3) - Parent set to h2Section1Tag
+            PdfStructureElement h3Sec1Sub2Tag = new PdfStructureElement(PdfTagType.HeadingLevel3)
+            {
+                Title = "Subsection 1.2 Heading (H3)",
+                Parent = h2Section1Tag // Parent-child relationship: H2 (Section 1) -> H3 (Subsection 1.2)
+            };
+
+            PdfTextElement h3Sec1Sub2Element = new PdfTextElement("H3: Subsection 1.2 - Operable Navigation Architecture", h3Font, headingBrush)
+            {
+                PdfTag = h3Sec1Sub2Tag
+            };
+            result = h3Sec1Sub2Element.Draw(page, new RectangleF(15, yPos, pageWidth - 15, 50), layoutFormat);
+            yPos = result.Bounds.Bottom + 4;
+
+            // Paragraph under Subsection 1.2 (H3) - Parent set to h3Sec1Sub2Tag
+            PdfStructureElement pSec1Sub2Tag = new PdfStructureElement(PdfTagType.Paragraph)
+            {
+                Title = "Paragraph under Subsection 1.2 (H3)",
+                Parent = h3Sec1Sub2Tag // Parent-child relationship: H3 (Subsection 1.2) -> Paragraph
+            };
+
+            PdfTextElement pSec1Sub2Element = new PdfTextElement(
+                "Heading outlines allow keyboard and screen-reader users to jump efficiently across document sections.",
+                bodyFont,
+                bodyBrush
+            )
+            {
+                PdfTag = pSec1Sub2Tag
+            };
+            result = pSec1Sub2Element.Draw(page, new RectangleF(15, yPos, pageWidth - 15, 50), layoutFormat);
+            yPos = result.Bounds.Bottom + 8;
+
+            // Deep Subsection 1.2.1 (H4) - Parent set to h3Sec1Sub2Tag
+            PdfStructureElement h4Sec1Sub2DeepTag = new PdfStructureElement(PdfTagType.HeadingLevel4)
+            {
+                Title = "Deep Subsection 1.2.1 Heading (H4)",
+                Parent = h3Sec1Sub2Tag // Parent-child relationship: H3 (Subsection 1.2) -> H4 (Deep Subsection)
+            };
+
+            PdfTextElement h4Sec1Sub2DeepElement = new PdfTextElement("H4: Deep Subsection 1.2.1 - Skip Navigation Keys", h4Font, headingBrush)
+            {
+                PdfTag = h4Sec1Sub2DeepTag
+            };
+            result = h4Sec1Sub2DeepElement.Draw(page, new RectangleF(30, yPos, pageWidth - 30, 50), layoutFormat);
+            yPos = result.Bounds.Bottom + 4;
+
+            // Paragraph under Deep Subsection 1.2.1 (H4) - Parent set to h4Sec1Sub2DeepTag
+            PdfStructureElement pSec1Sub2DeepTag = new PdfStructureElement(PdfTagType.Paragraph)
+            {
+                Title = "Paragraph under Deep Subsection 1.2.1 (H4)",
+                Parent = h4Sec1Sub2DeepTag // Parent-child relationship: H4 (Deep Subsection) -> Paragraph
+            };
+
+            PdfTextElement pSec1Sub2DeepElement = new PdfTextElement(
+                "Assistive tools use H4 structures for granular in-page skipping without losing broader section context.",
+                bodyFont,
+                bodyBrush
+            )
+            {
+                PdfTag = pSec1Sub2DeepTag
+            };
+            result = pSec1Sub2DeepElement.Draw(page, new RectangleF(30, yPos, pageWidth - 30, 50), layoutFormat);
             yPos = result.Bounds.Bottom + 14;
 
             // ====================================================================================
-            // 3. H3 (Subsection Heading)
-            // ------------------------------------------------------------------------------------
-            // ESTABLISHING PARENT-CHILD RELATIONSHIP:
-            // Setting h3Tag.Parent = h2Tag nests H3 as a direct child of H2 in the PDF structure tree.
-            // Assistive technologies encounter H3 as a logical subsection within H2.
+            // SECTION 2 (H2)
             // ====================================================================================
-            PdfStructureElement h3Tag = new PdfStructureElement(PdfTagType.HeadingLevel3)
+
+            // H2 Section 2: Second section heading attached at document root
+            PdfStructureElement h2Section2Tag = new PdfStructureElement(PdfTagType.HeadingLevel2)
             {
-                Title = "Subsection Heading (H3)",
-                Parent = h2Tag // Parent-child relationship: H2 -> H3
+                Title = "Section 2 Heading (H2)"
             };
 
-            PdfTextElement h3Element = new PdfTextElement("H3: Perceivable Digital Content and Structure", h3Font, headingBrush)
+            PdfTextElement h2Section2Element = new PdfTextElement("H2: Section 2 - PDF/UA Tagging and Validation", h2Font, headingBrush)
             {
-                PdfTag = h3Tag
+                PdfTag = h2Section2Tag
             };
-            result = h3Element.Draw(page, new RectangleF(15, yPos, pageWidth - 15, 50), layoutFormat);
-            yPos = result.Bounds.Bottom + 6;
+            result = h2Section2Element.Draw(page, new RectangleF(0, yPos, pageWidth, 50), layoutFormat);
+            yPos = result.Bounds.Bottom + 4;
 
-            // Sample content under H3 - nested under H3 structure element
-            PdfStructureElement h3ContentTag = new PdfStructureElement(PdfTagType.Paragraph)
+            // Paragraph under Section 2 (H2) - Parent set to h2Section2Tag
+            PdfStructureElement pSection2Tag = new PdfStructureElement(PdfTagType.Paragraph)
             {
-                Title = "Content under H3",
-                Parent = h3Tag // Parent-child relationship: H3 -> Paragraph
+                Title = "Paragraph under Section 2 (H2)",
+                Parent = h2Section2Tag // Parent-child relationship: H2 (Section 2) -> Paragraph
             };
 
-            PdfTextElement h3ContentElement = new PdfTextElement(
-                "Digital content must provide text alternatives and clear heading semantics so that assistive " +
-                "tools can convey visual hierarchy and meaningful reading sequences to end users.",
+            PdfTextElement pSection2Element = new PdfTextElement(
+                "PDF/UA-1 mandates marked content dictionaries and logical structure trees to guarantee accessible parsing.",
                 bodyFont,
                 bodyBrush
             )
             {
-                PdfTag = h3ContentTag
+                PdfTag = pSection2Tag
             };
-            result = h3ContentElement.Draw(page, new RectangleF(15, yPos, pageWidth - 15, 50), layoutFormat);
-            yPos = result.Bounds.Bottom + 14;
+            result = pSection2Element.Draw(page, new RectangleF(0, yPos, pageWidth, 50), layoutFormat);
+            yPos = result.Bounds.Bottom + 8;
 
-            // ====================================================================================
-            // 4. H4 (Subsection Heading)
-            // ------------------------------------------------------------------------------------
-            // ESTABLISHING PARENT-CHILD RELATIONSHIP:
-            // Setting h4Tag.Parent = h2Tag nests H4 under H2 in the tag hierarchy.
-            // This satisfies the requirement that H3, H4, and H5 are all nested under H2.
-            // ====================================================================================
-            PdfStructureElement h4Tag = new PdfStructureElement(PdfTagType.HeadingLevel4)
+            // Subsection 2.1 (H3) - Parent set to h2Section2Tag
+            PdfStructureElement h3Sec2Sub1Tag = new PdfStructureElement(PdfTagType.HeadingLevel3)
             {
-                Title = "Subsection Heading (H4)",
-                Parent = h2Tag // Parent-child relationship: H2 -> H4
+                Title = "Subsection 2.1 Heading (H3)",
+                Parent = h2Section2Tag // Parent-child relationship: H2 (Section 2) -> H3 (Subsection 2.1)
             };
 
-            PdfTextElement h4Element = new PdfTextElement("H4: Logical Tree Hierarchy and Element Ordering", h4Font, headingBrush)
+            PdfTextElement h3Sec2Sub1Element = new PdfTextElement("H3: Subsection 2.1 - Logical Structure Tree Construction", h3Font, headingBrush)
             {
-                PdfTag = h4Tag
+                PdfTag = h3Sec2Sub1Tag
             };
-            result = h4Element.Draw(page, new RectangleF(30, yPos, pageWidth - 30, 50), layoutFormat);
-            yPos = result.Bounds.Bottom + 6;
+            result = h3Sec2Sub1Element.Draw(page, new RectangleF(15, yPos, pageWidth - 15, 50), layoutFormat);
+            yPos = result.Bounds.Bottom + 4;
 
-            // Sample content under H4 - nested under H4 structure element
-            PdfStructureElement h4ContentTag = new PdfStructureElement(PdfTagType.Paragraph)
+            // Paragraph under Subsection 2.1 (H3) - Parent set to h3Sec2Sub1Tag
+            PdfStructureElement pSec2Sub1Tag = new PdfStructureElement(PdfTagType.Paragraph)
             {
-                Title = "Content under H4",
-                Parent = h4Tag // Parent-child relationship: H4 -> Paragraph
+                Title = "Paragraph under Subsection 2.1 (H3)",
+                Parent = h3Sec2Sub1Tag // Parent-child relationship: H3 (Subsection 2.1) -> Paragraph
             };
 
-            PdfTextElement h4ContentElement = new PdfTextElement(
-                "In PDF tagging, the StructTreeRoot manages the tree of PdfStructureElement instances. " +
-                "Explicitly assigning the Parent property ensures that subheadings and body paragraphs " +
-                "are grouped logically under their intended parent sections.",
+            PdfTextElement pSec2Sub1Element = new PdfTextElement(
+                "The StructTreeRoot references tagged elements, preserving parent-child relations across pages.",
                 bodyFont,
                 bodyBrush
             )
             {
-                PdfTag = h4ContentTag
+                PdfTag = pSec2Sub1Tag
             };
-            result = h4ContentElement.Draw(page, new RectangleF(30, yPos, pageWidth - 30, 50), layoutFormat);
-            yPos = result.Bounds.Bottom + 14;
+            result = pSec2Sub1Element.Draw(page, new RectangleF(15, yPos, pageWidth - 15, 50), layoutFormat);
+            yPos = result.Bounds.Bottom + 8;
 
-            // ====================================================================================
-            // 5. H5 (Subsection Heading)
-            // ------------------------------------------------------------------------------------
-            // ESTABLISHING PARENT-CHILD RELATIONSHIP:
-            // Setting h5Tag.Parent = h2Tag nests H5 under H2 in the tag hierarchy.
-            // Assistive devices and accessibility validators recognise H5 as nested under H2.
-            // ====================================================================================
-            PdfStructureElement h5Tag = new PdfStructureElement(PdfTagType.HeadingLevel5)
+            // Subsection 2.2 (H3) - Parent set to h2Section2Tag
+            PdfStructureElement h3Sec2Sub2Tag = new PdfStructureElement(PdfTagType.HeadingLevel3)
             {
-                Title = "Subsection Heading (H5)",
-                Parent = h2Tag // Parent-child relationship: H2 -> H5
+                Title = "Subsection 2.2 Heading (H3)",
+                Parent = h2Section2Tag // Parent-child relationship: H2 (Section 2) -> H3 (Subsection 2.2)
             };
 
-            PdfTextElement h5Element = new PdfTextElement("H5: Accessibility Validation and Compliance Verification", h5Font, headingBrush)
+            PdfTextElement h3Sec2Sub2Element = new PdfTextElement("H3: Subsection 2.2 - Compliance Checkers and Verification", h3Font, headingBrush)
             {
-                PdfTag = h5Tag
+                PdfTag = h3Sec2Sub2Tag
             };
-            result = h5Element.Draw(page, new RectangleF(45, yPos, pageWidth - 45, 50), layoutFormat);
-            yPos = result.Bounds.Bottom + 6;
+            result = h3Sec2Sub2Element.Draw(page, new RectangleF(15, yPos, pageWidth - 15, 50), layoutFormat);
+            yPos = result.Bounds.Bottom + 4;
 
-            // Sample content under H5 - nested under H5 structure element
-            PdfStructureElement h5ContentTag = new PdfStructureElement(PdfTagType.Paragraph)
+            // Paragraph under Subsection 2.2 (H3) - Parent set to h3Sec2Sub2Tag
+            PdfStructureElement pSec2Sub2Tag = new PdfStructureElement(PdfTagType.Paragraph)
             {
-                Title = "Content under H5",
-                Parent = h5Tag // Parent-child relationship: H5 -> Paragraph
+                Title = "Paragraph under Subsection 2.2 (H3)",
+                Parent = h3Sec2Sub2Tag // Parent-child relationship: H3 (Subsection 2.2) -> Paragraph
             };
 
-            PdfTextElement h5ContentElement = new PdfTextElement(
-                "Automated checkers and screen readers verify the MarkInfo dictionary (/Marked true) " +
-                "and traverse the structure tree to ensure valid parent-child relationships and semantic heading progression.",
+            PdfTextElement pSec2Sub2Element = new PdfTextElement(
+                "Accessibility engines verify that heading depths do not skip levels and remain properly enclosed in parent containers.",
                 bodyFont,
                 bodyBrush
             )
             {
-                PdfTag = h5ContentTag
+                PdfTag = pSec2Sub2Tag
             };
-            result = h5ContentElement.Draw(page, new RectangleF(45, yPos, pageWidth - 45, 50), layoutFormat);
+            result = pSec2Sub2Element.Draw(page, new RectangleF(15, yPos, pageWidth - 15, 50), layoutFormat);
+            yPos = result.Bounds.Bottom + 8;
+
+            // Deep Subsection 2.2.1 (H4) - Parent set to h3Sec2Sub2Tag
+            PdfStructureElement h4Sec2Sub2DeepTag = new PdfStructureElement(PdfTagType.HeadingLevel4)
+            {
+                Title = "Deep Subsection 2.2.1 Heading (H4)",
+                Parent = h3Sec2Sub2Tag // Parent-child relationship: H3 (Subsection 2.2) -> H4 (Deep Subsection)
+            };
+
+            PdfTextElement h4Sec2Sub2DeepElement = new PdfTextElement("H4: Deep Subsection 2.2.1 - Automated Validation Checkers", h4Font, headingBrush)
+            {
+                PdfTag = h4Sec2Sub2DeepTag
+            };
+            result = h4Sec2Sub2DeepElement.Draw(page, new RectangleF(30, yPos, pageWidth - 30, 50), layoutFormat);
+            yPos = result.Bounds.Bottom + 4;
+
+            // Paragraph under Deep Subsection 2.2.1 (H4) - Parent set to h4Sec2Sub2DeepTag
+            PdfStructureElement pSec2Sub2DeepTag = new PdfStructureElement(PdfTagType.Paragraph)
+            {
+                Title = "Paragraph under Deep Subsection 2.2.1 (H4)",
+                Parent = h4Sec2Sub2DeepTag // Parent-child relationship: H4 (Deep Subsection) -> Paragraph
+            };
+
+            PdfTextElement pSec2Sub2DeepElement = new PdfTextElement(
+                "Automated accessibility tools inspect each node in StructTreeRoot to validate tag order and nesting hierarchy.",
+                bodyFont,
+                bodyBrush
+            )
+            {
+                PdfTag = pSec2Sub2DeepTag
+            };
+            result = pSec2Sub2DeepElement.Draw(page, new RectangleF(30, yPos, pageWidth - 30, 50), layoutFormat);
 
             // Save the generated Tagged PDF document
             using (FileStream fileStream = new FileStream(outputPath, FileMode.Create, FileAccess.Write))
