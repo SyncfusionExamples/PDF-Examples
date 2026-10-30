@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Convert_PDF_to_Word</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Data\Input-file.pdf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Input-file.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.SmartDataExtractor.Net.Core" Version="35.1.41" />
+  </ItemGroup>
+
+</Project>
