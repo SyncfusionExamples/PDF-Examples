@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h2 style="margin-bottom: 20px">Working with Smart Data Extractor</h2>
+    <div>
+        <button style="width: 250px; margin-bottom: 20px; height: 40px; display:block; font-size:18px;"
+                onclick="location.href='@Url.Action("ConvertPDFtoWord", "Home")'">
+            PDF to Word
+        </button>
+        <button style="width: 250px; margin-bottom: 20px; height: 40px; display:block; font-size:18px;"
+                onclick="location.href='@Url.Action("PDFRangetoWord", "Home")'">
+            PDF Page Range to Word
+        </button>
+    </div>
+</div>
