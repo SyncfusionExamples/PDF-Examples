@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "/workspace/PDF-Examples/Certificate-to-PDF/ASP.NET Core/Certificate-to-PDF/wwwroot/Data/CertificateTemplate.jpeg",
+      "PackagePath": "staticwebassets/Data/CertificateTemplate.jpeg"
+    },
+    {
+      "Id": "/workspace/PDF-Examples/Certificate-to-PDF/ASP.NET Core/Certificate-to-PDF/wwwroot/Fonts/arial.ttf",
+      "PackagePath": "staticwebassets/Fonts/arial.ttf"
+    },
+    {
+      "Id": "/workspace/PDF-Examples/Certificate-to-PDF/ASP.NET Core/Certificate-to-PDF/wwwroot/Fonts/arialbd.ttf",
+      "PackagePath": "staticwebassets/Fonts/arialbd.ttf"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.Certificate-to-PDF.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.Certificate-to-PDF.props",
+      "PackagePath": "build\\Certificate-to-PDF.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Certificate-to-PDF.props",
+      "PackagePath": "buildMultiTargeting\\Certificate-to-PDF.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Certificate-to-PDF.props",
+      "PackagePath": "buildTransitive\\Certificate-to-PDF.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

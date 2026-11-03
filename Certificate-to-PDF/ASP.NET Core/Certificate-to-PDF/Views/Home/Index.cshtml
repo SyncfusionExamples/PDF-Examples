@@ -1,0 +1,38 @@
+@model Certificate_to_PDF.Models.CertificateModel
+@{
+    var examModes = ViewData["ExamModes"] as List<SelectListItem>;
+}
+
+<p class="lead">
+    Fill in the participant details and click <strong>Create Certificate</strong> to generate and download
+    the participation certificate as a PDF document using the Syncfusion PDF Library.
+</p>
+
+<form asp-action="CreateCertificate" method="post">
+    <div>
+        <label asp-for="ParticipantName"></label>
+        <input asp-for="ParticipantName" />
+        <span asp-validation-for="ParticipantName" class="field-error"></span>
+    </div>
+    <div>
+        <label asp-for="CompetitionTitle"></label>
+        <input asp-for="CompetitionTitle" />
+        <span asp-validation-for="CompetitionTitle" class="field-error"></span>
+    </div>
+    <div>
+        <label asp-for="DateText"></label>
+        <input asp-for="DateText" />
+        <span asp-validation-for="DateText" class="field-error"></span>
+    </div>
+    <div>
+        <label asp-for="ExamMode"></label>
+        <select asp-for="ExamMode" asp-items="examModes"></select>
+    </div>
+    <div>
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" rows="4"></textarea>
+    </div>
+    <button type="submit">Create Certificate</button>
+</form>
+
+<img class="preview" src="~/Data/CertificateTemplate.jpeg" alt="Certificate template preview" />

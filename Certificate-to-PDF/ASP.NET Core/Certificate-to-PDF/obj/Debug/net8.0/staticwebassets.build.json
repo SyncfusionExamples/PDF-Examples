@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "Rc4IRDCw/PaliUc1xeSWDszqelYTcfAAXRG4sRH5Lc4=",
+  "Source": "Certificate-to-PDF",
+  "BasePath": "_content/Certificate-to-PDF",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Certificate-to-PDF/wwwroot",
+      "Source": "Certificate-to-PDF",
+      "ContentRoot": "/workspace/PDF-Examples/Certificate-to-PDF/ASP.NET Core/Certificate-to-PDF/wwwroot/",
+      "BasePath": "_content/Certificate-to-PDF",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/workspace/PDF-Examples/Certificate-to-PDF/ASP.NET Core/Certificate-to-PDF/wwwroot/Data/CertificateTemplate.jpeg",
+      "SourceId": "Certificate-to-PDF",
+      "SourceType": "Discovered",
+      "ContentRoot": "/workspace/PDF-Examples/Certificate-to-PDF/ASP.NET Core/Certificate-to-PDF/wwwroot/",
+      "BasePath": "_content/Certificate-to-PDF",
+      "RelativePath": "Data/CertificateTemplate.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Data/CertificateTemplate.jpeg"
+    },
+    {
+      "Identity": "/workspace/PDF-Examples/Certificate-to-PDF/ASP.NET Core/Certificate-to-PDF/wwwroot/Fonts/arial.ttf",
+      "SourceId": "Certificate-to-PDF",
+      "SourceType": "Discovered",
+      "ContentRoot": "/workspace/PDF-Examples/Certificate-to-PDF/ASP.NET Core/Certificate-to-PDF/wwwroot/",
+      "BasePath": "_content/Certificate-to-PDF",
+      "RelativePath": "Fonts/arial.ttf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Fonts/arial.ttf"
+    },
+    {
+      "Identity": "/workspace/PDF-Examples/Certificate-to-PDF/ASP.NET Core/Certificate-to-PDF/wwwroot/Fonts/arialbd.ttf",
+      "SourceId": "Certificate-to-PDF",
+      "SourceType": "Discovered",
+      "ContentRoot": "/workspace/PDF-Examples/Certificate-to-PDF/ASP.NET Core/Certificate-to-PDF/wwwroot/",
+      "BasePath": "_content/Certificate-to-PDF",
+      "RelativePath": "Fonts/arialbd.ttf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Fonts/arialbd.ttf"
+    }
+  ]
+}
