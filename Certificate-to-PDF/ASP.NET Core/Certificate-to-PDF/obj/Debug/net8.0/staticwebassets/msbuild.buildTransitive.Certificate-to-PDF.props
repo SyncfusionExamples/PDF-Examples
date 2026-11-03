@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/Certificate-to-PDF.props" />
+</Project>

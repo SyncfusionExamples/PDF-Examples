@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificate to PDF - Syncfusion PDF Library</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+        }
+
+        header {
+            background-color: #264aa2;
+            color: #fff;
+            padding: 18px 32px;
+        }
+
+        main {
+            max-width: 640px;
+            margin: 32px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 32px;
+        }
+
+        h1 { font-size: 1.4rem; margin: 0 0 4px; }
+
+        p.lead { color: #555; margin-top: 0; }
+
+        label { display: block; margin-top: 16px; font-weight: 600; }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font: inherit;
+        }
+
+        button {
+            margin-top: 24px;
+            background-color: #264aa2;
+            color: #fff;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover { background-color: #1c3878; }
+
+        .field-error { color: #c0392b; font-size: 0.85rem; }
+
+        img.preview {
+            width: 100%;
+            margin-top: 24px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Certificate to PDF</h1>
+        <span>Demonstrates certificate creation and downloading as PDF using the Syncfusion PDF Library</span>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
