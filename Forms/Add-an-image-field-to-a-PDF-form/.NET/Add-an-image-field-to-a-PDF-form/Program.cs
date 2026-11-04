@@ -9,12 +9,12 @@ PdfDocument document = new PdfDocument();
 //Add a new page to PDF document.
 PdfPage page = document.Pages.Add();
 
-//Create a Button.
-PdfButtonField buttonField = new PdfButtonField(page, "Click");
+//Create an image-based button field.
+PdfButtonField buttonField = new PdfButtonField(page, "ImageField");
 //Set properties to the Button field.
 buttonField.Bounds = new RectangleF(0, 150, 90, 20);
 buttonField.Text = "Click";
-PdfBitmap image = new PdfBitmap(new FileStream(@"../../../logo.png", FileMode.Open));
+PdfBitmap image = new PdfBitmap(new FileStream(Path.GetFullPath(@"Data/logo.png"), FileMode.Open));
 buttonField.Appearance.Normal.Graphics.DrawImage(image, 0, 0, 90, 20);
 
 //Add the form field to the document.
